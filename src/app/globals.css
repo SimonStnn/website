@@ -83,7 +83,7 @@
 }
 
 h1, h2, h3, h4, h5, h6 {
-  @apply font-bold mb-3 mt-5;
+  @apply font-bold mb-4 mt-8;
 }
 h1 {
   @apply text-4xl;
