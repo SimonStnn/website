@@ -67,7 +67,7 @@ export default function ThemeChanger({
     <>
       <DropdownMenu>
         <DropdownMenuTrigger className={cn(className, ``)}>
-          <FontAwesomeIcon icon={themeIcon}  width={14} height={14} />
+          <FontAwesomeIcon icon={themeIcon} width={14} height={14} />
           <span className="sr-only">Change theme</span>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
@@ -85,8 +85,16 @@ export default function ThemeChanger({
                   setTheme(t);
                 }}
               >
-                <span className="capitalize">{t}</span>
-                <FontAwesomeIcon icon={getThemeIcon(t)} width={14} height={14} />
+                <span
+                  className={cn("capitalize", t === theme ? "border-b border-b-primary" : "")}
+                >
+                  {t}
+                </span>
+                <FontAwesomeIcon
+                  icon={getThemeIcon(t)}
+                  width={14}
+                  height={14}
+                />
               </DropdownMenuItem>
             );
           })}
