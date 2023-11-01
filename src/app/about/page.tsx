@@ -18,15 +18,21 @@ export default function About() {
         <h2>Education</h2>
         <ol>
           <li>
-            <strong>2023 &minus; ... </strong>: Bachelor Elektronics &minus; ICT
+            <strong>2023 &minus; &hellip; </strong>: Bachelor Elektronics &minus; ICT
             at Vives
+          </li>
+          <li>
+            <strong>2022 &minus; 2023</strong>: Programming@home at Howest
           </li>
           <li>
             <strong>2021 &minus; 2023</strong>: Diploma secundair Industriële
             ICT at KTA Brugge.
           </li>
           <li>
-            <strong>2022 &minus; 2023</strong>: Programming@home at Howest
+            <strong>2019 &minus; 2021</strong>: Science Math at Sint-Jozef Humaniora
+          </li>
+          <li>
+            <strong>2017 &minus; 2019</strong>: Science STEM at Sint-Pieter Oostkamp
           </li>
         </ol>
       </section>
