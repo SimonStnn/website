@@ -6,6 +6,7 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 import { cn } from "@/lib/public/utils";
 import Navbar from "@/components/navbar";
 import { Providers } from "@/components/themechanger";
+import Footer from "@/components/footer";
 
 config.autoAddCss = false;
 
@@ -27,6 +28,7 @@ export default function RootLayout({
         <Providers>
           <Navbar />
           <main className="container m-auto py-6 px-10">{children}</main>
+          <Footer />
         </Providers>
       </body>
     </html>
