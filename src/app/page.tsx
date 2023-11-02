@@ -21,7 +21,7 @@ export default function Home() {
           personal website!
         </h1>
         <p>
-          Hello there! I&apos;m Simon, a passionate developer based in Belgium.
+          Hello there! I&apos;m Simon Stijnen, a passionate developer based in Belgium.
           Welcome to my digital space, where creativity meets technology and
           curiosity fuels innovation.
         </p>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -61,9 +61,9 @@ const NavItem = ({
 const Navbar = () => {
   return (
     <nav className="flex flex-row justify-between bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 h-14 w-full z-50 sticky top-0 select-none overflow-hidden border-b shadow-md">
-      <Link href="/" className="flex justify-center items-center">
+      <Link href="/" className="flex justify-center gap-1 items-center font-bold text-xl">
         <FontAwesomeIcon icon={faCode} className="p-4 transition-transform hover:rotate-180" size="xl" />
-        <span id="logotext" className="font-bold text-xl transition-transform">Simon</span>
+        <span id="logotext" className="transition-transform">Simon</span>
       </Link>
 
       <ul className="flex flex-row justify-end items-center gap-1 px-5 py-1">
