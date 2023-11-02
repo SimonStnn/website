@@ -55,7 +55,7 @@ const Card = ({ title, content, footer, image }: CardProps) => {
           <></>
         ) : (
           <footer className="mt-3 text-sm">
-            <hr />
+            <hr className="mb-2"/>
             {footer}
           </footer>
         )}
