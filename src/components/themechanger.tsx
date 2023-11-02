@@ -9,7 +9,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { faMoon, faSun, faMagic } from "@fortawesome/free-solid-svg-icons";
+import { faMoon, faSun, faWandMagicSparkles } from "@fortawesome/free-solid-svg-icons";
 import { ClassValue } from "clsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { cn } from "@/lib/public/utils";
@@ -21,7 +21,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
       attribute="class"
       enableSystem={true}
       defaultTheme="system"
-      themes={["light", "dark"]}
+      themes={["light", "dark", "pink"]}
     >
       {children}
     </ThemeProvider>
@@ -45,6 +45,8 @@ export default function ThemeChanger({
           return faMoon;
         case "light":
           return faSun;
+        case "pink":
+          return faWandMagicSparkles
         default:
           return faSun;
       }

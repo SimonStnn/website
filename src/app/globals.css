@@ -50,24 +50,24 @@
   }
 
   .pink {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
+    --background: 312, 38%, 72%;
+    --foreground: 312, 38%, 11%;
+    --card: 312, 38%, 76%;
+    --card-foreground: 210 40% 8%;
+    --popover: 312, 38%, 59%;
     --popover-foreground: 210 40% 98%;
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 312, 49%, 53%;
+    --primary-foreground: 312, 38%, 11%;
     --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
+    --secondary-foreground: 312, 38%, 11%;
+    --muted: 312, 38%, 75%;
     --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 312, 38%, 60%;
+    --accent-foreground: 312, 55%, 26%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
+    --border: 312, 49%, 66%;
+    --input: 312, 38%, 60%;
     --ring: 224.3 76.3% 48%;
   }
 }
@@ -113,10 +113,10 @@ h5 {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  @apply bg-muted rounded-full border-[3px] border-background border-solid;
+  @apply bg-accent rounded-full border-[3px] border-background border-solid;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-primary-foreground
+  @apply bg-accent-foreground
 }
