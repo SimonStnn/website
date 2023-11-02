@@ -1,5 +1,11 @@
 import React from "react";
 import Card from "@/components/card";
+import Link from "next/link";
+import { buttonVariants } from "@/components/ui/button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faArrowUpRightFromSquare
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function Projects() {
   return (
@@ -23,11 +29,10 @@ export default function Projects() {
             </>
           }
           footer={
-            <>
-              Python | React | Node.js |{" "}
-              Raspberry Pi | Bluetooth | Websocket{" "}
-              | ESP32
-            </>
+            <span className="flex flex-row flex-wrap gap-1">
+              Python | React | Node.js | Raspberry Pi | Bluetooth | Websocket |
+              ESP32
+            </span>
           }
         />
         <Card
@@ -40,7 +45,33 @@ export default function Projects() {
               build time.
             </>
           }
-          footer={<></>}
+          footer={
+            <span className="flex flex-col items-end gap-1">
+              <Link
+                href="https://nextjs.org/"
+                target="_blank"
+                className={buttonVariants({
+                  variant: "link",
+                  size: "0",
+                  className:"flex gap-2"
+                })}
+              >
+                Next.js
+                 <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+              </Link>
+              <Link
+                href="https://github.com/SimonStnn/website"
+                target="_blank"
+                className={buttonVariants({
+                  variant: "link",
+                  size: "0",
+                  className:"flex gap-2"
+                })}
+              >
+                Github <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+              </Link>
+            </span>
+          }
         />
         <Card
           image={"/images/discord.svg"}

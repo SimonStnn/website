@@ -10,7 +10,6 @@ import Link from "next/link";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import GlassyBackground from "@/components/glassy-background";
 
 export default function Home() {
   return (
