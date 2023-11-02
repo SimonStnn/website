@@ -41,21 +41,22 @@ export default function Home() {
             })}
             href={"/about"}
           >
-            <span className="font-bold">Get to know me</span>{" "}
+            <span className="font-bold text-primary-foreground">
+              Get to know me
+            </span>{" "}
             <FontAwesomeIcon className="" icon={faArrowRight} />
           </Link>
         </div>
       </section>
       <hr />
       <section className="mb-16">
-        <h2>
-          Showcasing websites of talented <br />
-          friends. Explore their work!
-        </h2>
+        <h2>Showcasing websites of talented friends. Explore their work!</h2>
 
         <Accordion type="single" collapsible className="w-10/12 my-5">
           <AccordionItem value="item-1">
-            <AccordionTrigger className="text-lg py-2">Maxim Claus</AccordionTrigger>
+            <AccordionTrigger className="text-lg py-2">
+              Maxim Claus
+            </AccordionTrigger>
             <AccordionContent>
               <Link
                 className={buttonVariants({
