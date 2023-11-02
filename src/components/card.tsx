@@ -1,7 +1,4 @@
 import React from "react";
-import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 
 interface CardProps {

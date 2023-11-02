@@ -62,8 +62,8 @@ const Navbar = () => {
   return (
     <nav className="flex flex-row justify-between bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 h-14 w-full z-50 sticky top-0 select-none overflow-hidden border-b shadow-md">
       <Link href="/" className="flex justify-center items-center">
-        <FontAwesomeIcon icon={faCode} className="p-4" size="xl" />
-        <span className="">Simon</span>
+        <FontAwesomeIcon icon={faCode} className="p-4 transition-transform hover:rotate-180" size="xl" />
+        <span id="logotext" className="font-bold text-xl transition-transform">Simon</span>
       </Link>
 
       <ul className="flex flex-row justify-end items-center gap-1 px-5 py-1">

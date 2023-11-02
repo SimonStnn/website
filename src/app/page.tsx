@@ -10,6 +10,7 @@ import Link from "next/link";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import RedirectLink from "@/components/redirect=link";
 
 export default function Home() {
   return (
@@ -58,16 +59,9 @@ export default function Home() {
               Maxim Claus
             </AccordionTrigger>
             <AccordionContent>
-              <Link
-                className={buttonVariants({
-                  variant: "link",
-                  size: "0",
-                })}
-                href="https://maximclaus.ikdoeict.be/"
-                target="_blank"
-              >
+              <RedirectLink href="https://maximclaus.ikdoeict.be/" className="text-sm">
                 Maxim Claus
-              </Link>{" "}
+              </RedirectLink>{" "}
               is a friend of mine who is also a developer. He is currently
               studying at Odisee in Ghent.
             </AccordionContent>

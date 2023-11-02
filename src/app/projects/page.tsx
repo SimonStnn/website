@@ -1,11 +1,6 @@
 import React from "react";
 import Card from "@/components/card";
-import Link from "next/link";
-import { buttonVariants } from "@/components/ui/button";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faArrowUpRightFromSquare
-} from "@fortawesome/free-solid-svg-icons";
+import RedirectLink from "@/components/redirect=link";
 
 export default function Projects() {
   return (
@@ -47,29 +42,10 @@ export default function Projects() {
           }
           footer={
             <span className="flex flex-col items-end gap-1">
-              <Link
-                href="https://nextjs.org/"
-                target="_blank"
-                className={buttonVariants({
-                  variant: "link",
-                  size: "0",
-                  className:"flex gap-2"
-                })}
-              >
-                Next.js
-                 <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-              </Link>
-              <Link
-                href="https://github.com/SimonStnn/website"
-                target="_blank"
-                className={buttonVariants({
-                  variant: "link",
-                  size: "0",
-                  className:"flex gap-2"
-                })}
-              >
-                Github <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-              </Link>
+              <RedirectLink href="https://nextjs.org/" addIcon={true}>Next.js</RedirectLink>
+              <RedirectLink href="https://github.com/SimonStnn/website" addIcon={true}>
+                Github
+              </RedirectLink>
             </span>
           }
         />
