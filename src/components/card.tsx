@@ -4,8 +4,7 @@ import Image from "next/image";
 interface CardProps {
   title: string;
   content: string | React.JSX.Element;
-  footer?:
-  React.JSX.Element
+  footer?: React.JSX.Element;
   image?:
     | string
     | {
@@ -52,7 +51,7 @@ const Card = ({ title, content, footer, image }: CardProps) => {
           <></>
         ) : (
           <footer className="mt-3 text-sm">
-            <hr className="mb-2"/>
+            <hr className="mb-2" />
             {footer}
           </footer>
         )}

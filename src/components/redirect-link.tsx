@@ -34,7 +34,11 @@ export default function RedirectLink({
       })}
     >
       {children}
-      {addIcon ? <FontAwesomeIcon icon={faArrowUpRightFromSquare} size="sm" /> : <></>}
+      {addIcon ? (
+        <FontAwesomeIcon icon={faArrowUpRightFromSquare} size="sm" />
+      ) : (
+        <></>
+      )}
     </Link>
   );
 }

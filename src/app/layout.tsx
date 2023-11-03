@@ -24,7 +24,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="nl" suppressHydrationWarning>
-      <body className={cn(inter.className, "p-0 scroll-smooth min-h-screen border-r")}>
+      <body
+        className={cn(
+          inter.className,
+          "p-0 scroll-smooth min-h-screen border-r"
+        )}
+      >
         <Providers>
           <Navbar />
           <main className="container m-auto py-6 px-10">{children}</main>

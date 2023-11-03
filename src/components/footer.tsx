@@ -13,7 +13,10 @@ export default function Footer() {
           <FontAwesomeIcon icon={faCopyright} /> Simon 2023
         </span>
         <span>
-          <RedirectLink href={"https://github.com/SimonStnn"} className="text-sm">
+          <RedirectLink
+            href={"https://github.com/SimonStnn"}
+            className="text-sm"
+          >
             <FontAwesomeIcon icon={faGithub} size="lg" />
             Github
           </RedirectLink>

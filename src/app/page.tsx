@@ -15,15 +15,14 @@ import RedirectLink from "@/components/redirect-link";
 export default function Home() {
   return (
     <>
-      <section className="w-3/4 m-auto py-28 text-center">
+      <section className="w-1/2 m-auto py-28 text-center">
         <h1>
-          Welcome to <span className="text-primary">Simon</span>&apos;s <br />{" "}
-          personal website!
+          Welcome to <span className="text-primary">Simon</span>&apos;s personal
+          website!
         </h1>
         <p>
-          Hello there! I&apos;m Simon Stijnen, a passionate developer based in Belgium.
-          Welcome to my digital space, where creativity meets technology and
-          curiosity fuels innovation.
+          Hello there! I&apos;m Simon Stijnen, a passionate developer based in
+          Belgium. Welcome to my digital space.
         </p>
       </section>
 
@@ -59,7 +58,10 @@ export default function Home() {
               Maxim Claus
             </AccordionTrigger>
             <AccordionContent>
-              <RedirectLink href="https://maximclaus.ikdoeict.be/" className="text-sm">
+              <RedirectLink
+                href="https://maximclaus.ikdoeict.be/"
+                className="text-sm"
+              >
                 Maxim Claus
               </RedirectLink>{" "}
               is a friend of mine who is also a developer. He is currently

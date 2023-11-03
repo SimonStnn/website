@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
 
 @layer base {
   :root {
@@ -26,7 +25,7 @@
     --ring: 142.1 76.2% 36.3%;
     --radius: 0.5rem;
   }
- 
+
   .dark {
     --background: 20 14.3% 4.1%;
     --foreground: 0 0% 95%;
@@ -68,11 +67,10 @@
     --destructive-foreground: 210 40% 98%;
     --border: 312, 49%, 66%;
     --input: 312, 38%, 60%;
-    --ring:  312, 49%, 53%;
+    --ring: 312, 49%, 53%;
   }
 }
 
- 
 @layer base {
   * {
     @apply border-border;
@@ -82,7 +80,12 @@
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   @apply font-bold mb-4 mt-8;
 }
 h1 {
@@ -118,9 +121,9 @@ h5 {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-accent-foreground
+  @apply bg-accent-foreground;
 }
 
 .pink #logotext:hover {
-  @apply rotate-180
+  @apply rotate-180;
 }

@@ -12,7 +12,9 @@ export default function About() {
           <li>Currently studying Bachelor Elektronics &minus; ICT at Vives</li>
           <li>
             Icehockey player @{" "}
-            <RedirectLink href="https://brugschebeiren.com/">Brugsche Beiren</RedirectLink>
+            <RedirectLink href="https://brugschebeiren.com/">
+              Brugsche Beiren
+            </RedirectLink>
           </li>
         </ul>
       </section>
@@ -46,10 +48,12 @@ export default function About() {
           <li>
             <p>
               I did an internship at{" "}
-              <RedirectLink href="https://advionics.be/">Advionics</RedirectLink>. I learned a
-              lot about electronics and programming. I made a program that
-              automatically takes pictures from 3 different cameras of their
-              product right before it goes in the box for shipping.
+              <RedirectLink href="https://advionics.be/">
+                Advionics
+              </RedirectLink>
+              . I learned a lot about electronics and programming. I made a
+              program that automatically takes pictures from 3 different cameras
+              of their product right before it goes in the box for shipping.
             </p>
             <p>
               Later, I worked there as a student. I helped measuring their

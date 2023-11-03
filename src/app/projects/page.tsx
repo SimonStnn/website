@@ -42,8 +42,13 @@ export default function Projects() {
           }
           footer={
             <span className="flex flex-col items-end gap-1">
-              <RedirectLink href="https://nextjs.org/" addIcon={true}>Next.js</RedirectLink>
-              <RedirectLink href="https://github.com/SimonStnn/website" addIcon={true}>
+              <RedirectLink href="https://nextjs.org/" addIcon={true}>
+                Next.js
+              </RedirectLink>
+              <RedirectLink
+                href="https://github.com/SimonStnn/website"
+                addIcon={true}
+              >
                 Github
               </RedirectLink>
             </span>
