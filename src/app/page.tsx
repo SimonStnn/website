@@ -10,12 +10,12 @@ import Link from "next/link";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import RedirectLink from "@/components/redirect=link";
+import RedirectLink from "@/components/redirect-link";
 
 export default function Home() {
   return (
     <>
-      <section className="w-3/4 m-auto py-24 text-center">
+      <section className="w-3/4 m-auto py-28 text-center">
         <h1>
           Welcome to <span className="text-primary">Simon</span>&apos;s <br />{" "}
           personal website!
@@ -49,9 +49,9 @@ export default function Home() {
           </Link>
         </div>
       </section>
-      <hr />
+      {/* <hr /> */}
       <section className="mb-16">
-        <h2>Showcasing websites of talented friends. Explore their work!</h2>
+        <h2>Showcasing websites of my talented friends. Explore their work!</h2>
 
         <Accordion type="single" collapsible className="w-10/12 my-5">
           <AccordionItem value="item-1">
@@ -71,7 +71,7 @@ export default function Home() {
           They are really talented and I&apos;m proud to call them my friends.
         </p>
       </section>
-      <hr />
+      {/* <hr /> */}
       <section className="mt-5 text-sm">
         <p>
           Feel free to browse around, and don&apos;t hesitate to get in touch.

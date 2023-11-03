@@ -1,5 +1,5 @@
 import React from "react";
-import RedirectLink from "@/components/redirect=link";
+import RedirectLink from "@/components/redirect-link";
 
 export default function About() {
   return (

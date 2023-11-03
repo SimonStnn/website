@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faCopyright } from "@fortawesome/free-solid-svg-icons";
-import RedirectLink from "./redirect=link";
+import RedirectLink from "./redirect-link";
 
 export default function Footer() {
   return (

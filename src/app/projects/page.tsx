@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "@/components/card";
-import RedirectLink from "@/components/redirect=link";
+import RedirectLink from "@/components/redirect-link";
 
 export default function Projects() {
   return (
