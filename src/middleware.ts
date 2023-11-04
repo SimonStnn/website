@@ -9,6 +9,7 @@ export function middleware(request: NextRequest) {
   );
 
   if (pathnameHasLocale) return;
+  if (request.nextUrl.pathname.startsWith("/images")) return;
 
   // Redirect if there is no locale
   const locale = getLocale(request);
