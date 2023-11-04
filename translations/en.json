@@ -1,0 +1,32 @@
+{
+  "Index": {
+    "header": {
+      "title": {
+        "section1": "Welcome to",
+        "section2": "personal website!"
+      },
+      "slogan": "Hello there! I'm Simon Stijnen, a passionate developer based in Belgium. Welcome to my digital space."
+    },
+    "section1": {
+      "title": "Get to know me",
+      "text": "I&apos;m an 18 year old developer from Belgium. I&apos;m currently studying at Vives Burgge.",
+      "button": "Get to know me"
+    },
+    "section2": {
+      "title": "Showcasing websites of my talented friends. Explore their work!",
+      "text": "I&apos;m currently working on a few projects. You can find them all on my Github page.",
+      "accordion": {
+        "maxim": {
+          "title": "Maxim Claus",
+          "link": "Maxim Claus",
+          "text": "is a friend of mine who is also a developer. He is currently studying at Odisee in Ghent."
+        }
+      },
+      "footer": "They are really talented and I&apos;m proud to call them my friends."
+    },
+    "section3": {
+      "title": "",
+      "text": "Feel free to browse around, and don't hesitate to get in touch. I'm always eager to connect with like-minded individuals and explore new opportunities. Thank you for visiting, and I hope you enjoy your stay!"
+    }
+  }
+}

@@ -1,4 +1,3 @@
-"use client";
 import { buttonVariants } from "@/components/ui/button";
 import {
   Accordion,
@@ -11,28 +10,29 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import RedirectLink from "@/components/redirect-link";
+import { getDictionary } from "@/dictionary";
 
-export default function Home() {
+export default function Home({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) {
+  const dict = getDictionary(locale);
   return (
     <>
       <section className="w-1/2 m-auto py-28 text-center">
         <h1>
-          Welcome to <span className="text-primary">Simon</span>&apos;s personal
-          website!
+          {dict.Index.header.title.section1}{" "}
+          <span className="text-primary">Simon</span>&apos;s{" "}
+          {dict.Index.header.title.section2}
         </h1>
-        <p>
-          Hello there! I&apos;m Simon Stijnen, a passionate developer based in
-          Belgium. Welcome to my digital space.
-        </p>
+        <p>{dict.Index.header.slogan}</p>
       </section>
 
       <hr />
       <section className="mb-16">
-        <h2>Get to know me</h2>
-        <p>
-          I&apos;m an 18 year old developer from Belgium. I&apos;m currently
-          studying at Vives Burgge.
-        </p>
+        <h2>{dict.Index.section1.title}</h2>
+        <p>{dict.Index.section1.text}</p>
         <div className="flex justify-center mt-8">
           <Link
             className={buttonVariants({
@@ -42,44 +42,38 @@ export default function Home() {
             href={"/about"}
           >
             <span className="font-bold text-primary-foreground">
-              Get to know me
-            </span>{" "}
+              {dict.Index.section1.button}
+            </span>
             <FontAwesomeIcon className="" icon={faArrowRight} />
           </Link>
         </div>
       </section>
       {/* <hr /> */}
       <section className="mb-16">
-        <h2>Showcasing websites of my talented friends. Explore their work!</h2>
+        <h2>{dict.Index.section2.title}</h2>
 
         <Accordion type="single" collapsible className="w-10/12 my-5">
           <AccordionItem value="item-1">
             <AccordionTrigger className="text-lg py-2">
-              Maxim Claus
+              {dict.Index.section2.accordion.maxim.title}
             </AccordionTrigger>
             <AccordionContent>
               <RedirectLink
                 href="https://maximclaus.ikdoeict.be/"
                 className="text-sm"
               >
-                Maxim Claus
+                {dict.Index.section2.accordion.maxim.link}
               </RedirectLink>{" "}
-              is a friend of mine who is also a developer. He is currently
-              studying at Odisee in Ghent.
+              {dict.Index.section2.accordion.maxim.text}
             </AccordionContent>
           </AccordionItem>
         </Accordion>
-        <p>
-          They are really talented and I&apos;m proud to call them my friends.
-        </p>
+        <p>{dict.Index.section2.footer}</p>
       </section>
       {/* <hr /> */}
       <section className="mt-5 text-sm">
         <p>
-          Feel free to browse around, and don&apos;t hesitate to get in touch.
-          I&apos;m always eager to connect with like-minded individuals and
-          explore new opportunities. Thank you for visiting, and I hope you
-          enjoy your stay!
+          {dict.Index.section3.text}
         </p>
       </section>
     </>
