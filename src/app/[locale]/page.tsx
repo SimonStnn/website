@@ -22,17 +22,17 @@ export default function Home({
     <>
       <section className="w-1/2 m-auto py-28 text-center">
         <h1>
-          {dict.Index.header.title.section1}{" "}
+          {dict.index.header.title.section1}{" "}
           <span className="text-primary">Simon</span>&apos;s{" "}
-          {dict.Index.header.title.section2}
+          {dict.index.header.title.section2}
         </h1>
-        <p>{dict.Index.header.slogan}</p>
+        <p>{dict.index.header.slogan}</p>
       </section>
 
       <hr />
       <section className="mb-16">
-        <h2>{dict.Index.section1.title}</h2>
-        <p>{dict.Index.section1.text}</p>
+        <h2>{dict.index.section1.title}</h2>
+        <p>{dict.index.section1.text}</p>
         <div className="flex justify-center mt-8">
           <Link
             className={buttonVariants({
@@ -42,7 +42,7 @@ export default function Home({
             href={"/about"}
           >
             <span className="font-bold text-primary-foreground">
-              {dict.Index.section1.button}
+              {dict.index.section1.button}
             </span>
             <FontAwesomeIcon className="" icon={faArrowRight} />
           </Link>
@@ -50,30 +50,30 @@ export default function Home({
       </section>
       {/* <hr /> */}
       <section className="mb-16">
-        <h2>{dict.Index.section2.title}</h2>
+        <h2>{dict.index.section2.title}</h2>
 
         <Accordion type="single" collapsible className="w-10/12 my-5">
           <AccordionItem value="item-1">
             <AccordionTrigger className="text-lg py-2">
-              {dict.Index.section2.accordion.maxim.title}
+              {dict.index.section2.accordion.maxim.title}
             </AccordionTrigger>
             <AccordionContent>
               <RedirectLink
                 href="https://maximclaus.ikdoeict.be/"
                 className="text-sm"
               >
-                {dict.Index.section2.accordion.maxim.link}
+                {dict.index.section2.accordion.maxim.link}
               </RedirectLink>{" "}
-              {dict.Index.section2.accordion.maxim.text}
+              {dict.index.section2.accordion.maxim.text}
             </AccordionContent>
           </AccordionItem>
         </Accordion>
-        <p>{dict.Index.section2.footer}</p>
+        <p>{dict.index.section2.footer}</p>
       </section>
       {/* <hr /> */}
       <section className="mt-5 text-sm">
         <p>
-          {dict.Index.section3.text}
+          {dict.index.section3.text}
         </p>
       </section>
     </>

@@ -4,7 +4,7 @@
     "about": "About",
     "projects": "Projects"
   },
-  "Index": {
+  "index": {
     "header": {
       "title": {
         "section1": "Welcome to",
@@ -34,7 +34,7 @@
       "text": "Feel free to browse around, and don't hesitate to get in touch. I'm always eager to connect with like-minded individuals and explore new opportunities. Thank you for visiting, and I hope you enjoy your stay!"
     }
   },
-  "Projects": {
+  "projects": {
     "title": "Projects",
     "text": {
       "intro": "Here are some projects I've worked on. Some of them are open source, others are not.",

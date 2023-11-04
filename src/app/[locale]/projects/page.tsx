@@ -11,18 +11,18 @@ export default function Projects({
   const dict = getDictionary(locale);
   return (
     <>
-      <h1 className="text-4xl font-bold mb">{dict.Projects.title}</h1>
-      <p className="my-5">{dict.Projects.text.intro}</p>
+      <h1 className="text-4xl font-bold mb">{dict.projects.title}</h1>
+      <p className="my-5">{dict.projects.text.intro}</p>
       <section className="flex flex-row flex-wrap gap-5">
         <Card
-          title={dict.Projects.card.finalProject.title}
-          content={dict.Projects.card.finalProject.content}
-          footer={dict.Projects.card.finalProject.footer}
+          title={dict.projects.card.finalProject.title}
+          content={dict.projects.card.finalProject.content}
+          footer={dict.projects.card.finalProject.footer}
         />
         <Card
           image={"/images/next-js-logo.png"}
-          title={dict.Projects.card.nextjs.title}
-          content={dict.Projects.card.nextjs.content}
+          title={dict.projects.card.nextjs.title}
+          content={dict.projects.card.nextjs.content}
           footer={
             <span className="flex flex-col items-end gap-1">
               <RedirectLink href="https://nextjs.org/" addIcon={true}>
@@ -39,17 +39,17 @@ export default function Projects({
         />
         <Card
           image={"/images/discord.svg"}
-          title={dict.Projects.card.discordBot.title}
-          content={dict.Projects.card.discordBot.content}
-          footer={dict.Projects.card.discordBot.footer}
+          title={dict.projects.card.discordBot.title}
+          content={dict.projects.card.discordBot.content}
+          footer={dict.projects.card.discordBot.footer}
         />
         <Card
-          title={dict.Projects.card.other.title}
-          content={dict.Projects.card.other.content}
-          footer={dict.Projects.card.other.footer}
+          title={dict.projects.card.other.title}
+          content={dict.projects.card.other.content}
+          footer={dict.projects.card.other.footer}
         />
       </section>
-      <p className="my-5">{dict.Projects.text.end}</p>
+      <p className="my-5">{dict.projects.text.end}</p>
     </>
   );
 }
