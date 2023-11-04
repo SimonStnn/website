@@ -33,5 +33,34 @@
       "title": "",
       "text": "Feel free to browse around, and don't hesitate to get in touch. I'm always eager to connect with like-minded individuals and explore new opportunities. Thank you for visiting, and I hope you enjoy your stay!"
     }
+  },
+  "Projects": {
+    "title": "Projects",
+    "text": {
+      "intro": "Here are some projects I've worked on. Some of them are open source, others are not.",
+      "end": "I mostly work on larger projects, most of them included here. I also build smaller projects, but I don't share them here."
+    },
+    "card": {
+      "finalProject": {
+        "title": "Final Project",
+        "content": "For my final project in high school (2022 - 2023), I built a bluetooth detection system. It detects bluetooth devices and sends data via http to a server (Raspberry Pi). The server then tries to locate the found device in a room. This information is then displayed via websocket to a React app. This app had an advanced structure to make it easy to add new features.",
+        "footer": "Python | React | Node.js | Raspberry Pi | Bluetooth | Websocket | ESP32"
+      },
+      "nextjs": {
+        "title": "This App",
+        "content": "This app is built with Next JS, a React framework. It is a static site generator, which means that it generates static HTML pages at build time.",
+        "footer": ""
+      },
+      "discordBot": {
+        "title": "Discord Bot",
+        "content": "I built a discord bot with node.js and discord.js. It's written in TypeScript and uses a MongoDB database.",
+        "footer": "discord.js | MongoDB | Node.js"
+      },
+      "other": {
+        "title": "Other Projects",
+        "content": "I've also build some closed source projects, but I cannot share them here. I've made a prometheus exporter, that pushes to grafana. I'm also working on an API. It also saves the pictures and other neseccary data in a pdf.",
+        "footer": "Python | C# | ..."
+      }
+    }
   }
 }
