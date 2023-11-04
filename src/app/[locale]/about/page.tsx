@@ -17,9 +17,9 @@ export default function About({
           <li>{dict.about.section1.livingIn}</li>
           <li>{dict.about.section1.studies}</li>
           <li>
-            {dict.about.section1.hobby.text}{" "}
+            {dict.about.section1.hobby}{" "}
             <RedirectLink href="https://brugschebeiren.com/">
-              {dict.about.section1.hobby.link}
+              Brugsche Beiren
             </RedirectLink>
           </li>
         </ul>

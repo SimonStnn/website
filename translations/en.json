@@ -40,10 +40,7 @@
       "birthday": "23 march 2005",
       "livingIn": "Living in Belguim",
       "studies": "Currently studying Bachelor Elektronics − ICT at Vives",
-      "hobby": {
-        "text": "Icehockey player @",
-        "link": "Brugsche Beiren"
-      }
+      "hobby": "Icehockey player @"
     },
     "section2": {
       "title": "Education",
@@ -72,12 +69,12 @@
     },
     "section3": {
       "title": "Experience",
-      "paragraph1":{
+      "paragraph1": {
         "section1": "I did an internship at",
         "section2": ". I learned a lot about electronics and programming. I made a program that automatically takes pictures of the product from 3 different cameras of their product right before it goes in the box for shipping."
-      }, 
-      "paragraph2":{
-        "section1":"Later, I worked there as a student. I helped measuring their machines that callibrates equipment. For example, I measured the margin of error each machine had."
+      },
+      "paragraph2": {
+        "section1": "Later, I worked there as a student. I helped measuring their machines that callibrates equipment. For example, I measured the margin of error each machine had."
       }
     }
   },
