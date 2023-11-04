@@ -91,7 +91,7 @@ const Navbar = ({ lang }: { lang: Locale }) => {
 
       <ul className="flex flex-row justify-end items-center gap-1 px-5 py-1">
         {navItems.map((item, i) => (
-          <li key={i} className="justify-center items-center hidden md:block">
+          <li key={i} className="justify-center items-center hidden sm:block">
             <NavItem text={item.text} href={item.href} icon={item.icon} />
           </li>
         ))}
@@ -105,7 +105,7 @@ const Navbar = ({ lang }: { lang: Locale }) => {
             <SheetContent>
               <ul className="flex flex-col w-11/12">
                 {navItems.map((item, i) => (
-                  <li key={i} className="block w-full md:hidden">
+                  <li key={i} className="block w-full sm:hidden">
                     <SheetClose key={i} asChild>
                       <NavItem
                         text={item.text}
@@ -116,7 +116,7 @@ const Navbar = ({ lang }: { lang: Locale }) => {
                     </SheetClose>
                   </li>
                 ))}
-                <hr className="my-3 block w-full md:hidden" />
+                <hr className="my-3 block w-full sm:hidden" />
                 <li>
                   <ThemeChanger className={sheetButtonClassName} />
                 </li>
