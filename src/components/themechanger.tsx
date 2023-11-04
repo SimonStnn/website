@@ -9,7 +9,11 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { faMoon, faSun, faWandMagicSparkles } from "@fortawesome/free-solid-svg-icons";
+import {
+  faMoon,
+  faSun,
+  faWandMagicSparkles,
+} from "@fortawesome/free-solid-svg-icons";
 import { ClassValue } from "clsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { cn } from "@/lib/public/utils";
@@ -46,7 +50,7 @@ export default function ThemeChanger({
         case "light":
           return faSun;
         case "pink":
-          return faWandMagicSparkles
+          return faWandMagicSparkles;
         default:
           return faSun;
       }
@@ -62,16 +66,20 @@ export default function ThemeChanger({
     setMounted(true);
   }, []);
 
+  const dropdownMenuTrigger = (
+    <DropdownMenuTrigger className={cn(className, ``)}>
+      <FontAwesomeIcon icon={themeIcon} width={14} height={14} />
+      <span className="sr-only">Change theme</span>
+    </DropdownMenuTrigger>
+  );
+
   if (!mounted) {
-    return <DropdownMenu></DropdownMenu>;
+    return <DropdownMenu>{dropdownMenuTrigger}</DropdownMenu>;
   }
   return (
     <>
       <DropdownMenu>
-        <DropdownMenuTrigger className={cn(className, ``)}>
-          <FontAwesomeIcon icon={themeIcon} width={14} height={14} />
-          <span className="sr-only">Change theme</span>
-        </DropdownMenuTrigger>
+        {dropdownMenuTrigger}
         <DropdownMenuContent>
           <DropdownMenuLabel className="select-none">
             Change Theme
@@ -88,7 +96,10 @@ export default function ThemeChanger({
                 }}
               >
                 <span
-                  className={cn("capitalize", t === theme ? "border-b border-b-primary" : "")}
+                  className={cn(
+                    "capitalize",
+                    t === theme ? "border-b border-b-primary" : ""
+                  )}
                 >
                   {t}
                 </span>

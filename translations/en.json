@@ -1,0 +1,106 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects"
+  },
+  "index": {
+    "header": {
+      "title": {
+        "section1": "Welcome to",
+        "section2": "personal website!"
+      },
+      "slogan": "Hello there! I'm Simon Stijnen, a passionate developer based in Belgium. Welcome to my digital space."
+    },
+    "section1": {
+      "title": "Get to know me",
+      "text": "I'm an 18 year old developer from Belgium. I'm currently studying at Vives Burgge.",
+      "button": "Get to know me"
+    },
+    "section2": {
+      "title": "Showcasing websites of my talented friends. Explore their work!",
+      "text": "I'm currently working on a few projects. You can find them all on my Github page.",
+      "accordion": {
+        "maxim": "is a friend of mine who is also a developer. He is currently studying at Odisee in Ghent."
+      },
+      "footer": "They are really talented and I'm proud to call them my friends."
+    },
+    "section3": {
+      "title": "",
+      "text": "Feel free to browse around, and don't hesitate to get in touch. I'm always eager to connect with like-minded individuals and explore new opportunities. Thank you for visiting, and I hope you enjoy your stay!"
+    }
+  },
+  "about": {
+    "section1": {
+      "title": "Personal information",
+      "birthday": "23 march 2005",
+      "livingIn": "Living in Belguim",
+      "studies": "Currently studying Bachelor Elektronics − ICT at Vives",
+      "hobby": "Icehockey player @"
+    },
+    "section2": {
+      "title": "Education",
+      "studies": {
+        "vives": {
+          "year": "2023 − …",
+          "text": "Bachelor Elektronics − ICT at Vives"
+        },
+        "howest": {
+          "year": "2022 − 2023",
+          "text": "Programming@home at Howest"
+        },
+        "kta": {
+          "year": "2021 − 2023",
+          "text": "Diploma secundair Industriële ICT at KTA Brugge"
+        },
+        "sjh": {
+          "year": "2019 − 2021",
+          "text": "Science Math at Sint-Jozef Humaniora"
+        },
+        "sp": {
+          "year": "2017 − 2019",
+          "text": "Science STEM at Sint-Pieter Oostkamp"
+        }
+      }
+    },
+    "section3": {
+      "title": "Experience",
+      "paragraph1": {
+        "section1": "I did an internship at",
+        "section2": ". I learned a lot about electronics and programming. I made a program that automatically takes pictures of the product from 3 different cameras of their product right before it goes in the box for shipping."
+      },
+      "paragraph2": {
+        "section1": "Later, I worked there as a student. I helped measuring their machines that callibrates equipment. For example, I measured the margin of error each machine had."
+      }
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "text": {
+      "intro": "Here are some projects I've worked on. Some of them are open source, others are not.",
+      "end": "I mostly work on larger projects, most of them included here. I also build smaller projects, but I don't share them here."
+    },
+    "card": {
+      "finalProject": {
+        "title": "Final Project",
+        "content": "For my final project in high school (2022 - 2023), I built a bluetooth detection system. It detects bluetooth devices and sends data via http to a server (Raspberry Pi). The server then tries to locate the found device in a room. This information is then displayed via websocket to a React app. This app had an advanced structure to make it easy to add new features.",
+        "footer": "Python | React | Node.js | Raspberry Pi | Bluetooth | Websocket | ESP32"
+      },
+      "nextjs": {
+        "title": "This App",
+        "content": "This app is built with Next JS, a React framework. It is a static site generator, which means that it generates static HTML pages at build time.",
+        "footer": ""
+      },
+      "discordBot": {
+        "title": "Discord Bot",
+        "content": "I built a discord bot with node.js and discord.js. It's written in TypeScript and uses a MongoDB database.",
+        "footer": "discord.js | MongoDB | Node.js"
+      },
+      "other": {
+        "title": "Other Projects",
+        "content": "I've also build some closed source projects, but I cannot share them here. I've made a prometheus exporter, that pushes to grafana. I'm also working on an API. It also saves the pictures and other neseccary data in a pdf.",
+        "footer": "Python | C# | ..."
+      }
+    }
+  }
+}

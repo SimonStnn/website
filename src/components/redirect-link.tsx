@@ -20,7 +20,7 @@ export default function RedirectLink({
   children: React.ReactNode;
 }) {
   if (!target) {
-    target = target?.startsWith("http") ? "_blank" : "_self";
+    target = href?.startsWith("http") ? "_blank" : "_self";
   }
 
   return (
@@ -34,7 +34,11 @@ export default function RedirectLink({
       })}
     >
       {children}
-      {addIcon ? <FontAwesomeIcon icon={faArrowUpRightFromSquare} size="sm" /> : <></>}
+      {addIcon ? (
+        <FontAwesomeIcon icon={faArrowUpRightFromSquare} size="sm" />
+      ) : (
+        <></>
+      )}
     </Link>
   );
 }

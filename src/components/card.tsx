@@ -4,8 +4,7 @@ import Image from "next/image";
 interface CardProps {
   title: string;
   content: string | React.JSX.Element;
-  footer?:
-  React.JSX.Element
+  footer?: string | React.JSX.Element;
   image?:
     | string
     | {
@@ -38,7 +37,7 @@ const Card = ({ title, content, footer, image }: CardProps) => {
 
       <div className="p-4">
         <header>
-          <h1 className="mb-3 text-2xl font-normal capitalize">
+          <h1 className="mb-3 mt-0 text-2xl font-normal capitalize">
             {title}
             <hr />
           </h1>
@@ -52,7 +51,7 @@ const Card = ({ title, content, footer, image }: CardProps) => {
           <></>
         ) : (
           <footer className="mt-3 text-sm">
-            <hr className="mb-2"/>
+            <hr className="mb-2" />
             {footer}
           </footer>
         )}

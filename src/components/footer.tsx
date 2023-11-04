@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faCopyright } from "@fortawesome/free-solid-svg-icons";
-import RedirectLink from "./redirect=link";
+import RedirectLink from "./redirect-link";
 
 export default function Footer() {
   return (
@@ -13,7 +13,10 @@ export default function Footer() {
           <FontAwesomeIcon icon={faCopyright} /> Simon 2023
         </span>
         <span>
-          <RedirectLink href={"https://github.com/SimonStnn"} className="text-sm">
+          <RedirectLink
+            href={"https://github.com/SimonStnn"}
+            className="text-sm"
+          >
             <FontAwesomeIcon icon={faGithub} size="lg" />
             Github
           </RedirectLink>
