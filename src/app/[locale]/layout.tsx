@@ -39,7 +39,7 @@ export default function RootLayout({
         )}
       >
         <Providers>
-          <Navbar />
+          <Navbar lang={locale}/>
           <main className="container m-auto py-6 px-10">{children}</main>
           <Footer />
         </Providers>

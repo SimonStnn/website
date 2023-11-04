@@ -9,29 +9,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { buttonVariants } from "@components/ui/button";
 import ThemeChanger from "@components/themechanger";
+import { Dictionary } from "@/dictionary";
 
 const navbarItemClassName = buttonVariants({
   className: "gap-2",
   variant: "outline",
 });
-
-const navItems = [
-  {
-    text: "Home",
-    href: "/",
-    icon: <FontAwesomeIcon icon={faHome} />,
-  },
-  {
-    text: "About",
-    href: "/about",
-    icon: <FontAwesomeIcon icon={faContactBook} />,
-  },
-  {
-    text: "Projects",
-    href: "/projects",
-    icon: <FontAwesomeIcon icon={faProjectDiagram} />,
-  },
-];
 
 const NavItem = ({
   text,
@@ -46,19 +29,33 @@ const NavItem = ({
     <li className="flex justify-center items-center">
       <Link href={href} className={navbarItemClassName} title={text.toString()}>
         <span className="flex items-center">{icon}</span>
-        {!text ? (
-          <></>
-        ) : (
-          <span className="hidden sm:flex sm:items-center sm:visible">
-            {text}
-          </span>
-        )}
+        <span className="hidden sm:flex sm:items-center sm:visible capitalize">
+          {text}
+        </span>
       </Link>
     </li>
   );
 };
 
-const Navbar = () => {
+const Navbar = ({ dict }: { dict: Dictionary }) => {
+  const navItems = [
+    {
+      text: <>{dict.navbar.home}</>,
+      href: "/",
+      icon: <FontAwesomeIcon icon={faHome} />,
+    },
+    {
+      text: <>{dict.navbar.about}</>,
+      href: "/about",
+      icon: <FontAwesomeIcon icon={faContactBook} />,
+    },
+    {
+      text: <>{dict.navbar.projects}</>,
+      href: "/projects",
+      icon: <FontAwesomeIcon icon={faProjectDiagram} />,
+    },
+  ];
+
   return (
     <nav className="flex flex-row justify-between bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 h-14 w-full z-50 sticky top-0 select-none overflow-hidden border-b shadow-md">
       <Link
