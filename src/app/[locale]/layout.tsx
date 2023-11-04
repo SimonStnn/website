@@ -7,7 +7,7 @@ import { cn } from "@/lib/public/utils";
 import Navbar from "@/components/navbar";
 import { Providers } from "@/components/themechanger";
 import Footer from "@/components/footer";
-import { locales } from "@/dictionary";
+import { getDictionary, locales } from "@/dictionary";
 
 config.autoAddCss = false;
 
@@ -30,6 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
+  const dict = getDictionary(locale);
   return (
     <html lang={locale} suppressHydrationWarning>
       <body
@@ -39,7 +40,7 @@ export default function RootLayout({
         )}
       >
         <Providers>
-          <Navbar lang={locale}/>
+          <Navbar dict={dict} />
           <main className="container m-auto py-6 px-10">{children}</main>
           <Footer />
         </Providers>
