@@ -21,11 +21,7 @@
       "title": "Showcasing websites of my talented friends. Explore their work!",
       "text": "I'm currently working on a few projects. You can find them all on my Github page.",
       "accordion": {
-        "maxim": {
-          "title": "Maxim Claus",
-          "link": "Maxim Claus",
-          "text": "is a friend of mine who is also a developer. He is currently studying at Odisee in Ghent."
-        }
+        "maxim": "is a friend of mine who is also a developer. He is currently studying at Odisee in Ghent."
       },
       "footer": "They are really talented and I'm proud to call them my friends."
     },

@@ -55,16 +55,16 @@ export default function Home({
         <Accordion type="single" collapsible className="w-10/12 my-5">
           <AccordionItem value="item-1">
             <AccordionTrigger className="text-lg py-2">
-              {dict.index.section2.accordion.maxim.title}
+              Maxim Claus
             </AccordionTrigger>
             <AccordionContent>
               <RedirectLink
                 href="https://maximclaus.ikdoeict.be/"
                 className="text-sm"
               >
-                {dict.index.section2.accordion.maxim.link}
+                Maxim Claus
               </RedirectLink>{" "}
-              {dict.index.section2.accordion.maxim.text}
+              {dict.index.section2.accordion.maxim}
             </AccordionContent>
           </AccordionItem>
         </Accordion>
@@ -72,9 +72,7 @@ export default function Home({
       </section>
       {/* <hr /> */}
       <section className="mt-5 text-sm">
-        <p>
-          {dict.index.section3.text}
-        </p>
+        <p>{dict.index.section3.text}</p>
       </section>
     </>
   );
