@@ -3,7 +3,7 @@ import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 import { NextRequest } from "next/server";
 
-export const locales = ["en"];
+export const locales = ["en", "nl"];
 export const defaultLocale = "en";
 export type Locale = typeof locales[number];
 
@@ -14,6 +14,7 @@ export const languages = new Negotiator({ headers }).languages();
 
 const dictionaries = {
   en: () => import("@translations/en.json").then((module) => module.default),
+  nl: () => import("@translations/nl.json").then((module) => module.default),
 };
 
 type PromiseType<T> = T extends Promise<infer U> ? U : never;

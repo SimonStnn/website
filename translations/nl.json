@@ -1,5 +1,106 @@
 {
-  "Index":{
-    "title": "Hallo Wereld"
+  "navbar": {
+    "home": "Home",
+    "about": "Over mij",
+    "projects": "Projecten"
+  },
+  "index": {
+    "header": {
+      "title": {
+        "section1": "Welkom op",
+        "section2": "persoonlijke website!"
+      },
+      "slogan": "Hallo daar! Ik ben Simon Stijnen, een gepassioneerde ontwikkelaar gevestigd in België. Welkom in mijn digitale ruimte."
+    },
+    "section1": {
+      "title": "Leer mij kennen",
+      "text": "Ik ben een 18-jarige ontwikkelaar uit België. Momenteel studeer ik aan Vives Burgge.",
+      "button": "Leer mij kennen"
+    },
+    "section2": {
+      "title": "Websites van mijn getalenteerde vrienden presenteren. Ontdek hun werk!",
+      "text": "Momenteel ben ik bezig met een aantal projecten. Je kunt ze allemaal vinden op mijn Github-pagina.",
+      "accordion": {
+        "maxim": "is een vriend van mij die ook ontwikkelaar is. Momenteel studeert hij aan Odisee in Gent."
+      },
+      "footer": "Ze zijn echt getalenteerd en ik ben er trots op dat ik ze mijn vrienden mag noemen."
+    },
+    "section3": {
+      "title": "",
+      "text": "Kijk gerust eens rond en neem gerust contact met ons op. Ik wil altijd graag in contact komen met gelijkgestemde individuen en nieuwe kansen verkennen. Bedankt voor uw bezoek, en ik hoop dat u geniet van uw verblijf!"
+    }
+  },
+  "about": {
+    "section1": {
+      "title": "Persoonlijke informatie",
+      "birthday": "23 maart 2005",
+      "livingIn": "Komt uit België",
+      "studies": "Momenteel een Bachelor Elektronica − ICT aan het studeren in Vives",
+      "hobby": "Ijshockey speler @"
+    },
+    "section2": {
+      "title": "Studies",
+      "studies": {
+        "vives": {
+          "year": "2023 − …",
+          "text": "Bachelor Elektronica − ICT in Vives"
+        },
+        "howest": {
+          "year": "2022 − 2023",
+          "text": "Programming@home in Howest"
+        },
+        "kta": {
+          "year": "2021 − 2023",
+          "text": "Diploma secundair Industriële ICT in KTA Brugge"
+        },
+        "sjh": {
+          "year": "2019 − 2021",
+          "text": "Wetenschappen wiskunde in Sint-Jozef Humaniora"
+        },
+        "sp": {
+          "year": "2017 − 2019",
+          "text": "Wetenschappen STEM in Sint-Pieter Oostkamp"
+        }
+      }
+    },
+    "section3": {
+      "title": "Experience",
+      "paragraph1": {
+        "section1": "Ik deed stage bij",
+        "section2": ". Ik heb veel geleerd over elektronica en programmeren. Ik heb een programma gemaakt dat automatisch foto's van het product maakt met drie verschillende camera's van hun product, vlak voordat het in de doos gaat voor verzending."
+      },
+      "paragraph2": {
+        "section1": "Later heb ik daar als student gewerkt. Ik hielp met het meten van hun machines die apparatuur kalibreerden. Ik heb bijvoorbeeld de foutmarge van elke machine gemeten."
+      }
+    }
+  },
+  "projects": {
+    "title": "Projecten",
+    "text": {
+      "intro": "Hier zijn enkele projecten waaraan ik heb gewerkt. Sommigen van hen zijn open source, andere niet.",
+      "end": "Ik werk meestal aan grotere projecten, waarvan de meeste hier zijn opgenomen. Ik bouw ook kleinere projecten, maar die deel ik hier niet."
+    },
+    "card": {
+      "finalProject": {
+        "title": "Eindwerk",
+        "content": "Voor mijn eindproject op de middelbare school (2022 - 2023) heb ik een bluetooth detectiesysteem gebouwd. Het detecteert Bluetooth-apparaten en verzendt gegevens via http naar een server (Raspberry Pi). De server probeert vervolgens het gevonden apparaat in een kamer te lokaliseren. Deze informatie wordt vervolgens via websocket weergegeven in een React-app. Deze app had een geavanceerde structuur om het gemakkelijk te maken om nieuwe functies toe te voegen.",
+        "footer": "Python | React | Node.js | Raspberry Pi | Bluetooth | Websocket | ESP32"
+      },
+      "nextjs": {
+        "title": "Deze App",
+        "content": "Deze app is gebouwd met Next JS, een React-framework. Het is een statische sitegenerator, wat betekent dat het tijdens het bouwen statische HTML-pagina's genereert.",
+        "footer": ""
+      },
+      "discordBot": {
+        "title": "Discord Bot",
+        "content": "Ik heb een discord-bot gebouwd met node.js en discord.js. Het is geschreven in TypeScript en maakt gebruik van een MongoDB-database.",
+        "footer": "discord.js | MongoDB | Node.js"
+      },
+      "other": {
+        "title": "Andere Projecten",
+        "content": "Ik heb ook een aantal closed source-projecten gebouwd, maar ik kan ze hier niet delen. Ik heb een prometheus-exporteur gemaakt, die naar grafana pusht. Ik ben ook bezig met een API. Het slaat ook de afbeeldingen en andere noodzakelijke gegevens op in een pdf.",
+        "footer": "Python | C# | ..."
+      }
+    }
   }
 }
