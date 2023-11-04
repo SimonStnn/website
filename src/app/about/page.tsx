@@ -52,7 +52,7 @@ export default function About() {
                 Advionics
               </RedirectLink>
               . I learned a lot about electronics and programming. I made a
-              program that automatically takes pictures from 3 different cameras
+              program that automatically takes pictures of the product from 3 different cameras
               of their product right before it goes in the box for shipping.
             </p>
             <p>

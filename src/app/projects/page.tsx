@@ -71,7 +71,7 @@ export default function Projects() {
             <>
               I&apos;ve also build some closed source projects, but I cannot
               share them here. I&apos;ve made a prometheus exporter, that pushes
-              to grafana. I&apos;m also working on an API.
+              to grafana. I&apos;m also working on an API. It also saves the pictures and other neseccary data in a pdf.
             </>
           }
           footer={<>Python | C# | ...</>}
