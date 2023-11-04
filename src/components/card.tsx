@@ -37,7 +37,7 @@ const Card = ({ title, content, footer, image }: CardProps) => {
 
       <div className="p-4">
         <header>
-          <h1 className="mb-3 text-2xl font-normal capitalize">
+          <h1 className="mb-3 mt-0 text-2xl font-normal capitalize">
             {title}
             <hr />
           </h1>
