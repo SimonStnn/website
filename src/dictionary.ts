@@ -4,30 +4,24 @@ import Negotiator from "negotiator";
 import { NextRequest } from "next/server";
 
 export const locales = ["en"];
+export const defaultLocale = "en";
+export type Locale = typeof locales[number];
+
 const headers = {
   "accept-language": `${locales.join(",")};q=0.5`,
 };
-
 export const languages = new Negotiator({ headers }).languages();
-export const defaultLocale = "en";
-
-// Get the preferred locale, similar to the above or using a library
-export function getLocale(request: NextRequest) {
-  return match(languages, locales, defaultLocale);
-}
 
 const dictionaries = {
   en: () => import("@translations/en.json").then((module) => module.default),
 };
 
-(() => {})();
 type PromiseType<T> = T extends Promise<infer U> ? U : never;
 export type Dictionary = PromiseType<
   ReturnType<(typeof dictionaries)[keyof typeof dictionaries]>
 >;
 
 const loadedDicts = {} as { [key in keyof typeof dictionaries]: Dictionary };
-
 async function loadDictionaries() {
   const locales = Object.keys(dictionaries) as Array<keyof typeof dictionaries>;
 
@@ -38,7 +32,6 @@ async function loadDictionaries() {
     })
   );
 }
-
 loadDictionaries();
 
 export function getDictionary(locale: string) {
@@ -48,21 +41,8 @@ export function getDictionary(locale: string) {
 
   return loadedDicts[locale as keyof typeof loadedDicts];
 }
-// const loadedDictionaries: LoadedDictionaries = {};
 
-// // Load all dictionaries at startup
-// async function loadDictionaries() {
-//   for (let locale of Object.keys(dictionaries)) {
-//     loadedDictionaries[locale as keyof typeof dictionaries] = await dictionaries[locale as keyof typeof dictionaries]();
-//   }
-// }
-
-// loadDictionaries();
-
-// export function getDictionary(locale: string) {
-//   if (!Object.keys(loadedDictionaries).includes(locale)) {
-//     locale = defaultLocale;
-//   }
-
-//   return loadedDictionaries[locale];
-// }
+// Get the preferred locale, similar to the above or using a library
+export function getLocale(request: NextRequest) {
+  return match(languages, locales, defaultLocale);
+}
