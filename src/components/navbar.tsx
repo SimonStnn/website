@@ -9,7 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { buttonVariants } from "@components/ui/button";
 import ThemeChanger from "@components/themechanger";
-import { Dictionary } from "@/dictionary";
+import { Locale, getDictionary } from "@/dictionary";
 
 const navbarItemClassName = buttonVariants({
   className: "gap-2",
@@ -37,7 +37,8 @@ const NavItem = ({
   );
 };
 
-const Navbar = ({ dict }: { dict: Dictionary }) => {
+const Navbar = ({ lang }: { lang: Locale }) => {
+  const dict = getDictionary(lang);
   const navItems = [
     {
       text: <>{dict.navbar.home}</>,
