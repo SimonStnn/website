@@ -20,7 +20,7 @@ export default function Home({
   const dict = getDictionary(locale);
   return (
     <>
-      <section className="w-1/2 m-auto py-28 text-center">
+      <section className="w-4/5 md:w-1/2 m-auto py-28 text-center">
         <h1>
           {dict.index.header.title.section1}{" "}
           <span className="text-primary">Simon</span>&apos;s{" "}
