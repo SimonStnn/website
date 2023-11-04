@@ -10,12 +10,12 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import RedirectLink from "@/components/redirect-link";
-import { getDictionary } from "@/dictionary";
+import { Locale, getDictionary } from "@/dictionary";
 
 export default function Home({
   params: { locale },
 }: {
-  params: { locale: string };
+  params: { locale: Locale };
 }) {
   const dict = getDictionary(locale);
   return (
