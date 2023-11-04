@@ -6,34 +6,50 @@ import {
   faContactBook,
   faProjectDiagram,
   faCode,
+  faTableColumns,
 } from "@fortawesome/free-solid-svg-icons";
-import { buttonVariants } from "@components/ui/button";
+import { buttonVariants, Button } from "@components/ui/button";
+import {
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+  SheetClose,
+} from "@/components/ui/sheet";
 import ThemeChanger from "@components/themechanger";
 import { Locale, getDictionary } from "@/dictionary";
+import { ClassValue } from "clsx";
+import { cn } from "@/lib/public/utils";
 
 const navbarItemClassName = buttonVariants({
   className: "gap-2",
   variant: "outline",
 });
 
+const sheetButtonClassName = buttonVariants({
+  className: "w-full justify-start border-none gap-5",
+  variant: "ghost",
+});
+
 const NavItem = ({
   text,
   href,
   icon,
+  className,
 }: {
   text: string | React.JSX.Element;
   href: string;
   icon?: React.JSX.Element;
+  className?: ClassValue;
 }) => {
   return (
-    <li className="flex justify-center items-center">
-      <Link href={href} className={navbarItemClassName} title={text.toString()}>
-        <span className="flex items-center">{icon}</span>
-        <span className="hidden sm:flex sm:items-center sm:visible capitalize">
-          {text}
-        </span>
-      </Link>
-    </li>
+    <Link
+      href={href}
+      className={cn(navbarItemClassName, className)}
+      title={text.toString()}
+    >
+      <span className="flex items-center">{icon}</span>
+      <span className="flex items-center capitalize">{text}</span>
+    </Link>
   );
 };
 
@@ -75,11 +91,38 @@ const Navbar = ({ lang }: { lang: Locale }) => {
 
       <ul className="flex flex-row justify-end items-center gap-1 px-5 py-1">
         {navItems.map((item, i) => (
-          <NavItem key={i} text={item.text} href={item.href} icon={item.icon} />
+          <li key={i} className="justify-center items-center hidden md:block">
+            <NavItem text={item.text} href={item.href} icon={item.icon} />
+          </li>
         ))}
 
         <li>
-          <ThemeChanger className={navbarItemClassName}></ThemeChanger>
+          <Sheet>
+            <SheetTrigger className={navbarItemClassName}>
+              <FontAwesomeIcon icon={faTableColumns} size="lg" />
+              <span className="sr-only">Open Navigation</span>
+            </SheetTrigger>
+            <SheetContent>
+              <ul className="flex flex-col w-11/12">
+                {navItems.map((item, i) => (
+                  <li key={i} className="block w-full md:hidden">
+                    <SheetClose key={i} asChild>
+                      <NavItem
+                        text={item.text}
+                        href={item.href}
+                        icon={item.icon}
+                        className={sheetButtonClassName}
+                      />
+                    </SheetClose>
+                  </li>
+                ))}
+                <hr className="my-3 block w-full md:hidden" />
+                <li>
+                  <ThemeChanger className={sheetButtonClassName} />
+                </li>
+              </ul>
+            </SheetContent>
+          </Sheet>
         </li>
       </ul>
     </nav>
