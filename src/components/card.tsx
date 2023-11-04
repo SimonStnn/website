@@ -4,7 +4,7 @@ import Image from "next/image";
 interface CardProps {
   title: string;
   content: string | React.JSX.Element;
-  footer?: React.JSX.Element;
+  footer?: string | React.JSX.Element;
   image?:
     | string
     | {
