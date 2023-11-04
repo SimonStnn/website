@@ -22,7 +22,7 @@ const dictionaries = {
 
 (() => {})();
 type PromiseType<T> = T extends Promise<infer U> ? U : never;
-type Dictionary = PromiseType<
+export type Dictionary = PromiseType<
   ReturnType<(typeof dictionaries)[keyof typeof dictionaries]>
 >;
 
