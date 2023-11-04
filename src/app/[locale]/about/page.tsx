@@ -1,65 +1,66 @@
 import React from "react";
 import RedirectLink from "@/components/redirect-link";
+import { Locale, getDictionary } from "@/dictionary";
 
-export default function About() {
+export default function About({
+  params: { locale },
+}: {
+  params: { locale: Locale };
+}) {
+  const dict = getDictionary(locale);
   return (
     <>
       <section>
-        <h2>Personal information</h2>
+        <h2>{dict.about.section1.title}</h2>
         <ul>
-          <li>23 march 2005</li>
-          <li>Living in Belguim</li>
-          <li>Currently studying Bachelor Elektronics &minus; ICT at Vives</li>
+          <li>{dict.about.section1.birthday}</li>
+          <li>{dict.about.section1.livingIn}</li>
+          <li>{dict.about.section1.studies}</li>
           <li>
-            Icehockey player @{" "}
+            {dict.about.section1.hobby.text}{" "}
             <RedirectLink href="https://brugschebeiren.com/">
-              Brugsche Beiren
+              {dict.about.section1.hobby.link}
             </RedirectLink>
           </li>
         </ul>
       </section>
       <section>
-        <h2>Education</h2>
+        <h2>{dict.about.section2.title}</h2>
         <ol>
           <li>
-            <strong>2023 &minus; &hellip; </strong>: Bachelor Elektronics
-            &minus; ICT at Vives
+            <strong>{dict.about.section2.studies.vives.year}</strong>:{" "}
+            {dict.about.section2.studies.vives.text}
           </li>
           <li>
-            <strong>2022 &minus; 2023</strong>: Programming@home at Howest
+            <strong>{dict.about.section2.studies.howest.year}</strong>:{" "}
+            {dict.about.section2.studies.howest.text}
           </li>
           <li>
-            <strong>2021 &minus; 2023</strong>: Diploma secundair Industriële
-            ICT at KTA Brugge.
+            <strong>{dict.about.section2.studies.kta.year}</strong>:{" "}
+            {dict.about.section2.studies.kta.text}
           </li>
           <li>
-            <strong>2019 &minus; 2021</strong>: Science Math at Sint-Jozef
-            Humaniora
+            <strong>{dict.about.section2.studies.sjh.year}</strong>:{" "}
+            {dict.about.section2.studies.sjh.text}
           </li>
           <li>
-            <strong>2017 &minus; 2019</strong>: Science STEM at Sint-Pieter
-            Oostkamp
+            <strong>{dict.about.section2.studies.sp.year}</strong>:{" "}
+            {dict.about.section2.studies.sp.text}
           </li>
         </ol>
       </section>
       <section>
-        <h2>Experience</h2>
+        <h2>{dict.about.section3.title}</h2>
         <ul>
           <li>
             <p>
-              I did an internship at{" "}
+              {dict.about.section3.paragraph1.section1}{" "}
               <RedirectLink href="https://advionics.be/">
                 Advionics
               </RedirectLink>
-              . I learned a lot about electronics and programming. I made a
-              program that automatically takes pictures of the product from 3 different cameras
-              of their product right before it goes in the box for shipping.
+              {dict.about.section3.paragraph1.section2}
             </p>
-            <p>
-              Later, I worked there as a student. I helped measuring their
-              machines that callibrates equipment. For example, I measured the
-              margin of error each machine had.
-            </p>
+            <p>{dict.about.section3.paragraph2.section1}</p>
           </li>
         </ul>
       </section>
