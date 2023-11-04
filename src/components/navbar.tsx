@@ -53,22 +53,22 @@ const NavItem = ({
   );
 };
 
-const Navbar = ({ lang }: { lang: Locale }) => {
-  const dict = getDictionary(lang);
+const Navbar = ({ locale }: { locale: Locale }) => {
+  const dict = getDictionary(locale);
   const navItems = [
     {
       text: <>{dict.navbar.home}</>,
-      href: "/",
+      href: `${locale}/`,
       icon: <FontAwesomeIcon icon={faHome} />,
     },
     {
       text: <>{dict.navbar.about}</>,
-      href: "/about",
+      href: `${locale}/about`,
       icon: <FontAwesomeIcon icon={faContactBook} />,
     },
     {
       text: <>{dict.navbar.projects}</>,
-      href: "/projects",
+      href: `${locale}/projects`,
       icon: <FontAwesomeIcon icon={faProjectDiagram} />,
     },
   ];
@@ -76,7 +76,7 @@ const Navbar = ({ lang }: { lang: Locale }) => {
   return (
     <nav className="flex flex-row justify-between bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 h-14 w-full z-50 sticky top-0 select-none overflow-hidden border-b shadow-md">
       <Link
-        href="/"
+        href={`${locale}/`}
         className="flex justify-center gap-1 items-center font-bold text-xl"
       >
         <FontAwesomeIcon
