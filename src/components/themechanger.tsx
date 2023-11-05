@@ -27,6 +27,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
       enableSystem={true}
       defaultTheme="system"
       themes={["light", "dark", "pink"]}
+      disableTransitionOnChange
     >
       {children}
     </ThemeProvider>
