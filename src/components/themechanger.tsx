@@ -18,6 +18,7 @@ import { ClassValue } from "clsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { cn } from "@/lib/public/utils";
 import { ThemeProvider, useTheme } from "next-themes";
+import { Locale, getDictionary } from "@/dictionary";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
@@ -34,9 +35,12 @@ export function Providers({ children }: { children: React.ReactNode }) {
 
 export default function ThemeChanger({
   className,
+  locale,
 }: {
   className?: string | ClassValue[];
+  locale: Locale;
 }) {
+  const dict = getDictionary(locale);
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme, systemTheme, themes } = useTheme();
   const [themeIcon, setThemeIcon] = useState(faSun);
@@ -67,9 +71,9 @@ export default function ThemeChanger({
   }, []);
 
   const dropdownMenuTrigger = (
-    <DropdownMenuTrigger className={cn(className, ``)}>
+    <DropdownMenuTrigger className={cn(className, "capitalize")}>
       <FontAwesomeIcon icon={themeIcon} width={14} height={14} />
-      <span>Change theme</span>
+      <span>{dict.navbar.changeTheme.title}</span>
     </DropdownMenuTrigger>
   );
 
@@ -81,8 +85,8 @@ export default function ThemeChanger({
       <DropdownMenu>
         {dropdownMenuTrigger}
         <DropdownMenuContent>
-          <DropdownMenuLabel className="select-none">
-            Change Theme
+          <DropdownMenuLabel className="select-none capitalize">
+            {dict.navbar.changeTheme.title}
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
 
@@ -101,7 +105,11 @@ export default function ThemeChanger({
                     t === theme ? "border-b border-b-primary" : ""
                   )}
                 >
-                  {t}
+                  {
+                    dict.navbar.changeTheme[
+                      t as keyof typeof dict.navbar.changeTheme
+                    ]
+                  }
                 </span>
                 <FontAwesomeIcon
                   icon={getThemeIcon(t)}

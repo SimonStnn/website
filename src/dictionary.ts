@@ -1,4 +1,4 @@
-import "server-only";
+// import "server-only";
 import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 import { NextRequest } from "next/server";
@@ -6,10 +6,6 @@ import { NextRequest } from "next/server";
 export const locales = ["en", "nl"];
 export const defaultLocale = "en";
 export type Locale = (typeof locales)[number];
-
-const headers = {
-  "accept-language": `${locales.join(",")};q=0.5`,
-};
 
 const dictionaries = {
   en: () => import("@translations/en.json").then((module) => module.default),

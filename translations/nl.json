@@ -2,7 +2,15 @@
   "navbar": {
     "home": "Home",
     "about": "Over mij",
-    "projects": "Projecten"
+    "projects": "Projecten",
+    "changeTheme": {
+      "title": "Verander thema",
+      "light": "Licht",
+      "dark": "Donker",
+      "pink": "Roze",
+      "system": "Systeem"
+    },
+    "changeLanguage": "Verander taal"
   },
   "index": {
     "header": {

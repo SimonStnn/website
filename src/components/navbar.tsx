@@ -118,7 +118,7 @@ const Navbar = ({ locale }: { locale: Locale }) => {
                 ))}
                 <hr className="my-3 block w-full sm:hidden" />
                 <li>
-                  <ThemeChanger className={sheetButtonClassName} />
+                  <ThemeChanger className={sheetButtonClassName} locale={locale} />
                 </li>
               </ul>
             </SheetContent>

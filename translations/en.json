@@ -2,7 +2,15 @@
   "navbar": {
     "home": "Home",
     "about": "About",
-    "projects": "Projects"
+    "projects": "Projects",
+    "changeTheme": {
+      "title": "Change theme",
+      "light": "Light",
+      "dark": "Dark",
+      "pink": "Pink",
+      "system": "System"
+    },
+    "changeLanguage": "Change language"
   },
   "index": {
     "header": {
