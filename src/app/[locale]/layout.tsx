@@ -40,7 +40,9 @@ export default function RootLayout({
       >
         <Providers>
           <Navbar locale={locale} />
-          <main className="container m-auto py-6 px-10">{children}</main>
+          <main className="container m-auto py-6 px-10 min-h-[90vh]">
+            {children}
+          </main>
           <Footer />
         </Providers>
       </body>
