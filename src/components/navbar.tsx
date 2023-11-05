@@ -6,7 +6,7 @@ import {
   faContactBook,
   faProjectDiagram,
   faCode,
-  faTableColumns,
+  faBars,
 } from "@fortawesome/free-solid-svg-icons";
 import { buttonVariants, Button } from "@components/ui/button";
 import {
@@ -100,7 +100,7 @@ const Navbar = ({ locale }: { locale: Locale }) => {
         <li>
           <Sheet>
             <SheetTrigger className={navbarItemClassName}>
-              <FontAwesomeIcon icon={faTableColumns} size="lg" />
+              <FontAwesomeIcon icon={faBars} size="lg" />
               <span className="sr-only">Open Navigation</span>
             </SheetTrigger>
             <SheetContent>
