@@ -121,7 +121,7 @@ h5 {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-accent-foreground;
+  @apply bg-accent-foreground/20;
 }
 
 .pink #logotext:hover {
