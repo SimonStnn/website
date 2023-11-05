@@ -10,7 +10,11 @@
       "pink": "Roze",
       "system": "Systeem"
     },
-    "changeLanguage": "Verander taal"
+    "changeLanguage": {
+      "title": "Verander taal",
+      "en": "Engels",
+      "nl": "Nederlands"
+    }
   },
   "index": {
     "header": {

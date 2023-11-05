@@ -19,6 +19,7 @@ import ThemeChanger from "@components/themechanger";
 import { Locale, getDictionary } from "@/dictionary";
 import { ClassValue } from "clsx";
 import { cn } from "@/lib/public/utils";
+import LanguageChanger from "./languagechanger";
 
 const navbarItemClassName = buttonVariants({
   className: "gap-2",
@@ -119,6 +120,9 @@ const Navbar = ({ locale }: { locale: Locale }) => {
                 <hr className="my-3 block w-full sm:hidden" />
                 <li>
                   <ThemeChanger className={sheetButtonClassName} locale={locale} />
+                </li>
+                <li>
+                  <LanguageChanger className={sheetButtonClassName} locale={locale} />
                 </li>
               </ul>
             </SheetContent>

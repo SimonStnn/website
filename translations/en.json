@@ -10,7 +10,11 @@
       "pink": "Pink",
       "system": "System"
     },
-    "changeLanguage": "Change language"
+    "changeLanguage": {
+      "title": "Change Language",
+      "en": "English",
+      "nl": "Dutch"
+    }
   },
   "index": {
     "header": {
