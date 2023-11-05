@@ -25,7 +25,7 @@ export default function LanguageChanger({
   locale: Locale;
 }) {
   const dict = getDictionary(locale);
-  const path = usePathname()
+  const path = usePathname();
   return (
     <>
       <DropdownMenu>
@@ -43,18 +43,21 @@ export default function LanguageChanger({
             return (
               <DropdownMenuItem key={i} className="flex gap-2 items-center">
                 <Link
-                  className={cn(
-                    "capitalize",
-                    loc === locale ? "border-b border-b-primary" : ""
-                  )}
+                  className="w-full h-full capitalize"
                   href={`/${loc}${path.slice(3)}`}
                   locale={loc}
                 >
-                  {
-                    dict.navbar.changeLanguage[
-                      loc as keyof typeof dict.navbar.changeLanguage
-                    ]
-                  }
+                  <span
+                    className={
+                      loc === locale ? "border-b border-b-primary" : ""
+                    }
+                  >
+                    {
+                      dict.navbar.changeLanguage[
+                        loc as keyof typeof dict.navbar.changeLanguage
+                      ]
+                    }
+                  </span>
                 </Link>
               </DropdownMenuItem>
             );
