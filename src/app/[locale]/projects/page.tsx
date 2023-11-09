@@ -17,7 +17,19 @@ export default function Projects({
         <Card
           title={dict.projects.card.finalProject.title}
           content={dict.projects.card.finalProject.content}
-          footer={dict.projects.card.finalProject.footer}
+          footer={
+            <div className="flex gap-5">
+              <span>{dict.projects.card.finalProject.footer}</span>
+              <span>
+                <RedirectLink
+                  href="https://github.com/SimonStnn/Eindwerk"
+                  addIcon={true}
+                >
+                  Github
+                </RedirectLink>
+              </span>
+            </div>
+          }
         />
         <Card
           image={"/images/next-js-logo.png"}
