@@ -17,7 +17,19 @@ export default function Projects({
         <Card
           title={dict.projects.card.finalProject.title}
           content={dict.projects.card.finalProject.content}
-          footer={dict.projects.card.finalProject.footer}
+          footer={
+            <div className="flex gap-5">
+              <span>{dict.projects.card.finalProject.footer}</span>
+              <span>
+                <RedirectLink
+                  href="https://github.com/SimonStnn/Eindwerk"
+                  addIcon={true}
+                >
+                  Github
+                </RedirectLink>
+              </span>
+            </div>
+          }
         />
         <Card
           image={"/images/next-js-logo.png"}
@@ -41,7 +53,19 @@ export default function Projects({
           image={"/images/discord.svg"}
           title={dict.projects.card.discordBot.title}
           content={dict.projects.card.discordBot.content}
-          footer={dict.projects.card.discordBot.footer}
+          footer={
+            <div className="flex gap-5">
+              <span>{dict.projects.card.discordBot.footer}</span>
+              <span>
+                <RedirectLink
+                  href="https://github.com/SimonStnn/MyBot"
+                  addIcon={true}
+                >
+                  Github
+                </RedirectLink>
+              </span>
+            </div>
+          }
         />
         <Card
           title={dict.projects.card.other.title}
