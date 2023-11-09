@@ -71,7 +71,7 @@ The website will be available at <http://localhost:3000>.
 
 ## License
 
-This project is licensed under the Apache-2.0 license - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache-2.0 license − see the [LICENSE](LICENSE) file for details.
 
 ---
 
