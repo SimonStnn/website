@@ -14,7 +14,7 @@ config.autoAddCss = false;
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Personal website",
+  title: "Simon Stijnen",
   description: "My personal website",
 };
 
