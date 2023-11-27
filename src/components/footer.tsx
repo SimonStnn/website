@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import RedirectLink from "./redirect-link";
 
 export default function Footer() {
@@ -15,6 +15,15 @@ export default function Footer() {
           >
             <FontAwesomeIcon icon={faGithub} size="lg" />
             Github
+          </RedirectLink>
+        </span>
+        <span>
+          <RedirectLink
+            href={"https://github.com/SimonStnn"}
+            className="text-sm"
+          >
+            <FontAwesomeIcon icon={faLinkedin} size="lg" />
+            LinkedIn
           </RedirectLink>
         </span>
       </div>
