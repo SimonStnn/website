@@ -22,7 +22,7 @@ This website serves as my personal portfolio and a place to showcase my skills, 
 
 ## Visit the website
 
-I'm hosting this website locally. You can visit it at [simon.stijnen.be](https://simon.stijnen.be).
+I'm hosting this website myself. You can visit it at [simon.stijnen.be](https://simon.stijnen.be).
 
 ## Features
 
@@ -71,7 +71,7 @@ The website will be available at <http://localhost:3000>.
 
 ## License
 
-This project is licensed under the Apache-2.0 license - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache-2.0 license − see the [LICENSE](LICENSE) file for details.
 
 ---
 
