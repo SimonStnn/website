@@ -7,6 +7,7 @@ import { cn } from "@/lib/public/utils";
 import Navbar from "@/components/navbar";
 import { Providers } from "@/components/themechanger";
 import Footer from "@/components/footer";
+import Worker from "@/components/worker";
 import { locales } from "@/dictionary";
 
 config.autoAddCss = false;
@@ -53,6 +54,7 @@ export default function RootLayout({
           </main>
           <Footer />
         </Providers>
+        <Worker />
       </body>
     </html>
   );
