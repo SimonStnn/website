@@ -39,7 +39,7 @@ export default function Home({
               size: "lg",
               className: "flex justify-center items-center gap-2",
             })}
-            href={`/${locale}/about`}
+            href={"/about"}
           >
             <span className="font-bold text-primary-foreground">
               {dict.index.section1.button}
