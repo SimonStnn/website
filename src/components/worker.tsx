@@ -2,10 +2,12 @@
 
 import { useEffect } from "react";
 import { setLocaleCookies } from "@/lib/cookies";
+import { getBestMatchLocale } from "@/dictionary";
 
 export default function Worker() {
   useEffect(() => {
-    const userLang = navigator.language;
+    const userLang = getBestMatchLocale(navigator.languages as string[]);
+
     setLocaleCookies(userLang);
   }, []);
 
