@@ -38,6 +38,10 @@ export function getDictionary(locale: string) {
   return loadedDicts[locale as keyof typeof loadedDicts];
 }
 
+export function getBestMatchLocale(locals: string[]) {
+  return match(locals, locales, defaultLocale);
+}
+
 // Get the preferred locale, similar to the above or using a library
 export function getLocale(request: NextRequest) {
   // get the locale from the request

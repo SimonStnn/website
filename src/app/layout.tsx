@@ -7,7 +7,9 @@ import { cn } from "@/lib/public/utils";
 import Navbar from "@/components/navbar";
 import { Providers } from "@/components/themechanger";
 import Footer from "@/components/footer";
+import Worker from "@/components/worker";
 import { locales } from "@/dictionary";
+import { getLocaleCookie } from "@/lib/cookies";
 
 config.autoAddCss = false;
 
@@ -18,18 +20,13 @@ export const metadata: Metadata = {
   description: "My personal website",
 };
 
-// Used by nextjs to render static pages
-export async function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
-}
-
-export default function RootLayout({
+export default async function RootLayout({
   children,
-  params: { locale },
 }: {
   children: React.ReactNode;
-  params: { locale: string };
 }) {
+  const locale = await getLocaleCookie();
+  
   return (
     <html lang={locale} suppressHydrationWarning>
       <body
@@ -45,6 +42,7 @@ export default function RootLayout({
           </main>
           <Footer />
         </Providers>
+        <Worker />
       </body>
     </html>
   );

@@ -10,13 +10,11 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import RedirectLink from "@/components/redirect-link";
-import { Locale, getDictionary } from "@/dictionary";
+import { getDictionary } from "@/dictionary";
+import { getLocaleCookie } from "@/lib/cookies";
 
-export default function Home({
-  params: { locale },
-}: {
-  params: { locale: Locale };
-}) {
+export default async function Home() {
+  const locale = await getLocaleCookie();
   const dict = getDictionary(locale);
   return (
     <>
@@ -39,7 +37,7 @@ export default function Home({
               size: "lg",
               className: "flex justify-center items-center gap-2",
             })}
-            href={`/${locale}/about`}
+            href={"/about"}
           >
             <span className="font-bold text-primary-foreground">
               {dict.index.section1.button}
