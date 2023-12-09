@@ -1,13 +1,11 @@
 import React from "react";
 import Card from "@/components/card";
 import RedirectLink from "@/components/redirect-link";
-import { Locale, getDictionary } from "@/dictionary";
+import { getDictionary } from "@/dictionary";
+import { getLocaleCookie } from "@/lib/cookies";
 
-export default function Projects({
-  params: { locale },
-}: {
-  params: { locale: Locale };
-}) {
+export default async function Projects() {
+  const locale = await getLocaleCookie();
   const dict = getDictionary(locale);
   return (
     <>

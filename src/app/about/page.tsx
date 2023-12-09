@@ -1,12 +1,10 @@
 import React from "react";
 import RedirectLink from "@/components/redirect-link";
-import { Locale, getDictionary } from "@/dictionary";
+import { getDictionary } from "@/dictionary";
+import { getLocaleCookie } from "@/lib/cookies";
 
-export default function About({
-  params: { locale },
-}: {
-  params: { locale: Locale };
-}) {
+export default async function About() {
+  const locale = await getLocaleCookie();
   const dict = getDictionary(locale);
   return (
     <>

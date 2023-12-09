@@ -10,13 +10,13 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import RedirectLink from "@/components/redirect-link";
-import { Locale, getDictionary } from "@/dictionary";
+import { getDictionary } from "@/dictionary";
+import { getLocaleCookie } from "@/lib/cookies";
 
-export default function Home({
-  params: { locale },
-}: {
-  params: { locale: Locale };
-}) {
+export default async function Home() {
+  const locale = await getLocaleCookie();
+  console.log(locale);
+  
   const dict = getDictionary(locale);
   return (
     <>
