@@ -45,7 +45,7 @@ export default function LanguageChanger({
               <DropdownMenuItem key={i} className="flex gap-2 items-center">
                 <Link
                   className="w-full h-full capitalize"
-                  href={`/${path}`}
+                  href={path}
                   locale={loc}
                   onClick={() => setLocaleCookie(loc, true)}
                 >
