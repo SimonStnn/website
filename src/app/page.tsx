@@ -15,8 +15,6 @@ import { getLocaleCookie } from "@/lib/cookies";
 
 export default async function Home() {
   const locale = await getLocaleCookie();
-  console.log(locale);
-  
   const dict = getDictionary(locale);
   return (
     <>
