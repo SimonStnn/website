@@ -18,14 +18,6 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Simon Stijnen",
   description: "My personal website",
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://simon.stijnen.be",
-    title: "Simon Stijnen",
-    description: "My personal website",
-  },
-  metadataBase: new URL("https://simon.stijnen.be/"),
 };
 
 export default async function RootLayout({
