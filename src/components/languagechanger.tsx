@@ -16,6 +16,7 @@ import { cn } from "@/lib/public/utils";
 import { locales, Locale, getDictionary } from "@/dictionary";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { setLocaleCookie } from "@/lib/cookies";
 
 export default function LanguageChanger({
   className,
@@ -44,8 +45,9 @@ export default function LanguageChanger({
               <DropdownMenuItem key={i} className="flex gap-2 items-center">
                 <Link
                   className="w-full h-full capitalize"
-                  href={`/${loc}${path.slice(3)}`}
+                  href={`/${path}`}
                   locale={loc}
+                  onClick={() => setLocaleCookie(loc, true)}
                 >
                   <span
                     className={
