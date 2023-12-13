@@ -48,6 +48,7 @@ export default function ThemeChanger({
 
   const getThemeIcon = useCallback(
     (theme?: string) => {
+      // convert system theme to actual theme
       if (theme === "system") theme = systemTheme;
       switch (theme) {
         case "dark":
