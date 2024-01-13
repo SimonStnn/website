@@ -22,7 +22,7 @@ export default function Footer() {
         <Separator orientation="vertical" />
         <span>
           <RedirectLink
-            href={"https://github.com/SimonStnn"}
+            href={"https://www.linkedin.com/in/simon-stijnen/"}
             className="text-sm"
           >
             <FontAwesomeIcon icon={faLinkedin} size="lg" />
