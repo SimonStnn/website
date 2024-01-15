@@ -95,8 +95,7 @@
     "card": {
       "finalProject": {
         "title": "Final Project",
-        "content": "For my final project in high school (2022 - 2023), I built a bluetooth detection system. It detects bluetooth devices and sends data via http to a server (Raspberry Pi). The server then tries to locate the found device in a room. This information is then displayed via websocket to a React app. This app had an advanced structure to make it easy to add new features.",
-        "footer": "Python | React | Node.js | Raspberry Pi | Bluetooth | Websocket | ESP32"
+        "content": "For my final project in high school (2022 - 2023), I built a bluetooth detection system. It detects bluetooth devices and sends data via http to a server (Raspberry Pi). The server then tries to locate the found device in a room. This information is then displayed via websocket to a React app. This app had an advanced structure to make it easy to add new features."
       },
       "nextjs": {
         "title": "This App",
@@ -105,13 +104,11 @@
       },
       "discordBot": {
         "title": "Discord Bot",
-        "content": "I built a discord bot with node.js and discord.js. It's written in TypeScript and uses a MongoDB database.",
-        "footer": "discord.js | MongoDB | Node.js"
+        "content": "I built a discord bot with node.js and discord.js. It's written in TypeScript and uses a MongoDB database."
       },
       "other": {
         "title": "Other Projects",
-        "content": "I've also build some closed source projects, but I cannot share them here. I've made a prometheus exporter, that pushes to grafana. I'm also working on an API. It also saves the pictures and other neseccary data in a pdf.",
-        "footer": "Python | C# | ..."
+        "content": "I've also build some closed source projects, but I cannot share them here. I've made a prometheus exporter, that pushes to grafana. I'm also working on an API. It also saves the pictures and other neseccary data in a pdf."
       }
     }
   }
