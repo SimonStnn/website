@@ -65,6 +65,21 @@ export default async function Home() {
               {dict.index.section2.accordion.maxim}
             </AccordionContent>
           </AccordionItem>
+          <AccordionItem value="item-2">
+            <AccordionTrigger className="text-lg py-2">
+              Joë Boone
+            </AccordionTrigger>
+            <AccordionContent>
+              {dict.index.section2.accordion.joe1}
+              <RedirectLink
+                href="https://banaantjejowie.github.io/"
+                className="text-sm"
+              >
+                Joë Boone
+              </RedirectLink>{" "}
+              {dict.index.section2.accordion.joe2}
+            </AccordionContent>
+          </AccordionItem>
         </Accordion>
         <p>{dict.index.section2.footer}</p>
       </section>
