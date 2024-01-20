@@ -72,7 +72,7 @@ export default async function Home() {
             <AccordionContent>
               {dict.index.section2.accordion.joe1}
               <RedirectLink
-                href="https://banaantjejowie.github.io/"
+                href="https://banaantjejowie.github.io/Portfolio/"
                 className="text-sm"
               >
                 Joë Boone
