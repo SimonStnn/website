@@ -118,6 +118,52 @@ export default async function Projects() {
       </Card>
     </>,
     <>
+      <Card className="mb-4">
+        <CardHeader>
+          <CardTitle>Is even</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>{dict.projects.card.oddAndEven.even.content}</p>
+        </CardContent>
+        <CardFooter className="flex justify-end">
+          <>
+            <div className="flex justify-self-start w-full">Go</div>
+            <Separator orientation="vertical" className="mr-2 ml-1" />
+            <div>
+              <RedirectLink
+                href="https://github.com/SimonStnn/iseven"
+                addIcon={true}
+              >
+                Github
+              </RedirectLink>
+            </div>
+          </>
+        </CardFooter>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>Is odd</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>{dict.projects.card.oddAndEven.odd.content}</p>
+        </CardContent>
+        <CardFooter className="flex justify-end">
+          <>
+            <div className="flex justify-self-start w-full">Go</div>
+            <Separator orientation="vertical" className="mr-2 ml-1" />
+            <div>
+              <RedirectLink
+                href="https://github.com/SimonStnn/isodd"
+                addIcon={true}
+              >
+                Github
+              </RedirectLink>
+            </div>
+          </>
+        </CardFooter>
+      </Card>
+    </>,
+    <>
       <Card>
         <CardHeader>
           <CardTitle>{dict.projects.card.other.title}</CardTitle>
