@@ -108,6 +108,9 @@
         "title": "Discord Bot",
         "content": "Ik heb een discord-bot gebouwd met node.js en discord.js. Het is geschreven in TypeScript en maakt gebruik van een MongoDB-database."
       },
+      "colorsplash": {
+        "content": "Een simpele API die een afbeelding geeft van de gevraagde kleur en grootte."
+      },
       "oddAndEven": {
         "odd": {
           "content": "Een Go packet die kijkt als een getal oneven is."
