@@ -120,6 +120,36 @@ export default async function Projects() {
     <>
       <Card className="mb-4">
         <CardHeader>
+          <CardTitle>Colorsplash</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>{dict.projects.card.colorsplash.content}</p>
+        </CardContent>
+        <CardFooter className="flex justify-end">
+          <>
+            <div className="flex-grow">
+              Python
+              <Separator orientation="vertical" className="mx-2" />
+              Flask
+              <Separator orientation="vertical" className="mx-2" />
+              Vercel
+            </div>
+            <Separator orientation="vertical" className="mr-2 ml-1" />
+            <div>
+              <RedirectLink
+                href="https://github.com/SimonStnn/colorsplash"
+                addIcon={true}
+              >
+                Github
+              </RedirectLink>
+            </div>
+          </>
+        </CardFooter>
+      </Card>
+    </>,
+    <>
+      <Card className="mb-4">
+        <CardHeader>
           <CardTitle>Is even</CardTitle>
         </CardHeader>
         <CardContent>
