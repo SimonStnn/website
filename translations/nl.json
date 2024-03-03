@@ -108,6 +108,17 @@
         "title": "Discord Bot",
         "content": "Ik heb een discord-bot gebouwd met node.js en discord.js. Het is geschreven in TypeScript en maakt gebruik van een MongoDB-database."
       },
+      "colorsplash": {
+        "content": "Een simpele API die een afbeelding geeft van de gevraagde kleur en grootte."
+      },
+      "oddAndEven": {
+        "odd": {
+          "content": "Een Go packet die kijkt als een getal oneven is."
+        },
+        "even": {
+          "content": "Een Go packet die kijkt als een getal even is."
+        }
+      },
       "other": {
         "title": "Andere Projecten",
         "content": "Ik heb ook een aantal closed source-projecten gebouwd, maar ik kan ze hier niet delen. Ik heb een prometheus-exporteur gemaakt, die naar grafana pusht. Ik ben ook bezig met een API. Het slaat ook de afbeeldingen en andere noodzakelijke gegevens op in een pdf."

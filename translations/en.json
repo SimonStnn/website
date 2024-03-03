@@ -109,6 +109,17 @@
         "title": "Discord Bot",
         "content": "I built a discord bot with node.js and discord.js. It's written in TypeScript and uses a MongoDB database."
       },
+      "colorsplash": {
+        "content": "A simple API that returns an image of the requested color and size."
+      },
+      "oddAndEven": {
+        "odd": {
+          "content": "A go package that checks whether a given number is odd."
+        },
+        "even": {
+          "content": "A go package that checks whether a given number is even."
+        }
+      },
       "other": {
         "title": "Other Projects",
         "content": "I've also build some closed source projects, but I cannot share them here. I've made a prometheus exporter, that pushes to grafana. I'm also working on an API. It also saves the pictures and other neseccary data in a pdf."
