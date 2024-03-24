@@ -33,7 +33,9 @@
       "title": "Websites van mijn getalenteerde vrienden presenteren. Ontdek hun werk!",
       "text": "Momenteel ben ik bezig met een aantal projecten. Je kunt ze allemaal vinden op mijn Github-pagina.",
       "accordion": {
-        "maxim": "is een vriend van mij die ook ontwikkelaar is. Momenteel studeert hij aan Odisee in Gent."
+        "maxim": "is een vriend van mij die ook ontwikkelaar is. Momenteel studeert hij aan Odisee in Gent.",
+        "joe1": "Maak kennis met ",
+        "joe2": ", mijn studiemaatje aan Vives Brugge."
       },
       "footer": "Ze zijn echt getalenteerd en ik ben er trots op dat ik ze mijn vrienden mag noemen."
     },
@@ -95,8 +97,7 @@
     "card": {
       "finalProject": {
         "title": "Eindwerk",
-        "content": "Voor mijn eindproject op de middelbare school (2022 - 2023) heb ik een bluetooth detectiesysteem gebouwd. Het detecteert Bluetooth-apparaten en verzendt gegevens via http naar een server (Raspberry Pi). De server probeert vervolgens het gevonden apparaat in een kamer te lokaliseren. Deze informatie wordt vervolgens via websocket weergegeven in een React-app. Deze app had een geavanceerde structuur om het gemakkelijk te maken om nieuwe functies toe te voegen.",
-        "footer": "Python | React | Node.js | Raspberry Pi | Bluetooth | Websocket | ESP32"
+        "content": "Voor mijn eindproject op de middelbare school (2022 - 2023) heb ik een bluetooth detectiesysteem gebouwd. Het detecteert Bluetooth-apparaten en verzendt gegevens via http naar een server (Raspberry Pi). De server probeert vervolgens het gevonden apparaat in een kamer te lokaliseren. Deze informatie wordt vervolgens via websocket weergegeven in een React-app. Deze app had een geavanceerde structuur om het gemakkelijk te maken om nieuwe functies toe te voegen."
       },
       "nextjs": {
         "title": "Deze App",
@@ -105,13 +106,22 @@
       },
       "discordBot": {
         "title": "Discord Bot",
-        "content": "Ik heb een discord-bot gebouwd met node.js en discord.js. Het is geschreven in TypeScript en maakt gebruik van een MongoDB-database.",
-        "footer": "discord.js | MongoDB | Node.js"
+        "content": "Ik heb een discord-bot gebouwd met node.js en discord.js. Het is geschreven in TypeScript en maakt gebruik van een MongoDB-database."
+      },
+      "colorsplash": {
+        "content": "Een simpele API die een afbeelding geeft van de gevraagde kleur en grootte."
+      },
+      "oddAndEven": {
+        "odd": {
+          "content": "Een Go packet die kijkt als een getal oneven is."
+        },
+        "even": {
+          "content": "Een Go packet die kijkt als een getal even is."
+        }
       },
       "other": {
         "title": "Andere Projecten",
-        "content": "Ik heb ook een aantal closed source-projecten gebouwd, maar ik kan ze hier niet delen. Ik heb een prometheus-exporteur gemaakt, die naar grafana pusht. Ik ben ook bezig met een API. Het slaat ook de afbeeldingen en andere noodzakelijke gegevens op in een pdf.",
-        "footer": "Python | C# | ..."
+        "content": "Ik heb ook een aantal closed source-projecten gebouwd, maar ik kan ze hier niet delen. Ik heb een prometheus-exporteur gemaakt, die naar grafana pusht. Ik ben ook bezig met een API. Het slaat ook de afbeeldingen en andere noodzakelijke gegevens op in een pdf."
       }
     }
   }

@@ -33,7 +33,10 @@
       "title": "Showcasing websites of my talented friends. Explore their work!",
       "text": "I'm currently working on a few projects. You can find them all on my Github page.",
       "accordion": {
-        "maxim": "is a friend of mine who is also a developer. He is currently studying at Odisee in Ghent."
+        "maxim": "is a friend of mine who is also a developer. He is currently studying at Odisee in Ghent.",
+        "joe1": "Meet ",
+        "joe2": ", my study buddy at Vives Bruges."
+
       },
       "footer": "They are really talented and I'm proud to call them my friends."
     },
@@ -46,7 +49,7 @@
     "section1": {
       "title": "Personal information",
       "birthday": "23 march 2005",
-      "livingIn": "Living in Belguim",
+      "livingIn": "Living in Belgium",
       "studies": "Currently studying Bachelor Elektronics − ICT at Vives",
       "hobby": "Icehockey player @"
     },
@@ -95,8 +98,7 @@
     "card": {
       "finalProject": {
         "title": "Final Project",
-        "content": "For my final project in high school (2022 - 2023), I built a bluetooth detection system. It detects bluetooth devices and sends data via http to a server (Raspberry Pi). The server then tries to locate the found device in a room. This information is then displayed via websocket to a React app. This app had an advanced structure to make it easy to add new features.",
-        "footer": "Python | React | Node.js | Raspberry Pi | Bluetooth | Websocket | ESP32"
+        "content": "For my final project in high school (2022 - 2023), I built a bluetooth detection system. It detects bluetooth devices and sends data via http to a server (Raspberry Pi). The server then tries to locate the found device in a room. This information is then displayed via websocket to a React app. This app had an advanced structure to make it easy to add new features."
       },
       "nextjs": {
         "title": "This App",
@@ -105,13 +107,22 @@
       },
       "discordBot": {
         "title": "Discord Bot",
-        "content": "I built a discord bot with node.js and discord.js. It's written in TypeScript and uses a MongoDB database.",
-        "footer": "discord.js | MongoDB | Node.js"
+        "content": "I built a discord bot with node.js and discord.js. It's written in TypeScript and uses a MongoDB database."
+      },
+      "colorsplash": {
+        "content": "A simple API that returns an image of the requested color and size."
+      },
+      "oddAndEven": {
+        "odd": {
+          "content": "A go package that checks whether a given number is odd."
+        },
+        "even": {
+          "content": "A go package that checks whether a given number is even."
+        }
       },
       "other": {
         "title": "Other Projects",
-        "content": "I've also build some closed source projects, but I cannot share them here. I've made a prometheus exporter, that pushes to grafana. I'm also working on an API. It also saves the pictures and other neseccary data in a pdf.",
-        "footer": "Python | C# | ..."
+        "content": "I've also build some closed source projects, but I cannot share them here. I've made a prometheus exporter, that pushes to grafana. I'm also working on an API. It also saves the pictures and other neseccary data in a pdf."
       }
     }
   }
