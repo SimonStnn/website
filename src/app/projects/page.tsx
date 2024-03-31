@@ -26,6 +26,41 @@ export default async function Projects() {
     <>
       <Card>
         <CardHeader>
+          <CardTitle>Pop-a-loon</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="mb-2">{dict.projects.card.popaloon.content1}</p>
+          <p>{dict.projects.card.popaloon.content2}</p>
+        </CardContent>
+        <CardFooter>
+          <>
+            <div>
+              Typescript
+              <Separator orientation="vertical" className="mx-2" />
+              React
+              <Separator orientation="vertical" className="mx-2" />
+              Tailwindcss
+            </div>
+            <Separator orientation="vertical" className="mr-2 ml-1" />
+            <div className="min-w-fit">
+              <RedirectLink href="https://chromewebstore.google.com/detail/pop-a-loon/pahcoancbdjmffpmfbnjablnabomdocp" addIcon={true}>
+                Web store
+              </RedirectLink>
+              <Separator orientation="vertical" className="mx-2" />
+              <RedirectLink
+                href="https://github.com/SimonStnn/pop-a-loon"
+                addIcon={true}
+              >
+                Github
+              </RedirectLink>
+            </div>
+          </>
+        </CardFooter>
+      </Card>
+    </>,
+    <>
+      <Card>
+        <CardHeader>
           <CardTitle>{dict.projects.card.finalProject.title}</CardTitle>
         </CardHeader>
         <CardContent>

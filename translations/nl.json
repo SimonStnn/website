@@ -95,6 +95,10 @@
       "end": "Ik werk meestal aan grotere projecten, waarvan de meeste hier zijn opgenomen. Ik bouw ook kleinere projecten, maar die deel ik hier niet."
     },
     "card": {
+      "popaloon": {
+        "content1": "",
+        "content2": ""
+      },
       "finalProject": {
         "title": "Eindwerk",
         "content": "Voor mijn eindproject op de middelbare school (2022 - 2023) heb ik een bluetooth detectiesysteem gebouwd. Het detecteert Bluetooth-apparaten en verzendt gegevens via http naar een server (Raspberry Pi). De server probeert vervolgens het gevonden apparaat in een kamer te lokaliseren. Deze informatie wordt vervolgens via websocket weergegeven in een React-app. Deze app had een geavanceerde structuur om het gemakkelijk te maken om nieuwe functies toe te voegen."

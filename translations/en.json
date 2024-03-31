@@ -96,6 +96,10 @@
       "end": "I mostly work on larger projects, most of them included here. I also build smaller projects, but I don't share them here."
     },
     "card": {
+      "popaloon": {
+        "content1": "\"Pop-a-loon\" is a Chrome extension that I built that occasionally lets a balloon float across the screen. When you click on the balloon, it pops and disappears. The amount of balloons you've popped is displayed in the extension's popup.",
+        "content2": "The extension's popup also contains a leaderboard, where you can see the top 10 balloon poppers."
+      },
       "finalProject": {
         "title": "Final Project",
         "content": "For my final project in high school (2022 - 2023), I built a bluetooth detection system. It detects bluetooth devices and sends data via http to a server (Raspberry Pi). The server then tries to locate the found device in a room. This information is then displayed via websocket to a React app. This app had an advanced structure to make it easy to add new features."
