@@ -95,6 +95,14 @@
       "end": "Ik werk meestal aan grotere projecten, waarvan de meeste hier zijn opgenomen. Ik bouw ook kleinere projecten, maar die deel ik hier niet."
     },
     "card": {
+      "popaloon": {
+        "content1": "\"Pop-a-loon\" is een Chrome-extensie die ik heb gebouwd en die af en toe een ballon over het scherm laat zweven. Wanneer je op de ballon klikt, knalt hij en verdwijnt hij. Het aantal ballonnen dat je hebt laten knappen, wordt weergegeven in het pop-upvenster van de extensie.",
+        "content2": "Het pop-upvenster van de extensie bevat ook een leaderboard, waar je de top 10 ballonnenknallers kunt zien."
+      },
+      "popaloonBackend": {
+        "content1": "Dit is de backend-API voor de Pop-a-loon Chrome-extensie. Het is gebouwd met Node.js en Express. Het gebruikt een MongoDB-database om het aantal ballonnen dat door elke gebruiker is geknapt, op te slaan.",
+        "content2": "Ik host en beheer de server zelf. De server staat achter een omgekeerde proxy, die wordt beheerd door Nginx."
+      },
       "finalProject": {
         "title": "Eindwerk",
         "content": "Voor mijn eindproject op de middelbare school (2022 - 2023) heb ik een bluetooth detectiesysteem gebouwd. Het detecteert Bluetooth-apparaten en verzendt gegevens via http naar een server (Raspberry Pi). De server probeert vervolgens het gevonden apparaat in een kamer te lokaliseren. Deze informatie wordt vervolgens via websocket weergegeven in een React-app. Deze app had een geavanceerde structuur om het gemakkelijk te maken om nieuwe functies toe te voegen."
