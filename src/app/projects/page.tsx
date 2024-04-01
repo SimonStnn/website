@@ -61,6 +61,37 @@ export default async function Projects() {
     <>
       <Card>
         <CardHeader>
+          <CardTitle>Pop-a-loon backend API</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="mb-2">{dict.projects.card.popaloonBackend.content1}</p>
+          <p className="mb-2">{dict.projects.card.popaloonBackend.content2}</p>
+        </CardContent>
+        <CardFooter>
+          <>
+            <div>
+              Express js
+              <Separator orientation="vertical" className="mx-2" />
+              RESTfull API
+              <Separator orientation="vertical" className="mx-2" />
+              Typescript
+            </div>
+            <Separator orientation="vertical" className="mr-2 ml-1" />
+            <div className="min-w-fit">
+              <RedirectLink
+                href="https://github.com/SimonStnn/pop-a-loon-backend"
+                addIcon={true}
+              >
+                Github
+              </RedirectLink>
+            </div>
+          </>
+        </CardFooter>
+      </Card>
+    </>,
+    <>
+      <Card>
+        <CardHeader>
           <CardTitle>{dict.projects.card.finalProject.title}</CardTitle>
         </CardHeader>
         <CardContent>
