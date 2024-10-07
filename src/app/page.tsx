@@ -12,13 +12,14 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import RedirectLink from "@/components/redirect-link";
 import { getDictionary } from "@/dictionary";
 import { getLocaleCookie } from "@/lib/cookies";
+import { calculateAge } from "@/lib/public/utils";
 
 export default async function Home() {
   const locale = await getLocaleCookie();
   const dict = getDictionary(locale);
   return (
     <>
-      <section className="w-4/5 md:w-1/2 m-auto py-28 text-center">
+      <section className="w-4/5 md:w-1/2 m-auto py-28 text-center text-balance">
         <h1>
           {dict.index.header.title.section1}{" "}
           <span className="text-primary">Simon</span>&apos;s{" "}
@@ -30,7 +31,7 @@ export default async function Home() {
       <hr />
       <section className="mb-16">
         <h2>{dict.index.section1.title}</h2>
-        <p>{dict.index.section1.text}</p>
+        <p>{dict.index.section1.text_1} {calculateAge(new Date("2005-03-23"))} {dict.index.section1.text_2}</p>
         <div className="flex justify-center mt-8">
           <Link
             className={buttonVariants({

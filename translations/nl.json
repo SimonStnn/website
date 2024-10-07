@@ -22,11 +22,12 @@
         "section1": "Welkom op",
         "section2": "persoonlijke website!"
       },
-      "slogan": "Hallo daar! Ik ben Simon Stijnen, een gepassioneerde ontwikkelaar gevestigd in België. Welkom in mijn digitale ruimte."
+      "slogan": "Hallo daar! Ik ben Simon Stijnen, een gepassioneerde ontwikkelaar gevestigd in België."
     },
     "section1": {
       "title": "Leer mij kennen",
-      "text": "Ik ben een 18-jarige ontwikkelaar uit België. Momenteel studeer ik aan Vives Brugge.",
+      "text_1": "Ik ben een ",
+      "text_2": "- jarige ontwikkelaar uit België. Momenteel studeer ik aan Vives Brugge.",
       "button": "Leer mij kennen"
     },
     "section2": {
