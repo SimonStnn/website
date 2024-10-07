@@ -25,42 +25,33 @@ export default async function About() {
       <section>
         <h2>{dict.about.section2.title}</h2>
         <ol>
-          <li>
-            <strong>{dict.about.section2.studies.vives.year}</strong>:{" "}
-            {dict.about.section2.studies.vives.text}
-          </li>
-          <li>
-            <strong>{dict.about.section2.studies.howest.year}</strong>:{" "}
-            {dict.about.section2.studies.howest.text}
-          </li>
-          <li>
-            <strong>{dict.about.section2.studies.kta.year}</strong>:{" "}
-            {dict.about.section2.studies.kta.text}
-          </li>
-          <li>
-            <strong>{dict.about.section2.studies.sjh.year}</strong>:{" "}
-            {dict.about.section2.studies.sjh.text}
-          </li>
-          <li>
-            <strong>{dict.about.section2.studies.sp.year}</strong>:{" "}
-            {dict.about.section2.studies.sp.text}
-          </li>
+          {dict.about.section2.studies.map((item, index) => (
+            <li key={index}>
+              <strong className="tabular-nums">{item.date}</strong>: {item.text}
+            </li>
+          ))}
         </ol>
       </section>
       <section>
         <h2>{dict.about.section3.title}</h2>
-        <ul>
-          <li>
-            <p>
-              {dict.about.section3.paragraph1.section1}{" "}
-              <RedirectLink href="https://advionics.be/">
-                Advionics
-              </RedirectLink>
-              {dict.about.section3.paragraph1.section2}
-            </p>
-            <p>{dict.about.section3.paragraph2.section1}</p>
-          </li>
-        </ul>
+        <ol className="space-y-3 my-3">
+          {dict.about.section3.list.map((item, index) => (
+            <li key={index}>
+              <div className="flex items-baseline gap-2">
+                <h3 className="m-0 text-xl">{item.date}</h3> &mdash;{" "}
+                <span>{item.text}</span>{" "}
+              </div>
+              <p>
+                {item.description}{" "}
+                {item.hasOwnProperty("link") && (
+                  <RedirectLink href={(item as any).link.url}>
+                    {(item as any).link.text}
+                  </RedirectLink>
+                )}
+              </p>
+            </li>
+          ))}
+        </ol>
       </section>
     </>
   );
