@@ -82,24 +82,28 @@
       "title": "Experience",
       "list": [
         {
-          "date": "May  2023",
-          "text": "internship at",
-          "description": "I did an internship at"
+          "date": "May 2023",
+          "text": "Internship - 2 weeks",
+          "description": "For my internship in the 6th year of high school, I interned at Advionics. Here, I created a program that automatically takes pictures of the product using three different cameras just before it gets packed for shipping. The photos are then saved in a PDF on a server. For this, I used Python and OpenCV for image processing. I didn't learn either at school, but I taught myself."
         },
         {
           "date": "Summer 2023",
-          "text": "student job at",
-          "description": "I did a student job at"
+          "text": "Student Job",
+          "description": "For my student job, I worked at Advionics. Here, I helped measure their machines that calibrate equipment. For example, I measured the margin of error for each machine."
         },
         {
           "date": "May 2024",
-          "text": "student job at",
-          "description": "I did a student job at"
+          "text": "Student Job",
+          "description": "In this student job, I again worked at Advionics. I was tasked with reading multiple heat sensors and taking certain actions if the temperature was too high or too low. I wrote a program for this in Python.",
+          "link": {
+            "text": "More information",
+            "url": "https://github.com/SimonStnn/mlx90640"
+          }
         },
         {
           "date": "Summer 2024",
-          "text": "student job at",
-          "description": "I did a student job at"
+          "text": "Student Job",
+          "description": "I worked again at Advionics. Here, I helped rewrite their test software. It was written in Python using Flask. I also ensured this project was containerized with Docker."
         }
       ]
     }
