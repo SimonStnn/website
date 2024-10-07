@@ -27,15 +27,22 @@ export default function RedirectLink({
     <Link
       href={href}
       target={target}
-      className={buttonVariants({
-        variant: "link",
-        size: "0",
-        className: cn("flex gap-2 text-base", className),
-      })}
+      className={cn(
+        buttonVariants({
+          variant: "link",
+          size: "0",
+        }),
+        "text-base",
+        className
+      )}
     >
       {children}
       {addIcon ? (
-        <FontAwesomeIcon icon={faArrowUpRightFromSquare} size="sm" />
+        <FontAwesomeIcon
+          icon={faArrowUpRightFromSquare}
+          size="sm"
+          className="ml-1.5"
+        />
       ) : (
         <></>
       )}
