@@ -19,7 +19,7 @@ export default async function Home() {
   const dict = getDictionary(locale);
   return (
     <>
-      <section className="w-4/5 md:w-1/2 m-auto py-28 text-center text-balance">
+      <section className="w-4/5 md:w-1/2 m-auto h-[60dvh] flex flex-col justify-center items-center text-center text-balance">
         <h1>
           {dict.index.header.title.section1}{" "}
           <span className="text-primary">Simon</span>&apos;s{" "}
@@ -27,7 +27,6 @@ export default async function Home() {
         </h1>
         <p>{dict.index.header.slogan}</p>
       </section>
-
       <hr />
       <section className="mb-16">
         <h2>{dict.index.section1.title}</h2>
@@ -47,7 +46,7 @@ export default async function Home() {
           </Link>
         </div>
       </section>
-      {/* <hr /> */}
+      <hr />
       <section className="mb-16">
         <h2>{dict.index.section2.title}</h2>
 
