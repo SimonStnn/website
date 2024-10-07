@@ -19,6 +19,11 @@ export default async function About() {
               simon@stijnen.be
             </RedirectLink>
           </li>
+          <li>
+            <RedirectLink href="tel:+32472313919" className="text-base">
+              +32 472 31 39 19
+            </RedirectLink>
+          </li>
           <li>{dict.about.section1.studies}</li>
           <li>
             {dict.about.section1.hobby}{" "}
@@ -67,7 +72,7 @@ export default async function About() {
       <hr />
       <section>
         <h2 className="mt-0">{dict.about.section4.title}</h2>
-        <ol className="space-y-4 my-3">
+        <ol className="space-y-2">
           {dict.about.section4.languages.map((item, index) => (
             <li key={index}>
               <strong>{item.language}</strong>: {item.level}
