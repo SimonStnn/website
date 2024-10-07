@@ -82,28 +82,49 @@
       "title": "Ervaring",
       "list": [
         {
-          "date": "Mei  2023",
-          "text": "Stage 2 weken",
-          "description": "Voor mijn stage in het 6de middelbaar heb ik stage gelopen bij Advionics. Hier maakte ik een programma dat automatisch foto's neemt van het product met 3 verschillende camera's van hun product, net voor het in de doos gaat voor verzending. De foto's worden dan opgeslagen in een pdf op een server. Hiervoor gebruikte ik Python en OpenCV voor foto bewerking. Beide leerde ik niet op school, maar ik heb ze mezelf aangeleerd."
+          "date": "Mei 2023",
+          "text": "Stage — 2 weken",
+          "description": "Ontwikkelde een geautomatiseerd systeem om productafbeeldingen vast te leggen met 3 verschillende camera's voordat ze werden verpakt voor verzending. Gebruikte Python en OpenCV voor beeldverwerking; de afbeeldingen werden als PDF's op een server opgeslagen.",
+          "location": "Advionics — Brugge, België"
         },
         {
           "date": "Zomer 2023",
           "text": "Studentenjob",
-          "description": "Voor mijn studentenjob heb ik bij Advionics gewerkt. Hier hielp ik met het meten van hun machines die apparatuur kalibreerden. Ik heb bijvoorbeeld de foutmarge van elke machine gemeten."
+          "description": "Assisteerde bij het meten en kalibreren van industriële machines die werden gebruikt voor productapparatuur.",
+          "location": "Advionics — Brugge, België"
         },
         {
-          "date": "Mei 2024",
+          "date": "April 2024",
           "text": "Studentenjob",
-          "description": "Bij deze studentenjob werkte ik weer bij Advionics. Ik kreeg de opdracht om verschillende warmte sensoren uit te lezen en bepaalde acties te ondernemen als de temperatuur te hoog of te laag was. Ik heb hiervoor een programma geschreven in Python.",
+          "description": "Bij deze studentenjob werkte ik opnieuw bij Advionics. Ik kreeg de taak om meerdere warmte sensoren uit te lezen en bepaalde acties te ondernemen als de temperatuur te hoog of te laag was. Ik schreef hiervoor een programma in Python.",
           "link": {
             "text": "Meer informatie",
             "url": "https://github.com/SimonStnn/mlx90640"
-          }
+          },
+          "location": "Advionics — Brugge, België"
         },
         {
           "date": "Zomer 2024",
           "text": "Studentenjob",
-          "description": "Ik werkte opnieuw bij Advionics. Hier hielp ik hun test software herschrijven. Deze werd geschreven in Python m.b.v. Flask. Ik zorgde er ook voor dat dit project containerized werd met Docker."
+          "description": "Samenwerkte aan het herschrijven van interne testsoftware met Flask en Python. Geïmplementeerd containerization met Docker, waardoor de software in geïsoleerde omgevingen kon draaien, wat de implementatie en het testen vereenvoudigde.",
+          "location": "Advionics — Brugge, België"
+        }
+      ]
+    },
+    "section4": {
+      "title": "Talen",
+      "languages": [
+        {
+          "language": "Nederlands",
+          "level": "Moedertaal"
+        },
+        {
+          "language": "Engels",
+          "level": "Vloeiend"
+        },
+        {
+          "language": "Frans",
+          "level": "Gemiddeld"
         }
       ]
     }
