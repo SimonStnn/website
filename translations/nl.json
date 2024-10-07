@@ -108,11 +108,6 @@
         "title": "Eindwerk",
         "content": "Voor mijn eindproject op de middelbare school (2022 - 2023) heb ik een bluetooth detectiesysteem gebouwd. Het detecteert Bluetooth-apparaten en verzendt gegevens via http naar een server (Raspberry Pi). De server probeert vervolgens het gevonden apparaat in een kamer te lokaliseren. Deze informatie wordt vervolgens via websocket weergegeven in een React-app. Deze app had een geavanceerde structuur om het gemakkelijk te maken om nieuwe functies toe te voegen."
       },
-      "nextjs": {
-        "title": "Deze App",
-        "content": "Deze app is gebouwd met Next JS, een React-framework. Het is een statische sitegenerator, wat betekent dat het tijdens het bouwen statische HTML-pagina's genereert.",
-        "footer": ""
-      },
       "discordBot": {
         "title": "Discord Bot",
         "content": "Ik heb een discord-bot gebouwd met node.js en discord.js. Het is geschreven in TypeScript en maakt gebruik van een MongoDB-database."

@@ -130,32 +130,6 @@ export default async function Projects() {
     <>
       <Card>
         <CardHeader>
-          <CardTitle>{dict.projects.card.nextjs.title}</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p>{dict.projects.card.nextjs.content}</p>
-        </CardContent>
-        <CardFooter className="flex justify-end">
-          <>
-            <div>
-              <RedirectLink href="https://nextjs.org/" addIcon={true}>
-                Next.js
-              </RedirectLink>
-              <Separator orientation="vertical" className="mx-2" />
-              <RedirectLink
-                href="https://github.com/SimonStnn/website"
-                addIcon={true}
-              >
-                Github
-              </RedirectLink>
-            </div>
-          </>
-        </CardFooter>
-      </Card>
-    </>,
-    <>
-      <Card>
-        <CardHeader>
           <CardTitle>{dict.projects.card.discordBot.title}</CardTitle>
         </CardHeader>
         <CardContent>

@@ -109,11 +109,6 @@
         "title": "Final Project",
         "content": "For my final project in high school (2022 - 2023), I built a bluetooth detection system. It detects bluetooth devices and sends data via http to a server (Raspberry Pi). The server then tries to locate the found device in a room. This information is then displayed via websocket to a React app. This app had an advanced structure to make it easy to add new features."
       },
-      "nextjs": {
-        "title": "This App",
-        "content": "This app is built with Next JS, a React framework. It is a static site generator, which means that it generates static HTML pages at build time.",
-        "footer": ""
-      },
       "discordBot": {
         "title": "Discord Bot",
         "content": "I built a discord bot with node.js and discord.js. It's written in TypeScript and uses a MongoDB database."
