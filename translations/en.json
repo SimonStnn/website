@@ -107,7 +107,7 @@
       },
       "finalProject": {
         "title": "Final Project",
-        "content": "For my final project in high school (2022 - 2023), I built a bluetooth detection system. It detects bluetooth devices and sends data via http to a server (Raspberry Pi). The server then tries to locate the found device in a room. This information is then displayed via websocket to a React app. This app had an advanced structure to make it easy to add new features."
+        "content": "For my final project in high school (2022 - 2023), I built a bluetooth detection system that can locate bluetooth devices in a room. Detected devices get send via http to a server (Raspberry Pi). The server then calculates the location of the found device in a room. This information is then displayed via websocket in a React app. It has an advanced structure to make it easy to add new features."
       },
       "discordBot": {
         "title": "Discord Bot",

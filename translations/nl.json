@@ -106,7 +106,7 @@
       },
       "finalProject": {
         "title": "Eindwerk",
-        "content": "Voor mijn eindproject op de middelbare school (2022 - 2023) heb ik een bluetooth detectiesysteem gebouwd. Het detecteert Bluetooth-apparaten en verzendt gegevens via http naar een server (Raspberry Pi). De server probeert vervolgens het gevonden apparaat in een kamer te lokaliseren. Deze informatie wordt vervolgens via websocket weergegeven in een React-app. Deze app had een geavanceerde structuur om het gemakkelijk te maken om nieuwe functies toe te voegen."
+        "content": "Voor mijn eindwerk op de middelbare school (2022 - 2023) heb ik een bluetooth-detectiesysteem gebouwd dat bluetooth-apparaten in een kamer kan lokaliseren. Gedetecteerde apparaten worden via HTTP naar een server (Raspberry Pi) gestuurd. De server berekent vervolgens de locatie van het gevonden apparaat in de kamer. Deze informatie wordt daarna via een websocket weergegeven in een React-app. Het systeem heeft een geavanceerde structuur om het eenvoudig te maken om nieuwe functies toe te voegen."
       },
       "discordBot": {
         "title": "Discord Bot",
