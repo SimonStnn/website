@@ -17,6 +17,16 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Separator } from "@/components/ui/separator";
+import { Badge } from "@/components/ui/badge";
+
+const Hot = () => (
+  <Badge
+    className="translate-x-3.5 font-bold text-sm text-nowrap border-amber-600 text-amber-600 pr-1"
+    variant="outline"
+  >
+    Hot &#128293;
+  </Badge>
+);
 
 export default async function Projects() {
   const locale = await getLocaleCookie();
@@ -26,7 +36,10 @@ export default async function Projects() {
     <>
       <Card>
         <CardHeader>
-          <CardTitle>Pop-a-loon</CardTitle>
+          <CardTitle className="flex justify-between">
+            Pop-a-loon
+            <Hot />
+          </CardTitle>
         </CardHeader>
         <CardContent>
           <p className="mb-2">{dict.projects.card.popaloon.content1}</p>
@@ -43,7 +56,10 @@ export default async function Projects() {
             </div>
             <Separator orientation="vertical" className="mr-2 ml-1" />
             <div className="min-w-fit">
-              <RedirectLink href="https://chromewebstore.google.com/detail/pop-a-loon/pahcoancbdjmffpmfbnjablnabomdocp" addIcon={true}>
+              <RedirectLink
+                href="https://chromewebstore.google.com/detail/pop-a-loon/pahcoancbdjmffpmfbnjablnabomdocp"
+                addIcon={true}
+              >
                 Web store
               </RedirectLink>
               <Separator orientation="vertical" className="mx-2" />
@@ -61,7 +77,10 @@ export default async function Projects() {
     <>
       <Card>
         <CardHeader>
-          <CardTitle>Pop-a-loon backend API</CardTitle>
+          <CardTitle className="flex justify-between">
+            Pop-a-loon backend API
+            <Hot />
+          </CardTitle>
         </CardHeader>
         <CardContent>
           <p className="mb-2">{dict.projects.card.popaloonBackend.content1}</p>
@@ -92,7 +111,11 @@ export default async function Projects() {
     <>
       <Card>
         <CardHeader>
-          <CardTitle>{dict.projects.card.finalProject.title}</CardTitle>
+          <CardTitle></CardTitle>
+          <CardTitle className="flex justify-between">
+            {dict.projects.card.finalProject.title}
+            <Hot />
+          </CardTitle>
         </CardHeader>
         <CardContent>
           <p>{dict.projects.card.finalProject.content}</p>
