@@ -137,8 +137,8 @@
     },
     "card": {
       "popaloon": {
-        "content1": "\"Pop-a-loon\" is a Chrome extension that I built that occasionally lets a balloon float across the screen. When you click on the balloon, it pops and disappears. The amount of balloons you've popped is displayed in the extension's popup.",
-        "content2": "The extension's popup also contains a leaderboard, where you can see the top 10 balloon poppers."
+        "content1": "\"Pop-a-loon\" is a fun and interactive Chrome extension where balloons occasionally float across your screen at random times. When you click on a balloon, it pops with a satisfying burst and disappears. Your total number of popped balloons is tracked and displayed in the extension's popup.",
+        "content2": "The popup also features a leaderboard showcasing the top balloon poppers globally, along with a history graph that visualizes your popping progress over time, allowing you to track your improvement and compete with others."
       },
       "popaloonBackend": {
         "content1": "This is the backend API for the Pop-a-loon Chrome extension. It's built with Node.js and Express. It uses a MongoDB database to store the amount of balloons popped by each user.",

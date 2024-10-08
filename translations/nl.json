@@ -137,8 +137,8 @@
     },
     "card": {
       "popaloon": {
-        "content1": "\"Pop-a-loon\" is een Chrome-extensie die ik heb gebouwd en die af en toe een ballon over het scherm laat zweven. Wanneer je op de ballon klikt, knalt hij en verdwijnt hij. Het aantal ballonnen dat je hebt laten knappen, wordt weergegeven in het pop-upvenster van de extensie.",
-        "content2": "Het pop-upvenster van de extensie bevat ook een leaderboard, waar je de top 10 ballonnenknallers kunt zien."
+        "content1": "\"Pop-a-loon\" is een leuke en interactieve Chrome-extensie waarbij af en toe een ballon willekeurig over je scherm zweeft. Als je op de ballon klikt, knalt deze met een bevredigende plof en verdwijnt. Het totale aantal ballonnen dat je hebt laten knappen, wordt bijgehouden en weergegeven in de pop-up van de extensie.",
+        "content2": "De pop-up bevat ook een leaderboard met de top ballonknappers wereldwijd, samen met een voortgangsgrafiek die je knalgeschiedenis over de tijd visualiseert, zodat je jouw vooruitgang kunt bijhouden en het tegen anderen kunt opnemen."
       },
       "popaloonBackend": {
         "content1": "Dit is de backend-API voor de Pop-a-loon Chrome-extensie. Het is gebouwd met Node.js en Express. Het gebruikt een MongoDB-database om het aantal ballonnen dat door elke gebruiker is geknapt, op te slaan.",
