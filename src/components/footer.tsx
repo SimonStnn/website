@@ -7,7 +7,7 @@ import { Separator } from "./ui/separator";
 
 export default function Footer() {
   return (
-    <footer className="flex flex-col sm:flex-row justify-center items-start sm:items-center gap-6 p-10 border-t bg-background text-sm text-secondary-foreground">
+    <footer className="flex flex-col sm:flex-row justify-center items-start sm:items-center gap-6 p-10 py-14 mt-6 border-t bg-background text-sm text-secondary-foreground">
       <span>&copy; 2023 &minus; {new Date().getFullYear()}</span>
       <Separator orientation="vertical" className="hidden sm:inline-block" />
       <span>
