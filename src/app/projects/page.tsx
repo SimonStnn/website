@@ -36,6 +36,48 @@ export default async function Projects() {
     <>
       <Card>
         <CardHeader>
+          <CardTitle></CardTitle>
+          <CardTitle className="flex justify-between">
+            {dict.projects.card.finalProject.title}
+            <Hot />
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>{dict.projects.card.finalProject.content}</p>
+        </CardContent>
+        <CardFooter>
+          <>
+            <div>
+              Python
+              <Separator orientation="vertical" className="mx-2" />
+              React
+              <Separator orientation="vertical" className="mx-2" />
+              Node.js
+              <Separator orientation="vertical" className="mx-2" />
+              Raspberry Pi
+              <Separator orientation="vertical" className="mx-2" />
+              Bluetooth
+              <Separator orientation="vertical" className="mx-2" />
+              Websocket
+              <Separator orientation="vertical" className="mx-2" />
+              ESP32
+            </div>
+            <Separator orientation="vertical" className="mr-2 ml-1" />
+            <div className="min-w-fit">
+              <RedirectLink
+                href="https://github.com/SimonStnn/Eindwerk"
+                addIcon={true}
+              >
+                Github
+              </RedirectLink>
+            </div>
+          </>
+        </CardFooter>
+      </Card>
+    </>,
+    <>
+      <Card>
+        <CardHeader>
           <CardTitle className="flex justify-between">
             Pop-a-loon
             <Hot />
@@ -99,48 +141,6 @@ export default async function Projects() {
             <div className="min-w-fit">
               <RedirectLink
                 href="https://github.com/SimonStnn/pop-a-loon-backend"
-                addIcon={true}
-              >
-                Github
-              </RedirectLink>
-            </div>
-          </>
-        </CardFooter>
-      </Card>
-    </>,
-    <>
-      <Card>
-        <CardHeader>
-          <CardTitle></CardTitle>
-          <CardTitle className="flex justify-between">
-            {dict.projects.card.finalProject.title}
-            <Hot />
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p>{dict.projects.card.finalProject.content}</p>
-        </CardContent>
-        <CardFooter>
-          <>
-            <div>
-              Python
-              <Separator orientation="vertical" className="mx-2" />
-              React
-              <Separator orientation="vertical" className="mx-2" />
-              Node.js
-              <Separator orientation="vertical" className="mx-2" />
-              Raspberry Pi
-              <Separator orientation="vertical" className="mx-2" />
-              Bluetooth
-              <Separator orientation="vertical" className="mx-2" />
-              Websocket
-              <Separator orientation="vertical" className="mx-2" />
-              ESP32
-            </div>
-            <Separator orientation="vertical" className="mr-2 ml-1" />
-            <div className="min-w-fit">
-              <RedirectLink
-                href="https://github.com/SimonStnn/Eindwerk"
                 addIcon={true}
               >
                 Github
