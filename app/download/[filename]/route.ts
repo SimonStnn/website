@@ -29,8 +29,8 @@ const FILE_MAPPINGS: Record<
  * Dynamic route handler for file downloads
  * Accesses files based on the filename parameter
  */
-export async function GET(request: Request, { params }: { params: { filename: string } }) {
-  const { filename } = params;
+export async function GET(request: Request, { params }: { params: Promise<{ filename: string }> }) {
+  const { filename } = await params;
 
   // Check if we have a mapping for this file
   const fileConfig = FILE_MAPPINGS[filename];

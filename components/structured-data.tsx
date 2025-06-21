@@ -1,5 +1,3 @@
-"use client";
-
 interface JsonLdProps {
   data: Record<string, unknown>;
 }
@@ -77,8 +75,6 @@ export function BreadcrumbJsonLd({ items }: BreadcrumbJsonLdProps) {
       item: item.item,
     })),
   };
-
-  console.log("Breadcrumb JSON-LD Data:", JSON.stringify(data, null, 2));
 
   return <JsonLd data={data} />;
 }

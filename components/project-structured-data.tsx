@@ -1,5 +1,3 @@
-"use client";
-
 import { ProjectJsonLd, BreadcrumbJsonLd } from "@/components/structured-data";
 import { siteConfig } from "@/lib/config";
 
