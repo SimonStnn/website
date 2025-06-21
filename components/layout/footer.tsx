@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import SocialLink from "@/components/social-link";
 import { siteConfig } from "@/lib/config";
-import { GitHubIcon, LinkedInIcon } from "@/components/icons";
+import { FileDownloadIcon, GitHubIcon, LinkedInIcon } from "@/components/icons";
 import { Mail as MailIcon } from "lucide-react";
 
 interface FooterProps {
@@ -55,10 +55,20 @@ export function Footer({ className }: FooterProps) {
               <li>
                 <Button variant="link" className="[>svg]:px-0 h-auto !px-0" asChild>
                   <SocialLink
-                    href={siteConfig.social.github}
-                    ariaLabel="Mail"
-                    label="Mail"
+                    href={`mailto:${siteConfig.author.email}`}
+                    ariaLabel="Email"
+                    label="Email"
                     icon={MailIcon}
+                  />
+                </Button>
+              </li>
+              <li>
+                <Button variant="link" className="[>svg]:px-0 h-auto !px-0" asChild>
+                  <SocialLink
+                    href="/download/resume.pdf"
+                    ariaLabel="Download Resume"
+                    label="Resume"
+                    icon={FileDownloadIcon}
                   />
                 </Button>
               </li>
