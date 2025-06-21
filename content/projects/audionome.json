@@ -1,0 +1,19 @@
+{
+  "title": "Audionome: Music Genre Classification",
+  "shortDescription": "Using a Support Vector Machine (SVM) to classify music clips based on their genre.",
+  "description": "For the AI Machine Learning course at VIVES University of Applied Sciences, I worked with Lynn Delaere on Audionome: an AI-powered system for music genre classification.\nWe trained several models (including logistic regression, SGD, and random forest) to automatically recognize and accurately classify music clips based on their genre. The project combines audio processing, machine learning, and a user-friendly interface built with Streamlit.",
+  "technologies": [
+    "AI",
+    "SVM",
+    "Streamlit",
+    "Python",
+    "Pandas",
+    "NumPy",
+    "Librosa",
+    "Scikit-learn",
+    "Git"
+  ],
+  "demoUrl": "https://audionome.streamlit.app/",
+  "githubUrl": "https://github.com/SimonStnn/Audionome",
+  "featured": true
+}

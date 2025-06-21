@@ -1,0 +1,19 @@
+{
+  "title": "Pop-a-loon",
+  "shortDescription": "A full stack Chrome extension with 200+ users, featuring interactive balloons and real-time stats.",
+  "description": "\"Pop-a-loon\" is an innovative Chrome extension I designed and built to showcase my full stack development skills. It transforms the browsing experience with playful, interactive balloons that float across the screen at random intervals. Users can pop balloons for instant feedback, while the extension tracks their stats and displays a global leaderboard and pop-history graph. This project highlights my expertise in building engaging user interfaces, integrating real-time data, and creating gamified experiences that drive user engagement.",
+  "technologies": [
+    "React",
+    "Next.js",
+    "Tailwind CSS",
+    "MongoDB",
+    "REST API",
+    "Chrome Extensions",
+    "TypeScript",
+    "Docker",
+    "Git"
+  ],
+  "demoUrl": "https://chromewebstore.google.com/detail/pop-a-loon/pahcoancbdjmffpmfbnjablnabomdocp",
+  "githubUrl": "https://github.com/SimonStnn/pop-a-loon",
+  "featured": true
+}

@@ -1,42 +1,69 @@
-# My Personal Website
+# Simon Stijnen Portfolio
 
-Welcome to my personal website! This website is built using Next.js. You can visit the live site at [simon.stijnen.be](https://simon.stijnen.be).
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
----
+## Getting Started
 
-## Table of Contents
+First, run the development server:
 
-- [My Personal Website](#my-personal-website)
-  - [Table of Contents](#table-of-contents)
-  - [About](#about)
-  - [Visit the website](#visit-the-website)
-  - [Features](#features)
-  - [Technologies Used](#technologies-used)
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
----
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## About
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This website serves as my personal portfolio and a place to showcase my skills, projects, and experiences as a developer. You'll find information about me, my work, and how to get in touch.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Visit the website
+## Environment Variables
 
-I'm hosting this website myself. You can visit it at [simon.stijnen.be](https://simon.stijnen.be).
+This project uses environment variables for configuration, which are stored in the `.env` file.
 
-## Features
+Key environment variables:
 
-- Modern and responsive design.
-- Fast and optimized performance.
-- SEO-friendly.
-- Easily extensible with Next.js plugins and components.
+- `NEXT_PUBLIC_SITE_NAME`: The name of the website/author
+- `NEXT_PUBLIC_SITE_URL`: The URL of the website
+- `NEXT_PUBLIC_SITE_DESCRIPTION`: Description of the site for SEO
+- `NEXT_PUBLIC_AUTHOR_NAME`: The author's name
+- `NEXT_PUBLIC_AUTHOR_EMAIL`: Contact email address
+- `NEXT_PUBLIC_GITHUB_URL`: GitHub profile URL
+- `NEXT_PUBLIC_LINKEDIN_URL`: LinkedIn profile URL
+- `NEXT_PUBLIC_GA_ID`: Google Analytics ID (optional)
 
-## Technologies Used
+For development, the `.env` file contains default values. No additional environment files are needed.
 
-- [Next.js](https://nextjs.org/): A React framework for building fast and efficient web applications.
-- [React](https://reactjs.org/): A JavaScript library for building user interfaces.
-- [Tailwind](https://tailwindcss.com/): A utility-first CSS framework for quickly building custom designs.
-- [TypeScript](https://www.typescriptlang.org/) TypeScript is a superset of JavaScript that adds static typing to the language, enhancing code quality and development experience.
+## Code Formatting
 
----
+This project uses Prettier with Tailwind CSS class sorting. The configuration ensures consistent code style and automatically sorts Tailwind classes in a logical order.
 
-> Thank you for visiting my website! 😄
+```bash
+# Format all files
+npm run format
+
+# Check if files are properly formatted
+npm run format:check
+```
+
+See the [Prettier and Tailwind CSS documentation](./docs/prettier-tailwind.md) for more details.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

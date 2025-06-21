@@ -1,0 +1,19 @@
+{
+  "title": "BEMED - Zero Waste Montenegro",
+  "shortDescription": "Helping government institutions manage their environmental footprint.",
+  "description": "Helping government institutions manage their environmental footprint by building a web application that allows them to register and monitor expenses related to single-use plastics.\nThis project was developed as part of an Erasmus+ Blended Intensive Programme (BIP) in collaboration with international students from Hogeschool VIVES (Belgium), Zealand \u2013 Sjællands Erhvervsakademi (Denmark), and Hogeschool Inholland (Netherlands). The project combined weeks of remote teamwork with an in-person session at Universidad Politécnica de Madrid.",
+  "technologies": [
+    "Project Management",
+    "Node.js",
+    "TypeScript",
+    "REST API",
+    "Express.js",
+    "Vue",
+    "MySQL",
+    "Keycloak",
+    "Docker",
+    "Git"
+  ],
+  "demoUrl": null,
+  "githubUrl": "https://github.com/SimonStnn/BEMED"
+}
