@@ -3,6 +3,8 @@ import Image from "next/image";
 import { getProjects } from "@/lib/projects";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Timeline from "@/components/ui/timeline";
 import { cn } from "@/lib/utils";
 import SocialLink from "@/components/social-link";
@@ -15,7 +17,7 @@ export default async function Home() {
   return (
     <div className="flex min-h-screen flex-col">
       {/* Hero Section */}
-      <div className="conatiner mx-auto flex flex-col justify-center gap-4 px-6 py-10 md:flex-row md:items-center md:gap-12">
+      <div className="container mx-auto flex flex-col justify-center gap-4 px-6 py-10 md:flex-row md:items-center md:gap-12">
         <aside className="">
           <div
             className={cn(
@@ -81,8 +83,77 @@ export default async function Home() {
         </section>
       </div>
 
+      {/* Experience Section */}
+
+      <section id="experience" className="bg-muted/30 scroll-mt-16 px-4 py-16 md:px-6">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="mb-8 text-center text-3xl font-bold">Experience</h2>
+          <Tabs defaultValue="work">
+            <TabsList className="w-full">
+              <TabsTrigger value="work">Work</TabsTrigger>
+              <TabsTrigger value="education">Education</TabsTrigger>
+            </TabsList>
+            <TabsContent value="work">
+              <Card className="p-0 shadow-md">
+                <CardContent className="grid gap-6 py-0">
+                  <Timeline
+                    items={[
+                      {
+                        year: "Apr. 2024",
+                        title: "Student Job Test Engineer",
+                        company: "Advionics NV",
+                        description:
+                          "Developed a sensor monitoring system using real-time data analysis and MLX90640 heat sensors. Integrated the solution into an existing application, enabling continuous thermal monitoring for anomaly detection in a production environment.",
+                      },
+                      {
+                        year: "Apr. 2022",
+                        title: "Intern Test Engineer",
+                        company: "Advionics NV",
+                        description:
+                          "During my internship in my final year of secondary school, I developed an automated camera system for quality control in the shipping process. The system captures photos of products before packaging and automatically generates PDF reports as proof of undamaged shipments.",
+                      },
+                    ]}
+                  />
+                </CardContent>
+              </Card>
+            </TabsContent>
+            <TabsContent value="education">
+              <Card className="p-0 shadow-md">
+                <CardContent className="grid gap-6 py-0">
+                  <Timeline
+                    items={[
+                      {
+                        year: "2023 - 2026",
+                        title:
+                          "Electronics \u2013 ICT \u2013 Specialization in Software Engineering & AI",
+                        company: "Vives University of Applied Sciences \u2013 Bruges, Belgium",
+                        description: "Specialized in Software Engineering & AI.",
+                      },
+                      {
+                        year: "Sep. 2023 - Dec. 2023",
+                        title: "Graduate Programming",
+                        company: "HOWEST \u2013 Bruges, Belgium",
+                        description:
+                          "Evening school program focused on programming and software development & Git.",
+                      },
+                      {
+                        year: "2021 - 2023",
+                        title: "Internet of Things",
+                        company: "KTA Brugge \u2013 Bruges, Belgium",
+                        description:
+                          "Secondary education with a focus on Internet of Things (IoT) technologies.",
+                      },
+                    ]}
+                  />
+                </CardContent>
+              </Card>
+            </TabsContent>
+          </Tabs>
+        </div>
+      </section>
+
       {/* Featured Projects Section */}
-      <section id="projects" className="bg-muted/30 scroll-mt-16 px-4 py-16 md:px-6">
+      <section id="projects" className="scroll-mt-16 px-4 py-16 md:px-6">
         <div className="mx-auto max-w-6xl">
           <h2 className="mb-8 text-center text-3xl font-bold">Projects</h2>
           <p className="mx-auto mb-12 max-w-2xl text-center text-lg">
@@ -137,7 +208,7 @@ export default async function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="scroll-mt-16 px-4 py-16 md:px-6">
+      <section id="about" className="bg-muted/30 scroll-mt-16 px-4 py-16 md:px-6">
         <div className="container mx-auto max-w-4xl">
           <h2 className="mb-8 text-center text-3xl font-bold">About Me</h2>
 
@@ -165,26 +236,6 @@ export default async function Home() {
               In 2023, Rotary International recognized me as the top graduating student in secondary
               school; a recognition of my dedication, curiosity, and results.
             </p>
-
-            <h3 className="mt-8 mb-4 text-2xl font-bold">Work Experience</h3>
-            <Timeline
-              items={[
-                {
-                  year: "Apr. 2024",
-                  title: "Student Job Test Engineer",
-                  company: "Advionics NV",
-                  description:
-                    "Developed a sensor monitoring system using real-time data analysis and MLX90640 heat sensors. Integrated the solution into an existing application, enabling continuous thermal monitoring for anomaly detection in a production environment.",
-                },
-                {
-                  year: "Apr. 2022",
-                  title: "Intern Test Engineer",
-                  company: "Advionics NV",
-                  description:
-                    "During my internship in my final year of secondary school, I developed an automated camera system for quality control in the shipping process. The system captures photos of products before packaging and automatically generates PDF reports as proof of undamaged shipments.",
-                },
-              ]}
-            />
           </div>
         </div>
       </section>
