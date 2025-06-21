@@ -8,7 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Timeline from "@/components/ui/timeline";
 import { cn } from "@/lib/utils";
 import SocialLink from "@/components/social-link";
-import { Mail } from "lucide-react";
+import { Mail, SquareArrowOutUpRight } from "lucide-react";
 import { GitHubIcon, LinkedInIcon } from "@/components/icons";
 import { siteConfig } from "@/lib/config";
 
@@ -78,6 +78,12 @@ export default async function Home() {
             </Button>
             <Button variant="secondary" size="lg" asChild>
               <a href="#contact">Contact Me</a>
+            </Button>
+            <Button variant="secondary" size="lg" asChild className="hidden md:inline-flex">
+              <Link href="/download/resume.pdf" target="_blank">
+                Resume
+                <SquareArrowOutUpRight />
+              </Link>
             </Button>
           </div>
         </section>
