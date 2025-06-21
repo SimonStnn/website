@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: {
     template: `%s | Software Engineer & AI`,
-    default: `Software Engineer & AI | ${siteConfig.name}`,
+    default: `${siteConfig.name} | Software Engineer & AI`,
   },
   description: siteConfig.description,
   keywords: [
@@ -44,11 +44,11 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteConfig.url,
     siteName: "Software Engineer & AI Portfolio",
-    title: `Software Engineer & AI | ${siteConfig.name}`,
+    title: `${siteConfig.name} | Software Engineer & AI`,
     description: siteConfig.description,
     images: [
       {
-        url: "/images/profile-meta.jpg",
+        url: "/image/profile-meta.jpg",
         width: 1200,
         height: 630,
         alt: "Simon Stijnen - Software Engineer & AI Specialist",
