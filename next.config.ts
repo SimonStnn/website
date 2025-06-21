@@ -12,8 +12,15 @@ const domains = ["localhost", siteUrlDomain, ...commonDomains];
 
 const nextConfig: NextConfig = {
   images: {
-    domains: domains,
+    remotePatterns: domains.map((domain) => ({
+      protocol: "https",
+      hostname: domain,
+      port: "",
+      pathname: "/**",
+    })),
   },
+  // For Docker deployment - creates a standalone build
+  output: "standalone",
 };
 
 export default nextConfig;

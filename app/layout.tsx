@@ -18,6 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
     template: `%s | Software Engineer & AI`,
     default: `${siteConfig.name} | Software Engineer & AI`,
@@ -59,7 +60,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `Software Engineer & AI | ${siteConfig.name}`,
     description: siteConfig.description,
-    images: ["/images/profile-meta.jpg"],
+    images: ["/image/profile-meta.jpg"],
   },
   manifest: "/site.webmanifest",
 };
