@@ -7,7 +7,7 @@ export interface Project {
   shortDescription: string;
   description: string;
   technologies: string[];
-  image?: string;
+  images: string[];
   demoUrl?: string;
   githubUrl?: string;
   featured: boolean;

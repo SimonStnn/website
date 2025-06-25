@@ -5,6 +5,13 @@ import { notFound } from "next/navigation";
 import { getProjects } from "@/lib/projects";
 import ProjectStructuredData from "@/components/project-structured-data";
 import RelatedProjects from "@/components/related-projects";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 // Generate static params for all projects at build time
 export async function generateStaticParams() {
@@ -43,12 +50,12 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   // Client components must be rendered as children in Server Components
   return (
     <div className="container max-w-4xl px-4 py-12 md:px-6">
-      {/* Add structured data */}
       <ProjectStructuredData
         title={project.title}
         description={project.description}
         slug={project.slug}
         technologies={project.technologies}
+        images={project.images}
       />
       <div className="mb-6">
         <Link href="/#projects" className="text-primary hover:underline">
@@ -56,22 +63,47 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         </Link>
       </div>
       <h1 className="mb-6 text-4xl font-bold">{project.title}</h1>
-      <div className="bg-muted mb-8 aspect-video overflow-hidden rounded-lg">
-        {project.image ? (
-          <Image
-            src={project.image}
-            alt={`Screenshot of ${project.title}`}
-            width={1200}
-            height={675}
-            className="h-full w-full object-cover"
-            priority
-          />
-        ) : (
-          <div className="flex h-full items-center justify-center">
-            <span className="text-muted-foreground">[Project Screenshot]</span>
-          </div>
-        )}
-      </div>
+      {project.images && project.images.length > 1 ? (
+        <div className="mb-8">
+          <Carousel className="w-full overflow-hidden rounded-md" opts={{ loop: true }}>
+            <CarouselContent>
+              {project.images.map((image, index) => (
+                <CarouselItem key={index}>
+                  <div className="bg-muted aspect-video overflow-hidden rounded-lg">
+                    <Image
+                      src={image}
+                      alt={`${project.title} screenshot ${index + 1}`}
+                      width={1200}
+                      height={675}
+                      className="h-full w-full object-cover"
+                      priority={index === 0}
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-2" />
+            <CarouselNext className="right-2" />
+          </Carousel>
+        </div>
+      ) : (
+        <div className="bg-muted mb-8 aspect-video overflow-hidden rounded-lg">
+          {project.images && project.images.length === 1 ? (
+            <Image
+              src={project.images[0]}
+              alt={`Screenshot of ${project.title}`}
+              width={1200}
+              height={675}
+              className="h-full w-full object-cover"
+              priority
+            />
+          ) : (
+            <div className="flex h-full items-center justify-center">
+              <span className="text-muted-foreground">[Project Screenshot]</span>
+            </div>
+          )}
+        </div>
+      )}
       <div className="prose max-w-none">
         <h2 className="mt-8 mb-4 text-2xl font-bold">Project Overview</h2>
         {project.description.split("\n").map((line, index) => (

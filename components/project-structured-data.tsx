@@ -6,6 +6,7 @@ interface ProjectStructuredDataProps {
   description: string;
   slug: string;
   technologies: string[];
+  images?: string[];
 }
 
 export default function ProjectStructuredData({
@@ -13,8 +14,11 @@ export default function ProjectStructuredData({
   description,
   slug,
   technologies,
+  images,
 }: ProjectStructuredDataProps) {
   const domain = siteConfig.url;
+  const imagePath =
+    images && images.length > 0 ? `${domain}${images[0]}` : `${domain}/images/projects/${slug}.jpg`;
 
   return (
     <>
@@ -22,7 +26,7 @@ export default function ProjectStructuredData({
         name={title}
         description={description}
         url={`${domain}/projects/${slug}`}
-        image={`${domain}/images/projects/${slug}.jpg`}
+        image={imagePath}
         author={{
           name: siteConfig.author.name,
           url: domain,

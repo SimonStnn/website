@@ -17,7 +17,7 @@ export default async function Home() {
   return (
     <div className="flex min-h-screen flex-col">
       {/* Hero Section */}
-      <div className="container mx-auto flex flex-col justify-center gap-4 px-6 py-10 md:flex-row md:items-center md:gap-12">
+      <div className="container mx-auto flex flex-col justify-center gap-4 px-6 py-10 md:flex-row md:items-center md:gap-12 lg:w-4/5">
         <aside className="">
           <div
             className={cn(
@@ -49,7 +49,7 @@ export default async function Home() {
           <p className="mb-4">
             <b>Software Engineering & AI student</b> at VIVES University of Applied Sciences.
           </p>
-          <p className="mb-8 text-xl text-pretty md:w-4/5 md:text-2xl">
+          <p className="mb-8 text-xl text-pretty md:text-2xl">
             I build software that works, scales, and is maintainable; even under heavy load.
           </p>
           <div className="mb-8 flex items-center gap-4">
@@ -173,9 +173,9 @@ export default async function Home() {
                 className="bg-card overflow-hidden rounded-lg border shadow-sm"
               >
                 <div className="bg-muted flex h-48 items-center justify-center">
-                  {project.image ? (
+                  {project.images && project.images.length > 0 ? (
                     <Image
-                      src={project.image}
+                      src={project.images[0]}
                       alt={project.title}
                       width={400}
                       height={225}
