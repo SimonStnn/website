@@ -1,5 +1,8 @@
 import Link from "next/link";
+import type { ClassValue } from "clsx";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardFooter, CardTitle } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 export interface Project {
   slug: string;
@@ -17,12 +20,14 @@ interface RelatedProjectsProps {
   currentProject: Project;
   allProjects: Project[];
   maxProjects?: number;
+  className?: ClassValue;
 }
 
 export default function RelatedProjects({
   currentProject,
   allProjects,
   maxProjects = 3,
+  className,
 }: RelatedProjectsProps) {
   // Find projects that share at least one technology with the current project
   const relatedProjects = allProjects
@@ -38,17 +43,23 @@ export default function RelatedProjects({
   }
 
   return (
-    <div className="mt-16 border-t pt-8">
+    <div className={cn("", className)}>
       <h2 className="mb-6 text-2xl font-bold">Related Projects</h2>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
         {relatedProjects.map((project) => (
-          <div key={project.slug} className="rounded-lg border p-4">
-            <h3 className="mb-2 font-bold">{project.title}</h3>
-            <p className="text-muted-foreground mb-3 text-sm">{project.shortDescription}</p>
-            <Button variant="outline" size="sm" asChild>
-              <Link href={`/projects/${project.slug}`}>View Project</Link>
-            </Button>
-          </div>
+          <Card key={project.slug} className="shadow-md">
+            <CardContent className="grow">
+              <CardTitle className="mb-2 font-bold">{project.title}</CardTitle>
+              <CardDescription className="line-clamp-3" title={project.shortDescription}>
+                {project.shortDescription}
+              </CardDescription>
+            </CardContent>
+            <CardFooter>
+              <Button variant="secondary" size="sm" className="w-full" asChild>
+                <Link href={`/projects/${project.slug}`}>View Project</Link>
+              </Button>
+            </CardFooter>
+          </Card>
         ))}
       </div>
     </div>

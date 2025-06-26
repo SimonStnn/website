@@ -38,7 +38,6 @@ export function Header({ className }: HeaderProps) {
       {/* Desktop Navigation */}
       <NavigationMenu className="hidden md:flex md:w-full md:grow md:justify-end">
         <NavigationMenuList>
-          {" "}
           <NavigationMenuItem>
             <NavigationMenuLink asChild>
               <Link href="/#home" className="text-lg font-bold capitalize">
