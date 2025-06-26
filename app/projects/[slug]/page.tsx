@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/carousel";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, SquareArrowOutUpRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 // Generate static params for all projects at build time
 export async function generateStaticParams() {
@@ -73,13 +74,20 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               <CarouselContent>
                 {project.images.map((image, index) => (
                   <CarouselItem key={index}>
-                    <div className="bg-muted aspect-video overflow-hidden rounded-lg">
+                    <div
+                      className={cn(
+                        "inset-1 pr-2 pb-2 before:-inset-1 before:-z-10",
+                        "relative before:absolute before:size-full",
+                        "before:from-accent before:via-muted before:to-primary before:bg-gradient-to-br",
+                        "aspect-video before:rounded-lg"
+                      )}
+                    >
                       <Image
                         src={image}
                         alt={`${project.title} screenshot ${index + 1}`}
                         width={1200}
                         height={675}
-                        className="h-full w-full object-cover"
+                        className="text-muted-foreground bg-muted/80 h-full w-full rounded-md object-cover"
                         priority={index === 0}
                       />
                     </div>

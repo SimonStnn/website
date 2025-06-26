@@ -175,7 +175,12 @@ export default async function Home() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {projects.map((project) => (
               <Card key={project.slug} className="overflow-hidden pt-0">
-                <CardHeader className="bg-muted flex h-48 items-center justify-center px-0">
+                <CardHeader
+                  className={cn(
+                    "from-accent via-muted to-primary bg-gradient-to-br",
+                    "flex h-48 items-center justify-center px-0"
+                  )}
+                >
                   {project.images && project.images.length > 0 ? (
                     <Image
                       src={project.images[0]}
