@@ -13,6 +13,10 @@
     "Scikit-learn",
     "Git"
   ],
+  "images": [
+    "/images/projects/audionome/preview.jpg",
+    "/images/projects/audionome/quick-demo.webp"
+  ],
   "demoUrl": "https://audionome.streamlit.app/",
   "githubUrl": "https://github.com/SimonStnn/Audionome",
   "featured": true

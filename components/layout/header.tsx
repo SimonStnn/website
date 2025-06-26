@@ -41,22 +41,30 @@ export function Header({ className }: HeaderProps) {
           {" "}
           <NavigationMenuItem>
             <NavigationMenuLink asChild>
-              <Link href="/#home">Home</Link>
+              <Link href="/#home" className="text-lg font-bold capitalize">
+                Home
+              </Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
             <NavigationMenuLink asChild>
-              <Link href="/#about">About</Link>
+              <Link href="/#about" className="text-lg font-bold capitalize">
+                About
+              </Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
             <NavigationMenuLink asChild>
-              <Link href="/#projects">Projects</Link>
+              <Link href="/#projects" className="text-lg font-bold capitalize">
+                Projects
+              </Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
             <NavigationMenuLink asChild>
-              <Link href="/#contact">Contact</Link>
+              <Link href="/#contact" className="text-lg font-bold capitalize">
+                Contact
+              </Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
         </NavigationMenuList>
@@ -81,7 +89,6 @@ export function Header({ className }: HeaderProps) {
       {mobileMenuOpen && (
         <div className="bg-background absolute top-16 right-0 left-0 z-50 border-b md:hidden">
           <nav className="flex flex-col p-4">
-            {" "}
             <Link
               href="/#home"
               className="hover:bg-muted rounded-md px-4 py-2"

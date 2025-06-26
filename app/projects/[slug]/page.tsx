@@ -49,7 +49,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   }
   // Client components must be rendered as children in Server Components
   return (
-    <div className="container max-w-4xl px-4 py-12 md:px-6">
+    <div className="container mx-auto max-w-4xl px-4 py-12 md:px-6">
       <ProjectStructuredData
         title={project.title}
         description={project.description}

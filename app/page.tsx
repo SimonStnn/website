@@ -3,7 +3,14 @@ import Image from "next/image";
 import { getProjects } from "@/lib/projects";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Timeline from "@/components/ui/timeline";
 import { cn } from "@/lib/utils";
@@ -90,7 +97,6 @@ export default async function Home() {
       </div>
 
       {/* Experience Section */}
-
       <section id="experience" className="bg-muted/30 scroll-mt-16 px-4 py-16 md:px-6">
         <div className="mx-auto max-w-6xl">
           <h2 className="mb-8 text-center text-3xl font-bold">Experience</h2>
@@ -168,11 +174,8 @@ export default async function Home() {
           </p>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {projects.map((project) => (
-              <div
-                key={project.slug}
-                className="bg-card overflow-hidden rounded-lg border shadow-sm"
-              >
-                <div className="bg-muted flex h-48 items-center justify-center">
+              <Card key={project.slug} className="overflow-hidden pt-0">
+                <CardHeader className="bg-muted flex h-48 items-center justify-center px-0">
                   {project.images && project.images.length > 0 ? (
                     <Image
                       src={project.images[0]}
@@ -184,11 +187,15 @@ export default async function Home() {
                   ) : (
                     <div className="text-muted-foreground">[Project Image]</div>
                   )}
-                </div>
-                <div className="p-6">
-                  <h3 className="mb-2 text-xl font-bold">{project.title}</h3>
-                  <p className="mb-4">{project.shortDescription}</p>
-                  <div className="mb-4 flex flex-wrap gap-2">
+                </CardHeader>
+                <CardContent className="grow">
+                  <CardTitle className="mb-1">{project.title}</CardTitle>
+                  <CardDescription title={project.shortDescription}>
+                    {project.shortDescription}
+                  </CardDescription>
+                </CardContent>
+                <CardContent className="-my-2">
+                  <div className="flex flex-wrap items-baseline gap-2">
                     {project.technologies.slice(0, 3).map((tech) => (
                       <Badge key={tech} variant="secondary">
                         {tech}
@@ -203,11 +210,13 @@ export default async function Home() {
                       </span>
                     )}
                   </div>
-                  <Button variant="outline" size="sm" asChild>
+                </CardContent>
+                <CardFooter>
+                  <Button variant="secondary" size="sm" className="w-full" asChild>
                     <Link href={`/projects/${project.slug}`}>View Details</Link>
                   </Button>
-                </div>
-              </div>
+                </CardFooter>
+              </Card>
             ))}
           </div>
         </div>

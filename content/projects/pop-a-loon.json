@@ -13,6 +13,12 @@
     "Docker",
     "Git"
   ],
+  "images": [
+    "/images/projects/pop-a-loon/small.webp",
+    "/images/projects/pop-a-loon/screenshot-1.webp",
+    "/images/projects/pop-a-loon/screenshot-2.webp",
+    "/images/projects/pop-a-loon/screenshot-3.webp"
+  ],
   "demoUrl": "https://chromewebstore.google.com/detail/pop-a-loon/pahcoancbdjmffpmfbnjablnabomdocp",
   "githubUrl": "https://github.com/SimonStnn/pop-a-loon",
   "featured": true
