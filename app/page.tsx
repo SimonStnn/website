@@ -204,7 +204,7 @@ export default async function Home() {
                   </CardDescription>
                 </CardContent>
                 <CardContent className="-my-2">
-                  <div className="flex flex-wrap items-baseline gap-2">
+                  <div className="flex items-baseline gap-2">
                     {project.technologies.slice(0, 3).map((tech) => (
                       <Badge key={tech} variant="secondary">
                         {tech}
@@ -212,7 +212,7 @@ export default async function Home() {
                     ))}
                     {project.technologies.length > 3 && (
                       <span
-                        className="text-muted-foreground text-xs"
+                        className="text-muted-foreground text-xs text-nowrap"
                         title={project.technologies.slice(3).join(", \r\n")}
                       >
                         +{project.technologies.length - 3} more
