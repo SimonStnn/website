@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: [
       {
-        url: "/image/profile-meta.jpg",
+        url: "/images/profile-meta.jpg",
         width: 1200,
         height: 630,
         alt: "Simon Stijnen - Software Engineer & AI Specialist",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `Software Engineer & AI | ${siteConfig.name}`,
     description: siteConfig.description,
-    images: ["/image/profile-meta.jpg"],
+    images: ["/images/profile-meta.jpg"],
   },
   manifest: "/site.webmanifest",
 };

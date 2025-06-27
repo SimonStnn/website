@@ -42,6 +42,23 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
+function GradientContainer(props: { className?: string; children?: React.ReactNode }) {
+  return (
+    <div
+      className={cn(
+        "relative before:absolute before:size-full",
+        "inset-1 pr-2 pb-2 before:-inset-1 before:-z-10",
+        "before:from-accent before:via-muted before:to-primary before:bg-gradient-to-br",
+        "aspect-video before:rounded-lg"
+      )}
+    >
+      <div className={cn("bg-muted/60 inset-1 h-full w-full rounded-md", props.className)}>
+        {props.children}
+      </div>
+    </div>
+  );
+}
+
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const projects = await getProjects();
   const { slug } = await params;
@@ -74,14 +91,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               <CarouselContent>
                 {project.images.map((image, index) => (
                   <CarouselItem key={index}>
-                    <div
-                      className={cn(
-                        "inset-1 pr-2 pb-2 before:-inset-1 before:-z-10",
-                        "relative before:absolute before:size-full",
-                        "before:from-accent before:via-muted before:to-primary before:bg-gradient-to-br",
-                        "aspect-video before:rounded-lg"
-                      )}
-                    >
+                    <GradientContainer>
                       <Image
                         src={image}
                         alt={`${project.title} screenshot ${index + 1}`}
@@ -90,7 +100,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                         className="text-muted-foreground bg-muted/80 h-full w-full rounded-md object-cover"
                         priority={index === 0}
                       />
-                    </div>
+                    </GradientContainer>
                   </CarouselItem>
                 ))}
               </CarouselContent>
@@ -99,20 +109,22 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             </Carousel>
           </div>
         ) : (
-          <div className="bg-muted mb-8 aspect-video overflow-hidden rounded-lg">
+          <div className="mb-8 aspect-video overflow-hidden rounded-lg">
             {project.images && project.images.length === 1 ? (
-              <Image
-                src={project.images[0]}
-                alt={`Screenshot of ${project.title}`}
-                width={1200}
-                height={675}
-                className="h-full w-full object-cover"
-                priority
-              />
+              <GradientContainer>
+                <Image
+                  src={project.images[0]}
+                  alt={`Screenshot of ${project.title}`}
+                  width={1200}
+                  height={675}
+                  className="h-full w-full object-cover"
+                  priority
+                />
+              </GradientContainer>
             ) : (
-              <div className="flex h-full items-center justify-center">
+              <GradientContainer className="flex h-full items-center justify-center">
                 <span className="text-muted-foreground">[Project Screenshot]</span>
-              </div>
+              </GradientContainer>
             )}
           </div>
         )}

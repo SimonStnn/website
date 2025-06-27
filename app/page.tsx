@@ -29,7 +29,7 @@ export default async function Home() {
           <div
             className={cn(
               "relative ml-auto hidden md:block",
-              "transition-transform duration-700 ease-in-out hover:-rotate-4"
+              "w-[250px] transition-transform duration-700 ease-in-out hover:-rotate-4"
             )}
           >
             <span
@@ -38,7 +38,7 @@ export default async function Home() {
               )}
             />
             <Image
-              src="/image/hero.jpg"
+              src="/images/hero.jpg"
               alt="Hero Image"
               width={400}
               height={400}
@@ -174,11 +174,13 @@ export default async function Home() {
           </p>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {projects.map((project) => (
-              <Card key={project.slug} className="overflow-hidden pt-0">
+              <Card key={project.slug} className="group overflow-hidden pt-0">
                 <CardHeader
                   className={cn(
                     "from-accent via-muted to-primary bg-gradient-to-br",
-                    "flex h-48 items-center justify-center px-0"
+                    "flex h-48 items-center justify-center px-1 pt-1",
+                    "text-muted-foreground",
+                    "transition-all group-hover:p-0"
                   )}
                 >
                   {project.images && project.images.length > 0 ? (
@@ -187,10 +189,12 @@ export default async function Home() {
                       alt={project.title}
                       width={400}
                       height={225}
-                      className="h-full w-full object-cover"
+                      className="bg-muted/60 h-full w-full rounded-t-md object-cover"
                     />
                   ) : (
-                    <div className="text-muted-foreground">[Project Image]</div>
+                    <div className="bg-muted/60 flex h-full w-full items-center justify-center rounded-t-md">
+                      [Project Image]
+                    </div>
                   )}
                 </CardHeader>
                 <CardContent className="grow">
