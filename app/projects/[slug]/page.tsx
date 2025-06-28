@@ -139,8 +139,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           <h2 className="mt-8 mb-4 text-2xl font-bold">Technologies Used</h2>
           <ul className="mb-8 flex flex-wrap gap-2">
             {project.technologies.map((tech) => (
-              <Badge key={tech} variant="secondary">
-                {tech}
+              <Badge key={tech} variant="secondary" asChild>
+                <li>{tech}</li>
               </Badge>
             ))}
           </ul>

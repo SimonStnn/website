@@ -1,18 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getProjects } from "@/lib/projects";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
+import ProjectCard from "@/components/project-card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import Timeline from "@/components/ui/timeline";
+import Timeline from "@/components/timeline";
 import { cn } from "@/lib/utils";
 import SocialLink from "@/components/social-link";
 import { Mail, SquareArrowOutUpRight } from "lucide-react";
@@ -174,58 +167,7 @@ export default async function Home() {
           </p>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {projects.map((project) => (
-              <Card key={project.slug} className="group overflow-hidden pt-0">
-                <CardHeader
-                  className={cn(
-                    "from-accent via-muted to-primary bg-gradient-to-br",
-                    "flex h-48 items-center justify-center px-1 pt-1",
-                    "text-muted-foreground",
-                    "transition-all group-hover:p-0"
-                  )}
-                >
-                  {project.images && project.images.length > 0 ? (
-                    <Image
-                      src={project.images[0]}
-                      alt={project.title}
-                      width={400}
-                      height={225}
-                      className="bg-muted/60 h-full w-full rounded-t-md object-cover"
-                    />
-                  ) : (
-                    <div className="bg-muted/60 flex h-full w-full items-center justify-center rounded-t-md">
-                      [Project Image]
-                    </div>
-                  )}
-                </CardHeader>
-                <CardContent className="grow">
-                  <CardTitle className="mb-1">{project.title}</CardTitle>
-                  <CardDescription title={project.shortDescription}>
-                    {project.shortDescription}
-                  </CardDescription>
-                </CardContent>
-                <CardContent className="-my-2">
-                  <div className="flex items-baseline gap-2">
-                    {project.technologies.slice(0, 3).map((tech) => (
-                      <Badge key={tech} variant="secondary">
-                        {tech}
-                      </Badge>
-                    ))}
-                    {project.technologies.length > 3 && (
-                      <span
-                        className="text-muted-foreground text-xs text-nowrap"
-                        title={project.technologies.slice(3).join(", \r\n")}
-                      >
-                        +{project.technologies.length - 3} more
-                      </span>
-                    )}
-                  </div>
-                </CardContent>
-                <CardFooter>
-                  <Button variant="secondary" size="sm" className="w-full" asChild>
-                    <Link href={`/projects/${project.slug}`}>View Details</Link>
-                  </Button>
-                </CardFooter>
-              </Card>
+              <ProjectCard key={project.slug} project={project} />
             ))}
           </div>
         </div>
