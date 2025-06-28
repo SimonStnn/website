@@ -1,18 +1,40 @@
+import { cn } from "@/lib/utils";
+import Image from "next/image";
+
 interface TimelineItemProps {
   year: string;
   title: string;
   company: string;
   description: string;
+  logo?: string;
 }
 
-export function TimelineItem({ year, title, company, description }: TimelineItemProps) {
+export function TimelineItem({ year, title, company, description, logo }: TimelineItemProps) {
+  console.log(title, logo);
   return (
-    <div className="relative ml-2 pl-8 last:pb-5">
+    <div className="relative ml-5 pl-10 last:pb-5">
       {/* Vertical line */}
       <div className="bg-border absolute top-0 bottom-0 left-0 w-px"></div>
 
-      {/* Circle marker */}
-      <div className="bg-primary absolute top-[6px] left-[-3.5px] mt-5 h-2 w-2 rounded-full"></div>
+      {/* Company logo or circle marker */}
+      {logo ? (
+        <div
+          className={cn(
+            "bg-card absolute top-12 -left-6 h-12 w-12 rounded-full border-[1.5px] p-0.5"
+            // ,"from-accent via-secondary to-primary bg-gradient-to-br"
+          )}
+        >
+          <Image
+            src={logo}
+            alt={`${company} logo`}
+            width={48}
+            height={48}
+            className="h-full w-full rounded-full object-contain text-xs"
+          />
+        </div>
+      ) : (
+        <div className="bg-primary absolute top-[6px] left-[-3.5px] mt-5 h-2 w-2 rounded-full"></div>
+      )}
 
       {/* Content */}
       <div className="text-muted-foreground mb-1 pt-5 text-sm">{year}</div>
@@ -31,13 +53,7 @@ export function Timeline({ items }: TimelineProps) {
   return (
     <div>
       {items.map((item, index) => (
-        <TimelineItem
-          key={index}
-          year={item.year}
-          title={item.title}
-          company={item.company}
-          description={item.description}
-        />
+        <TimelineItem key={index} {...item} />
       ))}
     </div>
   );

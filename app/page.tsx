@@ -107,6 +107,7 @@ export default async function Home() {
                         year: "Apr. 2024",
                         title: "Student Job Test Engineer",
                         company: "Advionics NV",
+                        logo: "/images/logos/advionics-nv.webp",
                         description:
                           "Developed a sensor monitoring system using real-time data analysis and MLX90640 heat sensors. Integrated the solution into an existing application, enabling continuous thermal monitoring for anomaly detection in a production environment.",
                       },
@@ -114,6 +115,7 @@ export default async function Home() {
                         year: "Apr. 2022",
                         title: "Intern Test Engineer",
                         company: "Advionics NV",
+                        logo: "/images/logos/advionics-nv.webp",
                         description:
                           "During my internship in my final year of secondary school, I developed an automated camera system for quality control in the shipping process. The system captures photos of products before packaging and automatically generates PDF reports as proof of undamaged shipments.",
                       },
@@ -132,12 +134,14 @@ export default async function Home() {
                         title:
                           "Electronics \u2013 ICT \u2013 Specialization in Software Engineering & AI",
                         company: "Vives University of Applied Sciences \u2013 Bruges, Belgium",
+                        logo: "/images/logos/vives.webp",
                         description: "Specialized in Software Engineering & AI.",
                       },
                       {
                         year: "Sep. 2023 - Dec. 2023",
                         title: "Graduate Programming",
                         company: "HOWEST \u2013 Bruges, Belgium",
+                        logo: "/images/logos/howest.webp",
                         description:
                           "Evening school program focused on programming and software development & Git.",
                       },
@@ -145,6 +149,7 @@ export default async function Home() {
                         year: "2021 - 2023",
                         title: "Internet of Things",
                         company: "KTA Brugge \u2013 Bruges, Belgium",
+                        logo: "/images/logos/kta-brugge.webp",
                         description:
                           "Secondary education with a focus on Internet of Things (IoT) technologies.",
                       },
