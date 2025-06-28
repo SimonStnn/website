@@ -89,20 +89,38 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           <div className="mb-8">
             <Carousel className="w-full overflow-hidden rounded-md" opts={{ loop: true }}>
               <CarouselContent>
-                {project.images.map((image, index) => (
-                  <CarouselItem key={index}>
-                    <GradientContainer>
-                      <Image
-                        src={image}
-                        alt={`${project.title} screenshot ${index + 1}`}
-                        width={1200}
-                        height={675}
-                        className="text-muted-foreground bg-muted/80 h-full w-full rounded-md object-cover"
-                        priority={index === 0}
-                      />
-                    </GradientContainer>
-                  </CarouselItem>
-                ))}
+                {project.images.map((image, index) => {
+                  const isVideo =
+                    image.endsWith(".mp4") || image.endsWith(".webm") || image.endsWith(".mov");
+
+                  return (
+                    <CarouselItem key={index}>
+                      <GradientContainer>
+                        {isVideo ? (
+                          <video
+                            src={image}
+                            controls
+                            muted
+                            loop
+                            className="text-muted-foreground bg-muted/80 h-full w-full rounded-md object-contain"
+                            preload={index === 0 ? "metadata" : "none"}
+                          >
+                            Your browser does not support the video tag.
+                          </video>
+                        ) : (
+                          <Image
+                            src={image}
+                            alt={`${project.title} screenshot ${index + 1}`}
+                            width={1200}
+                            height={675}
+                            className="text-muted-foreground bg-muted/80 h-full w-full rounded-md object-contain"
+                            priority={index === 0}
+                          />
+                        )}
+                      </GradientContainer>
+                    </CarouselItem>
+                  );
+                })}
               </CarouselContent>
               <CarouselPrevious className="left-2" />
               <CarouselNext className="right-2" />
@@ -112,14 +130,29 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           <div className="mb-8 aspect-video overflow-hidden rounded-lg">
             {project.images && project.images.length === 1 ? (
               <GradientContainer>
-                <Image
-                  src={project.images[0]}
-                  alt={`Screenshot of ${project.title}`}
-                  width={1200}
-                  height={675}
-                  className="h-full w-full object-cover"
-                  priority
-                />
+                {project.images[0].endsWith(".mp4") ||
+                project.images[0].endsWith(".webm") ||
+                project.images[0].endsWith(".mov") ? (
+                  <video
+                    src={project.images[0]}
+                    controls
+                    muted
+                    loop
+                    className="h-full w-full object-cover"
+                    preload="metadata"
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                ) : (
+                  <Image
+                    src={project.images[0]}
+                    alt={`Screenshot of ${project.title}`}
+                    width={1200}
+                    height={675}
+                    className="h-full w-full object-contain"
+                    priority
+                  />
+                )}
               </GradientContainer>
             ) : (
               <GradientContainer className="flex h-full items-center justify-center">
