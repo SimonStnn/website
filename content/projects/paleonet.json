@@ -1,7 +1,7 @@
 {
   "title": "PaleoNet",
   "shortDescription": "Using a convolutional neural network (CNN) to classify images of dinosaurs.",
-  "description": "PaleoNet is a project that utilizes a convolutional neural network (CNN) to classify images of dinosaurs. The model is trained on a dataset of dinosaur images, enabling it to recognize and categorize different species based on their visual features. This project combines computer vision techniques with deep learning to achieve high accuracy in image classification tasks.",
+  "description": "A machine learning assignment that turned into an engaging deep learning challenge. Working with a dataset of dinosaur images, I built PaleoNet to automatically classify different dinosaur species using convolutional neural networks, with the goal of achieving above 70% accuracy.\n\nThe most rewarding part was optimizing the model architecture and seeing the accuracy improve to just above 80% through careful data preprocessing and hyperparameter tuning. I experimented with different CNN architectures, implemented data augmentation techniques to handle the limited dataset, and deployed the final model as an interactive Streamlit application.\n\nThis project taught me the importance of systematic experimentation in AI, methodically testing different approaches and analyzing the results to understand what works and why.",
   "technologies": ["AI", "CNN", "TensorFlow", "Keras", "Python", "NumPy", "Pandas"],
   "images": [
     {

@@ -1,7 +1,7 @@
 {
   "title": "Interactive Corridor",
   "shortDescription": "An immersive, interactive hallway.",
-  "description": "An immersive, interactive hallway that adapts to the user's movements and preferences. The corridor features dynamic lighting, soundscapes, and interactive displays that respond to user interactions. Built with a combination of web technologies and IoT devices.",
+  "description": "As the primary software developer in a team of 4, I created the system architecture connecting ESP32 microcontrollers, MQTT messaging, and a Vue.js dashboard for an interactive corridor that transforms a mundane hallway into an engaging, responsive environment.\nThe biggest challenge was synchronizing real-time lighting effects across multiple LED strips while maintaining smooth user interactions. I implemented a custom MQTT-based API and developed algorithms for seamless sensor integration.\nSeeing users' faces light up (literally and figuratively) when they first walked through the corridor and watched it respond to their movements was incredibly rewarding. The project is now permanently installed and continues to delight visitors.",
   "technologies": ["Typescript", "MQTT", "IoT", "ESP32", "Node.js", "Vue"],
   "images": [
     {

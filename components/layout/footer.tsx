@@ -6,6 +6,7 @@ import SocialLink from "@/components/social-link";
 import { siteConfig } from "@/lib/config";
 import { FileDownloadIcon, GitHubIcon, LinkedInIcon } from "@/components/icons";
 import { Mail as MailIcon } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
 
 interface FooterProps {
   className?: string;
@@ -34,7 +35,7 @@ export function Footer({ className }: FooterProps) {
         {/* Quick Links */}
         <div className="hidden md:block">
           <h3 className="mb-3 font-semibold">Navigate</h3>
-          <ul className="space-y-1 text-sm">
+          <ul className="space-y-0 text-sm">
             <li>
               <Button variant="link" asChild>
                 <Link
@@ -42,6 +43,16 @@ export function Footer({ className }: FooterProps) {
                   className="text-primary-foreground/80 hover:text-primary-foreground w-full justify-start !p-0 transition-colors"
                 >
                   About
+                </Link>
+              </Button>
+            </li>
+            <li>
+              <Button variant="link" asChild>
+                <Link
+                  href="/#experience"
+                  className="text-primary-foreground/80 hover:text-primary-foreground w-full justify-start !p-0 transition-colors"
+                >
+                  Experience
                 </Link>
               </Button>
             </li>
@@ -65,8 +76,9 @@ export function Footer({ className }: FooterProps) {
                 </Link>
               </Button>
             </li>
+            <Separator className="bg-border/30 my-1" />
             <li>
-              <Button variant="link" asChild>
+              <Button variant="link" size="sm" asChild>
                 <Link
                   href="/sitemap.xml"
                   className="text-primary-foreground/80 hover:text-primary-foreground w-full justify-start !p-0 transition-colors"
@@ -144,7 +156,7 @@ export function Footer({ className }: FooterProps) {
           </ul>
         </div>
       </div>
-      <hr className="border-accent" />
+      <Separator className="from-accent via-muted to-primary bg-gradient-to-r" />
       <p className="text-primary-foreground/80 mx-auto py-6 text-center text-sm md:text-base">
         &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
       </p>
