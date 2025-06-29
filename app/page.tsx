@@ -1,9 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getProjects } from "@/lib/projects";
+import { getAchievements } from "@/lib/achievements";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import ProjectCard from "@/components/project-card";
+import AchievementCard from "@/components/achievement-card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Timeline from "@/components/timeline";
 import { cn } from "@/lib/utils";
@@ -14,6 +16,7 @@ import { siteConfig } from "@/lib/config";
 
 export default async function Home() {
   const projects = await getProjects();
+  const achievements = await getAchievements();
   return (
     <div className="flex min-h-screen flex-col">
       {/* Hero Section */}
@@ -207,6 +210,22 @@ export default async function Home() {
               In 2023, Rotary International recognized me as the top graduating student in secondary
               school; a recognition of my dedication, curiosity, and results.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Certifications & Achievements Section */}
+      <section id="achievements" className="scroll-mt-16 px-4 py-16 md:px-6">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="mb-8 text-center text-3xl font-bold">Certifications & Achievements</h2>
+          <p className="text-muted-foreground mx-auto mb-12 max-w-2xl text-center text-lg">
+            Recognition of my dedication to learning and achieving excellence in technology and
+            academics.
+          </p>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {achievements.map((achievement) => (
+              <AchievementCard key={achievement.slug} achievement={achievement} />
+            ))}
           </div>
         </div>
       </section>
