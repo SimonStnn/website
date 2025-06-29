@@ -1,6 +1,11 @@
 import fs from "fs";
 import path from "path";
 
+export interface AchievementImage {
+  src: string;
+  alt: string;
+}
+
 export interface Achievement {
   slug: string;
   title: string;
@@ -9,7 +14,7 @@ export interface Achievement {
   type: "certification" | "award" | "achievement";
   description?: string;
   link?: string;
-  image?: string;
+  image?: AchievementImage;
   order?: number;
 }
 

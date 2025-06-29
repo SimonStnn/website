@@ -3,13 +3,14 @@ import type { ClassValue } from "clsx";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import type { ProjectImage } from "@/lib/projects";
 
 export interface Project {
   slug: string;
   title: string;
   description: string;
   shortDescription: string;
-  images?: string[];
+  images?: ProjectImage[];
   technologies: string[];
   demoUrl?: string;
   githubUrl?: string;

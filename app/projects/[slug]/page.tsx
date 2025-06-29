@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { getProjects } from "@/lib/projects";
+import { getProjects, type ProjectImage } from "@/lib/projects";
 import ProjectStructuredData from "@/components/project-structured-data";
 import RelatedProjects from "@/components/related-projects";
 import {
@@ -40,6 +40,111 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${project.title} | Simon Stijnen Portfolio`,
     description: `Details about ${project.title}, a project by Simon Stijnen`,
   };
+}
+
+// Helper functions to reduce code duplication
+function getImageProperties(image: ProjectImage | string, fallbackAlt: string) {
+  return {
+    src: typeof image === "string" ? image : image.src,
+    alt: typeof image === "string" ? fallbackAlt : image.alt,
+  };
+}
+
+function isVideoFile(src: string): boolean {
+  return src.endsWith(".mp4") || src.endsWith(".webm") || src.endsWith(".mov");
+}
+
+function renderMediaContent(
+  src: string,
+  alt: string,
+  isVideo: boolean,
+  priority: boolean = false,
+  preload: "metadata" | "none" = "metadata",
+  isSingleImage: boolean = false
+) {
+  const videoClasses = isSingleImage
+    ? "h-full w-full object-cover"
+    : "text-muted-foreground bg-muted/80 h-full w-full rounded-md object-contain";
+
+  const imageClasses = isSingleImage
+    ? "h-full w-full object-contain"
+    : "text-muted-foreground bg-muted/80 h-full w-full rounded-md object-contain";
+
+  if (isVideo) {
+    return (
+      <video src={src} controls muted loop className={videoClasses} preload={preload}>
+        Your browser does not support the video tag.
+      </video>
+    );
+  }
+
+  return (
+    <Image
+      src={src}
+      alt={alt}
+      width={1200}
+      height={675}
+      className={imageClasses}
+      priority={priority}
+    />
+  );
+}
+
+function ImageCaption({ alt }: { alt: string }) {
+  return <p className="text-muted-foreground mt-2 text-center text-sm text-balance">{alt}</p>;
+}
+
+function ActionButtons({ demoUrl, githubUrl }: { demoUrl?: string; githubUrl?: string }) {
+  if (!demoUrl && !githubUrl) return null;
+
+  return (
+    <div className="mt-8 flex gap-4">
+      {demoUrl && (
+        <Button asChild>
+          <Link href={demoUrl} target="_blank" rel="noopener noreferrer">
+            Live Demo
+            <SquareArrowOutUpRight />
+          </Link>
+        </Button>
+      )}
+      {githubUrl && (
+        <Button variant="secondary" asChild>
+          <Link href={githubUrl} target="_blank" rel="noopener noreferrer">
+            View Code
+            <SquareArrowOutUpRight />
+          </Link>
+        </Button>
+      )}
+    </div>
+  );
+}
+
+function ProjectContent({
+  description,
+  technologies,
+}: {
+  description: string;
+  technologies: string[];
+}) {
+  return (
+    <div className="prose max-w-none">
+      <h2 className="mt-8 mb-4 text-2xl font-bold">Project Overview</h2>
+      {description.split("\n").map((line, index) => (
+        <p key={index} className="mb-4">
+          {line}
+        </p>
+      ))}
+
+      <h2 className="mt-8 mb-4 text-2xl font-bold">Technologies Used</h2>
+      <ul className="mb-8 flex flex-wrap gap-2">
+        {technologies.map((tech) => (
+          <Badge key={tech} variant="secondary" asChild>
+            <li>{tech}</li>
+          </Badge>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
 function GradientContainer(props: { className?: string; children?: React.ReactNode }) {
@@ -85,117 +190,58 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           </Link>
         </Button>
         <h1 className="mb-6 text-4xl font-bold">{project.title}</h1>
-        {project.images && project.images.length > 1 ? (
-          <div className="mb-8">
-            <Carousel className="w-full overflow-hidden rounded-md" opts={{ loop: true }}>
-              <CarouselContent>
-                {project.images.map((image, index) => {
-                  const isVideo =
-                    image.endsWith(".mp4") || image.endsWith(".webm") || image.endsWith(".mov");
+        {project.images && project.images.length > 1 && (
+          <Carousel className="w-full overflow-hidden rounded-md" opts={{ loop: true }}>
+            <CarouselContent>
+              {project.images.map((image, index) => {
+                const { src, alt } = getImageProperties(
+                  image,
+                  `${project.title} screenshot ${index + 1}`
+                );
+                const isVideo = isVideoFile(src);
 
-                  return (
-                    <CarouselItem key={index}>
-                      <GradientContainer>
-                        {isVideo ? (
-                          <video
-                            src={image}
-                            controls
-                            muted
-                            loop
-                            className="text-muted-foreground bg-muted/80 h-full w-full rounded-md object-contain"
-                            preload={index === 0 ? "metadata" : "none"}
-                          >
-                            Your browser does not support the video tag.
-                          </video>
-                        ) : (
-                          <Image
-                            src={image}
-                            alt={`${project.title} screenshot ${index + 1}`}
-                            width={1200}
-                            height={675}
-                            className="text-muted-foreground bg-muted/80 h-full w-full rounded-md object-contain"
-                            priority={index === 0}
-                          />
-                        )}
-                      </GradientContainer>
-                    </CarouselItem>
-                  );
-                })}
-              </CarouselContent>
-              <CarouselPrevious className="left-2" />
-              <CarouselNext className="right-2" />
-            </Carousel>
-          </div>
-        ) : (
-          <div className="mb-8 aspect-video overflow-hidden rounded-lg">
-            {project.images && project.images.length === 1 ? (
-              <GradientContainer>
-                {project.images[0].endsWith(".mp4") ||
-                project.images[0].endsWith(".webm") ||
-                project.images[0].endsWith(".mov") ? (
-                  <video
-                    src={project.images[0]}
-                    controls
-                    muted
-                    loop
-                    className="h-full w-full object-cover"
-                    preload="metadata"
-                  >
-                    Your browser does not support the video tag.
-                  </video>
-                ) : (
-                  <Image
-                    src={project.images[0]}
-                    alt={`Screenshot of ${project.title}`}
-                    width={1200}
-                    height={675}
-                    className="h-full w-full object-contain"
-                    priority
-                  />
-                )}
-              </GradientContainer>
-            ) : (
-              <GradientContainer className="flex h-full items-center justify-center">
-                <span className="text-muted-foreground">[Project Screenshot]</span>
-              </GradientContainer>
-            )}
-          </div>
+                return (
+                  <CarouselItem key={index}>
+                    <GradientContainer>
+                      {renderMediaContent(
+                        src,
+                        alt,
+                        isVideo,
+                        index === 0,
+                        index === 0 ? "metadata" : "none"
+                      )}
+                    </GradientContainer>
+                    <ImageCaption alt={alt} />
+                  </CarouselItem>
+                );
+              })}
+            </CarouselContent>
+            <CarouselPrevious className="left-2" />
+            <CarouselNext className="right-2" />
+          </Carousel>
         )}
-        <div className="prose max-w-none">
-          <h2 className="mt-8 mb-4 text-2xl font-bold">Project Overview</h2>
-          {project.description.split("\n").map((line, index) => (
-            <p key={index} className="mb-4">
-              {line}
-            </p>
-          ))}
+        {project.images && project.images.length === 1 && (
+          <>
+            <div className="aspect-video overflow-hidden rounded-lg">
+              <GradientContainer>
+                {(() => {
+                  const { src, alt } = getImageProperties(
+                    project.images[0],
+                    `Screenshot of ${project.title}`
+                  );
+                  const isVideo = isVideoFile(src);
 
-          <h2 className="mt-8 mb-4 text-2xl font-bold">Technologies Used</h2>
-          <ul className="mb-8 flex flex-wrap gap-2">
-            {project.technologies.map((tech) => (
-              <Badge key={tech} variant="secondary" asChild>
-                <li>{tech}</li>
-              </Badge>
-            ))}
-          </ul>
-        </div>
-        <div className="mt-8 flex gap-4">
-          {project.demoUrl && (
-            <Button asChild>
-              <Link href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                Live Demo
-                <SquareArrowOutUpRight />
-              </Link>
-            </Button>
-          )}
-          {project.githubUrl && (
-            <Button variant="secondary" asChild>
-              <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                View Code
-                <SquareArrowOutUpRight />
-              </Link>
-            </Button>
-          )}
-        </div>
+                  return renderMediaContent(src, alt, isVideo, true, "metadata", true);
+                })()}
+              </GradientContainer>
+            </div>
+            <ImageCaption
+              alt={getImageProperties(project.images[0], `Screenshot of ${project.title}`).alt}
+            />
+          </>
+        )}
+        <ProjectContent description={project.description} technologies={project.technologies} />
+        <ActionButtons demoUrl={project.demoUrl} githubUrl={project.githubUrl} />
       </div>
       {/* Add related projects section */}
       <hr />

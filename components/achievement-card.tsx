@@ -98,8 +98,8 @@ export default function AchievementCard({ achievement }: AchievementCardProps) {
           <CardContent className="flex gap-2">
             {achievement.image && (
               <Image
-                src={achievement.image}
-                alt={`${achievement.title} logo`}
+                src={achievement.image.src}
+                alt={achievement.image.alt}
                 width={40}
                 height={40}
                 className="border-secondary size-10 rounded-full border object-contain p-0.5"
@@ -121,8 +121,8 @@ export default function AchievementCard({ achievement }: AchievementCardProps) {
           <DialogTitle className="mb-1 flex items-center gap-2">
             {achievement.image && (
               <Image
-                src={achievement.image}
-                alt={`${achievement.title} logo`}
+                src={achievement.image.src}
+                alt={achievement.image.alt}
                 width={36}
                 height={36}
                 className="border-secondary size-9 rounded-full border object-contain p-0.5"

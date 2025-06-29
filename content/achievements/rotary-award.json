@@ -4,6 +4,9 @@
   "date": "2023",
   "type": "award",
   "description": "Recognized as the top graduating student in secondary school for dedication, curiosity, and outstanding results.",
-  "image": "/images/logos/rotary-international.webp",
+  "image": {
+    "src": "/images/logos/rotary-international.webp",
+    "alt": "Rotary International logo - gold wheel emblem"
+  },
   "order": 1
 }

@@ -4,6 +4,9 @@
   "date": "2025",
   "type": "achievement",
   "description": "Participated in the Erasmus+ Blended Intensive Programme (BIP) in Madrid, Spain, focusing on international collaboration and cultural exchange.",
-  "image": "/images/logos/universidad-politecnica-de-madrid.webp",
+  "image": {
+    "src": "/images/logos/universidad-politecnica-de-madrid.webp",
+    "alt": "Universidad Politécnica de Madrid logo - official university emblem"
+  },
   "order": 19
 }

@@ -22,6 +22,7 @@ interface HeaderProps {
 const navigationItems = [
   { href: "/#home", label: "Home" },
   { href: "/#about", label: "About" },
+  { href: "/#experience", label: "Experience" },
   { href: "/#projects", label: "Projects" },
   { href: "/#achievements", label: "Achievements" },
   { href: "/#contact", label: "Contact" },

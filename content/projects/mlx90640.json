@@ -12,11 +12,26 @@
     "Python Package"
   ],
   "images": [
-    "/images/projects/mlx90640/sensors-view-1.webp",
-    "/images/projects/mlx90640/sensors-view-2.webp",
-    "/images/projects/mlx90640/application.webp",
-    "/images/projects/mlx90640/change-point-detection-1.webp",
-    "/images/projects/mlx90640/change-point-detection-2.webp"
+    {
+      "src": "/images/projects/mlx90640/sensors-view-1.webp",
+      "alt": "MLX90640 thermal camera monitoring interface showing multiple sensor views with temperature readings"
+    },
+    {
+      "src": "/images/projects/mlx90640/sensors-view-2.webp",
+      "alt": "Alternative view of MLX90640 thermal sensor array displaying heat map visualizations"
+    },
+    {
+      "src": "/images/projects/mlx90640/application.webp",
+      "alt": "Main MLX90640 application dashboard with real-time thermal monitoring and alert system"
+    },
+    {
+      "src": "/images/projects/mlx90640/change-point-detection-1.webp",
+      "alt": "Change point detection algorithm visualization showing temperature anomaly identification"
+    },
+    {
+      "src": "/images/projects/mlx90640/change-point-detection-2.webp",
+      "alt": "Advanced change point detection results with statistical analysis of thermal data patterns"
+    }
   ],
   "demoUrl": null,
   "githubUrl": "https://github.com/SimonStnn/MLX90640"

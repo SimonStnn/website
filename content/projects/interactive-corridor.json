@@ -4,12 +4,30 @@
   "description": "An immersive, interactive hallway that adapts to the user's movements and preferences. The corridor features dynamic lighting, soundscapes, and interactive displays that respond to user interactions. Built with a combination of web technologies and IoT devices.",
   "technologies": ["Typescript", "MQTT", "IoT", "ESP32", "Node.js", "Vue"],
   "images": [
-    "/images/projects/interactive-corridor/demo.webp",
-    "/images/projects/interactive-corridor/depth-effect.mp4",
-    "/images/projects/interactive-corridor/sync-ledstrips.mp4",
-    "/images/projects/interactive-corridor/working-people-1.webp",
-    "/images/projects/interactive-corridor/working-people-2.webp",
-    "/images/projects/interactive-corridor/ledstrip-effects.mp4"
+    {
+      "src": "/images/projects/interactive-corridor/demo.webp",
+      "alt": "Interactive corridor demonstration showing responsive LED lighting and user interaction"
+    },
+    {
+      "src": "/images/projects/interactive-corridor/depth-effect.mp4",
+      "alt": "Video demonstration of depth-sensing effects in the interactive corridor"
+    },
+    {
+      "src": "/images/projects/interactive-corridor/sync-ledstrips.mp4",
+      "alt": "Video showing synchronized LED strip lighting effects across the corridor"
+    },
+    {
+      "src": "/images/projects/interactive-corridor/working-people-1.webp",
+      "alt": "Development team working on interactive corridor project - hardware installation"
+    },
+    {
+      "src": "/images/projects/interactive-corridor/working-people-2.webp",
+      "alt": "Team members programming and testing the interactive corridor systems"
+    },
+    {
+      "src": "/images/projects/interactive-corridor/ledstrip-effects.mp4",
+      "alt": "Video showcasing various LED strip lighting patterns and effects in the corridor"
+    }
   ],
   "demoUrl": null,
   "githubUrl": "https://github.com/vives-project-xp/InteractiveCorridor",

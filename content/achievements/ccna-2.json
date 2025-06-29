@@ -3,7 +3,10 @@
   "issuer": "Cisco Networking Academy",
   "date": "2025",
   "type": "certification",
-  "image": "/images/logos/cisco-networking-academy.webp",
+  "image": {
+    "src": "/images/logos/cisco-networking-academy.webp",
+    "alt": "Cisco Networking Academy logo - official certification provider emblem"
+  },
   "link": "https://www.credly.com/badges/6256ff18-bb5a-4ec7-b676-31c7dc4ad8d4/public_url",
   "order": 58
 }

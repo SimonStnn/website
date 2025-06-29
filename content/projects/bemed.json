@@ -14,7 +14,12 @@
     "Docker",
     "Git"
   ],
-  "images": ["/images/projects/bemed/logo-bemed.webp"],
+  "images": [
+    {
+      "src": "/images/projects/bemed/logo-bemed.webp",
+      "alt": "BEMED project logo - Zero Waste Montenegro environmental management platform"
+    }
+  ],
   "demoUrl": null,
   "githubUrl": "https://github.com/SimonStnn/BEMED"
 }

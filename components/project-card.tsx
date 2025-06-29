@@ -30,8 +30,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       >
         {project.images && project.images.length > 0 ? (
           <Image
-            src={project.images[0]}
-            alt={project.title}
+            src={project.images[0].src}
+            alt={project.images[0].alt}
             width={400}
             height={225}
             className="bg-muted/60 h-full w-full rounded-t-md object-cover transition-all group-hover:rounded-t-lg"

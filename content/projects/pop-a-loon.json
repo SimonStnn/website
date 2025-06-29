@@ -14,10 +14,22 @@
     "Git"
   ],
   "images": [
-    "/images/projects/pop-a-loon/small.webp",
-    "/images/projects/pop-a-loon/screenshot-1.webp",
-    "/images/projects/pop-a-loon/screenshot-2.webp",
-    "/images/projects/pop-a-loon/screenshot-3.webp"
+    {
+      "src": "/images/projects/pop-a-loon/small.webp",
+      "alt": "Pop-a-loon Chrome extension icon showing colorful balloons"
+    },
+    {
+      "src": "/images/projects/pop-a-loon/screenshot-1.webp",
+      "alt": "Pop-a-loon extension interface with floating balloons on a webpage"
+    },
+    {
+      "src": "/images/projects/pop-a-loon/screenshot-2.webp",
+      "alt": "User statistics dashboard showing popped balloons count and global leaderboard"
+    },
+    {
+      "src": "/images/projects/pop-a-loon/screenshot-3.webp",
+      "alt": "Pop-history graph displaying user's balloon popping activity over time"
+    }
   ],
   "demoUrl": "https://chromewebstore.google.com/detail/pop-a-loon/pahcoancbdjmffpmfbnjablnabomdocp",
   "githubUrl": "https://github.com/SimonStnn/pop-a-loon",

@@ -35,7 +35,7 @@ export default async function Home() {
             />
             <Image
               src="/images/hero.jpg"
-              alt="Hero Image"
+              alt="Portrait of Simon Stijnen, Software Engineering and AI student"
               width={400}
               height={400}
               className={cn(

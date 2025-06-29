@@ -1,12 +1,13 @@
 import { ProjectJsonLd, BreadcrumbJsonLd } from "@/components/structured-data";
 import { siteConfig } from "@/lib/config";
+import type { ProjectImage } from "@/lib/projects";
 
 interface ProjectStructuredDataProps {
   title: string;
   description: string;
   slug: string;
   technologies: string[];
-  images?: string[];
+  images?: ProjectImage[];
 }
 
 export default function ProjectStructuredData({
@@ -17,8 +18,13 @@ export default function ProjectStructuredData({
   images,
 }: ProjectStructuredDataProps) {
   const domain = siteConfig.url;
-  const imagePath =
-    images && images.length > 0 ? `${domain}${images[0]}` : `${domain}/images/projects/${slug}.jpg`;
+  const firstImage = images && images.length > 0 ? images[0] : null;
+  const imageSrc = firstImage
+    ? typeof firstImage === "string"
+      ? firstImage
+      : firstImage.src
+    : `/images/projects/${slug}.jpg`;
+  const imagePath = `${domain}${imageSrc}`;
 
   return (
     <>

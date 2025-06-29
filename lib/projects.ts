@@ -1,13 +1,18 @@
 import fs from "fs";
 import path from "path";
 
+export interface ProjectImage {
+  src: string;
+  alt: string;
+}
+
 export interface Project {
   slug: string;
   title: string;
   shortDescription: string;
   description: string;
   technologies: string[];
-  images: string[];
+  images: ProjectImage[];
   demoUrl?: string;
   githubUrl?: string;
   featured: boolean;

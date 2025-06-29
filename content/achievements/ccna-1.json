@@ -3,6 +3,9 @@
   "issuer": "Cisco Networking Academy",
   "date": "2024",
   "type": "certification",
-  "image": "/images/logos/cisco-networking-academy.webp",
+  "image": {
+    "src": "/images/logos/cisco-networking-academy.webp",
+    "alt": "Cisco Networking Academy logo - official certification provider emblem"
+  },
   "order": 59
 }

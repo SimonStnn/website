@@ -4,10 +4,22 @@
   "description": "PaleoNet is a project that utilizes a convolutional neural network (CNN) to classify images of dinosaurs. The model is trained on a dataset of dinosaur images, enabling it to recognize and categorize different species based on their visual features. This project combines computer vision techniques with deep learning to achieve high accuracy in image classification tasks.",
   "technologies": ["AI", "CNN", "TensorFlow", "Keras", "Python", "NumPy", "Pandas"],
   "images": [
-    "/images/projects/paleonet/preview.jpg",
-    "/images/projects/paleonet/quick-demo.webp",
-    "/images/projects/paleonet/training.webp",
-    "/images/projects/paleonet/performance.webp"
+    {
+      "src": "/images/projects/paleonet/preview.jpg",
+      "alt": "PaleoNet application interface showing dinosaur image classification results"
+    },
+    {
+      "src": "/images/projects/paleonet/quick-demo.webp",
+      "alt": "Demo of PaleoNet classifying a dinosaur image with CNN model predictions"
+    },
+    {
+      "src": "/images/projects/paleonet/training.webp",
+      "alt": "Training progress visualization showing model accuracy and loss curves over epochs"
+    },
+    {
+      "src": "/images/projects/paleonet/performance.webp",
+      "alt": "Model performance metrics including accuracy, precision, recall, and confusion matrix"
+    }
   ],
   "demoUrl": "https://paleonet.streamlit.app/",
   "githubUrl": "https://github.com/SimonStnn/PaleoNet"

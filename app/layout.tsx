@@ -76,8 +76,17 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} selection:bg-primary/80 selection:text-accent flex min-h-screen flex-col antialiased`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <a
+            // Skip to main content link for screen readers
+            href="#main-content"
+            className="focus:bg-primary focus:text-primary-foreground focus:ring-accent sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:rounded-md focus:px-8 focus:py-2 focus:shadow-lg"
+          >
+            Skip to main content
+          </a>
           <Header className="sticky top-0 z-40" />
-          <main className="flex-grow">{children}</main>
+          <main id="main-content" className="flex-grow">
+            {children}
+          </main>
           <Footer />
           <Analytics />
         </ThemeProvider>
