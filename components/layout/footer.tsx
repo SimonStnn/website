@@ -13,73 +13,141 @@ interface FooterProps {
 
 export function Footer({ className }: FooterProps) {
   return (
-    <footer className={cn("bg-background w-full border-t p-6", className)}>
-      <div className="container mx-auto">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
-          {/* Brand and Description */}
-          <div className="md:col-span-3">
-            <Link href="/" className="text-xl font-bold">
-              {siteConfig.name}
-            </Link>
-            <p className="text-muted-foreground mt-2">
-              Web Developer specializing in creating beautiful, functional, and responsive websites.
-            </p>
-          </div>
-
-          {/* Social Links */}
-          <div>
-            <h3 className="mb-3 font-semibold">Connect</h3>
-            <ul className="space-y-2">
-              <li>
-                <Button variant="link" className="[>svg]:px-0 h-auto !px-0" asChild>
-                  <SocialLink
-                    href={siteConfig.social.linkedin}
-                    ariaLabel="LinkedIn"
-                    label="LinkedIn"
-                    icon={LinkedInIcon}
-                  />
-                </Button>
-              </li>
-              <li>
-                <Button variant="link" className="[>svg]:px-0 h-auto !px-0" asChild>
-                  <SocialLink
-                    href={siteConfig.social.github}
-                    ariaLabel="GitHub"
-                    label="GitHub"
-                    icon={GitHubIcon}
-                  />
-                </Button>
-              </li>
-              <li>
-                <Button variant="link" className="[>svg]:px-0 h-auto !px-0" asChild>
-                  <SocialLink
-                    href={`mailto:${siteConfig.author.email}`}
-                    ariaLabel="Email"
-                    label="Email"
-                    icon={MailIcon}
-                  />
-                </Button>
-              </li>
-              <li>
-                <Button variant="link" className="[>svg]:px-0 h-auto !px-0" asChild>
-                  <SocialLink
-                    href="/download/resume.pdf"
-                    ariaLabel="Download Resume"
-                    label="Resume"
-                    icon={FileDownloadIcon}
-                  />
-                </Button>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="text-muted-foreground mt-8 border-t pt-6 text-center text-sm">
-          <p>
-            &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+    <footer
+      className={cn("bg-primary/70 dark:bg-primary/30 text-primary-foreground w-full", className)}
+    >
+      <div className="container mx-auto grid max-w-6xl grid-cols-1 gap-8 px-8 py-12 md:grid-cols-5">
+        {/* Name and Description */}
+        <div className="flex flex-col gap-3 md:col-span-3">
+          <Link href="/" className="text-xl font-bold">
+            {siteConfig.name}
+          </Link>
+          <p className="text-primary-foreground/80">
+            Software Engineering & AI student building scalable software solutions.
+          </p>
+          <p className="text-primary-foreground/70 text-sm">
+            Currently studying at VIVES University of Applied Sciences, focusing on AI applications
+            and modern software development practices.
           </p>
         </div>
+
+        {/* Quick Links */}
+        <div className="hidden md:block">
+          <h3 className="mb-3 font-semibold">Navigate</h3>
+          <ul className="space-y-1 text-sm">
+            <li>
+              <Button variant="link" asChild>
+                <Link
+                  href="/#about"
+                  className="text-primary-foreground/80 hover:text-primary-foreground w-full justify-start !p-0 transition-colors"
+                >
+                  About
+                </Link>
+              </Button>
+            </li>
+            <li>
+              <Button variant="link" asChild>
+                <Link
+                  href="/#projects"
+                  className="text-primary-foreground/80 hover:text-primary-foreground w-full justify-start !p-0 transition-colors"
+                >
+                  Projects
+                </Link>
+              </Button>
+            </li>
+            <li>
+              <Button variant="link" asChild>
+                <Link
+                  href="/#achievements"
+                  className="text-primary-foreground/80 hover:text-primary-foreground w-full justify-start !p-0 transition-colors"
+                >
+                  Achievements
+                </Link>
+              </Button>
+            </li>
+            <li>
+              <Button variant="link" asChild>
+                <Link
+                  href="/sitemap.xml"
+                  className="text-primary-foreground/80 hover:text-primary-foreground w-full justify-start !p-0 transition-colors"
+                  target="_blank"
+                >
+                  Sitemap
+                </Link>
+              </Button>
+            </li>
+          </ul>
+        </div>
+
+        {/* Contact Links */}
+        <div>
+          <h3 id="contact" className="mb-3 font-semibold">
+            Connect
+          </h3>
+          <ul className="space-y-1">
+            <li>
+              <Button
+                variant="link"
+                className="[>svg]:px-0 text-primary-foreground/80 hover:text-primary-foreground h-auto w-full justify-start !px-0"
+                asChild
+              >
+                <SocialLink
+                  href={siteConfig.social.linkedin}
+                  ariaLabel="LinkedIn"
+                  label="LinkedIn"
+                  icon={LinkedInIcon}
+                />
+              </Button>
+            </li>
+            <li>
+              <Button
+                variant="link"
+                className="[>svg]:px-0 text-primary-foreground/80 hover:text-primary-foreground h-auto w-full justify-start !px-0"
+                asChild
+              >
+                <SocialLink
+                  href={siteConfig.social.github}
+                  ariaLabel="GitHub"
+                  label="GitHub"
+                  icon={GitHubIcon}
+                />
+              </Button>
+            </li>
+            <li>
+              <Button
+                variant="link"
+                className="[>svg]:px-0 text-primary-foreground/80 hover:text-primary-foreground h-auto w-full justify-start !px-0"
+                asChild
+              >
+                <SocialLink
+                  href={`mailto:${siteConfig.author.email}`}
+                  ariaLabel="Email"
+                  label="Email"
+                  icon={MailIcon}
+                />
+              </Button>
+            </li>
+            <li>
+              <Button
+                variant="link"
+                className="[>svg]:px-0 text-primary-foreground/80 hover:text-primary-foreground h-auto w-full justify-start !px-0"
+                asChild
+              >
+                <SocialLink
+                  href="/download/resume.pdf"
+                  ariaLabel="Download Resume"
+                  label="Resume"
+                  icon={FileDownloadIcon}
+                />
+              </Button>
+            </li>
+          </ul>
+        </div>
       </div>
+      <hr className="border-accent" />
+      <p className="text-primary-foreground/80 mx-auto py-6 text-center text-sm md:text-base">
+        &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+      </p>
     </footer>
   );
 }
