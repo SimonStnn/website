@@ -17,6 +17,7 @@ export function Footer({ className }: FooterProps) {
     <footer
       className={cn("bg-primary/70 dark:bg-primary/30 text-primary-foreground w-full", className)}
     >
+      <Separator className="from-accent via-muted to-primary bg-gradient-to-r" />
       <div className="container mx-auto grid max-w-6xl grid-cols-1 gap-8 px-8 py-12 md:grid-cols-5">
         {/* Name and Description */}
         <div className="flex flex-col gap-3 md:col-span-3">

@@ -10,7 +10,14 @@ import {
   NavigationMenuLink,
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+  SheetClose,
+} from "@/components/ui/sheet";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Menu } from "lucide-react";
 import { siteConfig } from "@/lib/config";
@@ -23,6 +30,7 @@ const navigationItems = [
   { href: "/#home", label: "Home" },
   { href: "/#about", label: "About" },
   { href: "/#experience", label: "Experience" },
+  { href: "/#skills", label: "Skills" },
   { href: "/#projects", label: "Projects" },
   { href: "/#achievements", label: "Achievements" },
   { href: "/#contact", label: "Contact" },
@@ -65,7 +73,7 @@ export function Header({ className }: HeaderProps) {
         <Sheet>
           <SheetTrigger asChild>
             <Button variant="ghost" size="icon" className="md:hidden" aria-label="Toggle menu">
-              <Menu className="h-5 w-5" />
+              <Menu className="size-5" />
             </Button>
           </SheetTrigger>
           <SheetContent side="right">
@@ -75,11 +83,13 @@ export function Header({ className }: HeaderProps) {
             <hr />
             <nav className="flex flex-col">
               {navigationItems.map((item) => (
-                <Button key={item.href} variant="link" asChild>
-                  <Link href={item.href} className="justify-start">
-                    {item.label}
-                  </Link>
-                </Button>
+                <SheetClose key={item.href} asChild>
+                  <Button variant="link" className="justify-start" size="lg" asChild>
+                    <Link href={item.href} className="justify-start">
+                      {item.label}
+                    </Link>
+                  </Button>
+                </SheetClose>
               ))}
             </nav>
           </SheetContent>

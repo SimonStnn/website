@@ -12,11 +12,16 @@ import { cn } from "@/lib/utils";
 import SocialLink from "@/components/social-link";
 import { Mail, SquareArrowOutUpRight } from "lucide-react";
 import { GitHubIcon, LinkedInIcon } from "@/components/icons";
+import { SkillsDataTable } from "@/components/skills-data-table";
 import { siteConfig } from "@/lib/config";
+import { getSkills } from "@/lib/skills";
+import { Separator } from "@/components/ui/separator";
 
 export default async function Home() {
   const projects = await getProjects();
   const achievements = await getAchievements();
+  const skills = await getSkills();
+
   return (
     <div className="flex min-h-screen flex-col">
       {/* Hero Section */}
@@ -178,6 +183,20 @@ export default async function Home() {
               <ProjectCard key={project.slug} project={project} />
             ))}
           </div>
+        </div>
+      </section>
+
+      <Separator />
+
+      {/* Skills Section */}
+      <section id="skills" className="scroll-mt-16 px-4 py-16 md:px-6">
+        <div className="container mx-auto max-w-2xl">
+          <h2 className="mb-8 text-center text-3xl font-bold">Technical Skills</h2>
+          <p className="text-muted-foreground mx-auto mb-12 max-w-2xl text-center text-lg">
+            Here&apos;s an overview of my technical skills extracted from my project portfolio.
+            Click on the dropdown to see which projects showcase each skill.
+          </p>
+          <SkillsDataTable data={skills} />
         </div>
       </section>
 
