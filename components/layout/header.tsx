@@ -30,8 +30,8 @@ const navigationItems = [
   { href: "/#home", label: "Home" },
   { href: "/#about", label: "About" },
   { href: "/#experience", label: "Experience" },
-  { href: "/#skills", label: "Skills" },
   { href: "/#projects", label: "Projects" },
+  { href: "/#skills", label: "Skills" },
   { href: "/#achievements", label: "Achievements" },
   { href: "/#contact", label: "Contact" },
 ];

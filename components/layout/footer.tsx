@@ -7,7 +7,7 @@ import { siteConfig } from "@/lib/config";
 import { FileDownloadIcon, GitHubIcon, LinkedInIcon } from "@/components/icons";
 import { Mail as MailIcon } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
-
+import { EmailCopyButton } from "@/components/email-copy-button";
 interface FooterProps {
   className?: string;
 }
@@ -126,10 +126,10 @@ export function Footer({ className }: FooterProps) {
                 />
               </Button>
             </li>
-            <li>
+            <li className="flex items-center">
               <Button
                 variant="link"
-                className="[>svg]:px-0 text-primary-foreground/80 hover:text-primary-foreground h-auto w-full justify-start !px-0"
+                className="[>svg]:px-0 text-primary-foreground/80 hover:text-primary-foreground h-auto grow justify-start !px-0"
                 asChild
               >
                 <SocialLink
@@ -139,6 +139,7 @@ export function Footer({ className }: FooterProps) {
                   icon={MailIcon}
                 />
               </Button>
+              <EmailCopyButton className="text-primary-foreground/80 hover:text-primary-foreground hover:bg-transparent dark:hover:bg-transparent" />
             </li>
             <li>
               <Button
