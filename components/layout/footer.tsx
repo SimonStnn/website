@@ -139,7 +139,7 @@ export function Footer({ className }: FooterProps) {
                   icon={MailIcon}
                 />
               </Button>
-              <EmailCopyButton className="text-primary-foreground/80 hover:text-primary-foreground hover:bg-transparent dark:hover:bg-transparent" />
+              <EmailCopyButton />
             </li>
             <li>
               <Button

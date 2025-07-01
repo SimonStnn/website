@@ -57,9 +57,14 @@ export function Header({ className }: HeaderProps) {
           {navigationItems.map((item) => (
             <NavigationMenuItem key={item.href}>
               <NavigationMenuLink asChild>
-                <Link href={item.href} className="text-lg font-bold capitalize">
-                  {item.label}
-                </Link>
+                <Button variant="link" asChild>
+                  <Link
+                    href={item.href}
+                    className="text-primary-foreground/80 hover:text-primary-foreground text-lg font-bold capitalize"
+                  >
+                    {item.label}
+                  </Link>
+                </Button>
               </NavigationMenuLink>
             </NavigationMenuItem>
           ))}

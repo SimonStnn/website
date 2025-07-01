@@ -28,7 +28,7 @@ const buttonVariants = cva(
         ),
         outline: cn(
           // backgroundGradient,
-          "border bg-background text-foreground shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/20"
+          "border bg-background text-foreground shadow-xs hover:bg-accent/30 hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/20"
           // "active:before:bg-gradient-to-tl active:before:from-muted/90 active:before:to-primary/90"
         ),
         secondary: cn(
@@ -37,7 +37,7 @@ const buttonVariants = cva(
           "active:before:bg-gradient-to-br active:before:from-popover/50 active:before:to-popover/95",
           "text-foreground shadow-xs "
         ),
-        ghost: cn("hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50"),
+        ghost: cn("text-primary-foreground/80 hover:text-primary-foreground"),
         link: cn("text-primary underline-offset-4 hover:underline"),
       },
       size: {
