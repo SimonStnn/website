@@ -229,6 +229,21 @@ export default async function Home() {
               In 2023, Rotary International recognized me as the top graduating student in secondary
               school; a recognition of my dedication, curiosity, and results.
             </p>
+            <p className="mb-4">
+              When I&apos;m not coding, you&apos;ll find me on the ice. I&apos;ve been playing
+              hockey for {new Date().getFullYear() - 2020} years with{" "}
+              <Button variant="link" className="h-min p-0" asChild>
+                <Link
+                  href="https://www.instagram.com/brugschebeiren/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Brugsche Beiren
+                </Link>
+              </Button>
+              , and there&apos;s something about the fast pace and split-second decisions that keeps
+              me coming back. Plus, debugging code after a good game always feels easier somehow.
+            </p>
           </div>
         </div>
       </section>
