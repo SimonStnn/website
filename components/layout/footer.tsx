@@ -97,11 +97,11 @@ export function Footer({ className }: FooterProps) {
           <h3 id="contact" className="mb-3 font-semibold">
             Connect
           </h3>
-          <ul className="space-y-1">
+          <ul>
             <li>
               <Button
                 variant="link"
-                className="[>svg]:px-0 text-primary-foreground/80 hover:text-primary-foreground h-auto w-full justify-start !px-0"
+                className="text-primary-foreground/80 hover:text-primary-foreground w-full justify-start !px-0"
                 asChild
               >
                 <SocialLink
@@ -115,13 +115,13 @@ export function Footer({ className }: FooterProps) {
             <li>
               <Button
                 variant="link"
-                className="[>svg]:px-0 text-primary-foreground/80 hover:text-primary-foreground h-auto w-full justify-start !px-0"
+                className="text-primary-foreground/80 hover:text-primary-foreground w-full justify-start !px-0"
                 asChild
               >
                 <SocialLink
                   href={siteConfig.social.github}
-                  ariaLabel="GitHub"
-                  label="GitHub"
+                  ariaLabel="Github"
+                  label="Github"
                   icon={GitHubIcon}
                 />
               </Button>
@@ -129,7 +129,7 @@ export function Footer({ className }: FooterProps) {
             <li className="flex items-center">
               <Button
                 variant="link"
-                className="[>svg]:px-0 text-primary-foreground/80 hover:text-primary-foreground h-auto grow justify-start !px-0"
+                className="text-primary-foreground/80 hover:text-primary-foreground grow justify-start !px-0"
                 asChild
               >
                 <SocialLink
@@ -144,7 +144,7 @@ export function Footer({ className }: FooterProps) {
             <li>
               <Button
                 variant="link"
-                className="[>svg]:px-0 text-primary-foreground/80 hover:text-primary-foreground h-auto w-full justify-start !px-0"
+                className="text-primary-foreground/80 hover:text-primary-foreground w-full justify-start !px-0"
                 asChild
               >
                 <SocialLink

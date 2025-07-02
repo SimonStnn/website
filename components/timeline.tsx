@@ -10,7 +10,6 @@ interface TimelineItemProps {
 }
 
 export function TimelineItem({ year, title, company, description, logo }: TimelineItemProps) {
-  console.log(title, logo);
   return (
     <div className="relative ml-5 pl-10 last:pb-5">
       {/* Vertical line */}

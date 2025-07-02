@@ -231,7 +231,7 @@ export default async function Home() {
             </p>
             <p className="mb-4">
               When I&apos;m not coding, you&apos;ll find me on the ice. I&apos;ve been playing
-              hockey for {new Date().getFullYear() - 2020} years with{" "}
+              hockey for {new Date().getFullYear() - 2019} years with{" "}
               <Button variant="link" className="h-min p-0" asChild>
                 <Link
                   href="https://www.instagram.com/brugschebeiren/"
