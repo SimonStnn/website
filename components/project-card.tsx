@@ -12,12 +12,16 @@ import {
 import { cn } from "@/lib/utils";
 import { Project } from "@/lib/projects";
 import BadgeOverflow from "@/components/badge-overflow";
+import { isVideoFile } from "@/lib/utils";
 
 interface ProjectCardProps {
   project: Project;
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
+  // Get first image that isn't a video
+  const heroimg = project.images.filter((p) => !isVideoFile(p.src))[0];
+
   return (
     <Card className="group overflow-hidden pt-0">
       <CardHeader
@@ -30,8 +34,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       >
         {project.images && project.images.length > 0 ? (
           <Image
-            src={project.images[0].src}
-            alt={project.images[0].alt}
+            src={heroimg.src}
+            alt={heroimg.alt}
             width={400}
             height={225}
             className="bg-muted/60 h-full w-full rounded-t-md object-cover transition-all group-hover:rounded-t-lg"
@@ -43,7 +47,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         )}
       </CardHeader>
       <CardContent className="grow">
-        <CardTitle className="mb-1">{project.title}</CardTitle>
+        <CardTitle className="mb-1 text-lg">{project.title}</CardTitle>
         <CardDescription title={project.shortDescription}>
           {project.shortDescription}
         </CardDescription>

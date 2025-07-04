@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/carousel";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, SquareArrowOutUpRight } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, isVideoFile } from "@/lib/utils";
 
 // Generate static params for all projects at build time
 export async function generateStaticParams() {
