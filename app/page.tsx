@@ -120,6 +120,22 @@ export default async function Home() {
                           "Developed a sensor monitoring system using real-time data analysis and MLX90640 heat sensors. Integrated the solution into an existing application, enabling continuous thermal monitoring for anomaly detection in a production environment.",
                       },
                       {
+                        year: "Aug. 2023 - Feb. 2024",
+                        title: "Software Engineer",
+                        company: "Stijnen Solutions",
+                        logo: "/images/logos/logo-stijnen.webp",
+                        description:
+                          "Designed and built a REST API in Python that translates the internal protocol of a Homecenter module into structured JSON data. Implemented an integration with Home Assistant.",
+                      },
+                      {
+                        year: "Dec. 2021 - Sep. 2022",
+                        title: "Software Developer",
+                        company: "Stijnen Solutions",
+                        logo: "/images/logos/logo-stijnen.webp",
+                        description:
+                          "Developed and tested a Python program that exposes the data from a Homecenter module to a Prometheus server. Connecting them to graphs in Grafana, allowing for real-time monitoring of home energy consumption.",
+                      },
+                      {
                         year: "Apr. 2022",
                         title: "Intern Test Engineer",
                         company: "Advionics NV",

@@ -1,9 +1,9 @@
-import { getProjects } from "./projects";
+import { getProjects, Project } from "@/lib/projects";
 
 export interface Skill {
   id: string;
   name: string;
-  projects: string[];
+  projects: Project[];
 }
 
 function generateSkillId(skillName: string): string {
@@ -28,15 +28,15 @@ export async function getSkills(): Promise<Skill[]> {
       if (skillsMap.has(skillId)) {
         // Add project to existing skill
         const existingSkill = skillsMap.get(skillId)!;
-        if (!existingSkill.projects.includes(project.title)) {
-          existingSkill.projects.push(project.title);
+        if (!existingSkill.projects.includes(project)) {
+          existingSkill.projects.push(project);
         }
       } else {
         // Create new skill
         skillsMap.set(skillId, {
           id: skillId,
           name: tech,
-          projects: [project.title],
+          projects: [project],
         });
       }
     });

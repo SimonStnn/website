@@ -50,10 +50,6 @@ function getImageProperties(image: ProjectImage | string, fallbackAlt: string) {
   };
 }
 
-function isVideoFile(src: string): boolean {
-  return src.endsWith(".mp4") || src.endsWith(".webm") || src.endsWith(".mov");
-}
-
 function renderMediaContent(
   src: string,
   alt: string,
@@ -100,7 +96,7 @@ function ActionButtons({ demoUrl, githubUrl }: { demoUrl?: string; githubUrl?: s
   return (
     <div className="mt-8 flex gap-4">
       {demoUrl && (
-        <Button asChild>
+        <Button size="lg" asChild>
           <Link href={demoUrl} target="_blank" rel="noopener noreferrer">
             Live Demo
             <SquareArrowOutUpRight />
@@ -108,7 +104,7 @@ function ActionButtons({ demoUrl, githubUrl }: { demoUrl?: string; githubUrl?: s
         </Button>
       )}
       {githubUrl && (
-        <Button variant="secondary" asChild>
+        <Button size="lg" variant="secondary" asChild>
           <Link href={githubUrl} target="_blank" rel="noopener noreferrer">
             View Code
             <SquareArrowOutUpRight />
@@ -130,7 +126,7 @@ function ProjectContent({
     <div className="prose max-w-none">
       <h2 className="mt-8 mb-4 text-2xl font-bold">Project Overview</h2>
       {description.split("\n").map((line, index) => (
-        <p key={index} className="mb-4">
+        <p key={index} className="mb-4 text-justify">
           {line}
         </p>
       ))}

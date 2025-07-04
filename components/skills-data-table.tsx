@@ -36,6 +36,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Skill } from "@/lib/skills";
 import Link from "next/link";
+import { Project } from "@/lib/projects";
 
 export const columns: ColumnDef<Skill>[] = [
   {
@@ -69,7 +70,7 @@ export const columns: ColumnDef<Skill>[] = [
       );
     },
     cell: ({ row }) => {
-      const projects = row.getValue("projects") as string[];
+      const projects = row.getValue("projects") as Project[];
 
       return (
         <Badge variant="outline">
@@ -78,8 +79,8 @@ export const columns: ColumnDef<Skill>[] = [
       );
     },
     sortingFn: (rowA, rowB) => {
-      const projectsA = rowA.getValue("projects") as string[];
-      const projectsB = rowB.getValue("projects") as string[];
+      const projectsA = rowA.getValue("projects") as Project[];
+      const projectsB = rowB.getValue("projects") as Project[];
       return projectsA.length - projectsB.length;
     },
   },
@@ -87,7 +88,7 @@ export const columns: ColumnDef<Skill>[] = [
     id: "actions",
     enableHiding: false,
     cell: ({ row }) => {
-      const projects = row.getValue("projects") as string[];
+      const projects = row.getValue("projects") as Project[];
 
       return (
         <DropdownMenu>
@@ -100,11 +101,13 @@ export const columns: ColumnDef<Skill>[] = [
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>View Projects</DropdownMenuLabel>
             {projects.map((project) => {
+              console.log(project);
+              return <>banan</>;
               return (
-                <DropdownMenuItem key={project} asChild>
-                  <Link href={`/projects/${project}`} target="_blank">
+                <DropdownMenuItem key={project.slug} asChild>
+                  <Link href={`/projects/${project.slug}`} target="_blank">
                     <ExternalLink className="size-4" />
-                    {project}
+                    {project.title}
                   </Link>
                 </DropdownMenuItem>
               );
@@ -163,7 +166,7 @@ export function SkillsDataTable({ data }: DataTableProps) {
         />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="ml-auto">
+            <Button size="sm" variant="outline" className="ml-auto">
               Columns <ChevronDown className="ml-2 h-4 w-4" />
             </Button>
           </DropdownMenuTrigger>
