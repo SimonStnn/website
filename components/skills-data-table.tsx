@@ -46,7 +46,7 @@ export const columns: ColumnDef<Skill>[] = [
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-          className="!px-0 hover:bg-transparent"
+          className="text-card-foreground !px-0"
         >
           Skill
           <ArrowUpDown className="size-4" />
@@ -62,7 +62,7 @@ export const columns: ColumnDef<Skill>[] = [
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-          className="!px-0 hover:bg-transparent"
+          className="text-card-foreground !px-0"
         >
           Projects
           <ArrowUpDown className="size-4" />
@@ -100,11 +100,9 @@ export const columns: ColumnDef<Skill>[] = [
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>View Projects</DropdownMenuLabel>
-            {projects.map((project) => {
-              console.log(project);
-              return <>banan</>;
+            {projects.map((project, i) => {
               return (
-                <DropdownMenuItem key={project.slug} asChild>
+                <DropdownMenuItem key={project.slug + i} asChild>
                   <Link href={`/projects/${project.slug}`} target="_blank">
                     <ExternalLink className="size-4" />
                     {project.title}
@@ -190,10 +188,10 @@ export function SkillsDataTable({ data }: DataTableProps) {
         </DropdownMenu>
       </div>
       <div className="rounded-md border">
-        <Table>
+        <Table className="bg-card text-card-foreground rounded-md">
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id}>
+              <TableRow key={headerGroup.id} className="hover:bg-inherit">
                 {headerGroup.headers.map((header) => {
                   return (
                     <TableHead key={header.id} className="w-full">
@@ -209,7 +207,7 @@ export function SkillsDataTable({ data }: DataTableProps) {
           <TableBody>
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
-                <TableRow key={row.id}>
+                <TableRow key={row.id} className="hover:bg-inherit">
                   {row.getVisibleCells().map((cell) => (
                     <TableCell
                       key={cell.id}

@@ -28,7 +28,12 @@ export function ThemeToggle() {
         <Tooltip>
           <TooltipTrigger asChild>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="icon" aria-label="Toggle theme" className="relative">
+              <Button
+                variant="ghost"
+                size="icon"
+                aria-label="Toggle theme"
+                className="text-primary-foreground/80 hover:text-primary-foreground"
+              >
                 <Monitor className="h-5 w-5" />
                 <span className="sr-only">Toggle theme</span>
               </Button>
@@ -85,7 +90,12 @@ export function ThemeToggle() {
       <Tooltip>
         <TooltipTrigger asChild>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" size="icon" aria-label="Toggle theme" className="relative">
+            <Button
+              variant="ghost"
+              size="icon"
+              aria-label="Toggle theme"
+              className="text-primary-foreground/80 hover:text-primary-foreground"
+            >
               {getCurrentIcon()}
               <span className="sr-only">Toggle theme</span>
             </Button>

@@ -16,6 +16,7 @@ export interface Project {
   demoUrl?: string;
   githubUrl?: string;
   featured: boolean;
+  order?: number;
 }
 
 // Path to the project files
@@ -48,14 +49,38 @@ export async function getProjects(): Promise<Project[]> {
     };
   });
 
-  // Sort projects by featured status (featured first) and then by title
+  // Sort projects by order (if specified) and featured status
   return projects.sort((a, b) => {
-    // Featured projects come first
+    // If both have order, sort by order
+    if (a.order !== undefined && b.order !== undefined) {
+      return a.order - b.order;
+    }
+
+    // If only one has order, it comes first
+    if (a.order !== undefined && b.order === undefined) return -1;
+    if (a.order === undefined && b.order !== undefined) return 1;
+
+    // If neither has order, sort by featured status (featured first)
     if (a.featured && !b.featured) return -1;
     if (!a.featured && b.featured) return 1;
 
     // If both have same featured status, sort alphabetically
     return a.title.localeCompare(b.title);
+  });
+}
+
+/**
+ * Gets featured projects for the home page (projects with order 1-6 or featured=true and no order)
+ */
+export async function getFeaturedProjects(): Promise<Project[]> {
+  const projects = await getProjects();
+  return projects.filter((project) => {
+    // Include projects with order 1-6
+    if (project.order !== undefined) {
+      return project.order >= 1 && project.order <= 6;
+    }
+    // Include featured projects without order (for backward compatibility)
+    return project.featured;
   });
 }
 

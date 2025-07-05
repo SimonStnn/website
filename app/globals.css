@@ -50,7 +50,7 @@
   --foreground: #09090b;
   --card: #ffffff;
   --card-foreground: var(--foreground);
-  --popover: #eeeeee;
+  --popover: #f8f8f8;
   --popover-foreground: var(--foreground);
   --primary: oklch(0.48 0.0813 198.19);
   --primary-foreground: #ffffff;
@@ -62,7 +62,7 @@
   --accent-foreground: #28282b;
   --destructive: #4464ad;
   --border: oklch(0.92 0.004 286.32);
-  --input: var(--accent);
+  --input: var(--primary);
   --ring: #4464ad;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);

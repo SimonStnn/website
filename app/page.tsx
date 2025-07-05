@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { getProjects } from "@/lib/projects";
+import { getFeaturedProjects } from "@/lib/projects";
 import { getAchievements } from "@/lib/achievements";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -18,7 +18,7 @@ import { getSkills } from "@/lib/skills";
 import { Separator } from "@/components/ui/separator";
 
 export default async function Home() {
-  const projects = await getProjects();
+  const projects = await getFeaturedProjects();
   const achievements = await getAchievements();
   const skills = await getSkills();
 
@@ -189,7 +189,7 @@ export default async function Home() {
       {/* Featured Projects Section */}
       <section id="projects" className="scroll-mt-16 px-4 py-16 md:px-6">
         <div className="mx-auto max-w-6xl">
-          <h2 className="mb-8 text-center text-3xl font-bold">Projects</h2>
+          <h2 className="mb-8 text-center text-3xl font-bold">Featured Projects</h2>
           <p className="mx-auto mb-12 max-w-2xl text-center text-lg">
             Here are some of the projects I&apos;ve worked on. Each project showcases different
             skills and technologies.
@@ -198,6 +198,14 @@ export default async function Home() {
             {projects.map((project) => (
               <ProjectCard key={project.slug} project={project} />
             ))}
+          </div>
+          <div className="mt-12 text-center">
+            <Link href="/projects">
+              <Button variant="secondary" size="lg" className="w-full max-w-xl">
+                View All Projects
+                <SquareArrowOutUpRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -248,7 +256,7 @@ export default async function Home() {
             <p className="mb-4">
               When I&apos;m not coding, you&apos;ll find me on the ice. I&apos;ve been playing
               hockey for {new Date().getFullYear() - 2019} years with{" "}
-              <Button variant="link" className="h-min p-0" asChild>
+              <Button variant="link" className="h-min p-0 text-base" asChild>
                 <Link
                   href="https://www.instagram.com/brugschebeiren/"
                   target="_blank"

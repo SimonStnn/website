@@ -37,7 +37,7 @@ const buttonVariants = cva(
           "active:before:bg-gradient-to-br active:before:from-popover/50 active:before:to-popover/95",
           "text-foreground shadow-xs "
         ),
-        ghost: cn("text-primary-foreground/80 hover:text-primary-foreground"),
+        ghost: cn("bg-transparent text-foreground/80 hover:text-foreground"),
         link: cn("text-primary underline-offset-4 hover:underline"),
       },
       size: {

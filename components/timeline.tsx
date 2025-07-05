@@ -32,7 +32,7 @@ export function TimelineItem({ year, title, company, description, logo }: Timeli
           />
         </div>
       ) : (
-        <div className="bg-primary absolute top-[6px] left-[-3.5px] mt-5 h-2 w-2 rounded-full"></div>
+        <div className="bg-primary absolute top-12 left-[-3.5px] mt-5 h-2 w-2 rounded-full"></div>
       )}
 
       {/* Content */}

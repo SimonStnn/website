@@ -33,5 +33,7 @@
     }
   ],
   "demoUrl": null,
-  "githubUrl": "https://github.com/SimonStnn/Eindwerk"
+  "githubUrl": "https://github.com/SimonStnn/Eindwerk",
+  "featured": true,
+  "order": 1
 }
