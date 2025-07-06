@@ -68,7 +68,7 @@ function renderMediaContent(
 
   if (isVideo) {
     return (
-      <video src={src} controls muted loop className={videoClasses} preload={preload}>
+      <video src={src} controls muted loop autoPlay className={videoClasses} preload={preload}>
         Your browser does not support the video tag.
       </video>
     );
