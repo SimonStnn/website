@@ -10,7 +10,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Timeline from "@/components/timeline";
 import { cn } from "@/lib/utils";
 import SocialLink from "@/components/social-link";
-import { Mail, SquareArrowOutUpRight } from "lucide-react";
+import { Download, Mail, SquareArrowOutUpRight } from "lucide-react";
 import { GitHubIcon, LinkedInIcon } from "@/components/icons";
 import { SkillsDataTable } from "@/components/skills-data-table";
 import { siteConfig } from "@/lib/config";
@@ -90,7 +90,7 @@ export default async function Home() {
             <Button variant="secondary" size="lg" asChild className="hidden md:inline-flex">
               <Link href="/download/resume.pdf" target="_blank">
                 Resume
-                <SquareArrowOutUpRight />
+                <Download />
               </Link>
             </Button>
           </div>
@@ -118,6 +118,7 @@ export default async function Home() {
                         logo: "/images/logos/advionics-nv.webp",
                         description:
                           "Developed a sensor monitoring system using real-time data analysis and MLX90640 heat sensors. Integrated the solution into an existing application, enabling continuous thermal monitoring for anomaly detection in a production environment.",
+                        projectLink: "/projects/mlx90640",
                       },
                       {
                         year: "Aug. 2023 - Feb. 2024",

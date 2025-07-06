@@ -10,8 +10,7 @@
     "Pandas",
     "NumPy",
     "Librosa",
-    "Scikit-learn",
-    "Git"
+    "Scikit-learn"
   ],
   "images": [
     {

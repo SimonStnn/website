@@ -11,8 +11,7 @@
     "Vue",
     "MySQL",
     "Keycloak",
-    "Docker",
-    "Git"
+    "Docker"
   ],
   "images": [
     {

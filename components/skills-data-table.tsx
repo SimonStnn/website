@@ -92,8 +92,6 @@ export const columns: ColumnDef<Skill>[] = [
       const projects = row.getValue("projects") as Project[];
       const featuredProjects = projects.filter((project) => project.featured);
       const nonFeaturedProjects = projects.filter((project) => !project.featured);
-      console.log("Featured Projects:", featuredProjects);
-      console.log("Non-Featured Projects:", nonFeaturedProjects);
 
       return (
         <DropdownMenu>
