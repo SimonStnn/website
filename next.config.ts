@@ -7,7 +7,7 @@ import { siteConfig } from "./lib/config";
 const siteUrlDomain = new URL(siteConfig.url).hostname;
 
 // Common domains for images
-const commonDomains = ["github.githubassets.com"];
+const commonDomains = ["github.githubassets.com", "colorsplash.vercel.app"];
 const domains = ["localhost", siteUrlDomain, ...commonDomains];
 
 const nextConfig: NextConfig = {

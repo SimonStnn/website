@@ -1,0 +1,30 @@
+{
+  "title": "ChitChatz",
+  "shortDescription": "A websocket based messaging application with a focus on real-time communication.",
+  "description": "A high performance, real-time messaging application built with Node.js and WebSocket. ChitChatz allows users to set a name, join chat rooms, and send messages in real-time. The application uses JWT for authentication and stores user data in cookies for session management.\nThe frontend is built with TypeScript and JQuery, providing a responsive and interactive user interface.\nDocker is used for containerization, ensuring easy deployment and scalability.",
+  "technologies": ["WebSocket", "TypeScript", "Docker", "Node.js", "JWT", "JQuery", "Cookies"],
+  "images": [
+    {
+      "src": "/images/projects/chitchatz/demo-room.webp",
+      "alt": "ChitChatz chat interface showing real-time messaging between users"
+    },
+    {
+      "src": "/images/projects/chitchatz/enter-username.webp",
+      "alt": "Users that are not logged in get a username prompt to fill in a username. This is then store in the JWT token provided by the server."
+    },
+    {
+      "src": "/images/projects/chitchatz/user-not-in-room.webp",
+      "alt": "Once a user is logged in he gets to see the available rooms at the left of the screen. Together with the option to create a room for himself."
+    },
+    {
+      "src": "/images/projects/chitchatz/user-in-room.webp",
+      "alt": "Once a user has joined the room by clicking it, he can start chatting!"
+    },
+    {
+      "src": "/images/projects/chitchatz/debug-information.webp",
+      "alt": "Because this project was all about JWT tokens, a user can view his JWT token in this popup."
+    }
+  ],
+  "demoUrl": null,
+  "githubUrl": "https://github.com/SimonStnn/MLX90640"
+}

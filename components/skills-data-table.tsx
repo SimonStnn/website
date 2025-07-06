@@ -22,6 +22,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
@@ -89,6 +90,10 @@ export const columns: ColumnDef<Skill>[] = [
     enableHiding: false,
     cell: ({ row }) => {
       const projects = row.getValue("projects") as Project[];
+      const featuredProjects = projects.filter((project) => project.featured);
+      const nonFeaturedProjects = projects.filter((project) => !project.featured);
+      console.log("Featured Projects:", featuredProjects);
+      console.log("Non-Featured Projects:", nonFeaturedProjects);
 
       return (
         <DropdownMenu>
@@ -100,16 +105,46 @@ export const columns: ColumnDef<Skill>[] = [
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>View Projects</DropdownMenuLabel>
-            {projects.map((project, i) => {
-              return (
-                <DropdownMenuItem key={project.slug + i} asChild>
-                  <Link href={`/projects/${project.slug}`} target="_blank">
-                    <ExternalLink className="size-4" />
-                    {project.title}
-                  </Link>
-                </DropdownMenuItem>
-              );
-            })}
+            {/* Featured Projects */}
+            {featuredProjects.length > 0 && (
+              <>
+                {nonFeaturedProjects.length > 0 && (
+                  <DropdownMenuLabel className="text-muted-foreground text-xs font-medium">
+                    Featured Projects
+                  </DropdownMenuLabel>
+                )}
+                {featuredProjects.map((project, i) => (
+                  <DropdownMenuItem key={project.slug + i} asChild>
+                    <Link href={`/projects/${project.slug}`} target="_blank">
+                      <ExternalLink className="size-4" />
+                      {project.title}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </>
+            )}
+            {/* Separator */}
+            {featuredProjects.length > 0 && nonFeaturedProjects.length > 0 && (
+              <DropdownMenuSeparator />
+            )}
+            {/* Non-Featured Projects */}
+            {nonFeaturedProjects.length > 0 && (
+              <>
+                {featuredProjects.length > 0 && (
+                  <DropdownMenuLabel className="text-muted-foreground text-xs font-medium">
+                    Other Projects
+                  </DropdownMenuLabel>
+                )}
+                {nonFeaturedProjects.map((project, i) => (
+                  <DropdownMenuItem key={project.slug + i} asChild>
+                    <Link href={`/projects/${project.slug}`} target="_blank">
+                      <ExternalLink className="size-4" />
+                      {project.title}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </>
+            )}
           </DropdownMenuContent>
         </DropdownMenu>
       );

@@ -1,0 +1,9 @@
+{
+  "title": "MyBot",
+  "shortDescription": "My first big solo project. A discord bot.",
+  "description": "A discord bot built for a server. Included a bunch of commands with a dynamic help command to display information about each one of them.\n The bot also included various games such as dont-break-the-chain: A game where users have to keep repeating the same word in order to keep the 'chain' going. The bot keeps track of how long this chain is and when it is broken. Users also get points for doing this.",
+  "technologies": ["Node.js", "TypeScript", "Docker", "MongoDB"],
+  "images": [],
+  "demoUrl": null,
+  "githubUrl": "https://github.com/SimonStnn/MyBot"
+}

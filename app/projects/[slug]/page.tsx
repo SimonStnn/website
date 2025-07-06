@@ -171,74 +171,76 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   // Client components must be rendered as children in Server Components
   return (
     <>
-      <div className="container mx-auto max-w-4xl px-4 py-12 md:px-6">
-        <ProjectStructuredData
-          title={project.title}
-          description={project.description}
-          slug={project.slug}
-          technologies={project.technologies}
-          images={project.images}
-        />
-        <Button variant="link" className="mb-6 !px-0" asChild>
-          <Link href="/#projects" className="text-primary hover:underline">
-            <ArrowLeft />
-            Back to All Projects
-          </Link>
-        </Button>
-        <h1 className="mb-6 text-4xl font-bold">{project.title}</h1>
-        {project.images && project.images.length > 1 && (
-          <Carousel className="w-full overflow-hidden rounded-md" opts={{ loop: true }}>
-            <CarouselContent>
-              {project.images.map((image, index) => {
-                const { src, alt } = getImageProperties(
-                  image,
-                  `${project.title} screenshot ${index + 1}`
-                );
-                const isVideo = isVideoFile(src);
-
-                return (
-                  <CarouselItem key={index}>
-                    <GradientContainer>
-                      {renderMediaContent(
-                        src,
-                        alt,
-                        isVideo,
-                        index === 0,
-                        index === 0 ? "metadata" : "none"
-                      )}
-                    </GradientContainer>
-                    <ImageCaption alt={alt} />
-                  </CarouselItem>
-                );
-              })}
-            </CarouselContent>
-            <CarouselPrevious className="left-2" />
-            <CarouselNext className="right-2" />
-          </Carousel>
-        )}
-        {project.images && project.images.length === 1 && (
-          <>
-            <div className="aspect-video overflow-hidden rounded-lg">
-              <GradientContainer>
-                {(() => {
+      <section className="scroll-mt-16 px-4 py-16 md:px-6">
+        <div className="container mx-auto max-w-4xl">
+          <ProjectStructuredData
+            title={project.title}
+            description={project.description}
+            slug={project.slug}
+            technologies={project.technologies}
+            images={project.images}
+          />
+          <Button variant="link" className="mb-6 !px-0" asChild>
+            <Link href="/#projects" className="text-primary hover:underline">
+              <ArrowLeft />
+              Back to All Projects
+            </Link>
+          </Button>
+          <h1 className="mb-6 text-4xl font-bold">{project.title}</h1>
+          {project.images && project.images.length > 1 && (
+            <Carousel className="w-full overflow-hidden rounded-md" opts={{ loop: true }}>
+              <CarouselContent>
+                {project.images.map((image, index) => {
                   const { src, alt } = getImageProperties(
-                    project.images[0],
-                    `Screenshot of ${project.title}`
+                    image,
+                    `${project.title} screenshot ${index + 1}`
                   );
                   const isVideo = isVideoFile(src);
 
-                  return renderMediaContent(src, alt, isVideo, true, "metadata", true);
-                })()}
-              </GradientContainer>
-            </div>
-            <ImageCaption
-              alt={getImageProperties(project.images[0], `Screenshot of ${project.title}`).alt}
-            />
-          </>
-        )}
-        <ProjectContent description={project.description} technologies={project.technologies} />
-        <ActionButtons demoUrl={project.demoUrl} githubUrl={project.githubUrl} />
-      </div>
+                  return (
+                    <CarouselItem key={index}>
+                      <GradientContainer>
+                        {renderMediaContent(
+                          src,
+                          alt,
+                          isVideo,
+                          index === 0,
+                          index === 0 ? "metadata" : "none"
+                        )}
+                      </GradientContainer>
+                      <ImageCaption alt={alt} />
+                    </CarouselItem>
+                  );
+                })}
+              </CarouselContent>
+              <CarouselPrevious className="left-2" />
+              <CarouselNext className="right-2" />
+            </Carousel>
+          )}
+          {project.images && project.images.length === 1 && (
+            <>
+              <div className="aspect-video overflow-hidden rounded-lg">
+                <GradientContainer>
+                  {(() => {
+                    const { src, alt } = getImageProperties(
+                      project.images[0],
+                      `Screenshot of ${project.title}`
+                    );
+                    const isVideo = isVideoFile(src);
+
+                    return renderMediaContent(src, alt, isVideo, true, "metadata", true);
+                  })()}
+                </GradientContainer>
+              </div>
+              <ImageCaption
+                alt={getImageProperties(project.images[0], `Screenshot of ${project.title}`).alt}
+              />
+            </>
+          )}
+          <ProjectContent description={project.description} technologies={project.technologies} />
+          <ActionButtons demoUrl={project.demoUrl} githubUrl={project.githubUrl} />
+        </div>
+      </section>
       {/* Add related projects section */}
       <hr />
       <RelatedProjects

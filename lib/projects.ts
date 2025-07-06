@@ -42,6 +42,9 @@ export async function getProjects(): Promise<Project[]> {
     // Parse the JSON data
     const projectData = JSON.parse(fileContent);
 
+    if (!projectData.featured)
+      projectData.featured = projectData.order !== undefined && projectData.order !== null;
+
     // Return the project data with the slug
     return {
       slug,
