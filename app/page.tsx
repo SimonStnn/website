@@ -88,7 +88,7 @@ export default async function Home() {
               <a href="#contact">Contact Me</a>
             </Button>
             <Button variant="secondary" size="lg" asChild className="hidden md:inline-flex">
-              <Link href="/download/resume.pdf" target="_blank">
+              <Link href="/resume.pdf" target="_blank">
                 Resume
                 <Download />
               </Link>

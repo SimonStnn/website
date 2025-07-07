@@ -39,18 +39,6 @@ Key environment variables:
 
 For development, the `.env` file contains default values. No additional environment files are needed.
 
-## File Downloads
-
-The project includes a reusable file download system using dynamic routes:
-
-- Access files via: `/download/[filename]` (e.g., `/download/resume.pdf`)
-- Configure file mappings for user-friendly URLs and proper download names
-
-To add new downloadable files:
-
-1. Add the file to the `public` directory
-2. Configure it in the `FILE_MAPPINGS` object in `app/download/[filename]/route.ts`
-
 ## Code Formatting
 
 This project uses Prettier with Tailwind CSS class sorting. The configuration ensures consistent code style and automatically sorts Tailwind classes in a logical order.

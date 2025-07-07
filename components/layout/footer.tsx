@@ -148,7 +148,7 @@ export function Footer({ className }: FooterProps) {
                 asChild
               >
                 <SocialLink
-                  href="/download/resume.pdf"
+                  href="/resume.pdf"
                   ariaLabel="Download Resume"
                   label="Resume"
                   icon={FileDownloadIcon}
