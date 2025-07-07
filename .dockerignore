@@ -15,10 +15,6 @@ out
 *.md
 !README.md
 
-# Environment variables (except example)
-.env*
-!.env.example
-
 # Build files
 Dockerfile
 docker-compose.yml

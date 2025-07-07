@@ -26,6 +26,7 @@ export const siteConfig = {
 // Analytics configuration
 export const analyticsConfig = {
   gaId: process.env.NEXT_PUBLIC_GA_ID || "",
+  gtmId: process.env.NEXT_PUBLIC_GTM_ID || "",
 };
 
 // Application configuration

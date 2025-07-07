@@ -72,9 +72,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <head>
+        <Analytics />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} selection:bg-primary/80 selection:text-accent flex min-h-screen flex-col antialiased`}
       >
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-KH4ZNPL4"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <a
             // Skip to main content link for screen readers
@@ -88,7 +99,6 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
-          <Analytics />
         </ThemeProvider>
       </body>
     </html>
