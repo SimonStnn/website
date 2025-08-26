@@ -3,7 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
-import Analytics from "@/components/analytics";
+import Analytics from "@/components/meta/analytics";
+import { PersonJsonLd } from "@/components/meta/structured-data";
 import { ThemeProvider } from "next-themes";
 import { siteConfig } from "@/lib/config";
 
@@ -74,6 +75,13 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <Analytics />
+        <PersonJsonLd
+          name={siteConfig.author.name}
+          url={siteConfig.url}
+          sameAs={[siteConfig.social.linkedin, siteConfig.social.github]}
+          jobTitle="Software Engineering & AI student"
+          homeCountry="Belgium"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} selection:bg-primary/80 selection:text-accent flex min-h-screen flex-col antialiased`}

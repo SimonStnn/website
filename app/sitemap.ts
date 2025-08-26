@@ -71,7 +71,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Add download routes (if they exist)
   const downloadRoutes: MetadataRoute.Sitemap = [
     {
-      url: `${baseUrl}/resume.pdf`,
+      url: `${baseUrl}/download/resume.pdf`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.6,

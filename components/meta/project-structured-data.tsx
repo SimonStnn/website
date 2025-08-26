@@ -1,4 +1,4 @@
-import { ProjectJsonLd, BreadcrumbJsonLd } from "@/components/structured-data";
+import { ProjectJsonLd, BreadcrumbJsonLd } from "@/components/meta/structured-data";
 import { siteConfig } from "@/lib/config";
 import type { ProjectImage } from "@/lib/projects";
 

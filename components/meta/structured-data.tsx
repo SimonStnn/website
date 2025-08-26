@@ -78,3 +78,36 @@ export function BreadcrumbJsonLd({ items }: BreadcrumbJsonLdProps) {
 
   return <JsonLd data={data} />;
 }
+
+interface PersonJsonLdProps {
+  name: string;
+  url: string;
+  sameAs: string[];
+  jobTitle?: string;
+  homeCountry?: string; // e.g., "Belgium"
+}
+
+export function PersonJsonLd({ name, url, sameAs, jobTitle, homeCountry }: PersonJsonLdProps) {
+  const data: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name,
+    url,
+    sameAs,
+  };
+
+  if (jobTitle) {
+    data.jobTitle = jobTitle;
+  }
+  if (homeCountry) {
+    data.homeLocation = {
+      "@type": "Place",
+      address: {
+        "@type": "PostalAddress",
+        addressCountry: homeCountry,
+      },
+    };
+  }
+
+  return <JsonLd data={data} />;
+}

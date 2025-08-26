@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getProjects, type ProjectImage } from "@/lib/projects";
-import ProjectStructuredData from "@/components/project-structured-data";
+import ProjectStructuredData from "@/components/meta/project-structured-data";
 import RelatedProjects from "@/components/related-projects";
 import {
   Carousel,
