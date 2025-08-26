@@ -10,7 +10,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Timeline from "@/components/timeline";
 import { cn } from "@/lib/utils";
 import SocialLink from "@/components/social-link";
-import { Download, Mail, SquareArrowOutUpRight } from "lucide-react";
+import { Download, Mail, MapPin, SquareArrowOutUpRight } from "lucide-react";
 import { GitHubIcon, LinkedInIcon } from "@/components/icons";
 import { SkillsDataTable } from "@/components/skills-data-table";
 import { siteConfig } from "@/lib/config";
@@ -50,17 +50,38 @@ export default async function Home() {
             />
           </div>
         </aside>
-        <section id="home" className="flex flex-col py-24">
-          <h1 className="mb-3 text-4xl font-extrabold md:text-6xl">
+        <section id="home" className="flex flex-col space-y-4 py-24">
+          <h1 className="text-4xl font-extrabold md:text-6xl">
             Hi, I&apos;m <span className="text-primary text-nowrap">Simon Stijnen</span>
           </h1>
-          <p className="mb-4">
+          <p className="">
             <b>Software Engineering & AI student</b> at VIVES University of Applied Sciences.
           </p>
-          <p className="mb-8 text-xl text-pretty md:text-2xl">
+          <Separator />
+          <p className="text-xl text-pretty md:text-2xl">
             I build software that works, scales, and is maintainable; even under heavy load.
           </p>
-          <div className="mb-8 flex items-center gap-4">
+          <p className="bg-accent/20 text-accent-foreground dark:text-foreground rounded-lg px-5 py-3">
+            Looking for an{" "}
+            <b>
+              internship in Sweden{" "}
+              <Image
+                src={`https://flagcdn.com/24x18/se.png`}
+                alt="flag"
+                width={24}
+                height={18}
+                className="inline"
+              />
+            </b>{" "}
+            in the <b>first semester of 2026</b>.
+          </p>
+          <div className="flex items-center gap-4">
+            <span className="mr-4 flex items-center gap-3">
+              <MapPin className="text-primary" />
+              <span className="sr-only">Based in: &#x1f1e7;&#x1f1ea;</span>
+              Belgium
+              <Image src={`https://flagcdn.com/24x18/be.png`} alt="flag" width={24} height={18} />
+            </span>
             <SocialLink
               href={siteConfig.social.linkedin}
               ariaLabel="LinkedIn"
