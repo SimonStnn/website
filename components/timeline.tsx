@@ -11,12 +11,14 @@ interface TimelineItemProps {
   description: string;
   logo?: string;
   projectLink?: string;
+  companyUrl?: string;
 }
 
 export function TimelineItem({
   year,
   title,
   company,
+  companyUrl,
   description,
   logo,
   projectLink,
@@ -52,14 +54,32 @@ export function TimelineItem({
         <h3 className="text-lg font-semibold">{title}</h3>
         {projectLink && (
           <Button variant="link" size="sm" className="h-full" asChild>
-            <Link href={projectLink}>
+            <Link
+              href={projectLink}
+              target={projectLink.startsWith("http") ? "_blank" : undefined}
+              rel={projectLink.startsWith("http") ? "noopener noreferrer" : undefined}
+            >
               View Project
               <ExternalLink className="size-4" />
             </Link>
           </Button>
         )}
       </div>
-      <p className="text-muted-foreground mb-2">{company}</p>
+      <p className="text-muted-foreground mb-2">
+        {companyUrl ? (
+          <Link
+            href={companyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline-offset-4 hover:underline"
+          >
+            {company}
+            <ExternalLink className="ml-1 inline size-3 align-baseline" />
+          </Link>
+        ) : (
+          company
+        )}
+      </p>
       <p>{description}</p>
     </div>
   );
