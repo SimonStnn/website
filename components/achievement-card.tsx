@@ -19,7 +19,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Award, Trophy, Calendar, ExternalLink, FileBadge } from "lucide-react";
+import { Award, Trophy, Calendar, ExternalLink, FileBadge, Maximize2 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { Achievement } from "@/lib/achievements";
@@ -114,6 +114,9 @@ export default function AchievementCard({ achievement }: AchievementCardProps) {
               </CardDescription>
             </div>
           </CardContent>
+          <Button variant="ghost" className="absolute right-1 bottom-1 opacity-30 dark:opacity-70">
+            <Maximize2 className="h-4 w-4" />
+          </Button>
         </Card>
       </DialogTrigger>
       <DialogContent className="max-w-md">
