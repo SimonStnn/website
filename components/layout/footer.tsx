@@ -3,6 +3,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import SocialLink from "@/components/social-link";
+import Copyright from "@/components/copyright";
 import { siteConfig } from "@/lib/config";
 import { FileDownloadIcon, GitHubIcon, LinkedInIcon } from "@/components/icons";
 import { Mail as MailIcon } from "lucide-react";
@@ -159,9 +160,7 @@ export function Footer({ className }: FooterProps) {
         </div>
       </div>
       <Separator className="from-accent via-muted to-primary bg-gradient-to-r" />
-      <p className="text-primary-foreground/80 mx-auto py-6 text-center text-sm md:text-base">
-        &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
-      </p>
+      <Copyright className="text-primary-foreground/80 mx-auto py-6 text-center text-sm md:text-base" />
     </footer>
   );
 }
