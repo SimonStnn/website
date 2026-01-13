@@ -3,6 +3,15 @@ import Image from "next/image";
 import { getFeaturedProjects } from "@/lib/projects";
 import { getAchievements } from "@/lib/achievements";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import ProjectCard from "@/components/project-card";
@@ -59,27 +68,13 @@ export default async function Home() {
             <b>Software Engineering & AI student</b> at VIVES University of Applied Sciences.
           </p>
           <Separator />
-          <p className="text-xl text-pretty md:text-2xl">
+          <p className="text-xl text-pretty md:text-xl">
             I build software that works, scales, and is maintainable; even under heavy load.
           </p>
-          <p className="bg-accent/20 text-accent-foreground dark:text-foreground rounded-lg px-5 py-3">
-            Looking for an{" "}
-            <b>
-              internship in Sweden{" "}
-              <Image
-                src={`https://flagcdn.com/24x18/se.png`}
-                alt="flag"
-                width={24}
-                height={18}
-                className="inline"
-              />
-            </b>{" "}
-            in the <b>first semester of 2026</b>.
-          </p>
           <div className="flex items-center gap-4">
-            <span className="mr-4 flex items-center gap-3">
-              <MapPin className="text-primary" />
-              <span className="sr-only">Based in: &#x1f1e7;&#x1f1ea;</span>
+            <span className="mr-auto flex items-center gap-2">
+              <MapPin className="text-primary -mr-1" />
+              <span className="sr-only">Based in: &#x1f1e7;&#x1f1ea; {/* Belgian flag */}</span>
               Belgium
               <Image src={`https://flagcdn.com/24x18/be.png`} alt="flag" width={24} height={18} />
             </span>
@@ -106,9 +101,50 @@ export default async function Home() {
             <Button asChild size="lg" className="font-bold">
               <a href="#projects">View My Work</a>
             </Button>
-            <Button variant="secondary" size="lg" asChild>
-              <a href="#contact">Contact Me</a>
-            </Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="secondary" size="lg" className="font-bold">
+                  Contact Me
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-md">
+                <DialogHeader>
+                  <DialogTitle>Get in touch</DialogTitle>
+                  <DialogDescription>
+                    I&apos;m happy to discuss projects, collaboration or internships.
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="mt-2 space-y-3">
+                  <div>
+                    <strong>Email:</strong>{" "}
+                    <Link
+                      className="text-primary underline"
+                      href={`mailto:${siteConfig.author.email}`}
+                    >
+                      {siteConfig.author.email}
+                    </Link>
+                  </div>
+                  <div>
+                    <strong>LinkedIn:</strong>{" "}
+                    <Link
+                      className="text-primary underline"
+                      href={siteConfig.social.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {siteConfig.social.linkedin}
+                    </Link>
+                  </div>
+                </div>
+                <DialogFooter>
+                  <div className="flex w-full justify-end gap-2">
+                    <Button asChild>
+                      <Link href={`mailto:${siteConfig.author.email}`}>Email me</Link>
+                    </Button>
+                  </div>
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
             <Button variant="secondary" size="lg" asChild className="hidden md:inline-flex">
               <Link href="/download/resume.pdf" target="_blank" rel="noopener noreferrer">
                 Resume
