@@ -20,7 +20,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Timeline from "@/components/timeline";
 import { cn } from "@/lib/utils";
 import SocialLink from "@/components/social-link";
-import { Download, Mail, MapPin, SquareArrowOutUpRight } from "lucide-react";
+import { Download, Mail, MapPin } from "lucide-react";
 import { GitHubIcon, LinkedInIcon } from "@/components/icons";
 import { SkillsDataTable } from "@/components/skills-data-table";
 import { siteConfig } from "@/lib/config";
@@ -279,7 +279,6 @@ export default async function Home() {
             <Link href="/projects">
               <Button variant="secondary" size="lg" className="w-full max-w-xl">
                 View All Projects
-                <SquareArrowOutUpRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
           </div>
