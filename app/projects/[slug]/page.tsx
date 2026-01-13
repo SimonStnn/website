@@ -181,7 +181,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             images={project.images}
           />
           <Button variant="link" className="mb-6 !px-0" asChild>
-            <Link href="/#projects" className="text-primary hover:underline">
+            <Link href="/projects" className="text-primary hover:underline">
               <ArrowLeft />
               Back to All Projects
             </Link>
