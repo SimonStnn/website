@@ -22,7 +22,5 @@
     }
   ],
   "demoUrl": "https://paleonet.streamlit.app/",
-  "githubUrl": "https://github.com/SimonStnn/PaleoNet",
-  "featured": true,
-  "order": 4
+  "githubUrl": "https://github.com/SimonStnn/PaleoNet"
 }
