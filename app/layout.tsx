@@ -7,6 +7,8 @@ import Analytics from "@/components/meta/analytics";
 import { PersonJsonLd } from "@/components/meta/structured-data";
 import { ThemeProvider } from "next-themes";
 import { siteConfig } from "@/lib/config";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -75,6 +77,8 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <Analytics />
+        <VercelAnalytics />
+        <SpeedInsights />
         <PersonJsonLd
           name={siteConfig.author.name}
           url={siteConfig.url}
