@@ -168,9 +168,20 @@ export default async function Home() {
               <Card className="p-0 shadow-md">
                 <CardContent className="grid gap-6 py-0">
                   <Timeline
+                    smartDates
                     items={[
                       {
-                        year: "Aug. 2025 - Present",
+                        year: "Jan. 2026 - Jun. 2026",
+                        title: "Intern AI Researcher & Developer",
+                        company: "Cerm",
+                        companyUrl: "https://www.cerm.be/",
+                        logo: "/images/logos/cerm.webp",
+                        description:
+                          "Implemented an automated workflow that extracts key data from customer correspondence and instantly syncs it with the internal ERP/CRM system.",
+                        projectLink: "/projects/cerm-mcp-poc",
+                      },
+                      {
+                        year: "Aug. 2025 - Dec. 2025",
                         title: "Student AI Researcher",
                         company: "Cerm",
                         companyUrl: "https://www.cerm.be/",
