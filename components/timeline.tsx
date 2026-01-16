@@ -25,12 +25,22 @@ function formatDateRange(year: string): string {
   // Handle date ranges like "Jan. 2026 - Jun. 2026"
   if (year.includes(" - ")) {
     const [start, end] = year.split(" - ").map((s) => s.trim());
+
     // Parse end date to check if it's in the future
-    const endDate = new Date(end);
-    const today = new Date();
-    // If end date is in the future, replace with "Present"
-    if (endDate > today) {
-      return `${start} - Present`;
+    // Create a proper date from "Mon. YYYY" format for cross-browser compatibility
+    const monthYearRegex = /([A-Za-z]+)\.\s(\d{4})/;
+    const match = end.match(monthYearRegex);
+
+    if (match) {
+      const [, monthStr, yearStr] = match;
+      // Create date with the first day of the month to ensure it's valid
+      const endDate = new Date(`${monthStr} 1, ${yearStr}`);
+      const today = new Date();
+
+      // If end date is in the future, replace with "Present"
+      if (endDate > today) {
+        return `${start} - Present`;
+      }
     }
   }
   return year;
