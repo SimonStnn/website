@@ -1,0 +1,27 @@
+{
+  "title": "CERM MCP PoC",
+  "shortDescription": "A proof of concept email automation agent using Microsoft 365 MCP server and LangChain.",
+  "description": "An intelligent email automation agent developed as a proof of concept that demonstrates integration between AI assistants and Microsoft 365 services. The project consists of two main components: a custom Microsoft 365 MCP (Model Context Protocol) server providing comprehensive access to Outlook emails, Calendar events, OneDrive files, and Contacts through the Microsoft Graph API, and a Gradio-based conversational interface powered by LangChain agents.\n\nThe M365 MCP server implements 51 specialized tools for managing Microsoft 365 services, featuring multi-account support, high-performance AES-256 encrypted caching (300x performance improvement), and secure bearer token authentication over HTTP transport. It supports both personal and work/school Microsoft accounts with device flow authentication.\n\nThe Gradio application provides an intuitive chat interface where users can interact naturally with their Microsoft 365 data through AI-powered conversations. Built with LangChain and Azure OpenAI, the agent can understand complex email management tasks, schedule calendar events, manage files, and search across multiple data sources. The system supports streamable HTTP connections for real-time bidirectional communication between the AI assistant and the MCP server.",
+  "technologies": [
+    "Python",
+    "LangChain",
+    "MCP",
+    "Azure OpenAI",
+    "FastAPI",
+    "Gradio",
+    "Microsoft Graph API",
+    "Docker"
+  ],
+  "images": [
+    {
+      "src": "/images/projects/cerm-mcp-poc/chat.webp",
+      "alt": "Chat interface of the CERM MCP email agent application"
+    },
+    {
+      "src": "/images/projects/cerm-mcp-poc/outlook.webp",
+      "alt": "Outlook integration showing email management capabilities"
+    }
+  ],
+  "githubUrl": "https://github.com/SimonStnn/email-agent",
+  "order": 2
+}

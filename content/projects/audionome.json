@@ -23,7 +23,5 @@
     }
   ],
   "demoUrl": "https://audionome.streamlit.app/",
-  "githubUrl": "https://github.com/SimonStnn/Audionome",
-  "featured": true,
-  "order": 6
+  "githubUrl": "https://github.com/SimonStnn/Audionome"
 }
