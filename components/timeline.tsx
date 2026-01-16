@@ -1,8 +1,11 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
 
 interface TimelineItemProps {
   year: string;
@@ -12,6 +15,37 @@ interface TimelineItemProps {
   logo?: string;
   projectLink?: string;
   companyUrl?: string;
+  /**
+   * If true, formats date ranges to replace future end dates with "Present".
+   */
+  smartDates?: boolean;
+}
+
+function formatDateRange(year: string): string {
+  // Handle date ranges like "Jan. 2026 - Jun. 2026"
+  if (year.includes(" - ")) {
+    const [start, end] = year.split(" - ").map((s) => s.trim());
+    // Parse end date to check if it's in the future
+    const endDate = new Date(end);
+    const today = new Date();
+    // If end date is in the future, replace with "Present"
+    if (endDate > today) {
+      return `${start} - Present`;
+    }
+  }
+  return year;
+}
+
+function DateDisplay({ year, smartDates = false }: { year: string; smartDates?: boolean }) {
+  const [displayYear, setDisplayYear] = useState(year);
+
+  useEffect(() => {
+    if (smartDates) {
+      setDisplayYear(formatDateRange(year));
+    }
+  }, [year, smartDates]);
+
+  return <div className="text-muted-foreground mb-1 pt-5 text-sm">{displayYear}</div>;
 }
 
 export function TimelineItem({
@@ -22,6 +56,7 @@ export function TimelineItem({
   description,
   logo,
   projectLink,
+  smartDates = false,
 }: TimelineItemProps) {
   return (
     <div className="relative ml-5 pl-10 last:pb-5">
@@ -49,7 +84,7 @@ export function TimelineItem({
       )}
 
       {/* Content */}
-      <div className="text-muted-foreground mb-1 pt-5 text-sm">{year}</div>
+      <DateDisplay year={year} smartDates={smartDates} />
       <div className="flex items-baseline gap-2">
         <h3 className="text-lg font-semibold">{title}</h3>
         {projectLink && (
@@ -87,13 +122,17 @@ export function TimelineItem({
 
 interface TimelineProps {
   items: TimelineItemProps[];
+  /**
+   * If true, formats date ranges to replace future end dates with "Present".
+   */
+  smartDates?: boolean;
 }
 
-export function Timeline({ items }: TimelineProps) {
+export function Timeline({ items, smartDates = false }: TimelineProps) {
   return (
     <div>
       {items.map((item, index) => (
-        <TimelineItem key={index} {...item} />
+        <TimelineItem key={index} {...item} smartDates={smartDates} />
       ))}
     </div>
   );
