@@ -6,8 +6,12 @@ export default async function ProjectsPage() {
   const projects = await getProjects();
 
   // Separate featured and non-featured projects
-  const featuredProjects = projects.filter((project) => project.featured);
-  const nonFeaturedProjects = projects.filter((project) => !project.featured);
+  const featuredProjects = projects.filter(
+    (project) => project.order !== undefined && project.order >= 1 && project.order <= 6
+  );
+  const nonFeaturedProjects = projects.filter(
+    (project) => project.order === undefined || project.order < 1 || project.order > 6
+  );
 
   return (
     <section className="scroll-mt-16 px-4 py-16 md:px-6">

@@ -90,8 +90,12 @@ export const columns: ColumnDef<Skill>[] = [
     enableHiding: false,
     cell: ({ row }) => {
       const projects = row.getValue("projects") as Project[];
-      const featuredProjects = projects.filter((project) => project.featured);
-      const nonFeaturedProjects = projects.filter((project) => !project.featured);
+      const featuredProjects = projects.filter(
+        (project) => project.order !== undefined && project.order >= 1 && project.order <= 6
+      );
+      const nonFeaturedProjects = projects.filter(
+        (project) => featuredProjects.indexOf(project) === -1
+      );
 
       return (
         <DropdownMenu>
