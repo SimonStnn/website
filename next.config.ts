@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import bundleAnalyzer from "@next/bundle-analyzer";
 
 // Import site configuration for URL parsing
 import { siteConfig } from "./lib/config";
@@ -28,4 +29,8 @@ const nextConfig: NextConfig = {
   output: "standalone",
 };
 
-export default nextConfig;
+const withBundleAnalyzer = bundleAnalyzer({
+  enabled: process.env.ANALYZE === "true",
+});
+
+export default withBundleAnalyzer(nextConfig);
