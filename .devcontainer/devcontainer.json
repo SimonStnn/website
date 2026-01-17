@@ -11,6 +11,11 @@
     }
   },
 
+  // Mount the host's ~/.ssh directory as a read-only volume in the container
+  "mounts": [
+    "source=${localEnv:HOME}/.ssh,target=/root/.ssh,type=bind,consistency=cached,readonly"
+  ],
+
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
 
