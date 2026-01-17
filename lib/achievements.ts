@@ -45,15 +45,32 @@ export async function getAchievements(): Promise<Achievement[]> {
       const filePath = path.join(achievementsDirectory, fileName);
       const fileContent = fs.readFileSync(filePath, "utf8");
 
-      // Parse the JSON data
-      const achievementData = JSON.parse(fileContent);
+      // Parse the JSON data with error handling
+      let achievementData: unknown;
+      try {
+        achievementData = JSON.parse(fileContent);
+      } catch (error) {
+        console.error(`Error parsing JSON for achievement ${slug}`, { error, fileName });
+        return null; // Skip invalid files
+      }
+
+      // Ensure it's an object and not an array
+      if (
+        typeof achievementData !== "object" ||
+        achievementData === null ||
+        Array.isArray(achievementData)
+      ) {
+        console.error(`Invalid JSON structure for achievement ${slug}`, { achievementData });
+        return null;
+      }
 
       // Return the achievement data with the slug
       return {
         slug,
         ...achievementData,
       };
-    });
+    })
+    .filter((achievement): achievement is Achievement => achievement !== null);
 
   // Sort achievements by order (if specified), then by date (newest first)
   return achievements.sort((a, b) => {

@@ -6,7 +6,7 @@ export interface Skill {
   projects: Project[];
 }
 
-function generateSkillId(skillName: string): string {
+export function generateSkillId(skillName: string): string {
   return skillName
     .toLowerCase()
     .replace(/[^\w\s-]/g, "") // Remove special characters except hyphens

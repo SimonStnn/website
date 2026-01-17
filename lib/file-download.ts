@@ -45,7 +45,7 @@ const MIME_TYPES: Record<string, string> = {
 /**
  * Gets the content type based on the file extension
  */
-function getContentType(filename: string): string {
+export function getContentType(filename: string): string {
   const ext = path.extname(filename).toLowerCase();
   return MIME_TYPES[ext] || "application/octet-stream";
 }
@@ -59,8 +59,25 @@ export function createFileDownloadResponse({
   forceDownload = true,
   contentType,
 }: DownloadOptions) {
+  // Validate filePath to prevent directory traversal
+  if (!filePath || typeof filePath !== "string") {
+    return new NextResponse("Invalid file path", { status: 400 });
+  }
+
+  // Prevent directory traversal attacks
+  if (filePath.includes("..") || filePath.startsWith("/")) {
+    return new NextResponse("Invalid file path", { status: 400 });
+  }
+
   // Resolve full path - ensure path is within public directory for security
   const fullPath = path.join(process.cwd(), "public", filePath);
+
+  // Ensure the resolved path is within the public directory
+  const publicDir = path.resolve(process.cwd(), "public");
+  const resolvedPath = path.resolve(fullPath);
+  if (!resolvedPath.startsWith(publicDir)) {
+    return new NextResponse("Access denied", { status: 403 });
+  }
 
   // Ensure file exists
   if (!fs.existsSync(fullPath)) {

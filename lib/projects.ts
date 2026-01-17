@@ -30,23 +30,38 @@ export async function getProjects(): Promise<Project[]> {
   const fileNames = fs.readdirSync(projectsDirectory);
 
   // Get project data from each file
-  const projects = fileNames.map((fileName) => {
-    // Get the slug from the filename (without .json extension)
-    const slug = fileName.replace(/\.json$/, "");
+  const projects = fileNames
+    .filter((fileName) => fileName.endsWith(".json"))
+    .map((fileName) => {
+      // Get the slug from the filename (without .json extension)
+      const slug = fileName.replace(/\.json$/, "");
 
-    // Read the JSON file content
-    const filePath = path.join(projectsDirectory, fileName);
-    const fileContent = fs.readFileSync(filePath, "utf8");
+      // Read the JSON file content
+      const filePath = path.join(projectsDirectory, fileName);
+      const fileContent = fs.readFileSync(filePath, "utf8");
 
-    // Parse the JSON data
-    const projectData = JSON.parse(fileContent);
+      // Parse the JSON data with error handling
+      let projectData: unknown;
+      try {
+        projectData = JSON.parse(fileContent);
+      } catch (error) {
+        console.error(`Error parsing JSON for project ${slug}`, { error, fileName });
+        return null; // Skip invalid files
+      }
 
-    // Return the project data with the slug
-    return {
-      slug,
-      ...projectData,
-    };
-  });
+      // Ensure it's an object and not an array
+      if (typeof projectData !== "object" || projectData === null || Array.isArray(projectData)) {
+        console.error(`Invalid JSON structure for project ${slug}`, { projectData });
+        return null;
+      }
+
+      // Return the project data with the slug
+      return {
+        slug,
+        ...projectData,
+      };
+    })
+    .filter((project): project is Project => project !== null);
 
   // Sort projects by order (if specified)
   return projects.sort((a, b) => {

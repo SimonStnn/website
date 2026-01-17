@@ -6,5 +6,9 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function isVideoFile(src: string): boolean {
-  return src.endsWith(".mp4") || src.endsWith(".webm") || src.endsWith(".mov");
+  return (
+    src.toLowerCase().endsWith(".mp4") ||
+    src.toLowerCase().endsWith(".webm") ||
+    src.toLowerCase().endsWith(".mov")
+  );
 }

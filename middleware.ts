@@ -15,9 +15,23 @@ export async function middleware(request: NextRequest) {
     if (value) headers[header] = value;
   });
   try {
-    // Skip if webhook URL is not set
+    // Skip if webhook URL is not set or invalid
     if (!webhookConfig.url) {
       console.warn("Webhook URL is not set, skipping webhook");
+      return NextResponse.next();
+    }
+
+    // Validate webhook URL
+    let webhookUrl: URL;
+    try {
+      webhookUrl = new URL(webhookConfig.url);
+      // Only allow HTTPS in production
+      if (appConfig.isProduction && webhookUrl.protocol !== "https:") {
+        console.warn("Webhook URL must be HTTPS in production, skipping webhook");
+        return NextResponse.next();
+      }
+    } catch (error) {
+      console.error("Invalid webhook URL:", error);
       return NextResponse.next();
     }
 
@@ -34,13 +48,6 @@ export async function middleware(request: NextRequest) {
         second: "2-digit",
         timeZone: "Europe/Brussels",
       })}*\n` + `**\`${request.method.padStart(6)}\`**: \`${request.nextUrl.href}\`\n`;
-
-    // if (queryParams.size > 0) {
-    //   content += `Query Parameters\n` + `\`\`\`json\n`;
-    //   content += JSON.stringify(Object.fromEntries(queryParams), null, 2) + `\n\`\`\`\n`;
-    // }
-    // content += `Headers\n` + `\`\`\`json\n`;
-    // content += JSON.stringify(Object.fromEntries(headerEntries), null, 2) + `\n\`\`\`\n`;
 
     // Send request information to webhook
     await fetch(webhookConfig.url, {
