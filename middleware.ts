@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { webhookConfig } from "./middleware/config";
+import { webhookConfig } from "@/middleware/config";
+import { appConfig } from "@/lib/config";
 
 export async function middleware(request: NextRequest) {
   // Skip webhook if disabled
@@ -61,7 +62,7 @@ export async function middleware(request: NextRequest) {
 
   // Add a header to indicate the request was processed by middleware
   // Only in development to avoid leaking information in production
-  if (process.env.NODE_ENV === "development") {
+  if (appConfig.isDevelopment) {
     response.headers.set("x-middleware-processed", "true");
   }
 
