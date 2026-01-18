@@ -1,6 +1,9 @@
 import { Project } from "@/lib/projects";
 import { Achievement } from "@/lib/achievements";
 import { Skill } from "@/lib/skills";
+import { getFeaturedProjects } from "@/lib/projects";
+import { getAchievements } from "@/lib/achievements";
+import { getSkills } from "@/lib/skills";
 
 // Mock Next.js components
 jest.mock("next/image", () => ({
@@ -115,9 +118,7 @@ jest.mock("@/components/ui/badge", () => ({
 }));
 
 jest.mock("@/components/ui/dialog", () => ({
-  Dialog: ({ children }: { children: React.ReactNode }) => (
-    <div data-testid="dialog">{children}</div>
-  ),
+  Dialog: () => null,
   DialogContent: ({ children, className }: { children: React.ReactNode; className?: string }) => (
     <div className={className}>{children}</div>
   ),
@@ -142,8 +143,26 @@ jest.mock("@/lib/projects");
 jest.mock("@/lib/achievements");
 jest.mock("@/lib/skills");
 
+const mockGetFeaturedProjects = jest.mocked(getFeaturedProjects);
+const mockGetAchievements = jest.mocked(getAchievements);
+const mockGetSkills = jest.mocked(getSkills);
+
+import Home from "@/app/page";
+
 describe("Home Page", () => {
   beforeEach(() => {
     jest.clearAllMocks();
+  });
+
+  it("renders the home page", async () => {
+    mockGetFeaturedProjects.mockResolvedValue([]);
+    mockGetAchievements.mockResolvedValue([]);
+    mockGetSkills.mockResolvedValue([]);
+
+    const Component = await Home();
+
+    expect(Component).toBeDefined();
+    expect(Component.type).toBe("div");
+    expect(Component.props.className).toBe("flex min-h-screen flex-col");
   });
 });

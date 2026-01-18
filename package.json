@@ -17,7 +17,7 @@
     "build:analyze": "ANALYZE=true next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write . && eslint --fix",
+    "format": "prettier --write .",
     "format:check": "prettier --check .",
     "ci:check": "npm run lint && npm run format:check",
     "test": "jest",
