@@ -32,7 +32,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           "transition-all group-hover:p-0"
         )}
       >
-        {project.images && project.images.length > 0 ? (
+        {project.images && project.images.length > 0 && heroimg ? (
           <Image
             src={heroimg.src}
             alt={heroimg.alt}

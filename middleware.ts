@@ -3,9 +3,16 @@ import { webhookConfig } from "@/middleware/config";
 import { appConfig } from "@/lib/config";
 
 export async function middleware(request: NextRequest) {
+  // Add a response header to track that the request went through our middleware
+  // Only in development to avoid leaking information in production
+  const response = NextResponse.next();
+  if (appConfig.isDevelopment) {
+    response.headers.set("x-middleware-processed", "true");
+  }
+
   // Skip webhook if disabled
   if (!webhookConfig.enabled) {
-    return NextResponse.next();
+    return response;
   }
 
   // Collect headers that we want to include
@@ -62,15 +69,6 @@ export async function middleware(request: NextRequest) {
     });
   } catch (e) {
     console.error("Middleware error:", e);
-  }
-
-  // Add a response header to track that the request went through our middleware
-  const response = NextResponse.next();
-
-  // Add a header to indicate the request was processed by middleware
-  // Only in development to avoid leaking information in production
-  if (appConfig.isDevelopment) {
-    response.headers.set("x-middleware-processed", "true");
   }
 
   return response;
