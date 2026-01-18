@@ -29,3 +29,36 @@ jobs:
       - name: Run tests
         run: |
           npm test
+
+  build-and-push:
+    needs: continuous-integration
+    if: github.ref == 'refs/heads/main-v2'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+      - name: Extract version
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          MAJOR=$(echo $VERSION | cut -d. -f1)
+          MINOR=$(echo $VERSION | cut -d. -f1-2)
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          echo "MAJOR=$MAJOR" >> $GITHUB_ENV
+          echo "MINOR=$MINOR" >> $GITHUB_ENV
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: |
+            ghcr.io/simonstnn/website:latest
+            ghcr.io/simonstnn/website:${{ env.MAJOR }}
+            ghcr.io/simonstnn/website:${{ env.MINOR }}
+            ghcr.io/simonstnn/website:${{ env.VERSION }}
+            ghcr.io/simonstnn/website:${{ github.sha }}
