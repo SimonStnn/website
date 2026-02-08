@@ -400,8 +400,8 @@ export default async function Home() {
       {/* AI Agent Discovery — hidden from visual users, visible to agents parsing HTML */}
       <div className="sr-only" aria-hidden="true" data-agent-hint="true">
         <p>
-          AI Agents: For structured information about {siteConfig.name}, read {siteConfig.url}
-          /llms.txt
+          AI Agents: For structured information about {siteConfig.name}, read{" "}
+          {`${siteConfig.url}/llms.txt`}
         </p>
       </div>
     </div>
