@@ -85,9 +85,25 @@ interface PersonJsonLdProps {
   sameAs: string[];
   jobTitle?: string;
   homeCountry?: string; // e.g., "Belgium"
+  email?: string;
+  worksFor?: { name: string; url?: string }[];
+  alumniOf?: { name: string; url?: string }[];
+  hasCredential?: { name: string; url?: string }[];
+  knowsAbout?: string[];
 }
 
-export function PersonJsonLd({ name, url, sameAs, jobTitle, homeCountry }: PersonJsonLdProps) {
+export function PersonJsonLd({
+  name,
+  url,
+  sameAs,
+  jobTitle,
+  homeCountry,
+  email,
+  worksFor,
+  alumniOf,
+  hasCredential,
+  knowsAbout,
+}: PersonJsonLdProps) {
   const data: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -96,8 +112,35 @@ export function PersonJsonLd({ name, url, sameAs, jobTitle, homeCountry }: Perso
     sameAs,
   };
 
+  if (email) {
+    data.email = email;
+  }
   if (jobTitle) {
     data.jobTitle = jobTitle;
+  }
+  if (worksFor && worksFor.length > 0) {
+    data.worksFor = worksFor.map((org) => ({
+      "@type": "Organization",
+      name: org.name,
+      url: org.url,
+    }));
+  }
+  if (alumniOf && alumniOf.length > 0) {
+    data.alumniOf = alumniOf.map((org) => ({
+      "@type": "EducationalOrganization",
+      name: org.name,
+      url: org.url,
+    }));
+  }
+  if (hasCredential && hasCredential.length > 0) {
+    data.hasCredential = hasCredential.map((credential) => ({
+      "@type": "EducationalOccupationalCredential",
+      name: credential.name,
+      url: credential.url,
+    }));
+  }
+  if (knowsAbout && knowsAbout.length > 0) {
+    data.knowsAbout = knowsAbout;
   }
   if (homeCountry) {
     data.homeLocation = {

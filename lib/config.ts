@@ -12,14 +12,56 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://simon.stijnen.be",
   description:
     process.env.NEXT_PUBLIC_SITE_DESCRIPTION ||
-    "Portfolio highlighting software engineering and AI projects by Simon Stijnen.",
+    "Software engineer and AI student in Belgium building scalable, reliable products.",
+  recruiterSummary:
+    process.env.NEXT_PUBLIC_RECRUITER_SUMMARY ||
+    "Software engineer and AI student focused on scalable web apps, LLM automation, and data-driven systems. Available for internships and junior roles.",
   author: {
     name: process.env.NEXT_PUBLIC_AUTHOR_NAME || "Simon Stijnen",
     email: process.env.NEXT_PUBLIC_AUTHOR_EMAIL || "simon.stijnen.23+portfolio@gmail.com",
   },
+  location: {
+    city: process.env.NEXT_PUBLIC_AUTHOR_CITY || "Bruges",
+    country: process.env.NEXT_PUBLIC_AUTHOR_COUNTRY || "Belgium",
+  },
   social: {
     github: process.env.NEXT_PUBLIC_GITHUB_URL || "https://github.com/SimonStnn",
     linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL || "https://www.linkedin.com/in/simon-stijnen/",
+  },
+  person: {
+    jobTitle: process.env.NEXT_PUBLIC_AUTHOR_JOB_TITLE || "Software Engineer & AI student",
+    worksFor: [
+      {
+        name: process.env.NEXT_PUBLIC_AUTHOR_WORKS_FOR || "Cerm",
+        url: process.env.NEXT_PUBLIC_AUTHOR_WORKS_FOR_URL || "https://www.cerm.be/",
+      },
+    ],
+    alumniOf: [
+      {
+        name: process.env.NEXT_PUBLIC_AUTHOR_ALUMNI_OF || "VIVES University of Applied Sciences",
+        url: process.env.NEXT_PUBLIC_AUTHOR_ALUMNI_OF_URL || "https://www.vives.be/en",
+      },
+    ],
+    hasCredential: [
+      {
+        name:
+          process.env.NEXT_PUBLIC_AUTHOR_CREDENTIAL ||
+          "Computer Science - Software Engineering & AI (in progress)",
+      },
+    ],
+    knowsAbout: [
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Node.js",
+      "Python",
+      "AI",
+      "LLMs",
+      "Machine Learning",
+      "APIs",
+      "PostgreSQL",
+      "Docker",
+    ],
   },
 };
 

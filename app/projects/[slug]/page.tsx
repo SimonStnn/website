@@ -15,6 +15,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, SquareArrowOutUpRight } from "lucide-react";
 import { cn, isVideoFile } from "@/lib/utils";
+import { siteConfig } from "@/lib/config";
 
 // Generate static params for all projects at build time
 export async function generateStaticParams() {
@@ -36,9 +37,45 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     };
   }
 
+  const firstImage = project.images?.find((image) => {
+    const src = typeof image === "string" ? image : image.src;
+    return !isVideoFile(src);
+  });
+  const firstImageSrc = firstImage
+    ? typeof firstImage === "string"
+      ? firstImage
+      : firstImage.src
+    : "/images/profile-meta.jpg";
+  const firstImageAlt =
+    typeof firstImage === "string"
+      ? `${project.title} screenshot`
+      : firstImage?.alt || `${project.title} screenshot`;
+  const description = project.shortDescription || `Details about ${project.title}.`;
+
   return {
     title: `${project.title} | Simon Stijnen Portfolio`,
-    description: `Details about ${project.title}, a project by Simon Stijnen`,
+    description,
+    openGraph: {
+      type: "website",
+      locale: "en_US",
+      url: `${siteConfig.url}/projects/${project.slug}`,
+      title: `${project.title} | ${siteConfig.name}`,
+      description,
+      images: [
+        {
+          url: firstImageSrc,
+          alt: firstImageAlt,
+          width: 1200,
+          height: 630,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} | ${siteConfig.name}`,
+      description,
+      images: [firstImageSrc],
+    },
   };
 }
 

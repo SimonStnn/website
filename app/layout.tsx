@@ -35,6 +35,9 @@ export const metadata: Metadata = {
     "Machine Learning",
     "Developer",
     "Portfolio",
+    "Full Stack",
+    "TypeScript",
+    "Junior Software Engineer",
   ],
   authors: [{ name: siteConfig.author.name }],
   creator: siteConfig.author.name,
@@ -83,8 +86,13 @@ export default function RootLayout({
           name={siteConfig.author.name}
           url={siteConfig.url}
           sameAs={[siteConfig.social.linkedin, siteConfig.social.github]}
-          jobTitle="Software Engineering & AI student"
-          homeCountry="Belgium"
+          jobTitle={siteConfig.person.jobTitle}
+          homeCountry={siteConfig.location.country}
+          worksFor={siteConfig.person.worksFor}
+          alumniOf={siteConfig.person.alumniOf}
+          hasCredential={siteConfig.person.hasCredential}
+          knowsAbout={siteConfig.person.knowsAbout}
+          email={siteConfig.author.email}
         />
       </head>
       <body

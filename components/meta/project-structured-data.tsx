@@ -1,6 +1,7 @@
 import { ProjectJsonLd, BreadcrumbJsonLd } from "@/components/meta/structured-data";
 import { siteConfig } from "@/lib/config";
 import type { ProjectImage } from "@/lib/projects";
+import { isVideoFile } from "@/lib/utils";
 
 interface ProjectStructuredDataProps {
   title: string;
@@ -18,7 +19,10 @@ export default function ProjectStructuredData({
   images,
 }: ProjectStructuredDataProps) {
   const domain = siteConfig.url;
-  const firstImage = images && images.length > 0 ? images[0] : null;
+  const firstImage = images?.find((image) => {
+    const src = typeof image === "string" ? image : image.src;
+    return !isVideoFile(src);
+  });
   const imageSrc = firstImage
     ? typeof firstImage === "string"
       ? firstImage
