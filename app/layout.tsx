@@ -69,6 +69,9 @@ export const metadata: Metadata = {
     images: ["/images/profile-meta.jpg"],
   },
   manifest: "/site.webmanifest",
+  other: {
+    "llms-txt": `${siteConfig.url}/llms.txt`,
+  },
 };
 
 export default function RootLayout({
@@ -79,6 +82,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
+        {/* AI agent discovery: structured site info for LLMs */}
+        <link
+          rel="alternate"
+          type="text/plain"
+          href="/llms.txt"
+          title="LLM-readable site information"
+        />
         <Analytics />
         <VercelAnalytics />
         <SpeedInsights />

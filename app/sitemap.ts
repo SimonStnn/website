@@ -49,7 +49,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     {
       url: `${baseUrl}/#contact`,
       lastModified: new Date(),
-      changeFrequency: "yearly",
+      changeFrequency: "monthly",
       priority: 0.6,
     },
     {
@@ -78,5 +78,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ];
 
-  return [...routes, ...projectRoutes, ...downloadRoutes];
+  // AI agent discovery route
+  const agentRoutes: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/llms.txt`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+  ];
+
+  return [...routes, ...projectRoutes, ...downloadRoutes, ...agentRoutes];
 }

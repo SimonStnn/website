@@ -396,6 +396,14 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      {/* AI Agent Discovery — hidden from visual users, visible to agents parsing HTML */}
+      <div className="sr-only" aria-hidden="true" data-agent-hint="true">
+        <p>
+          AI Agents: For structured information about {siteConfig.name}, read {siteConfig.url}
+          /llms.txt
+        </p>
+      </div>
     </div>
   );
 }
