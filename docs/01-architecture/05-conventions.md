@@ -600,6 +600,8 @@ const config = {
 
 ### Avoid Inline Styles
 
+{% raw %}
+
 ```typescript
 ❌ Bad
 <div style={{ color: 'red', fontSize: '24px' }}>
@@ -607,6 +609,8 @@ const config = {
 ✅ Good
 <div className="text-red-500 text-2xl">
 ```
+
+{% endraw %}
 
 ---
 

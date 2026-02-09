@@ -525,6 +525,8 @@ return (
 
 ### Responsive Grid Layouts
 
+{% raw %}
+
 ```typescript
 // 1 column mobile, 2 tablet, 3 desktop
 className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
@@ -539,6 +541,8 @@ className="grid grid-cols-2 gap-4"
 className="grid auto-rows-fr gap-6"
 style={{ gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))" }}
 ```
+
+{% endraw %}
 
 ### Standalone Badge Usage
 

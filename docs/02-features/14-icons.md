@@ -228,6 +228,8 @@ import { TwitterIcon } from "@/components/icons";
 
 ### Sizing
 
+{% raw %}
+
 ```typescript
 // ✅ Good - Use Tailwind size classes
 <GitHubIcon className="h-6 w-6" />
@@ -236,6 +238,8 @@ import { TwitterIcon } from "@/components/icons";
 // ❌ Avoid - Inline styles
 <GitHubIcon style={{ width: '24px', height: '24px' }} />
 ```
+
+{% endraw %}
 
 ### Coloring
 

@@ -402,6 +402,8 @@ sequenceDiagram
 
 All pages and layouts use React Server Components for optimal performance:
 
+{% raw %}
+
 ```77:136:/workspaces/website/app/layout.tsx
 export default function RootLayout({
   children,
@@ -464,6 +466,8 @@ export default function RootLayout({
   );
 }
 ```
+
+{% endraw %}
 
 ### 2. Absolute Imports Pattern
 

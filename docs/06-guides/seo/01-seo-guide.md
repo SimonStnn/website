@@ -572,6 +572,8 @@ export default function ProjectsPage() {
 
 ### Local Business Schema
 
+{% raw %}
+
 ```typescript
 // components/meta/structured-data.tsx
 export function PersonJsonLd({ name, location, ...props }) {
@@ -596,6 +598,8 @@ export function PersonJsonLd({ name, location, ...props }) {
   );
 }
 ```
+
+{% endraw %}
 
 See [Structured Data Guide](./02-structured-data.md) for details.
 

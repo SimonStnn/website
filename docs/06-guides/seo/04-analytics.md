@@ -148,6 +148,8 @@ export function Analytics() {
 
 ### Layout Integration
 
+{% raw %}
+
 ```typescript
 // app/layout.tsx
 import Analytics from '@/components/meta/analytics';
@@ -178,6 +180,8 @@ export default function RootLayout({ children }) {
   );
 }
 ```
+
+{% endraw %}
 
 ### Configuration
 

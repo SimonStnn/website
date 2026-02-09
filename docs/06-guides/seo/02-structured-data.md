@@ -80,6 +80,8 @@ components/
 
 **Component:**
 
+{% raw %}
+
 ```typescript
 // components/meta/structured-data.tsx
 interface PersonJsonLdProps {
@@ -144,6 +146,8 @@ export function PersonJsonLd({
   );
 }
 ```
+
+{% endraw %}
 
 **Usage in layout:**
 
@@ -210,6 +214,8 @@ export default function RootLayout({ children }) {
 
 **Component:**
 
+{% raw %}
+
 ```typescript
 // components/meta/structured-data.tsx
 import { Project } from '@/lib/projects';
@@ -260,6 +266,8 @@ export function ProjectJsonLd({ project }: ProjectJsonLdProps) {
 }
 ```
 
+{% endraw %}
+
 **Usage in project page:**
 
 ```typescript
@@ -288,6 +296,8 @@ export default async function ProjectPage({ params }: { params: { slug: string }
 ### BreadcrumbList Schema
 
 **Component:**
+
+{% raw %}
 
 ```typescript
 // components/meta/structured-data.tsx
@@ -320,6 +330,8 @@ export function BreadcrumbJsonLd({ items }: BreadcrumbJsonLdProps) {
   );
 }
 ```
+
+{% endraw %}
 
 **Usage:**
 
@@ -476,6 +488,8 @@ export default async function ProjectPage({ params }: { params: { slug: string }
 
 **For the portfolio site:**
 
+{% raw %}
+
 ```typescript
 export function WebSiteJsonLd() {
   const jsonLd = {
@@ -499,6 +513,8 @@ export function WebSiteJsonLd() {
   );
 }
 ```
+
+{% endraw %}
 
 ## Testing and Validation
 

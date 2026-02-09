@@ -85,6 +85,8 @@ After Overflow Detection:
 
 ### Component Structure
 
+{% raw %}
+
 ```typescript:1:93:components/badge-overflow.tsx
 "use client";
 
@@ -180,6 +182,8 @@ export default function BadgeOverflow({ technologies, className }: BadgeOverflow
   );
 }
 ```
+
+{% endraw %}
 
 ## Overflow Detection Logic
 
@@ -328,6 +332,8 @@ Prevents memory leaks by removing event listener on unmount.
 
 ### Tooltip Structure
 
+{% raw %}
+
 ```typescript
 <Tooltip>
   <TooltipTrigger asChild>
@@ -345,6 +351,8 @@ Prevents memory leaks by removing event listener on unmount.
   </TooltipContent>
 </Tooltip>
 ```
+
+{% endraw %}
 
 ### Tooltip Content
 

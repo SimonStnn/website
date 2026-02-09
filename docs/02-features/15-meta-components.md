@@ -31,6 +31,8 @@ Integrates Google Analytics (GA4) and Google Tag Manager (GTM) for tracking user
 
 ### File: `components/meta/analytics.tsx`
 
+{% raw %}
+
 ```typescript:1:27:components/meta/analytics.tsx
 // import Script from "next/script";
 import { analyticsConfig, appConfig } from "@/lib/config";
@@ -60,6 +62,8 @@ export function Analytics() {
 
 export default Analytics;
 ```
+
+{% endraw %}
 
 ### Features
 
@@ -118,6 +122,8 @@ NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX
 Provides JSON-LD structured data for enhanced search results (rich snippets) and better SEO.
 
 ### File: `components/meta/structured-data.tsx`
+
+{% raw %}
 
 ```typescript:1:80:components/meta/structured-data.tsx
 interface JsonLdProps {
@@ -201,6 +207,8 @@ export function BreadcrumbJsonLd({ items }: BreadcrumbJsonLdProps) {
   return <JsonLd data={data} />;
 }
 ```
+
+{% endraw %}
 
 ### Schema Types
 

@@ -234,6 +234,8 @@ function CarouselNext({
 
 ### Project Detail Page Integration
 
+{% raw %}
+
 ```typescript:228:256:app/projects/[slug]/page.tsx
           {project.images && project.images.length > 1 && (
             <Carousel className="w-full overflow-hidden rounded-md" opts={{ loop: true }}>
@@ -267,11 +269,17 @@ function CarouselNext({
           )}
 ```
 
+{% endraw %}
+
 ### Configuration Options
+
+{% raw %}
 
 ```typescript
 opts={{ loop: true }}
 ```
+
+{% endraw %}
 
 | Option          | Value         | Description                     |
 | --------------- | ------------- | ------------------------------- |
@@ -506,6 +514,8 @@ This moves buttons inside the carousel for better mobile UX.
 
 ### Basic Image Carousel
 
+{% raw %}
+
 ```typescript
 import {
   Carousel,
@@ -544,6 +554,8 @@ export function ImageGallery() {
   );
 }
 ```
+
+{% endraw %}
 
 ### Carousel with API Access
 
@@ -584,6 +596,8 @@ export function ControlledCarousel() {
 
 ### Multiple Slides Visible
 
+{% raw %}
+
 ```typescript
 <Carousel
   opts={{
@@ -607,6 +621,8 @@ export function ControlledCarousel() {
   <CarouselNext />
 </Carousel>
 ```
+
+{% endraw %}
 
 ## See Also
 

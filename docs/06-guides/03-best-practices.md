@@ -716,6 +716,8 @@ export async function generateMetadata({
 
 **Add JSON-LD structured data:**
 
+{% raw %}
+
 ```typescript
 // components/meta/structured-data.tsx
 export function ProjectJsonLd({ project }: { project: Project }) {
@@ -739,6 +741,8 @@ export function ProjectJsonLd({ project }: { project: Project }) {
   );
 }
 ```
+
+{% endraw %}
 
 ## Security Best Practices
 
@@ -788,6 +792,8 @@ export async function getProjectBySlug(slug: string): Promise<Project | null> {
 
 **Sanitize dynamic content:**
 
+{% raw %}
+
 ```typescript
 // ✅ GOOD: Safe content rendering
 export function ProjectDescription({ description }: { description: string }) {
@@ -801,6 +807,8 @@ export function RichContent({ html }: { html: string }) {
   return <div dangerouslySetInnerHTML={{ __html: sanitize(html) }} />;
 }
 ```
+
+{% endraw %}
 
 ## Testing Patterns
 

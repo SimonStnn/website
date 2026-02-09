@@ -371,6 +371,8 @@ HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
 
 ### Check Health Status
 
+{% raw %}
+
 ```bash
 # View health status
 docker ps
@@ -382,6 +384,8 @@ docker inspect --format='{{json .State.Health}}' personal-website | jq
 # Watch health status in real-time
 watch -n 1 'docker inspect --format="{{.State.Health.Status}}" personal-website'
 ```
+
+{% endraw %}
 
 ### Custom Health Checks
 
@@ -401,6 +405,8 @@ docker run -d --no-healthcheck -p 3000:3000 personal-website
 
 ### Health Check Integration
 
+{% raw %}
+
 ```bash
 # Wait for healthy status before proceeding
 docker run -d --name website -p 3000:3000 personal-website
@@ -411,11 +417,15 @@ echo "Container is healthy!"
 # See: docker-compose.md#health-check-dependencies
 ```
 
+{% endraw %}
+
 ---
 
 ## Troubleshooting
 
 ### Container Won't Start
+
+{% raw %}
 
 ```bash
 # View container logs
@@ -430,6 +440,8 @@ docker logs -f personal-website
 # Check exit code
 docker inspect personal-website --format='{{.State.ExitCode}}'
 ```
+
+{% endraw %}
 
 ### Common Issues
 
@@ -509,6 +521,8 @@ docker diff personal-website
 
 ### Performance Issues
 
+{% raw %}
+
 ```bash
 # Monitor resource usage
 docker stats personal-website
@@ -523,7 +537,11 @@ docker stats --format "table {{.Container}}\t{{.BlockIO}}"
 docker stats --format "table {{.Container}}\t{{.NetIO}}"
 ```
 
+{% endraw %}
+
 ### Network Debugging
+
+{% raw %}
 
 ```bash
 # Inspect network
@@ -538,6 +556,8 @@ docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' pers
 # Connect to host network (removes isolation)
 docker run -d --network host personal-website
 ```
+
+{% endraw %}
 
 ---
 
