@@ -390,7 +390,7 @@ function ImageCaption({ alt }: { alt: string }) {
 
 ### Loop Navigation
 
-With `opts={{ loop: true }}`, the carousel:
+With {% raw %}`opts={{ loop: true }}`{% endraw %}, the carousel:
 
 1. Wraps from last slide to first
 2. Wraps from first slide to last

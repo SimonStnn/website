@@ -98,6 +98,8 @@ The code is automatically installed via the Analytics component.
 
 **File:** `components/meta/analytics.tsx`
 
+{% raw %}
+
 ```typescript
 // components/meta/analytics.tsx
 import { analyticsConfig, appConfig } from '@/lib/config';
@@ -124,7 +126,7 @@ export function Analytics() {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${analyticsConfig.gaId}');
+            gtag('config', '${analyticsConfig.gaId}';
           `,
         }}
       />
@@ -145,6 +147,8 @@ export function Analytics() {
   );
 }
 ```
+
+{% endraw %}
 
 ### Layout Integration
 

@@ -373,6 +373,8 @@ Wrapper component that combines ProjectJsonLd and BreadcrumbJsonLd for project p
 
 ### File: `components/meta/project-structured-data.tsx`
 
+{% raw %}
+
 ```typescript:1:68:components/meta/project-structured-data.tsx
 import { ProjectJsonLd, BreadcrumbJsonLd } from "@/components/meta/structured-data";
 import { siteConfig } from "@/lib/config";
@@ -443,6 +445,8 @@ export default function ProjectStructuredData({
   );
 }
 ```
+
+{% endraw %}
 
 ### Features
 
