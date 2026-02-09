@@ -1,0 +1,67 @@
+site_name: Documentation - Simon Stijnen Portfolio
+site_description: Comprehensive documentation for Simon Stijnen's portfolio website built with Next.js 15, TypeScript, and Tailwind CSS
+site_author: Simon Stijnen
+repo_url: https://github.com/SimonStnn/website
+copyright: Copyright &copy; 2025 Simon Stijnen
+
+# Use default docs/ subdirectory (relative to mkdocs.yml location)
+docs_dir: docs
+
+theme:
+  name: material
+  locale: en
+  palette:
+    - media: "(prefers-color-scheme)"
+      primary: teal
+      accent: yellow
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      primary: teal
+      accent: yellow
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      primary: teal
+      accent: yellow
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - tables
+  - admonition
+  - footnotes
+  - toc:
+      permalink: true
+  - attr_list
+
+plugins:
+  - search
+  - mkdocs-pdf

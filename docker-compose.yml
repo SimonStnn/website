@@ -8,3 +8,12 @@ services:
     restart: unless-stopped
     ports:
       - "3000:3000"
+
+  docs:
+    container_name: personal-website-docs
+    build:
+      context: .
+      dockerfile: config/mkdocs/Dockerfile
+    restart: unless-stopped
+    ports:
+      - "8000:80"
