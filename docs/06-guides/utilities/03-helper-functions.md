@@ -1,6 +1,6 @@
 # Helper Functions
 
-**Breadcrumbs:** [Documentation](../../README.md) > [Guides](../README.md) > [Utilities](./README.md) > Helper Functions
+**Breadcrumbs:** [Documentation](../../index.md) > [Guides](../index.md) > [Utilities](./index.md) > Helper Functions
 
 This guide documents additional helper functions throughout the codebase.
 

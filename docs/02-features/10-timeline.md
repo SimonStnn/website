@@ -1,6 +1,6 @@
 # Timeline Component
 
-**Navigation:** [Home](../README.md) → [Features & Components](./01-components-overview.md) → Timeline
+**Navigation:** [Home](../index.md) → [Features & Components](./01-components-overview.md) → Timeline
 
 ## Table of Contents
 
@@ -465,4 +465,4 @@ const educationTimeline = [
 ---
 
 **Last Updated:** 2024-02-09  
-**Related Docs:** [Components](./01-components-overview.md) | [Custom Components](./02-custom-components.md) | [Data Layer](../01-architecture/03-data-layer.md)
+**Related Docs:** [Components](./01-components-overview.md) | [Custom Components](./02-custom-components.md) | [Data Flow](../01-architecture/03-data-flow.md)

@@ -1,6 +1,6 @@
 # Custom Icon System
 
-**Navigation:** [Home](../README.md) → [Features & Components](./01-components-overview.md) → Custom Icons
+**Navigation:** [Home](../index.md) → [Features & Components](./01-components-overview.md) → Custom Icons
 
 ## Table of Contents
 
@@ -228,8 +228,6 @@ import { TwitterIcon } from "@/components/icons";
 
 ### Sizing
 
-{% raw %}
-
 ```typescript
 // ✅ Good - Use Tailwind size classes
 <GitHubIcon className="h-6 w-6" />
@@ -238,8 +236,6 @@ import { TwitterIcon } from "@/components/icons";
 // ❌ Avoid - Inline styles
 <GitHubIcon style={{ width: '24px', height: '24px' }} />
 ```
-
-{% endraw %}
 
 ### Coloring
 

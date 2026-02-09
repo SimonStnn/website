@@ -1,6 +1,6 @@
 # Secure File Download API
 
-**Breadcrumbs:** [Documentation](../../README.md) > [Guides](../README.md) > [API](./README.md) > File Download
+**Breadcrumbs:** [Documentation](../../index.md) > [Guides](../index.md) > [API](./index.md) > File Download
 
 This guide explains the secure file download system for serving PDFs and other downloadable files.
 

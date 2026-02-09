@@ -1,6 +1,6 @@
 # Deployment Documentation
 
-**Navigation:** [Home](../README.md) → Deployment
+**Navigation:** [Home](../index.md) → Deployment
 
 ---
 
@@ -136,9 +136,11 @@ Production best practices including security, performance, monitoring, and opera
 
 1. Read [Docker Guide Quick Start](./01-docker-guide.md#quick-start)
 2. Build and run locally:
+
    ```bash
    docker compose up -d
    ```
+
 3. Deploy to [Railway](https://railway.app) or [Fly.io](https://fly.io)
 
 **Learn more:** [Docker Guide](./01-docker-guide.md) → [Deployment Strategies](./05-deployment-strategies.md)
@@ -429,10 +431,10 @@ docker compose up -d --build
 
 ### Related Documentation
 
-- [Project README](../../README.md) - Project overview
-- [Architecture Guide](../01-architecture/) - Technical architecture
-- [Development Guide](../02-development/) - Development setup
-- [Content Guide](../03-content/) - Content management
+- [Documentation Home](../index.md) - Documentation index
+- [Architecture Guide](../01-architecture/README.md) - Technical architecture
+- [Development Guide](../04-development/README.md) - Development setup
+- [Content Guide](../03-content/README.md) - Content management
 
 ---
 

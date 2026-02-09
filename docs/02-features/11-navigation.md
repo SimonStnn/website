@@ -1,6 +1,6 @@
 # Navigation Components
 
-**Navigation:** [Home](../README.md) → [Features & Components](./01-components-overview.md) → Navigation
+**Navigation:** [Home](../index.md) → [Features & Components](./01-components-overview.md) → Navigation
 
 ## Table of Contents
 

@@ -1,6 +1,6 @@
 # Sitemap and Robots.txt Configuration
 
-**Breadcrumbs:** [Documentation](../../README.md) > [Guides](../README.md) > [SEO](./README.md) > Sitemap & Robots
+**Breadcrumbs:** [Documentation](../../index.md) > [Guides](../index.md) > [SEO](./index.md) > Sitemap & Robots
 
 This guide explains the dynamic sitemap generation and robots.txt configuration for search engines and AI crawlers.
 

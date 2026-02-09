@@ -1,6 +1,6 @@
 # Configuration Library
 
-**Breadcrumbs:** [Documentation](../../README.md) > [Guides](../README.md) > [Utilities](./README.md) > Config Library
+**Breadcrumbs:** [Documentation](../../index.md) > [Guides](../index.md) > [Utilities](./index.md) > Config Library
 
 This guide documents the configuration system in `lib/config.ts`.
 
@@ -112,7 +112,7 @@ NEXT_PUBLIC_GTM_ID="GTM-XXXXXXX"
 ## See Also
 
 - [Utility Functions](./01-utility-functions.md)
-- [Environment Setup](../../01-getting-started/02-installation.md)
+- [Getting Started](../../04-development/01-getting-started.md)
 
 ---
 

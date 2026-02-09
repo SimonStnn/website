@@ -1,6 +1,6 @@
 # Architecture Documentation
 
-**Navigation:** [Documentation Home](../README.md) → Architecture
+**Navigation:** [Documentation Home](../index.md) → Architecture
 
 ---
 
@@ -125,21 +125,21 @@ Detailed reference for all configuration files:
 ### 🔨 Adding Content?
 
 1. [Data Flow](./03-data-flow.md) - Understand how content works
-2. [Adding New Projects Guide](../02-guides/01-adding-projects.md) - Step-by-step instructions
+2. [Adding New Projects Guide](../03-content/06-adding-projects.md) - Step-by-step instructions
 3. [Directory Structure](./02-directory-structure.md) - Where to put files
 
 ### 🚀 Building Features?
 
 1. [Routing & Navigation](./04-routing-navigation.md) - Add new routes
 2. [Conventions](./05-conventions.md) - Follow patterns
-3. [Component Reference](../03-api/02-components.md) - Use existing components
-4. [Data Access API](../03-api/01-data-access.md) - Access data
+3. [Component Reference](../02-features/01-components-overview.md) - Use existing components
+4. [Data Access API](../03-content/04-data-fetching.md) - Access data
 
 ### ⚙️ Configuring the Project?
 
 1. [Configuration Reference](./06-configuration.md) - All config files
-2. [Environment Setup Guide](../02-guides/02-environment-setup.md) - Set up dev environment
-3. [Deployment Guide](../02-guides/04-deployment.md) - Production configuration
+2. [Environment Setup Guide](../04-development/01-getting-started.md) - Set up dev environment
+3. [Deployment Guide](../05-deployment/01-docker-guide.md) - Production configuration
 
 ---
 
@@ -265,17 +265,17 @@ graph LR
 
 ### Developer Guides
 
-- **[Adding New Projects](../02-guides/01-adding-projects.md)** - Create content step-by-step
-- **[Environment Setup](../02-guides/02-environment-setup.md)** - Get your dev environment ready
-- **[Development Workflow](../02-guides/03-development-workflow.md)** - Day-to-day development
-- **[Deployment Guide](../02-guides/04-deployment.md)** - Deploy to production
-- **[Testing Guide](../02-guides/05-testing.md)** - Write and run tests
+- **[Adding New Projects](../03-content/06-adding-projects.md)** - Create content step-by-step
+- **[Environment Setup](../04-development/01-getting-started.md)** - Get your dev environment ready
+- **[Development Workflow](../04-development/02-development-workflow.md)** - Day-to-day development
+- **[Deployment Guide](../05-deployment/01-docker-guide.md)** - Deploy to production
+- **[Testing Guide](../04-development/07-testing.md)** - Write and run tests
 
 ### API Reference
 
-- **[Data Access API](../03-api/01-data-access.md)** - Functions for accessing content
-- **[Component Reference](../03-api/02-components.md)** - Reusable UI components
-- **[Utility Functions](../03-api/03-utilities.md)** - Helper functions
+- **[Data Access API](../03-content/04-data-fetching.md)** - Functions for accessing content
+- **[Component Reference](../02-features/01-components-overview.md)** - Reusable UI components
+- **[Utility Functions](../06-guides/utilities/01-utility-functions.md)** - Helper functions
 
 ---
 
@@ -294,10 +294,10 @@ When working on this project:
 ## Need Help?
 
 - **Can't find something?** Check [Directory Structure](./02-directory-structure.md)
-- **Adding content?** See [Adding New Projects](../02-guides/01-adding-projects.md)
+- **Adding content?** See [Adding New Projects](../03-content/06-adding-projects.md)
 - **Config issues?** Review [Configuration Reference](./06-configuration.md)
 - **Code questions?** Follow [Conventions](./05-conventions.md)
 
 ---
 
-[← Back to Documentation Home](../README.md)
+[← Back to Documentation Home](../index.md)

@@ -1,6 +1,6 @@
 # Image Handling Guide
 
-**Navigation**: [Documentation Home](../README.md) > [Content Management](./README.md) > Image Handling
+**Navigation**: [Documentation Home](../index.md) > [Content Management](./README.md) > Image Handling
 
 ---
 

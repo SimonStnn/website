@@ -1,6 +1,6 @@
 # Development Workflow
 
-**Navigation:** [Home](../../README.md) > [Development](./README.md) > Development Workflow
+**Navigation:** [Home](../index.md) > [Development](./README.md) > Development Workflow
 
 ---
 
@@ -181,7 +181,7 @@ mkdir -p public/images/projects/my-new-project
 
 Navigate to `http://localhost:3000/projects/my-new-project` to see your project page.
 
-See [Projects Documentation](../03-content/01-projects.md) for complete details.
+See [Projects Documentation](../03-content/06-adding-projects.md) for complete details.
 
 ### Modifying Components
 

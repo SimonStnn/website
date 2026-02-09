@@ -1,6 +1,6 @@
 # Content Management System Overview
 
-**Navigation**: [Documentation Home](../README.md) > [Content Management](./README.md) > CMS Overview
+**Navigation**: [Documentation Home](../index.md) > [Content Management](./README.md) > CMS Overview
 
 ---
 
@@ -437,7 +437,7 @@ sequenceDiagram
 - [Data Fetching](./04-data-fetching.md) - Data access API
 - [Skills Generation](./05-skills-generation.md) - Auto-generated skills logic
 - [Adding Projects](./06-adding-projects.md) - Step-by-step project guide
-- [Architecture Overview](../01-overview/02-tech-stack.md) - Full stack details
+- [Architecture Overview](../01-architecture/01-overview.md) - Full stack details
 
 ---
 

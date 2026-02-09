@@ -1,6 +1,6 @@
 # Content Management Documentation
 
-**Navigation**: [Documentation Home](../README.md) > Content Management
+**Navigation**: [Documentation Home](../index.md) > Content Management
 
 ---
 
@@ -445,9 +445,9 @@ Technologies array in projects automatically generates skills.
 
 ## Related Documentation
 
-- [Architecture Overview](../01-overview/01-introduction.md) - System architecture
-- [Development Guide](../02-development/01-getting-started.md) - Development setup
-- [Component Library](../04-components/README.md) - UI components
+- [Architecture Overview](../01-architecture/01-overview.md) - System architecture
+- [Development Guide](../04-development/01-getting-started.md) - Development setup
+- [Component Library](../02-features/01-components-overview.md) - UI components
 - [Deployment Guide](../05-deployment/README.md) - Production deployment
 
 ---

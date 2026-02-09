@@ -1,6 +1,6 @@
 # JSON Schema Reference
 
-**Navigation**: [Documentation Home](../README.md) > [Content Management](./README.md) > JSON Schema
+**Navigation**: [Documentation Home](../index.md) > [Content Management](./README.md) > JSON Schema
 
 ---
 

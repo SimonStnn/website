@@ -1,6 +1,6 @@
 # Getting Started
 
-**Navigation:** [Home](../../README.md) > [Development](./README.md) > Getting Started
+**Navigation:** [Home](../index.md) > [Development](./README.md) > Getting Started
 
 ---
 
@@ -388,7 +388,7 @@ Now that you have the project running, you can:
 
 1. **Learn the development workflow:** [Development Workflow](./02-development-workflow.md)
 2. **Explore available npm scripts:** [NPM Scripts](./04-npm-scripts.md)
-3. **Add your first project:** [Projects Documentation](../03-content/01-projects.md)
+3. **Add your first project:** [Projects Documentation](../03-content/06-adding-projects.md)
 4. **Configure environment variables:** [Environment Variables](./03-environment-variables.md)
 5. **Set up your IDE:** Configure VSCode/Cursor with recommended extensions
 
@@ -399,7 +399,7 @@ Now that you have the project running, you can:
 - [NPM Scripts](./04-npm-scripts.md) - All available commands
 - [Testing Guide](./07-testing.md) - How to write and run tests
 - [Next.js 15 Documentation](https://nextjs.org/docs) - Official Next.js docs
-- [Project README](../../README.md) - Project overview
+- [Documentation Home](../index.md) - Documentation index
 
 ---
 

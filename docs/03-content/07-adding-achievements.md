@@ -1,6 +1,6 @@
 # Adding Achievements Guide
 
-**Navigation**: [Documentation Home](../README.md) > [Content Management](./README.md) > Adding Achievements
+**Navigation**: [Documentation Home](../index.md) > [Content Management](./README.md) > Adding Achievements
 
 ---
 

@@ -1,6 +1,6 @@
 # Skills Generation System
 
-**Navigation**: [Documentation Home](../README.md) > [Content Management](./README.md) > Skills Generation
+**Navigation**: [Documentation Home](../index.md) > [Content Management](./README.md) > Skills Generation
 
 ---
 

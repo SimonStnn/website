@@ -1,6 +1,6 @@
 # Contributing to the Portfolio
 
-**Breadcrumbs:** [Documentation](../README.md) > [Guides](./README.md) > Contributing
+**Breadcrumbs:** [Documentation](../index.md) > [Guides](./index.md) > Contributing
 
 This guide provides comprehensive guidelines for contributing to the Simon Stijnen portfolio website codebase.
 
@@ -24,7 +24,7 @@ Before contributing, ensure you have:
 - Node.js 20+ installed
 - Git configured with your credentials
 - Familiarity with TypeScript, React, and Next.js 15
-- Understanding of the project architecture (see [Architecture Guide](../02-architecture/01-overview.md))
+- Understanding of the project architecture (see [Architecture Guide](../01-architecture/01-overview.md))
 
 ### Initial Setup
 
@@ -452,7 +452,7 @@ export async function getProjects(): Promise<Project[]> {
 
 If your change affects:
 
-- **Architecture** - Update `docs/02-architecture/`
+- **Architecture** - Update `docs/01-architecture/`
 - **Content** - Update `docs/03-content/`
 - **Deployment** - Update `docs/05-deployment/`
 - **Guides** - Update `docs/06-guides/`
@@ -680,8 +680,8 @@ git push origin fix/navigation-menu-bug
 
 - [Best Practices](./03-best-practices.md) - Code patterns and conventions
 - [Troubleshooting](./02-troubleshooting.md) - Common issues and solutions
-- [Architecture Overview](../02-architecture/01-overview.md) - Project structure
-- [Testing Guide](../04-testing/01-overview.md) - Testing strategies
+- [Architecture Overview](../01-architecture/01-overview.md) - Project structure
+- [Testing Guide](../04-development/07-testing.md) - Testing strategies
 
 ## Next Steps
 

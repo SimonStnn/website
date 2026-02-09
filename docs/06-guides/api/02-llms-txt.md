@@ -1,6 +1,6 @@
 # LLMs.txt - AI Agent Discovery Endpoint
 
-**Breadcrumbs:** [Documentation](../../README.md) > [Guides](../README.md) > [API](./README.md) > LLMs.txt
+**Breadcrumbs:** [Documentation](../../index.md) > [Guides](../index.md) > [API](./index.md) > LLMs.txt
 
 This guide explains the `/llms.txt` endpoint for AI agent discovery and professional recommendation.
 

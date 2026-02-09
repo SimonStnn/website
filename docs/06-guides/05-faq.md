@@ -1,6 +1,6 @@
 # Frequently Asked Questions (FAQ)
 
-**Breadcrumbs:** [Documentation](../README.md) > [Guides](./README.md) > FAQ
+**Breadcrumbs:** [Documentation](../index.md) > [Guides](./index.md) > FAQ
 
 Answers to common questions about the portfolio website architecture, development, and deployment.
 
@@ -305,7 +305,7 @@ npm run dev
 # Your project should appear
 ```
 
-See [Content Guide](../03-content/01-projects.md) for details.
+See [Content Guide](../03-content/06-adding-projects.md) for details.
 
 ### What image formats are supported?
 
@@ -443,7 +443,7 @@ docker-compose up -d website-prod
 
 3. **Other platforms:** Netlify, AWS, Railway, etc.
 
-See [Deployment Guide](../05-deployment/01-overview.md) for details.
+See [Deployment Guide](../05-deployment/01-docker-guide.md) for details.
 
 ### Why use Docker?
 
@@ -763,13 +763,13 @@ The data layer (`lib/`, `content/`) is separate, so you can rebuild the UI witho
 - [Contributing Guide](./01-contributing.md) - Development workflow
 - [Troubleshooting](./02-troubleshooting.md) - Common issues
 - [Best Practices](./03-best-practices.md) - Code patterns
-- [Architecture Overview](../02-architecture/01-overview.md) - Project structure
+- [Architecture Overview](../01-architecture/01-overview.md) - Project structure
 
 ## Still Have Questions?
 
 - Check [GitHub Discussions](https://github.com/SimonStnn/website/discussions)
 - Open an [issue](https://github.com/SimonStnn/website/issues)
-- Review the [documentation](../README.md)
+- Review the [documentation](../index.md)
 
 ---
 

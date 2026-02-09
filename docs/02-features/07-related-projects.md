@@ -1,6 +1,6 @@
 # Related Projects Algorithm
 
-**Navigation:** [Home](../README.md) → [Features & Components](./01-components-overview.md) → Related Projects
+**Navigation:** [Home](../index.md) → [Features & Components](./01-components-overview.md) → Related Projects
 
 ## Table of Contents
 
@@ -488,10 +488,10 @@ const relatedComponent = (
 
 ## See Also
 
-- [Project Data Structure](../01-architecture/03-data-layer.md#projects) - Project schema
+- [Project Data Structure](../01-architecture/03-data-flow.md#projects) - Project schema
 - [Project Card Component](./02-custom-components.md#project-card-component) - Card design
-- [Skills Generation](../01-architecture/03-data-layer.md#skills-generation) - Similar technology analysis
-- [Performance Optimization](../01-architecture/02-project-structure.md#performance) - Performance tips
+- [Skills Generation](../03-content/05-skills-generation.md) - Similar technology analysis
+- [Performance Optimization](../06-guides/seo/05-performance.md) - Performance tips
 
 ## Next Steps
 
@@ -557,4 +557,4 @@ function getRelatedProjects(
 ---
 
 **Last Updated:** 2024-02-09  
-**Related Docs:** [Components](./01-components-overview.md) | [Data Layer](../01-architecture/03-data-layer.md) | [Project Card](./02-custom-components.md)
+**Related Docs:** [Components](./01-components-overview.md) | [Data Flow](../01-architecture/03-data-flow.md) | [Project Card](./02-custom-components.md)

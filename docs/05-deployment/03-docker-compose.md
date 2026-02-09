@@ -1,6 +1,6 @@
 # Docker Compose Guide
 
-**Navigation:** [Home](../README.md) → [Deployment](./README.md) → Docker Compose
+**Navigation:** [Home](../index.md) → [Deployment](./README.md) → Docker Compose
 
 ---
 

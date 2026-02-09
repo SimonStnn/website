@@ -1,6 +1,6 @@
 # Meta Components: SEO & Analytics
 
-**Navigation:** [Home](../README.md) → [Features & Components](./01-components-overview.md) → Meta Components
+**Navigation:** [Home](../index.md) → [Features & Components](./01-components-overview.md) → Meta Components
 
 ## Table of Contents
 
@@ -31,8 +31,6 @@ Integrates Google Analytics (GA4) and Google Tag Manager (GTM) for tracking user
 
 ### File: `components/meta/analytics.tsx`
 
-{% raw %}
-
 ```typescript:1:27:components/meta/analytics.tsx
 // import Script from "next/script";
 import { analyticsConfig, appConfig } from "@/lib/config";
@@ -62,8 +60,6 @@ export function Analytics() {
 
 export default Analytics;
 ```
-
-{% endraw %}
 
 ### Features
 
@@ -122,8 +118,6 @@ NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX
 Provides JSON-LD structured data for enhanced search results (rich snippets) and better SEO.
 
 ### File: `components/meta/structured-data.tsx`
-
-{% raw %}
 
 ```typescript:1:80:components/meta/structured-data.tsx
 interface JsonLdProps {
@@ -207,8 +201,6 @@ export function BreadcrumbJsonLd({ items }: BreadcrumbJsonLdProps) {
   return <JsonLd data={data} />;
 }
 ```
-
-{% endraw %}
 
 ### Schema Types
 
@@ -373,8 +365,6 @@ Wrapper component that combines ProjectJsonLd and BreadcrumbJsonLd for project p
 
 ### File: `components/meta/project-structured-data.tsx`
 
-{% raw %}
-
 ```typescript:1:68:components/meta/project-structured-data.tsx
 import { ProjectJsonLd, BreadcrumbJsonLd } from "@/components/meta/structured-data";
 import { siteConfig } from "@/lib/config";
@@ -445,8 +435,6 @@ export default function ProjectStructuredData({
   );
 }
 ```
-
-{% endraw %}
 
 ### Features
 
@@ -614,4 +602,4 @@ export default function HomePage() {
 ---
 
 **Last Updated:** 2024-02-09  
-**Related Docs:** [Components](./01-components-overview.md) | [Configuration](../01-architecture/04-configuration.md) | [SEO](../04-deployment/03-seo-optimization.md)
+**Related Docs:** [Components](./01-components-overview.md) | [Configuration](../01-architecture/06-configuration.md) | [SEO](../06-guides/seo/01-seo-guide.md)

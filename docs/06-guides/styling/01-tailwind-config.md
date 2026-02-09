@@ -1,6 +1,6 @@
 # Tailwind CSS Configuration
 
-**Breadcrumbs:** [Documentation](../../README.md) > [Guides](../README.md) > [Styling](./README.md) > Tailwind Config
+**Breadcrumbs:** [Documentation](../../index.md) > [Guides](../index.md) > [Styling](./index.md) > Tailwind Config
 
 This guide explains the Tailwind CSS 4 configuration and customization in the portfolio.
 

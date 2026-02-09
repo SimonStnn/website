@@ -1,6 +1,6 @@
 # Bundle Analysis
 
-**Navigation:** [Home](../../README.md) > [Development](./README.md) > Bundle Analysis
+**Navigation:** [Home](../index.md) > [Development](./README.md) > Bundle Analysis
 
 ---
 
@@ -240,6 +240,7 @@ react-dom
    ```
 
 3. **Unused dependencies**
+
    ```
    Example: lodash (70 KB)
    Why present? Imported but not actually used
@@ -711,9 +712,7 @@ Total savings: 270 KB (60% reduction)
 
 ## Next Steps
 
-- [Optimize images](../06-optimization/) with Next.js Image component
-- [Set up performance monitoring](../07-monitoring/) to track real-world performance
-- [Configure CDN](../05-deployment/) for faster asset delivery
+- [Configure CDN](../05-deployment/README.md) for faster asset delivery
 
 ---
 

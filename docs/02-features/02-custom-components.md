@@ -1,6 +1,6 @@
 # Custom Components Deep Dive
 
-**Navigation:** [Home](../README.md) → [Features & Components](./01-components-overview.md) → Custom Components
+**Navigation:** [Home](../index.md) → [Features & Components](./01-components-overview.md) → Custom Components
 
 ## Table of Contents
 
@@ -837,4 +837,4 @@ className="flex flex-col md:flex-row lg:grid-cols-3"
 ---
 
 **Last Updated:** 2024-02-09  
-**Related Docs:** [Component Overview](./01-components-overview.md) | [UI Components](./03-shadcn-ui.md) | [Testing](../03-testing/01-overview.md)
+**Related Docs:** [Component Overview](./01-components-overview.md) | [UI Components](./03-shadcn-ui.md) | [Testing](../04-development/07-testing.md)

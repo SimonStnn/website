@@ -1,6 +1,6 @@
 # TypeScript Interfaces
 
-**Navigation**: [Documentation Home](../README.md) > [Content Management](./README.md) > TypeScript Interfaces
+**Navigation**: [Documentation Home](../index.md) > [Content Management](./README.md) > TypeScript Interfaces
 
 ---
 

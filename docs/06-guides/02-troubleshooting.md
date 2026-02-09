@@ -1,6 +1,6 @@
 # Troubleshooting Guide
 
-**Breadcrumbs:** [Documentation](../README.md) > [Guides](./README.md) > Troubleshooting
+**Breadcrumbs:** [Documentation](../index.md) > [Guides](./index.md) > Troubleshooting
 
 This guide provides solutions to common issues you may encounter while developing or deploying the portfolio website.
 
@@ -871,8 +871,8 @@ npm run build -- --debug
 
 - [Contributing Guide](./01-contributing.md) - Development workflow
 - [Best Practices](./03-best-practices.md) - Code patterns
-- [Architecture Overview](../02-architecture/01-overview.md) - Project structure
-- [Deployment Guide](../05-deployment/01-overview.md) - Deployment setup
+- [Architecture Overview](../01-architecture/01-overview.md) - Project structure
+- [Deployment Guide](../05-deployment/01-docker-guide.md) - Deployment setup
 
 ## Next Steps
 

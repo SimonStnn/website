@@ -1,6 +1,6 @@
 # Architecture Overview
 
-**Navigation:** [Documentation Home](../README.md) → [Architecture](./README.md) → Overview
+**Navigation:** [Documentation Home](../index.md) → [Architecture](./README.md) → Overview
 
 ---
 
@@ -402,8 +402,6 @@ sequenceDiagram
 
 All pages and layouts use React Server Components for optimal performance:
 
-{% raw %}
-
 ```77:136:/workspaces/website/app/layout.tsx
 export default function RootLayout({
   children,
@@ -466,8 +464,6 @@ export default function RootLayout({
   );
 }
 ```
-
-{% endraw %}
 
 ### 2. Absolute Imports Pattern
 
@@ -597,9 +593,9 @@ Related documentation:
 
 1. **Understand the structure**: Read [Directory Structure](./02-directory-structure.md) to learn how files are organized
 2. **Learn data flow**: Review [Data Flow](./03-data-flow.md) to understand content management
-3. **Add content**: See [Adding New Projects](../02-guides/01-adding-projects.md) to contribute
-4. **Development setup**: Follow [Development Guide](../02-guides/03-development-workflow.md) to start coding
+3. **Add content**: See [Adding New Projects](../03-content/06-adding-projects.md) to contribute
+4. **Development setup**: Follow [Development Guide](../04-development/02-development-workflow.md) to start coding
 
 ---
 
-[← Back to Architecture Index](./README.md) | [Documentation Home](../README.md)
+[← Back to Architecture Index](./README.md) | [Documentation Home](../index.md)

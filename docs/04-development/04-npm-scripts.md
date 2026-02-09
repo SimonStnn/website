@@ -1,6 +1,6 @@
 # NPM Scripts
 
-**Navigation:** [Home](../../README.md) > [Development](./README.md) > NPM Scripts
+**Navigation:** [Home](../index.md) > [Development](./README.md) > NPM Scripts
 
 ---
 

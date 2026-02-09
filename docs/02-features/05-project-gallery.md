@@ -1,6 +1,6 @@
 # Project Gallery with Embla Carousel
 
-**Navigation:** [Home](../README.md) → [Features & Components](./01-components-overview.md) → Project Gallery
+**Navigation:** [Home](../index.md) → [Features & Components](./01-components-overview.md) → Project Gallery
 
 ## Table of Contents
 
@@ -234,8 +234,6 @@ function CarouselNext({
 
 ### Project Detail Page Integration
 
-{% raw %}
-
 ```typescript:228:256:app/projects/[slug]/page.tsx
           {project.images && project.images.length > 1 && (
             <Carousel className="w-full overflow-hidden rounded-md" opts={{ loop: true }}>
@@ -269,17 +267,11 @@ function CarouselNext({
           )}
 ```
 
-{% endraw %}
-
 ### Configuration Options
-
-{% raw %}
 
 ```typescript
 opts={{ loop: true }}
 ```
-
-{% endraw %}
 
 | Option          | Value         | Description                     |
 | --------------- | ------------- | ------------------------------- |
@@ -390,7 +382,7 @@ function ImageCaption({ alt }: { alt: string }) {
 
 ### Loop Navigation
 
-With {% raw %}`opts={{ loop: true }}`{% endraw %}, the carousel:
+With `opts={{ loop: true }}`, the carousel:
 
 1. Wraps from last slide to first
 2. Wraps from first slide to last
@@ -514,8 +506,6 @@ This moves buttons inside the carousel for better mobile UX.
 
 ### Basic Image Carousel
 
-{% raw %}
-
 ```typescript
 import {
   Carousel,
@@ -554,8 +544,6 @@ export function ImageGallery() {
   );
 }
 ```
-
-{% endraw %}
 
 ### Carousel with API Access
 
@@ -596,8 +584,6 @@ export function ControlledCarousel() {
 
 ### Multiple Slides Visible
 
-{% raw %}
-
 ```typescript
 <Carousel
   opts={{
@@ -622,8 +608,6 @@ export function ControlledCarousel() {
 </Carousel>
 ```
 
-{% endraw %}
-
 ## See Also
 
 - [Embla Carousel Documentation](https://www.embla-carousel.com/) - Official Embla docs
@@ -642,4 +626,4 @@ export function ControlledCarousel() {
 ---
 
 **Last Updated:** 2024-02-09  
-**Related Docs:** [Components](./01-components-overview.md) | [shadcn/ui](./03-shadcn-ui.md) | [Images](../01-architecture/06-images-media.md)
+**Related Docs:** [Components](./01-components-overview.md) | [shadcn/ui](./03-shadcn-ui.md) | [Image Handling](../03-content/08-image-handling.md)

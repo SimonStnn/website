@@ -1,6 +1,6 @@
 # Configuration Reference
 
-**Navigation:** [Documentation Home](../README.md) → [Architecture](./README.md) → Configuration
+**Navigation:** [Documentation Home](../index.md) → [Architecture](./README.md) → Configuration
 
 ---
 
@@ -930,8 +930,8 @@ Related documentation:
 - **[Architecture Overview](./01-overview.md)** - Understanding the tech stack
 - **[Directory Structure](./02-directory-structure.md)** - Where config files live
 - **[Conventions](./05-conventions.md)** - Coding standards
-- **[Development Workflow](../02-guides/03-development-workflow.md)** - Using these configurations
-- **[Deployment Guide](../02-guides/04-deployment.md)** - Production configuration
+- **[Development Workflow](../04-development/02-development-workflow.md)** - Using these configurations
+- **[Deployment Guide](../05-deployment/01-docker-guide.md)** - Production configuration
 
 ---
 
@@ -944,4 +944,4 @@ Related documentation:
 
 ---
 
-[← Back to Architecture Index](./README.md) | [Documentation Home](../README.md)
+[← Back to Architecture Index](./README.md) | [Documentation Home](../index.md)

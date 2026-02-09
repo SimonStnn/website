@@ -1,6 +1,6 @@
 # Responsive Design Patterns
 
-**Breadcrumbs:** [Documentation](../../README.md) > [Guides](../README.md) > [Styling](./README.md) > Responsive Design
+**Breadcrumbs:** [Documentation](../../index.md) > [Guides](../index.md) > [Styling](./index.md) > Responsive Design
 
 This guide covers mobile-first responsive design patterns used in the portfolio.
 

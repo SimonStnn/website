@@ -1,6 +1,6 @@
 # Linting and Formatting
 
-**Navigation:** [Home](../../README.md) > [Development](./README.md) > Linting and Formatting
+**Navigation:** [Home](../index.md) > [Development](./README.md) > Linting and Formatting
 
 ---
 

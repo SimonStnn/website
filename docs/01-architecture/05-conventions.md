@@ -1,6 +1,6 @@
 # Coding Conventions & Standards
 
-**Navigation:** [Documentation Home](../README.md) → [Architecture](./README.md) → Conventions
+**Navigation:** [Documentation Home](../index.md) → [Architecture](./README.md) → Conventions
 
 ---
 
@@ -600,8 +600,6 @@ const config = {
 
 ### Avoid Inline Styles
 
-{% raw %}
-
 ```typescript
 ❌ Bad
 <div style={{ color: 'red', fontSize: '24px' }}>
@@ -609,8 +607,6 @@ const config = {
 ✅ Good
 <div className="text-red-500 text-2xl">
 ```
-
-{% endraw %}
 
 ---
 
@@ -783,8 +779,8 @@ Related documentation:
 - **[Architecture Overview](./01-overview.md)** - Understanding the system
 - **[Directory Structure](./02-directory-structure.md)** - Where files belong
 - **[Configuration Reference](./06-configuration.md)** - Tool configurations
-- **[Development Workflow](../02-guides/03-development-workflow.md)** - Day-to-day development
-- **[Testing Guide](../02-guides/05-testing.md)** - Writing and running tests
+- **[Development Workflow](../04-development/02-development-workflow.md)** - Day-to-day development
+- **[Testing Guide](../04-development/07-testing.md)** - Writing and running tests
 
 ---
 
@@ -797,4 +793,4 @@ Related documentation:
 
 ---
 
-[← Back to Architecture Index](./README.md) | [Documentation Home](../README.md)
+[← Back to Architecture Index](./README.md) | [Documentation Home](../index.md)

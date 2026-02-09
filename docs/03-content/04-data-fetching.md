@@ -1,6 +1,6 @@
 # Data Fetching Functions API
 
-**Navigation**: [Documentation Home](../README.md) > [Content Management](./README.md) > Data Fetching
+**Navigation**: [Documentation Home](../index.md) > [Content Management](./README.md) > Data Fetching
 
 ---
 

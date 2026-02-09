@@ -1,6 +1,6 @@
 # Git Hooks
 
-**Navigation:** [Home](../../README.md) > [Development](./README.md) > Git Hooks
+**Navigation:** [Home](../index.md) > [Development](./README.md) > Git Hooks
 
 ---
 
@@ -863,7 +863,7 @@ git commit -m "test: verify hooks" --dry-run
 ## Next Steps
 
 - [Analyze bundle size](./10-bundle-analysis.md) to optimize performance
-- [Configure CI/CD](../05-deployment/) with similar checks
+- [Configure CI/CD](../05-deployment/README.md) with similar checks
 - [Set up testing](./07-testing.md) in pre-push hooks
 
 ---

@@ -1,6 +1,6 @@
 # Google Analytics & Google Tag Manager
 
-**Breadcrumbs:** [Documentation](../../README.md) > [Guides](../README.md) > [SEO](./README.md) > Analytics
+**Breadcrumbs:** [Documentation](../../index.md) > [Guides](../index.md) > [SEO](./index.md) > Analytics
 
 This guide explains the Google Analytics and Google Tag Manager implementation for tracking website metrics.
 
@@ -98,8 +98,6 @@ The code is automatically installed via the Analytics component.
 
 **File:** `components/meta/analytics.tsx`
 
-{% raw %}
-
 ```typescript
 // components/meta/analytics.tsx
 import { analyticsConfig, appConfig } from '@/lib/config';
@@ -148,11 +146,7 @@ export function Analytics() {
 }
 ```
 
-{% endraw %}
-
 ### Layout Integration
-
-{% raw %}
 
 ```typescript
 // app/layout.tsx
@@ -184,8 +178,6 @@ export default function RootLayout({ children }) {
   );
 }
 ```
-
-{% endraw %}
 
 ### Configuration
 

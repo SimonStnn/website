@@ -1,6 +1,6 @@
 # Badge Overflow Detection
 
-**Navigation:** [Home](../README.md) → [Features & Components](./01-components-overview.md) → Badge Overflow
+**Navigation:** [Home](../index.md) → [Features & Components](./01-components-overview.md) → Badge Overflow
 
 ## Table of Contents
 
@@ -84,8 +84,6 @@ After Overflow Detection:
 ## Algorithm Implementation
 
 ### Component Structure
-
-{% raw %}
 
 ```typescript:1:93:components/badge-overflow.tsx
 "use client";
@@ -182,8 +180,6 @@ export default function BadgeOverflow({ technologies, className }: BadgeOverflow
   );
 }
 ```
-
-{% endraw %}
 
 ## Overflow Detection Logic
 
@@ -332,8 +328,6 @@ Prevents memory leaks by removing event listener on unmount.
 
 ### Tooltip Structure
 
-{% raw %}
-
 ```typescript
 <Tooltip>
   <TooltipTrigger asChild>
@@ -351,8 +345,6 @@ Prevents memory leaks by removing event listener on unmount.
   </TooltipContent>
 </Tooltip>
 ```
-
-{% endraw %}
 
 ### Tooltip Content
 
@@ -519,4 +511,4 @@ export default function BadgeOverflow({
 ---
 
 **Last Updated:** 2024-02-09  
-**Related Docs:** [Components](./01-components-overview.md) | [Project Card](./02-custom-components.md) | [Performance](../01-architecture/02-project-structure.md)
+**Related Docs:** [Components](./01-components-overview.md) | [Project Card](./02-custom-components.md) | [Directory Structure](../01-architecture/02-directory-structure.md)

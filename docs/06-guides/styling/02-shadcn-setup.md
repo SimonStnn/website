@@ -1,6 +1,6 @@
 # shadcn/ui Setup and Customization
 
-**Breadcrumbs:** [Documentation](../../README.md) > [Guides](../README.md) > [Styling](./README.md) > shadcn/ui
+**Breadcrumbs:** [Documentation](../../index.md) > [Guides](../index.md) > [Styling](./index.md) > shadcn/ui
 
 This guide explains the shadcn/ui component library configuration and usage.
 

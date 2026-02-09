@@ -1,6 +1,6 @@
 # Layout Components
 
-**Navigation:** [Home](../README.md) → [Features & Components](./01-components-overview.md) → Layout Components
+**Navigation:** [Home](../index.md) → [Features & Components](./01-components-overview.md) → Layout Components
 
 ## Table of Contents
 

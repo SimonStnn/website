@@ -1,6 +1,6 @@
 # Utility Functions
 
-**Breadcrumbs:** [Documentation](../../README.md) > [Guides](../README.md) > [Utilities](./README.md) > Utility Functions
+**Breadcrumbs:** [Documentation](../../index.md) > [Guides](../index.md) > [Utilities](./index.md) > Utility Functions
 
 This guide documents the utility functions in `lib/utils.ts`.
 

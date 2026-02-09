@@ -1,6 +1,6 @@
 # Routing & Navigation
 
-**Navigation:** [Documentation Home](../README.md) → [Architecture](./README.md) → Routing & Navigation
+**Navigation:** [Documentation Home](../index.md) → [Architecture](./README.md) → Routing & Navigation
 
 ---
 
@@ -549,7 +549,7 @@ Related documentation:
 - **[Architecture Overview](./01-overview.md)** - High-level system architecture
 - **[Data Flow](./03-data-flow.md)** - How data reaches pages
 - **[Directory Structure](./02-directory-structure.md)** - Where route files live
-- **[Adding New Projects](../02-guides/01-adding-projects.md)** - Creating new routes
+- **[Adding New Projects](../03-content/06-adding-projects.md)** - Creating new routes
 - **[Next.js App Router Docs](https://nextjs.org/docs/app)** - Official documentation
 
 ---
@@ -563,4 +563,4 @@ Related documentation:
 
 ---
 
-[← Back to Architecture Index](./README.md) | [Documentation Home](../README.md)
+[← Back to Architecture Index](./README.md) | [Documentation Home](../index.md)

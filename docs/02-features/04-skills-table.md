@@ -1,6 +1,6 @@
 # Skills Table
 
-**Navigation:** [Home](../README.md) → [Features & Components](./01-components-overview.md) → Skills Table
+**Navigation:** [Home](../index.md) → [Features & Components](./01-components-overview.md) → Skills Table
 
 ## Table of Contents
 
@@ -644,7 +644,7 @@ export default async function SkillsPage() {
 
 ## See Also
 
-- [Skills Data Generation](../01-architecture/03-data-layer.md#skills-generation) - How skills are extracted from projects
+- [Skills Data Generation](../03-content/05-skills-generation.md) - How skills are extracted from projects
 - [TanStack Table Docs](https://tanstack.com/table/latest) - Official documentation
 - [Badge Overflow](./08-badge-overflow.md) - Technology badge display
 - [Custom Components](./02-custom-components.md) - Other custom components
@@ -660,4 +660,4 @@ export default async function SkillsPage() {
 ---
 
 **Last Updated:** 2024-02-09  
-**Related Docs:** [Components](./01-components-overview.md) | [Data Layer](../01-architecture/03-data-layer.md) | [Testing](../03-testing/01-overview.md)
+**Related Docs:** [Components](./01-components-overview.md) | [Data Flow](../01-architecture/03-data-flow.md) | [Testing](../04-development/07-testing.md)

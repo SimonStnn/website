@@ -1,6 +1,6 @@
 # Data Flow
 
-**Navigation:** [Documentation Home](../README.md) → [Architecture](./README.md) → Data Flow
+**Navigation:** [Documentation Home](../index.md) → [Architecture](./README.md) → Data Flow
 
 ---
 
@@ -610,18 +610,18 @@ Related documentation:
 - **[Architecture Overview](./01-overview.md)** - High-level architecture patterns
 - **[Directory Structure](./02-directory-structure.md)** - Where data files live
 - **[Routing & Navigation](./04-routing-navigation.md)** - How routes access data
-- **[Adding New Projects](../02-guides/01-adding-projects.md)** - Step-by-step content creation
-- **[Data Access API](../03-api/01-data-access.md)** - Complete function reference
+- **[Adding New Projects](../03-content/06-adding-projects.md)** - Step-by-step content creation
+- **[Data Access API](../03-content/04-data-fetching.md)** - Complete function reference
 
 ---
 
 ## Next Steps
 
-1. **Add content**: Follow [Adding New Projects](../02-guides/01-adding-projects.md) to create projects
+1. **Add content**: Follow [Adding New Projects](../03-content/06-adding-projects.md) to create projects
 2. **Understand routing**: Read [Routing & Navigation](./04-routing-navigation.md) for page generation
-3. **Explore components**: See [Component Reference](../03-api/02-components.md) for UI patterns
+3. **Explore components**: See [Component Reference](../02-features/01-components-overview.md) for UI patterns
 4. **Learn conventions**: Review [Conventions](./05-conventions.md) for best practices
 
 ---
 
-[← Back to Architecture Index](./README.md) | [Documentation Home](../README.md)
+[← Back to Architecture Index](./README.md) | [Documentation Home](../index.md)

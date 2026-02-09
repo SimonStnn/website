@@ -1,6 +1,6 @@
 # TypeScript Configuration
 
-**Navigation:** [Home](../../README.md) > [Development](./README.md) > TypeScript Configuration
+**Navigation:** [Home](../index.md) > [Development](./README.md) > TypeScript Configuration
 
 ---
 

@@ -1,6 +1,6 @@
 # Complete SEO Implementation Guide
 
-**Breadcrumbs:** [Documentation](../../README.md) > [Guides](../README.md) > [SEO](./README.md) > SEO Guide
+**Breadcrumbs:** [Documentation](../../index.md) > [Guides](../index.md) > [SEO](./index.md) > SEO Guide
 
 This comprehensive guide covers all SEO implementations in the portfolio website.
 
@@ -572,8 +572,6 @@ export default function ProjectsPage() {
 
 ### Local Business Schema
 
-{% raw %}
-
 ```typescript
 // components/meta/structured-data.tsx
 export function PersonJsonLd({ name, location, ...props }) {
@@ -598,8 +596,6 @@ export function PersonJsonLd({ name, location, ...props }) {
   );
 }
 ```
-
-{% endraw %}
 
 See [Structured Data Guide](./02-structured-data.md) for details.
 

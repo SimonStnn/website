@@ -1,6 +1,6 @@
 # Design System & Design Tokens
 
-**Breadcrumbs:** [Documentation](../../README.md) > [Guides](../README.md) > [Styling](./README.md) > Design System
+**Breadcrumbs:** [Documentation](../../index.md) > [Guides](../index.md) > [Styling](./index.md) > Design System
 
 This guide documents the design system tokens and patterns.
 

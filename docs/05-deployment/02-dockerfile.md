@@ -1,6 +1,6 @@
 # Dockerfile Deep Dive
 
-**Navigation:** [Home](../README.md) → [Deployment](./README.md) → Dockerfile
+**Navigation:** [Home](../index.md) → [Deployment](./README.md) → Dockerfile
 
 ---
 

@@ -1,6 +1,6 @@
 # Development Documentation
 
-**Navigation:** [Home](../../README.md) > Development
+**Navigation:** [Home](../index.md) > Development
 
 ---
 
@@ -322,7 +322,7 @@ npm run build:analyze    # Bundle size analysis
 
 - Check `AGENTS.md` for AI agent instructions
 - Review `README.md` for project overview
-- Read `DOCKER.md` for deployment information
+- Read [Docker Guide](../05-deployment/01-docker-guide.md) for deployment information
 
 ### External Resources
 

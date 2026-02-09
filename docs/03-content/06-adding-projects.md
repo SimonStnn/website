@@ -1,6 +1,6 @@
 # Adding Projects Guide
 
-**Navigation**: [Documentation Home](../README.md) > [Content Management](./README.md) > Adding Projects
+**Navigation**: [Documentation Home](../index.md) > [Content Management](./README.md) > Adding Projects
 
 ---
 

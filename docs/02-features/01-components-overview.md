@@ -1,6 +1,6 @@
 # Components Overview
 
-**Navigation:** [Home](../README.md) → [Features & Components](./01-components-overview.md)
+**Navigation:** [Home](../index.md) → [Features & Components](./01-components-overview.md)
 
 ## Table of Contents
 
@@ -351,4 +351,4 @@ import { useTheme } from "next-themes";
 ---
 
 **Last Updated:** 2024-02-09  
-**Related Docs:** [Architecture](../01-architecture/01-overview.md) | [Data Layer](../01-architecture/03-data-layer.md) | [Styling](../01-architecture/05-styling.md)
+**Related Docs:** [Architecture](../01-architecture/01-overview.md) | [Data Flow](../01-architecture/03-data-flow.md) | [Design System](../06-guides/styling/04-design-system.md)

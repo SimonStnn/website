@@ -1,6 +1,6 @@
 # Next.js Configuration
 
-**Navigation:** [Home](../../README.md) > [Development](./README.md) > Next.js Configuration
+**Navigation:** [Home](../index.md) > [Development](./README.md) > Next.js Configuration
 
 ---
 

@@ -1,6 +1,6 @@
 # Migration Guide
 
-**Breadcrumbs:** [Documentation](../README.md) > [Guides](./README.md) > Migration Guide
+**Breadcrumbs:** [Documentation](../index.md) > [Guides](./index.md) > Migration Guide
 
 This guide provides instructions for migrating between versions and upgrading dependencies for the portfolio website.
 
@@ -735,7 +735,7 @@ curl http://localhost:3000
 - [Contributing Guide](./01-contributing.md) - Development workflow
 - [Troubleshooting](./02-troubleshooting.md) - Common issues
 - [Best Practices](./03-best-practices.md) - Code patterns
-- [Architecture Overview](../02-architecture/01-overview.md) - Project structure
+- [Architecture Overview](../01-architecture/01-overview.md) - Project structure
 
 ## Next Steps
 

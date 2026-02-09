@@ -1,6 +1,6 @@
 # Social Utilities & Links
 
-**Navigation:** [Home](../README.md) → [Features & Components](./01-components-overview.md) → Social Utilities
+**Navigation:** [Home](../index.md) → [Features & Components](./01-components-overview.md) → Social Utilities
 
 ## Table of Contents
 
@@ -493,7 +493,7 @@ Without `"use client"`, the year would be stale until next build.
 
 - [Footer Component](./13-layout-components.md#footer) - Footer implementation
 - [Icon System](./14-icons.md) - Custom icon components
-- [Configuration](../01-architecture/04-configuration.md) - Site config
+- [Configuration](../01-architecture/06-configuration.md) - Site config
 
 ## Next Steps
 

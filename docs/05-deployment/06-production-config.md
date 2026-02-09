@@ -1,6 +1,6 @@
 # Production Configuration
 
-**Navigation:** [Home](../README.md) → [Deployment](./README.md) → Production Configuration
+**Navigation:** [Home](../index.md) → [Deployment](./README.md) → Production Configuration
 
 ---
 

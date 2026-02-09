@@ -1,6 +1,6 @@
 # shadcn/ui Integration
 
-**Navigation:** [Home](../README.md) → [Features & Components](./01-components-overview.md) → shadcn/ui Integration
+**Navigation:** [Home](../index.md) → [Features & Components](./01-components-overview.md) → shadcn/ui Integration
 
 ## Table of Contents
 
@@ -489,7 +489,7 @@ import {
 
 - [Components Overview](./01-components-overview.md) - Component architecture
 - [Theme System](./09-theme-system.md) - Dark mode implementation
-- [Styling Guide](../01-architecture/05-styling.md) - Tailwind CSS patterns
+- [Styling Guide](../06-guides/styling/04-design-system.md) - Tailwind CSS patterns
 - [Official shadcn/ui Docs](https://ui.shadcn.com/docs) - Complete component reference
 
 ## Next Steps

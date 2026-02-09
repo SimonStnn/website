@@ -1,6 +1,6 @@
 # Deployment Strategies
 
-**Navigation:** [Home](../README.md) → [Deployment](./README.md) → Deployment Strategies
+**Navigation:** [Home](../index.md) → [Deployment](./README.md) → Deployment Strategies
 
 ---
 

@@ -1,6 +1,6 @@
 # Testing Guide
 
-**Navigation:** [Home](../../README.md) > [Development](./README.md) > Testing
+**Navigation:** [Home](../index.md) > [Development](./README.md) > Testing
 
 ---
 

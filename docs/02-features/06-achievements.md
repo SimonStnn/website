@@ -1,6 +1,6 @@
 # Achievement Cards & Dialogs
 
-**Navigation:** [Home](../README.md) → [Features & Components](./01-components-overview.md) → Achievement Cards
+**Navigation:** [Home](../index.md) → [Features & Components](./01-components-overview.md) → Achievement Cards
 
 ## Table of Contents
 
@@ -525,8 +525,6 @@ return (
 
 ### Responsive Grid Layouts
 
-{% raw %}
-
 ```typescript
 // 1 column mobile, 2 tablet, 3 desktop
 className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
@@ -541,8 +539,6 @@ className="grid grid-cols-2 gap-4"
 className="grid auto-rows-fr gap-6"
 style={{ gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))" }}
 ```
-
-{% endraw %}
 
 ### Standalone Badge Usage
 
@@ -562,7 +558,7 @@ import { AchievementBadge } from "@/components/achievement-card";
 - [Dialog Component](https://ui.shadcn.com/docs/components/dialog) - shadcn/ui docs
 - [Card Component](https://ui.shadcn.com/docs/components/card) - shadcn/ui docs
 - [Badge Component](https://ui.shadcn.com/docs/components/badge) - shadcn/ui docs
-- [Data Layer](../01-architecture/03-data-layer.md#achievements) - Achievement data structure
+- [Data Flow](../01-architecture/03-data-flow.md#achievements) - Achievement data structure
 
 ## Next Steps
 
@@ -576,4 +572,4 @@ import { AchievementBadge } from "@/components/achievement-card";
 ---
 
 **Last Updated:** 2024-02-09  
-**Related Docs:** [Components](./01-components-overview.md) | [shadcn/ui](./03-shadcn-ui.md) | [Data Layer](../01-architecture/03-data-layer.md)
+**Related Docs:** [Components](./01-components-overview.md) | [shadcn/ui](./03-shadcn-ui.md) | [Data Flow](../01-architecture/03-data-flow.md)

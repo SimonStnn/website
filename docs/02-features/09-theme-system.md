@@ -1,6 +1,6 @@
 # Theme System & Dark Mode
 
-**Navigation:** [Home](../README.md) → [Features & Components](./01-components-overview.md) → Theme System
+**Navigation:** [Home](../index.md) → [Features & Components](./01-components-overview.md) → Theme System
 
 ## Table of Contents
 
@@ -559,4 +559,4 @@ Then add CSS:
 ---
 
 **Last Updated:** 2024-02-09  
-**Related Docs:** [Components](./01-components-overview.md) | [shadcn/ui](./03-shadcn-ui.md) | [Styling](../01-architecture/05-styling.md)
+**Related Docs:** [Components](./01-components-overview.md) | [shadcn/ui](./03-shadcn-ui.md) | [Styling](../06-guides/styling/04-design-system.md)

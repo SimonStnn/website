@@ -1,6 +1,6 @@
 # CI/CD Pipeline
 
-**Navigation:** [Home](../README.md) → [Deployment](./README.md) → CI/CD
+**Navigation:** [Home](../index.md) → [Deployment](./README.md) → CI/CD
 
 ---
 

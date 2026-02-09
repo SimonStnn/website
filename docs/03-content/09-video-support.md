@@ -1,6 +1,6 @@
 # Video Support Guide
 
-**Navigation**: [Documentation Home](../README.md) > [Content Management](./README.md) > Video Support
+**Navigation**: [Documentation Home](../index.md) > [Content Management](./README.md) > Video Support
 
 ---
 
@@ -873,7 +873,7 @@ First, we'll create a new project
 
 - [Image Handling Guide](./08-image-handling.md) - General media handling
 - [Adding Projects Guide](./06-adding-projects.md) - Adding videos to projects
-- [Utility Functions](../02-development/04-utilities.md) - `isVideoFile()` function
+- [Utility Functions](../06-guides/utilities/01-utility-functions.md) - `isVideoFile()` function
 - [JSON Schema Reference](./02-json-schema.md) - Media field structure
 
 ---

@@ -1,6 +1,6 @@
 # Performance Optimization Guide
 
-**Breadcrumbs:** [Documentation](../../README.md) > [Guides](../README.md) > [SEO](./README.md) > Performance
+**Breadcrumbs:** [Documentation](../../index.md) > [Guides](../index.md) > [SEO](./index.md) > Performance
 
 This guide covers performance optimization techniques for faster page loads and better Core Web Vitals scores.
 

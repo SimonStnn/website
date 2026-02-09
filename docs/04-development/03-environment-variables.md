@@ -1,6 +1,6 @@
 # Environment Variables
 
-**Navigation:** [Home](../../README.md) > [Development](./README.md) > Environment Variables
+**Navigation:** [Home](../index.md) > [Development](./README.md) > Environment Variables
 
 ---
 
@@ -657,7 +657,7 @@ Environment variables are loaded once at startup, not hot-reloaded.
 
 - [Configure npm scripts](./04-npm-scripts.md) for different environments
 - [Set up Next.js config](./05-nextjs-config.md) to use environment variables
-- [Deploy your site](../05-deployment/) with production environment variables
+- [Deploy your site](../05-deployment/README.md) with production environment variables
 
 ---
 

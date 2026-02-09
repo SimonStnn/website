@@ -1,6 +1,6 @@
 # Directory Structure
 
-**Navigation:** [Documentation Home](../README.md) → [Architecture](./README.md) → Directory Structure
+**Navigation:** [Documentation Home](../index.md) → [Architecture](./README.md) → Directory Structure
 
 ---
 
@@ -113,8 +113,11 @@ The project follows Next.js 15 App Router conventions with a clear separation of
 │
 ├── docs/                    # Documentation (this file!)
 │   ├── 01-architecture/     # Architecture documentation
-│   ├── 02-guides/           # Developer guides
-│   ├── 03-api/              # API reference
+│   ├── 02-features/         # Features and components
+│   ├── 03-content/          # Content management
+│   ├── 04-development/      # Development guides
+│   ├── 05-deployment/       # Deployment guides
+│   ├── 06-guides/           # Additional guides and references
 │   └── README.md            # Documentation home
 │
 ├── .github/                 # GitHub configuration
@@ -166,8 +169,8 @@ The root directory contains all configuration files for the project's tools and 
 | `eslint.config.mjs`  | ESLint linting rules                      | [Configuration Reference](./06-configuration.md#eslintconfigmjs)  |
 | `.prettierrc.json`   | Prettier formatting rules                 | [Configuration Reference](./06-configuration.md#prettierrjson)    |
 | `jest.config.js`     | Jest testing configuration                | [Configuration Reference](./06-configuration.md#jestconfigjs)     |
-| `docker-compose.yml` | Docker multi-container setup              | [Deployment Guide](../02-guides/04-deployment.md)                 |
-| `Dockerfile`         | Docker image definition                   | [Deployment Guide](../02-guides/04-deployment.md)                 |
+| `docker-compose.yml` | Docker multi-container setup              | [Deployment Guide](../05-deployment/01-docker-guide.md)           |
+| `Dockerfile`         | Docker image definition                   | [Deployment Guide](../05-deployment/01-docker-guide.md)           |
 
 ### Documentation Files
 
@@ -393,7 +396,7 @@ JSON files store all content. Each file represents one piece of content (project
 }
 ```
 
-See [Adding New Projects](../02-guides/01-adding-projects.md) for content creation guide.
+See [Adding New Projects](../03-content/06-adding-projects.md) for content creation guide.
 
 ### `public/` Directory
 
@@ -600,9 +603,9 @@ Related documentation:
 
 1. **Understand routing**: Read [Routing & Navigation](./04-routing-navigation.md) to see how `app/` becomes routes
 2. **Learn data flow**: Study [Data Flow](./03-data-flow.md) to understand content → component pipeline
-3. **Add content**: Follow [Adding New Projects](../02-guides/01-adding-projects.md) to create content
-4. **Explore components**: Review [Component Reference](../03-api/02-components.md) for component API
+3. **Add content**: Follow [Adding New Projects](../03-content/06-adding-projects.md) to create content
+4. **Explore components**: Review [Component Reference](../02-features/01-components-overview.md) for component API
 
 ---
 
-[← Back to Architecture Index](./README.md) | [Documentation Home](../README.md)
+[← Back to Architecture Index](./README.md) | [Documentation Home](../index.md)
