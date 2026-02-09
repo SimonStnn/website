@@ -1,7 +1,10 @@
 # Build stage
 FROM python:3.11-alpine AS builder
 
-# Install dependencies
+# Install system dependencies and clean up apk cache
+RUN apk add --no-cache pngquant
+
+# Install python dependencies
 RUN pip install --no-cache-dir \
   mkdocs-material \
   mkdocs-pdf
@@ -12,7 +15,7 @@ WORKDIR /docs
 # Copy MkDocs configuration file to default location
 COPY config/mkdocs/mkdocs.yml .
 
-# Copy custom stylesheets into docs_dir (must be inside docs_dir for MkDocs to copy them)
+# Copy custom stylesheets into docs_dir
 COPY config/mkdocs/stylesheets ./docs/stylesheets
 
 # Copy documentation files to default docs/ subdirectory
@@ -24,7 +27,7 @@ RUN mkdocs build
 # Production stage
 FROM nginx:alpine
 
-# Copy built static files from builder stage (default site/ directory)
+# Copy built static files from builder stage
 COPY --from=builder /docs/site /usr/share/nginx/html
 
 # Expose port 80 for nginx
