@@ -98,7 +98,28 @@ describe("generateMetadata", () => {
 
     expect(metadata).toEqual({
       title: "Test Project | Simon Stijnen Portfolio",
-      description: "Details about Test Project, a project by Simon Stijnen",
+      description: "Details about Test Project.",
+      openGraph: {
+        type: "website",
+        locale: "en_US",
+        url: "https://simon.stijnen.be/projects/test-project",
+        title: "Test Project | Simon Stijnen",
+        description: "Details about Test Project.",
+        images: [
+          {
+            url: "/images/profile-meta.jpg",
+            alt: "Test Project screenshot",
+            width: 1200,
+            height: 630,
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: "Test Project | Simon Stijnen",
+        description: "Details about Test Project.",
+        images: ["/images/profile-meta.jpg"],
+      },
     });
   });
 

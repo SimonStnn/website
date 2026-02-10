@@ -75,7 +75,8 @@ describe("sitemap", () => {
 
     // Base routes: home, about, experience, skills, projects, achievements, contact, projects page = 8
     // Download: 1
-    // Total: 9
-    expect(result).toHaveLength(9);
+    // Agent discovery (llms.txt): 1
+    // Total: 10
+    expect(result).toHaveLength(10);
   });
 });

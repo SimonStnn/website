@@ -15,9 +15,7 @@ describe("siteConfig", () => {
     // Note: .env file sets these, so defaults are from .env
     expect(siteConfig.name).toBe("Simon Stijnen");
     expect(siteConfig.url).toBe("https://simon.stijnen.be");
-    expect(siteConfig.description).toBe(
-      "Portfolio highlighting software engineering and AI projects by Simon Stijnen."
-    );
+    expect(siteConfig.description).toBe("Personal portfolio website for Simon Stijnen.");
     expect(siteConfig.author.name).toBe("Simon Stijnen");
     expect(siteConfig.author.email).toBe("simon.stijnen.23+portfolio@gmail.com");
     expect(siteConfig.social.github).toBe("https://github.com/SimonStnn");
@@ -40,19 +38,10 @@ describe("analyticsConfig", () => {
     process.env = originalEnv;
   });
 
-  it("uses default empty strings", () => {
-    // GA_ID is set in .env
-    expect(analyticsConfig.gaId).toBe("");
-    expect(analyticsConfig.gtmId).toBe("");
-  });
-
-  it("uses env var values", () => {
-    // Set env var
-    process.env.NEXT_PUBLIC_GA_ID = "G-XXXXXXXXXX";
-    // Re-import or access after setting
-    // Since config is imported at top, we need to test differently
-    // For now, expect the default since env not set at import time
-    expect(analyticsConfig.gaId).toBe("");
+  it("uses values from .env file", () => {
+    // GA_ID and GTM_ID are set in .env, so they reflect those values
+    expect(analyticsConfig.gaId).toBe("G-XXXXXXXXXX");
+    expect(analyticsConfig.gtmId).toBe("GTM-XXXXXXX");
   });
 });
 
