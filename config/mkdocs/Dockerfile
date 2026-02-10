@@ -10,25 +10,28 @@ RUN pip install --no-cache-dir \
   mkdocs-pdf
 
 # Set working directory
-WORKDIR /docs
+WORKDIR /app
 
-# Copy MkDocs configuration file to default location
-COPY config/mkdocs/mkdocs.yml .
+# Copy MkDocs configuration and stylesheets
+COPY config/mkdocs /app/config/mkdocs
 
-# Copy custom stylesheets into docs_dir
-COPY config/mkdocs/stylesheets ./docs/stylesheets
+# Copy documentation files
+COPY docs /app/docs
 
-# Copy documentation files to default docs/ subdirectory
-COPY docs ./docs
+# Copy stylesheets to docs directory
+COPY config/mkdocs/stylesheets /app/docs/stylesheets
 
-# Build static site using default locations
+# Change to MkDocs config directory
+WORKDIR /app/config/mkdocs
+
+# Build static site
 RUN mkdocs build
 
 # Production stage
 FROM nginx:alpine
 
 # Copy built static files from builder stage
-COPY --from=builder /docs/site /usr/share/nginx/html
+COPY --from=builder /app/config/mkdocs/site /usr/share/nginx/html
 
 # Expose port 80 for nginx
 EXPOSE 80
