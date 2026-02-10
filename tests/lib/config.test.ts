@@ -1,21 +1,25 @@
-import { siteConfig, analyticsConfig, appConfig } from "@/lib/config";
-
 const originalEnv = process.env;
 
+beforeEach(() => {
+  jest.resetModules();
+  // Start with a clean environment — only NODE_ENV is kept for Jest
+  process.env = { NODE_ENV: "test" };
+});
+
+afterEach(() => {
+  process.env = originalEnv;
+});
+
 describe("siteConfig", () => {
-  beforeEach(() => {
-    process.env = { ...originalEnv };
-  });
+  it("uses hardcoded defaults when no env vars are set", () => {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const { siteConfig } = require("@/lib/config");
 
-  afterEach(() => {
-    process.env = originalEnv;
-  });
-
-  it("uses default values when env vars not set", () => {
-    // Note: .env file sets these, so defaults are from .env
     expect(siteConfig.name).toBe("Simon Stijnen");
     expect(siteConfig.url).toBe("https://simon.stijnen.be");
-    expect(siteConfig.description).toBe("Personal portfolio website for Simon Stijnen.");
+    expect(siteConfig.description).toBe(
+      "Software engineer and AI student in Belgium building scalable, reliable products."
+    );
     expect(siteConfig.author.name).toBe("Simon Stijnen");
     expect(siteConfig.author.email).toBe("simon.stijnen.23+portfolio@gmail.com");
     expect(siteConfig.social.github).toBe("https://github.com/SimonStnn");
@@ -23,41 +27,56 @@ describe("siteConfig", () => {
   });
 
   it("uses env var values when set", () => {
-    // Since config is imported at top, env vars are already set from .env
-    // This test is not applicable
-    expect(siteConfig.name).toBe("Simon Stijnen");
+    process.env.NEXT_PUBLIC_SITE_NAME = "Custom Name";
+    process.env.NEXT_PUBLIC_SITE_URL = "https://custom.example.com";
+    process.env.NEXT_PUBLIC_SITE_DESCRIPTION = "Custom description.";
+    process.env.NEXT_PUBLIC_AUTHOR_NAME = "Custom Author";
+    process.env.NEXT_PUBLIC_AUTHOR_EMAIL = "custom@example.com";
+    process.env.NEXT_PUBLIC_GITHUB_URL = "https://github.com/custom";
+    process.env.NEXT_PUBLIC_LINKEDIN_URL = "https://linkedin.com/in/custom";
+
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const { siteConfig } = require("@/lib/config");
+
+    expect(siteConfig.name).toBe("Custom Name");
+    expect(siteConfig.url).toBe("https://custom.example.com");
+    expect(siteConfig.description).toBe("Custom description.");
+    expect(siteConfig.author.name).toBe("Custom Author");
+    expect(siteConfig.author.email).toBe("custom@example.com");
+    expect(siteConfig.social.github).toBe("https://github.com/custom");
+    expect(siteConfig.social.linkedin).toBe("https://linkedin.com/in/custom");
   });
 });
 
 describe("analyticsConfig", () => {
-  beforeEach(() => {
-    process.env = { ...originalEnv };
+  it("uses empty strings when no env vars are set", () => {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const { analyticsConfig } = require("@/lib/config");
+
+    expect(analyticsConfig.gaId).toBe("");
+    expect(analyticsConfig.gtmId).toBe("");
   });
 
-  afterEach(() => {
-    process.env = originalEnv;
-  });
+  it("uses env var values when set", () => {
+    process.env.NEXT_PUBLIC_GA_ID = "G-TEST123";
+    process.env.NEXT_PUBLIC_GTM_ID = "GTM-TEST456";
 
-  it("uses values from .env file", () => {
-    // GA_ID and GTM_ID are set in .env, so they reflect those values
-    expect(analyticsConfig.gaId).toBe("G-XXXXXXXXXX");
-    expect(analyticsConfig.gtmId).toBe("GTM-XXXXXXX");
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const { analyticsConfig } = require("@/lib/config");
+
+    expect(analyticsConfig.gaId).toBe("G-TEST123");
+    expect(analyticsConfig.gtmId).toBe("GTM-TEST456");
   });
 });
 
 describe("appConfig", () => {
-  beforeEach(() => {
-    process.env = { ...originalEnv };
-  });
+  it("detects test environment", () => {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const { appConfig } = require("@/lib/config");
 
-  afterEach(() => {
-    process.env = originalEnv;
-  });
-
-  it("detects development environment", () => {
-    // Can't easily override NODE_ENV in tests, as it's set by Jest
-    // Just test the current test environment
     expect(appConfig.environment).toBe("test");
     expect(appConfig.isTest).toBe(true);
+    expect(appConfig.isProduction).toBe(false);
+    expect(appConfig.isDevelopment).toBe(false);
   });
 });
