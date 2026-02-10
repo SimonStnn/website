@@ -7,12 +7,14 @@ on:
     paths:
       - "docs/**"
       - "README.md"
+      - "config/mkdocs/**"
   pull_request:
     branches:
       - "main-v2"
     paths:
       - "docs/**"
       - "README.md"
+      - "config/mkdocs/**"
 
 env:
   REGISTRY: ghcr.io

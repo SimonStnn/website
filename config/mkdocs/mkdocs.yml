@@ -5,7 +5,6 @@ site_url: https://simonstnn.github.io/website/
 repo_url: https://github.com/SimonStnn/website
 copyright: Copyright &copy; 2025 Simon Stijnen
 
-# Use default docs/ subdirectory (relative to mkdocs.yml location)
 docs_dir: ../../docs
 
 theme:
