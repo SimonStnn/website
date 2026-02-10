@@ -76,7 +76,7 @@ This project includes Docker configuration for containerized deployment:
 
 ```bash
 # Run in production mode
-docker-compose up website-prod -d
+docker-compose up website -d
 ```
 
 For detailed information about Docker deployment, see the [Docker documentation](05-deployment/01-docker-guide.md).
