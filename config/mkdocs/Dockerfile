@@ -1,4 +1,3 @@
-# Build stage
 FROM python:3.11-alpine AS builder
 
 # Install system dependencies and clean up apk cache
