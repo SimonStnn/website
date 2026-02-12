@@ -69,7 +69,10 @@ export default async function Home() {
           </p>
           <Separator />
           <p className="text-xl text-pretty md:text-xl">
-            I build software that works, scales, and is maintainable; even under heavy load.
+            With over 5 years of hands-on experience, I craft scalable, maintainable software
+            solutions that integrate AI, IoT, and automation to solve real-world problems—from
+            LLM-powered workflow tools to thermal monitoring systems. Passionate about turning ideas
+            into efficient code that performs under pressure.
           </p>
           <div className="flex items-center gap-4">
             <span className="mr-auto flex items-center gap-2">

@@ -12,7 +12,7 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://simon.stijnen.be",
   description:
     process.env.NEXT_PUBLIC_SITE_DESCRIPTION ||
-    "Software engineer and AI student in Belgium building scalable, reliable products.",
+    "AI & Software Engineering student at VIVES University crafting scalable, maintainable solutions integrating AI, IoT, and automation for real-world impact.",
   recruiterSummary:
     process.env.NEXT_PUBLIC_RECRUITER_SUMMARY ||
     "Software engineer and AI student focused on scalable web apps, LLM automation, and data-driven systems. Available for internships and junior roles.",

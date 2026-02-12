@@ -15,12 +15,12 @@
   ],
   "images": [
     {
-      "src": "/images/projects/signapse/demo.webp",
-      "alt": "The demo of the Signapse application in action at VIVES."
-    },
-    {
       "src": "/images/projects/signapse/stack.webp",
       "alt": "While presenting the tech stack used in the Signapse project."
+    },
+    {
+      "src": "/images/projects/signapse/demo.webp",
+      "alt": "The demo of the Signapse application in action at VIVES."
     },
     {
       "src": "/images/projects/signapse/tablet-home-1-2527x1422.webp",
