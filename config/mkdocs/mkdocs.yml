@@ -1,7 +1,7 @@
 site_name: Documentation - Simon Stijnen Portfolio
 site_description: Comprehensive documentation for Simon Stijnen's portfolio website built with Next.js 15, TypeScript, and Tailwind CSS
 site_author: Simon Stijnen
-site_url: https://simonstnn.github.io/website/
+site_url: https://docs.simon.stijnen.be
 repo_url: https://github.com/SimonStnn/website
 copyright: Copyright &copy; 2025 Simon Stijnen
 
