@@ -78,6 +78,17 @@ export function Footer({ className }: FooterProps) {
                 </Link>
               </Button>
             </li>
+            <li>
+              <Button variant="link" asChild>
+                <Link
+                  href="https://docs.simon.stijnen.be/"
+                  target="_blank"
+                  className="text-primary-foreground/80 hover:text-primary-foreground w-full justify-start !p-0 transition-colors"
+                >
+                  Documentation
+                </Link>
+              </Button>
+            </li>
             <Separator className="bg-border/30 my-1" />
             <li>
               <Button variant="link" size="sm" asChild>

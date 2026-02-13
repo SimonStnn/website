@@ -26,7 +26,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${baseUrl}/#experience`,
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.7,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/#skills`,
@@ -88,5 +88,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ];
 
-  return [...routes, ...projectRoutes, ...downloadRoutes, ...agentRoutes];
+  const externalSitemaps: MetadataRoute.Sitemap = [
+    {
+      url: "https://docs.simon.stijnen.be/sitemap.xml",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+  ];
+
+  return [...routes, ...projectRoutes, ...downloadRoutes, ...agentRoutes, ...externalSitemaps];
 }

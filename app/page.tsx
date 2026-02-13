@@ -357,6 +357,15 @@ export default async function Home() {
               , and there&apos;s something about the fast pace and split-second decisions that keeps
               me coming back. Plus, debugging code after a good game always feels easier somehow.
             </p>
+            <p className="mb-4">
+              For more details about my work and this website, check out the{" "}
+              <Button variant="link" className="h-min p-0 text-base" asChild>
+                <Link href="https://docs.simon.stijnen.be/" target="_blank">
+                  documentation
+                </Link>
+              </Button>
+              .
+            </p>
           </div>
 
           {/* Soft Skills */}
