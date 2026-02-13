@@ -66,6 +66,12 @@ jobs:
             VERSION="1.0.0"
           fi
 
+          # Check if the tag already exists
+          if git tag --list | grep -q "^docs-v${VERSION}$"; then
+            echo "Error: Tag docs-v${VERSION} already exists"
+            exit 1
+          fi
+
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "Detected docs version: $VERSION"
 

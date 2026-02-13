@@ -1,4 +1,4 @@
-name: CI
+name: Website Build
 
 on:
   push:
@@ -35,16 +35,28 @@ jobs:
     if: github.ref == 'refs/heads/main-v2'
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       packages: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          fetch-tags: true
       - name: Extract version
         run: |
           VERSION=$(node -p "require('./package.json').version")
           MAJOR=$(echo $VERSION | cut -d. -f1)
           MINOR=$(echo $VERSION | cut -d. -f1-2)
+
+          git fetch --tags --quiet
+
+          # Check if the tag already exists
+          if git tag --list | grep -q "^v${VERSION}$"; then
+            echo "Error: Tag v${VERSION} already exists"
+            exit 1
+          fi
+
           echo "VERSION=$VERSION" >> $GITHUB_ENV
           echo "MAJOR=$MAJOR" >> $GITHUB_ENV
           echo "MINOR=$MINOR" >> $GITHUB_ENV
@@ -65,3 +77,11 @@ jobs:
             ghcr.io/simonstnn/website:${{ env.MINOR }}
             ghcr.io/simonstnn/website:${{ env.VERSION }}
             ghcr.io/simonstnn/website:${{ github.sha }}
+      - name: Create and push git tag
+        run: |
+          TAG_REF=v${{ env.VERSION }}
+          echo "Creating tag $TAG_REF"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git tag -a "$TAG_REF" -m "Release $TAG_REF"
+          git push origin "$TAG_REF"
