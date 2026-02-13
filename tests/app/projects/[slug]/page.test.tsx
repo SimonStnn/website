@@ -1,9 +1,10 @@
+import React from "react";
 import ProjectPage, { generateStaticParams } from "@/app/projects/[slug]/page";
 import { getProjects } from "@/lib/projects";
 
 // Mock Next.js
 jest.mock("next/link", () => ({
-  default: ({ children, ...props }: Record<string, unknown>) => <a {...props}>{children}</a>,
+  default: ({ children, ...props }: { children: React.ReactNode }) => <a {...props}>{children}</a>,
 }));
 jest.mock("next/image", () => ({
   // eslint-disable-next-line @next/next/no-img-element
@@ -26,27 +27,29 @@ jest.mock("@/lib/utils", () => ({
   cn: jest.fn((...classes) => classes.join(" ")),
 }));
 jest.mock("@/components/ui/carousel", () => ({
-  Carousel: ({ children, ...props }: Record<string, unknown>) => (
+  Carousel: ({ children, ...props }: { children: React.ReactNode }) => (
     <div data-testid="carousel" {...props}>
       {children}
     </div>
   ),
-  CarouselContent: ({ children }: Record<string, unknown>) => (
+  CarouselContent: ({ children }: { children: React.ReactNode }) => (
     <div data-testid="carousel-content">{children}</div>
   ),
-  CarouselItem: ({ children }: Record<string, unknown>) => (
+  CarouselItem: ({ children }: { children: React.ReactNode }) => (
     <div data-testid="carousel-item">{children}</div>
   ),
   CarouselNext: () => <button data-testid="carousel-next">Next</button>,
   CarouselPrevious: () => <button data-testid="carousel-prev">Prev</button>,
 }));
 jest.mock("@/components/ui/button", () => ({
-  Button: ({ children, ...props }: Record<string, unknown>) => (
+  Button: ({ children, ...props }: { children: React.ReactNode }) => (
     <button {...props}>{children}</button>
   ),
 }));
 jest.mock("@/components/ui/badge", () => ({
-  Badge: ({ children, ...props }: Record<string, unknown>) => <span {...props}>{children}</span>,
+  Badge: ({ children, ...props }: { children: React.ReactNode }) => (
+    <span {...props}>{children}</span>
+  ),
 }));
 jest.mock("@/components/meta/project-structured-data", () => ({
   default: () => <div data-testid="project-structured-data" />,
@@ -73,7 +76,24 @@ describe("Project Page", () => {
 
 describe("generateStaticParams", () => {
   it("returns slugs for all projects", async () => {
-    const mockProjects = [{ slug: "project1" }, { slug: "project2" }];
+    const mockProjects = [
+      {
+        slug: "project1",
+        title: "Project 1",
+        shortDescription: "Short desc 1",
+        description: "Description 1",
+        technologies: ["Tech1"],
+        images: [{ src: "/img1.jpg", alt: "Alt1" }],
+      },
+      {
+        slug: "project2",
+        title: "Project 2",
+        shortDescription: "Short desc 2",
+        description: "Description 2",
+        technologies: ["Tech2"],
+        images: [{ src: "/img2.jpg", alt: "Alt2" }],
+      },
+    ];
     mockGetProjects.mockResolvedValue(mockProjects);
 
     const params = await generateStaticParams();
