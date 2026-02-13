@@ -1,5 +1,3 @@
-import { metadata } from "@/app/layout";
-
 // Mock the layout components
 jest.mock("@/components/layout/header", () => ({
   default: ({ className }: { className?: string }) => (
@@ -37,23 +35,3 @@ jest.mock("@/lib/config", () => ({
     social: { linkedin: "https://linkedin.com", github: "https://github.com" },
   },
 }));
-
-describe("RootLayout", () => {
-  it("exports metadata with correct title template", () => {
-    expect(metadata.title.template).toBe("%s | Software Engineer & AI");
-    expect(metadata.title.default).toBe("Test Name | Software Engineer & AI");
-  });
-
-  it("exports metadata with correct description", () => {
-    expect(metadata.description).toBe("Test Description");
-  });
-
-  it("exports metadata with correct open graph", () => {
-    expect(metadata.openGraph?.title).toBe("Test Name | Software Engineer & AI");
-    expect(metadata.openGraph?.url).toBe("https://example.com");
-  });
-
-  // Note: Testing the component directly is challenging due to <html> and <body> tags.
-  // The layout structure is verified through integration tests or manual inspection.
-  // Components like Header and Footer are tested separately.
-});

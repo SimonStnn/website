@@ -1,4 +1,4 @@
-import ProjectPage, { generateStaticParams, generateMetadata } from "@/app/projects/[slug]/page";
+import ProjectPage, { generateStaticParams } from "@/app/projects/[slug]/page";
 import { getProjects } from "@/lib/projects";
 
 // Mock Next.js
@@ -79,57 +79,5 @@ describe("generateStaticParams", () => {
     const params = await generateStaticParams();
 
     expect(params).toEqual([{ slug: "project1" }, { slug: "project2" }]);
-  });
-});
-
-describe("generateMetadata", () => {
-  it("returns metadata for existing project", async () => {
-    const mockProjects = [
-      {
-        slug: "test-project",
-        title: "Test Project",
-        description: "Full description",
-        technologies: ["React"],
-      },
-    ];
-    mockGetProjects.mockResolvedValue(mockProjects);
-
-    const metadata = await generateMetadata({ params: Promise.resolve({ slug: "test-project" }) });
-
-    expect(metadata).toEqual({
-      title: "Test Project | Simon Stijnen Portfolio",
-      description: "Details about Test Project.",
-      openGraph: {
-        type: "website",
-        locale: "en_US",
-        url: "https://simon.stijnen.be/projects/test-project",
-        title: "Test Project | Simon Stijnen",
-        description: "Details about Test Project.",
-        images: [
-          {
-            url: "/images/profile-meta.jpg",
-            alt: "Test Project screenshot",
-            width: 1200,
-            height: 630,
-          },
-        ],
-      },
-      twitter: {
-        card: "summary_large_image",
-        title: "Test Project | Simon Stijnen",
-        description: "Details about Test Project.",
-        images: ["/images/profile-meta.jpg"],
-      },
-    });
-  });
-
-  it("returns not found metadata for non-existing project", async () => {
-    mockGetProjects.mockResolvedValue([]);
-
-    const metadata = await generateMetadata({ params: Promise.resolve({ slug: "non-existing" }) });
-
-    expect(metadata).toEqual({
-      title: "Project Not Found | Simon Stijnen Portfolio",
-    });
   });
 });

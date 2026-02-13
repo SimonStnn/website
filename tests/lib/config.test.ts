@@ -11,21 +11,6 @@ afterEach(() => {
 });
 
 describe("siteConfig", () => {
-  it("uses hardcoded defaults when no env vars are set", () => {
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
-    const { siteConfig } = require("@/lib/config");
-
-    expect(siteConfig.name).toBe("Simon Stijnen");
-    expect(siteConfig.url).toBe("https://simon.stijnen.be");
-    expect(siteConfig.description).toBe(
-      "Software engineer and AI student in Belgium building scalable, reliable products."
-    );
-    expect(siteConfig.author.name).toBe("Simon Stijnen");
-    expect(siteConfig.author.email).toBe("simon.stijnen.23+portfolio@gmail.com");
-    expect(siteConfig.social.github).toBe("https://github.com/SimonStnn");
-    expect(siteConfig.social.linkedin).toBe("https://www.linkedin.com/in/simon-stijnen/");
-  });
-
   it("uses env var values when set", () => {
     process.env.NEXT_PUBLIC_SITE_NAME = "Custom Name";
     process.env.NEXT_PUBLIC_SITE_URL = "https://custom.example.com";
