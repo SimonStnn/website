@@ -26,6 +26,7 @@ import { SkillsDataTable } from "@/components/skills-data-table";
 import { siteConfig } from "@/lib/config";
 import { getSkills } from "@/lib/skills";
 import { Separator } from "@/components/ui/separator";
+import Beams from "@/components/Beams";
 
 export default async function Home() {
   const projects = await getFeaturedProjects();
@@ -33,8 +34,34 @@ export default async function Home() {
   const skills = await getSkills();
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="relative flex min-h-screen flex-col">
       {/* Hero Section */}
+      <div
+        style={{
+          width: "100%",
+          height: "600px",
+          position: "absolute",
+          top: 0,
+          left: 0,
+          zIndex: -1,
+          maskImage: `linear-gradient(to bottom, 
+            rgba(0,0,0,1) 0%,
+            rgba(0,0,0,1) 40%,
+            rgba(0,0,0,0) 100%
+            )`,
+        }}
+      >
+        <Beams
+          beamWidth={3}
+          beamHeight={30}
+          beamNumber={20}
+          lightColor="#6dbfc2"
+          speed={2}
+          noiseIntensity={1}
+          scale={0.2}
+          rotation={26}
+        />
+      </div>
       <div className="container mx-auto flex flex-col justify-center gap-4 px-6 py-10 md:flex-row md:items-center md:gap-12 lg:w-4/5">
         <aside className="">
           <div
