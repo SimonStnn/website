@@ -27,6 +27,7 @@ import { siteConfig } from "@/lib/config";
 import { getSkills } from "@/lib/skills";
 import { Separator } from "@/components/ui/separator";
 import Beams from "@/components/Beams";
+import ShinyText from "@/components/ShinyText";
 
 export default async function Home() {
   const projects = await getFeaturedProjects();
@@ -43,7 +44,7 @@ export default async function Home() {
           position: "absolute",
           top: 0,
           left: 0,
-          zIndex: -1,
+          zIndex: -20,
           maskImage: `linear-gradient(to bottom, 
             rgba(0,0,0,1) 0%,
             rgba(0,0,0,1) 40%,
@@ -89,7 +90,19 @@ export default async function Home() {
         </aside>
         <section id="home" className="flex flex-col space-y-4 py-24">
           <h1 className="text-4xl font-extrabold md:text-6xl">
-            Hi, I&apos;m <span className="text-primary text-nowrap">Simon Stijnen</span>
+            Hi, I&apos;m{" "}
+            <ShinyText
+              text="Simon Stijnen"
+              speed={2}
+              delay={0}
+              color="#016b6e"
+              shineColor="#129599"
+              spread={60}
+              direction="left"
+              yoyo={false}
+              pauseOnHover={false}
+              disabled={false}
+            />
           </h1>
           <p className="">
             <b>Software Engineering & AI student</b> at VIVES University of Applied Sciences.
@@ -106,7 +119,13 @@ export default async function Home() {
               <MapPin className="text-primary -mr-1" />
               <span className="sr-only">Based in: &#x1f1e7;&#x1f1ea; {/* Belgian flag */}</span>
               Belgium
-              <Image src={`https://flagcdn.com/24x18/be.png`} alt="flag" width={24} height={18} />
+              <Image
+                src={`https://flagcdn.com/24x18/be.png`}
+                alt="flag"
+                width={24}
+                height={18}
+                className="select-none"
+              />
             </span>
             <SocialLink
               href={siteConfig.social.linkedin}
