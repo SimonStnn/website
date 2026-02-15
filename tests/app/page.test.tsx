@@ -138,6 +138,11 @@ jest.mock("@/components/ui/dialog", () => ({
     asChild ? children : <div data-testid="dialog-trigger">{children}</div>,
 }));
 
+// Mock Beams component to avoid Three.js issues
+jest.mock("@/components/Beams", () => ({
+  default: () => <div data-testid="beams">Beams</div>,
+}));
+
 // Mock the data fetching functions
 jest.mock("@/lib/projects");
 jest.mock("@/lib/achievements");
@@ -163,6 +168,6 @@ describe("Home Page", () => {
 
     expect(Component).toBeDefined();
     expect(Component.type).toBe("div");
-    expect(Component.props.className).toBe("flex min-h-screen flex-col");
+    expect(Component.props.className).toBe("relative flex min-h-screen flex-col");
   });
 });

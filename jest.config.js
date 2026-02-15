@@ -14,6 +14,7 @@ const customJestConfig = {
     "^@/(.*)$": "<rootDir>/$1",
   },
   testEnvironment: "jest-environment-jsdom",
+  transformIgnorePatterns: ["node_modules/(?!(three|@react-three)/)"],
   collectCoverageFrom: [
     "**/*.{js,jsx,ts,tsx}",
     "!**/*.d.ts",
