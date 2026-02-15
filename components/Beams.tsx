@@ -374,6 +374,16 @@ const DirLight: FC<{ position: [number, number, number]; color: string }> = ({
 }) => {
   const dir = useRef<THREE.DirectionalLight>(null!);
   useEffect(() => {
+    if (dir.current) {
+      const temp = document.createElement("div");
+      temp.style.color = color;
+      document.body.appendChild(temp);
+      const comp = getComputedStyle(temp).color;
+      document.body.removeChild(temp);
+      dir.current.color.set(comp);
+    }
+  }, [color]);
+  useEffect(() => {
     if (!dir.current) return;
     const cam = dir.current.shadow.camera as THREE.Camera & {
       top: number;

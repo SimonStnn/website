@@ -56,7 +56,7 @@ export default async function Home() {
           beamWidth={3}
           beamHeight={30}
           beamNumber={20}
-          lightColor="#6dbfc2"
+          lightColor="#ffffff"
           speed={2}
           noiseIntensity={1}
           scale={0.2}
@@ -95,8 +95,9 @@ export default async function Home() {
               text="Simon Stijnen"
               speed={2}
               delay={0}
-              color="#016b6e"
-              shineColor="#129599"
+              color="var(--primary)"
+              shineColor="var(--primary)"
+              // brightnessIncrease={10}
               spread={60}
               direction="left"
               yoyo={false}

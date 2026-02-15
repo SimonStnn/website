@@ -1,6 +1,7 @@
 "use client";
-import React, { useState, useCallback, useEffect, useRef } from "react";
+import React, { useState, useCallback, useEffect, useLayoutEffect, useRef } from "react";
 import { motion, useMotionValue, useAnimationFrame, useTransform } from "motion/react";
+import { useTheme } from "next-themes";
 
 interface ShinyTextProps {
   text: string;
@@ -9,6 +10,7 @@ interface ShinyTextProps {
   className?: string;
   color?: string;
   shineColor?: string;
+  brightnessIncrease?: number;
   spread?: number;
   yoyo?: boolean;
   pauseOnHover?: boolean;
@@ -23,6 +25,7 @@ const ShinyText: React.FC<ShinyTextProps> = ({
   className = "",
   color = "#b5b5b5",
   shineColor = "#ffffff",
+  brightnessIncrease = 20,
   spread = 120,
   yoyo = false,
   pauseOnHover = false,
@@ -30,10 +33,99 @@ const ShinyText: React.FC<ShinyTextProps> = ({
   delay = 0,
 }) => {
   const [isPaused, setIsPaused] = useState(false);
+  const [resolvedColor, setResolvedColor] = useState(color);
+  const [resolvedShineColor, setResolvedShineColor] = useState(shineColor);
+  const { theme } = useTheme();
   const progress = useMotionValue(0);
   const elapsedRef = useRef(0);
   const lastTimeRef = useRef<number | null>(null);
   const directionRef = useRef(direction === "left" ? 1 : -1);
+
+  const rgbToHsl = (r: number, g: number, b: number) => {
+    r /= 255;
+    g /= 255;
+    b /= 255;
+    const max = Math.max(r, g, b);
+    const min = Math.min(r, g, b);
+    let h = 0,
+      s = 0;
+    const l = (max + min) / 2;
+    if (max === min) {
+      h = s = 0;
+    } else {
+      const d = max - min;
+      s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+      switch (max) {
+        case r:
+          h = (g - b) / d + (g < b ? 6 : 0);
+          break;
+        case g:
+          h = (b - r) / d + 2;
+          break;
+        case b:
+          h = (r - g) / d + 4;
+          break;
+      }
+      h /= 6;
+    }
+    return [h * 360, s * 100, l * 100];
+  };
+
+  const hslToRgb = (h: number, s: number, l: number) => {
+    h /= 360;
+    s /= 100;
+    l /= 100;
+    const hue2rgb = (p: number, q: number, t: number) => {
+      if (t < 0) t += 1;
+      if (t > 1) t -= 1;
+      if (t < 1 / 6) return p + (q - p) * 6 * t;
+      if (t < 1 / 2) return q;
+      if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
+      return p;
+    };
+    let r, g, b;
+    if (s === 0) {
+      r = g = b = l;
+    } else {
+      const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+      const p = 2 * l - q;
+      r = hue2rgb(p, q, h + 1 / 3);
+      g = hue2rgb(p, q, h);
+      b = hue2rgb(p, q, h - 1 / 3);
+    }
+    return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+  };
+
+  useLayoutEffect(() => {
+    setTimeout(() => {
+      const resolveColor = (c: string) => {
+        const temp = document.createElement("div");
+        temp.style.color = c;
+        document.documentElement.appendChild(temp);
+        const comp = getComputedStyle(temp).color;
+        document.documentElement.removeChild(temp);
+        return comp;
+      };
+
+      const resolvedC = resolveColor(color);
+      setResolvedColor(resolvedC);
+
+      const rgbMatch = resolvedC.match(/rgb\((\d+), (\d+), (\d+)\)/);
+      if (rgbMatch) {
+        const [h, s, l] = rgbToHsl(
+          parseInt(rgbMatch[1]),
+          parseInt(rgbMatch[2]),
+          parseInt(rgbMatch[3])
+        );
+        const brighterL = Math.min(100, l + brightnessIncrease);
+        const [r, g, b] = hslToRgb(h, s, brighterL);
+        const brighterColor = `rgb(${r}, ${g}, ${b})`;
+        setResolvedShineColor(brighterColor);
+      } else {
+        setResolvedShineColor(resolveColor(shineColor));
+      }
+    }, 0);
+  }, [color, shineColor, brightnessIncrease, theme]);
 
   const animationDuration = speed * 1000;
   const delayDuration = delay * 1000;
@@ -110,7 +202,7 @@ const ShinyText: React.FC<ShinyTextProps> = ({
   }, [pauseOnHover]);
 
   const gradientStyle: React.CSSProperties = {
-    backgroundImage: `linear-gradient(${spread}deg, ${color} 0%, ${color} 35%, ${shineColor} 50%, ${color} 65%, ${color} 100%)`,
+    backgroundImage: `linear-gradient(${spread}deg, ${resolvedColor} 0%, ${resolvedColor} 35%, ${resolvedShineColor} 50%, ${resolvedColor} 65%, ${resolvedColor} 100%)`,
     backgroundSize: "200% auto",
     WebkitBackgroundClip: "text",
     backgroundClip: "text",
