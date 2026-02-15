@@ -9,7 +9,7 @@ interface SocialLinkProps {
   className?: string;
   children?: ReactNode;
   // Icon component prop (optional)
-  icon?: React.ElementType;
+  icon?: React.ComponentType<{ className?: string }>;
   // Icon image props (optional)
   imgSrc?: string;
   imgAlt?: string;

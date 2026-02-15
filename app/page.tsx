@@ -97,8 +97,7 @@ export default async function Home() {
               delay={0}
               color="var(--primary)"
               shineColor="var(--primary)"
-              // brightnessIncrease={10}
-              spread={60}
+              spread={120}
               direction="left"
               yoyo={false}
               pauseOnHover={false}
