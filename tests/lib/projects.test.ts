@@ -5,9 +5,12 @@ import fs from "fs";
 jest.mock("fs");
 const mockedFs = fs as jest.Mocked<typeof fs>;
 
+const mockMtime = new Date("2024-01-01");
+
 describe("getProjects", () => {
   beforeEach(() => {
     jest.clearAllMocks();
+    mockedFs.statSync.mockReturnValue({ mtime: mockMtime } as fs.Stats);
   });
 
   it("reads and parses project JSON files correctly", async () => {
@@ -83,6 +86,11 @@ describe("getProjects", () => {
 });
 
 describe("getFeaturedProjects", () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+    mockedFs.statSync.mockReturnValue({ mtime: mockMtime } as fs.Stats);
+  });
+
   it("returns projects with order 1-6", async () => {
     mockedFs.readdirSync.mockReturnValue(["feat1.json", "feat2.json", "nonfeat.json"]);
     mockedFs.readFileSync
@@ -98,6 +106,11 @@ describe("getFeaturedProjects", () => {
 });
 
 describe("getProjectBySlug", () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+    mockedFs.statSync.mockReturnValue({ mtime: mockMtime } as fs.Stats);
+  });
+
   it("returns project by slug", async () => {
     mockedFs.readdirSync.mockReturnValue(["test.json"]);
     mockedFs.readFileSync.mockReturnValue(JSON.stringify({ title: "Test Project" }));
