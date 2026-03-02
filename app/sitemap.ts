@@ -1,6 +1,21 @@
+import fs from "fs";
+import path from "path";
+
 import { MetadataRoute } from "next";
+
 import { siteConfig } from "@/lib/config";
 import { getProjects } from "@/lib/projects";
+
+// Stable date for the homepage — update manually when you make significant content changes.
+const HOMEPAGE_LAST_MODIFIED = new Date("2026-02-28");
+
+function getFileMtime(relativePath: string): Date {
+  try {
+    return fs.statSync(path.join(process.cwd(), relativePath)).mtime;
+  } catch {
+    return HOMEPAGE_LAST_MODIFIED;
+  }
+}
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = siteConfig.url;
@@ -8,94 +23,51 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Get all projects dynamically
   const projects = await getProjects();
 
-  // Base routes
+  // Most recent project file modification — used for the /projects listing page
+  const projectsListLastModified = projects.reduce(
+    (latest, p) => (p.lastModified > latest ? p.lastModified : latest),
+    new Date(0)
+  );
+
+  // Base routes — fragment URLs (/#about etc.) intentionally omitted:
+  // search engines strip fragments before processing, producing duplicate homepage entries.
   const routes: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
+      lastModified: HOMEPAGE_LAST_MODIFIED,
+      changeFrequency: "monthly",
       priority: 1,
     },
     {
-      url: `${baseUrl}/#about`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/#experience`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/#skills`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/#projects`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/#achievements`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/#contact`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
       url: `${baseUrl}/projects`,
-      lastModified: new Date(),
+      lastModified: projectsListLastModified,
       changeFrequency: "weekly",
-      priority: 0.9,
+      priority: 0.8,
     },
   ];
 
-  // Add individual project pages
+  // Individual project pages
   const projectRoutes: MetadataRoute.Sitemap = projects.map((project) => ({
     url: `${baseUrl}/projects/${project.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly",
+    lastModified: project.lastModified,
+    changeFrequency: "monthly" as const,
     priority: 0.8,
   }));
 
-  // Add download routes (if they exist)
+  // Resume PDF (Google can index PDFs)
   const downloadRoutes: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}/download/resume.pdf`,
-      lastModified: new Date(),
+      lastModified: getFileMtime("public/download/resume.pdf"),
       changeFrequency: "monthly",
       priority: 0.6,
     },
   ];
 
-  // AI agent discovery route
-  const agentRoutes: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/llms.txt`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.5,
-    },
-  ];
+  // Intentionally omitted:
+  // - /llms.txt: not a webpage; discovery is handled via <link rel="alternate"> in layout.tsx
+  // - https://docs.simon.stijnen.be/sitemap.xml: cross-domain URLs are prohibited by the
+  //   Sitemaps Protocol. Submit that sitemap separately in Google Search Console.
 
-  const externalSitemaps: MetadataRoute.Sitemap = [
-    {
-      url: "https://docs.simon.stijnen.be/sitemap.xml",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.5,
-    },
-  ];
-
-  return [...routes, ...projectRoutes, ...downloadRoutes, ...agentRoutes, ...externalSitemaps];
+  return [...routes, ...projectRoutes, ...downloadRoutes];
 }

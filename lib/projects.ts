@@ -8,6 +8,7 @@ export interface ProjectImage {
 
 export interface Project {
   slug: string;
+  lastModified: Date;
   title: string;
   shortDescription: string;
   description: string;
@@ -55,9 +56,10 @@ export async function getProjects(): Promise<Project[]> {
         return null;
       }
 
-      // Return the project data with the slug
+      // Return the project data with the slug and file modification date
       return {
         slug,
+        lastModified: fs.statSync(filePath).mtime,
         ...projectData,
       };
     })
