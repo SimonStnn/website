@@ -194,7 +194,7 @@ export default async function Home() {
                 </DialogFooter>
               </DialogContent>
             </Dialog>
-            <Button variant="secondary" size="lg" asChild className="hidden md:inline-flex">
+            <Button variant="secondary" size="lg" asChild>
               <Link href="/download/resume.pdf" target="_blank" rel="noopener noreferrer">
                 Resume
                 <Download />
