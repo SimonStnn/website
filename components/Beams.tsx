@@ -189,10 +189,10 @@ const Beams: FC<BeamsProps> = ({
   scale = 0.2,
   rotation = 0,
 }) => {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const meshRef = useRef<THREE.Mesh<THREE.BufferGeometry, THREE.ShaderMaterial>>(null!);
 
-  const isDark = theme === "dark";
+  const isDark = resolvedTheme === "dark";
   const backgroundColor = isDark ? "#000000" : "#f8f8f8";
   const diffuseColor = isDark ? "#000000" : "#f8f8f8";
   const ambientIntensity = isDark ? 1 : 0.5;
