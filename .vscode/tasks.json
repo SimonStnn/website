@@ -1,0 +1,86 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start Dev Server",
+      "type": "npm",
+      "script": "dev",
+      "problemMatcher": [],
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Build for Production",
+      "type": "npm",
+      "script": "build",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Build & Analyze Bundle",
+      "type": "npm",
+      "script": "build:analyze",
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "Start Production Server",
+      "type": "npm",
+      "script": "start",
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "Lint (ESLint)",
+      "type": "npm",
+      "script": "lint",
+      "problemMatcher": ["$eslint-stylish"],
+      "group": "test"
+    },
+    {
+      "label": "Format Code (Prettier)",
+      "type": "npm",
+      "script": "format",
+      "problemMatcher": []
+    },
+    {
+      "label": "Check Formatting (Prettier)",
+      "type": "npm",
+      "script": "format:check",
+      "problemMatcher": []
+    },
+    {
+      "label": "CI Check (Lint + Format)",
+      "type": "npm",
+      "script": "ci:check",
+      "problemMatcher": ["$eslint-stylish"]
+    },
+    {
+      "label": "Run Tests (Jest)",
+      "type": "npm",
+      "script": "test",
+      "problemMatcher": [],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Run Tests in Watch Mode (Jest)",
+      "type": "npm",
+      "script": "test:watch",
+      "problemMatcher": [],
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    }
+  ]
+}
