@@ -118,7 +118,7 @@ export default async function Home() {
             <span className="mr-auto flex items-center gap-2">
               <MapPin className="text-primary -mr-1" />
               <span className="sr-only">Based in: &#x1f1e7;&#x1f1ea; {/* Belgian flag */}</span>
-              Belgium
+              Oostkamp, Belgium
               <Image
                 src={`https://flagcdn.com/24x18/be.png`}
                 alt="flag"

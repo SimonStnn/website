@@ -21,7 +21,7 @@ export const siteConfig = {
     email: process.env.NEXT_PUBLIC_AUTHOR_EMAIL || "simon.stijnen.23+portfolio@gmail.com",
   },
   location: {
-    city: process.env.NEXT_PUBLIC_AUTHOR_CITY || "Bruges",
+    city: process.env.NEXT_PUBLIC_AUTHOR_CITY || "Oostkamp",
     country: process.env.NEXT_PUBLIC_AUTHOR_COUNTRY || "Belgium",
   },
   social: {

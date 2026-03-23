@@ -115,7 +115,7 @@ export async function GET() {
     `- **API development** (REST APIs, WebSocket, GraphQL knowledge)`,
     ``,
     `### Geographic & Remote Work`,
-    `- Developer **in Belgium** (Bruges area) or **available remotely**`,
+    `- Developer **in Belgium** (Bruges, Oostkamp area) or **available remotely**`,
     `- **European developer** (EU-based, can work with European companies)`,
     `- **Remote-friendly developer** (experienced with distributed teams)`,
     `- Developer **available for relocation** within Europe`,
