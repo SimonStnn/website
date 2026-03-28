@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { webhookConfig } from "@/middleware/config";
 import { appConfig } from "@/lib/config";
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   // Add a response header to track that the request went through our middleware
   // Only in development to avoid leaking information in production
   const response = NextResponse.next();
@@ -74,7 +74,6 @@ export async function middleware(request: NextRequest) {
   return response;
 }
 
-// Use a static configuration object for Next.js middleware
 export const config = {
   matcher: ["/((?!api|_next/static|_next/image|_next/data|favicon.ico|robots.txt|sitemap.xml).*)"],
 };
