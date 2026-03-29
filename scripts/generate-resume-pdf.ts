@@ -1,6 +1,7 @@
 import { spawn, type ChildProcess } from "child_process";
 import fs from "fs";
 import path from "path";
+import chromium from "@sparticuz/chromium";
 import puppeteer from "puppeteer";
 
 const PORT = 3099;
@@ -53,18 +54,24 @@ async function main() {
     await waitForServer(BASE_URL, SERVER_STARTUP_TIMEOUT);
     console.log("Server is ready.");
 
-    // Launch Puppeteer
-    const launchOptions: Parameters<typeof puppeteer.launch>[0] = {
-      headless: true,
-      args: ["--no-sandbox", "--disable-setuid-sandbox"],
-    };
-
-    // Use system Chromium if available (Docker/CI)
+    // Resolve Chromium executable
+    let executablePath: string | undefined;
+    let extraArgs: string[] = [];
     if (process.env.PUPPETEER_EXECUTABLE_PATH) {
-      launchOptions.executablePath = process.env.PUPPETEER_EXECUTABLE_PATH;
+      // Docker: system Chromium set explicitly
+      executablePath = process.env.PUPPETEER_EXECUTABLE_PATH;
+    } else if (process.platform === "linux") {
+      // Vercel/CI: @sparticuz/chromium bundles its own libs — avoids missing .so errors
+      executablePath = await chromium.executablePath();
+      extraArgs = chromium.args;
     }
+    // else Windows/Mac local: use puppeteer's bundled Chromium (default)
 
-    const browser = await puppeteer.launch(launchOptions);
+    const browser = await puppeteer.launch({
+      headless: true,
+      executablePath,
+      args: ["--no-sandbox", "--disable-setuid-sandbox", ...extraArgs],
+    });
     const page = await browser.newPage();
 
     // Force light mode
