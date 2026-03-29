@@ -17,6 +17,9 @@ const commonDomains = [
 const domains = ["localhost", siteUrlDomain, ...commonDomains];
 
 const nextConfig: NextConfig = {
+  outputFileTracingExcludes: {
+    "*": ["public/**"],
+  },
   images: {
     remotePatterns: domains.map((domain) => ({
       protocol: "https",
