@@ -1,5 +1,4 @@
 import { spawn, type ChildProcess } from "child_process";
-import fs from "fs";
 import path from "path";
 import chromium from "@sparticuz/chromium";
 import puppeteer from "puppeteer";
@@ -30,19 +29,16 @@ async function main() {
   let server: ChildProcess | null = null;
 
   try {
-    // Standalone server requires static files and public dir alongside it
-    const standaloneDir = path.resolve(".next/standalone");
-    fs.cpSync(path.resolve(".next/static"), path.join(standaloneDir, ".next/static"), {
-      recursive: true,
-    });
-    fs.cpSync(path.resolve("public"), path.join(standaloneDir, "public"), { recursive: true });
-
     console.log(`Starting Next.js server on port ${PORT}...`);
 
-    server = spawn(process.execPath, [path.join(standaloneDir, "server.js")], {
-      env: { ...process.env, PORT: String(PORT), HOSTNAME: "localhost" },
-      stdio: "pipe",
-    });
+    server = spawn(
+      process.execPath,
+      ["node_modules/next/dist/bin/next", "start", "--port", String(PORT)],
+      {
+        env: { ...process.env, PORT: String(PORT), HOSTNAME: "localhost" },
+        stdio: "pipe",
+      }
+    );
 
     server.stderr?.on("data", (data: Buffer) => {
       const msg = data.toString();
