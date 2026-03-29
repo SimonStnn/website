@@ -19,6 +19,7 @@ export const siteConfig = {
   author: {
     name: process.env.NEXT_PUBLIC_AUTHOR_NAME || "Simon Stijnen",
     email: process.env.NEXT_PUBLIC_AUTHOR_EMAIL || "simon.stijnen.23+portfolio@gmail.com",
+    phone: process.env.NEXT_PUBLIC_AUTHOR_PHONE || "",
   },
   location: {
     city: process.env.NEXT_PUBLIC_AUTHOR_CITY || "Oostkamp",

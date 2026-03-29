@@ -1,0 +1,28 @@
+/* CV page styles — only rules that cannot be expressed with Tailwind utilities */
+
+/* @page rules must live outside @media print to work reliably in Chrome */
+@page {
+  margin: 1.5cm 0 1.8cm 0;
+  size: A4;
+}
+
+@media print {
+  /* Global selectors — cannot target these from individual elements */
+  header,
+  footer {
+    display: none !important;
+  }
+
+  .sticky {
+    position: static !important;
+  }
+
+  * {
+    box-shadow: none !important;
+  }
+
+  a {
+    text-decoration: none !important;
+    color: inherit !important;
+  }
+}
