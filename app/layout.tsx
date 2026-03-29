@@ -1,6 +1,6 @@
+import "./globals.css";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import Analytics from "@/components/meta/analytics";
@@ -23,8 +23,8 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    template: `%s | Software Engineer & AI`,
-    default: `${siteConfig.author.name} | Software Engineer & AI`,
+    template: `%s | Simon Stijnen`,
+    default: `${siteConfig.author.name}`,
   },
   description: siteConfig.description,
   keywords: [

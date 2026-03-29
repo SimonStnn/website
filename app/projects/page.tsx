@@ -1,6 +1,12 @@
 import { getProjects } from "@/lib/projects";
 import ProjectCard from "@/components/project-card";
 import { Separator } from "@/components/ui/separator";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description: "Explore all of my projects, from featured work to experimental builds.",
+};
 
 export default async function ProjectsPage() {
   const projects = await getProjects();
