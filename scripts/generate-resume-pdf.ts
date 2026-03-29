@@ -1,4 +1,5 @@
 import { spawn, type ChildProcess } from "child_process";
+import fs from "fs";
 import path from "path";
 import chromium from "@sparticuz/chromium";
 import puppeteer from "puppeteer";
@@ -79,6 +80,7 @@ async function main() {
     // Wait a bit for fonts/images to settle
     await new Promise((r) => setTimeout(r, 1000));
 
+    fs.mkdirSync(path.dirname(OUTPUT_PATH), { recursive: true });
     console.log(`Generating PDF at ${OUTPUT_PATH}...`);
     await page.pdf({
       path: OUTPUT_PATH,
