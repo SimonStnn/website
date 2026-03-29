@@ -1,4 +1,3 @@
-import React from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -164,6 +163,7 @@ export function Footer({ className }: FooterProps) {
                   ariaLabel="Download Resume"
                   label="Resume"
                   icon={FileDownloadIcon}
+                  download="Stijnen Simon resume.pdf"
                 />
               </Button>
             </li>

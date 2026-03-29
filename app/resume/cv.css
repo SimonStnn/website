@@ -2,7 +2,7 @@
 
 /* @page rules must live outside @media print to work reliably in Chrome */
 @page {
-  margin: 1.5cm 0 1.8cm 0;
+  margin: 0;
   size: A4;
 }
 

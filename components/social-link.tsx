@@ -8,6 +8,7 @@ interface SocialLinkProps {
   ariaLabel: string;
   className?: string;
   children?: ReactNode;
+  download?: string;
   // Icon component prop (optional)
   icon?: React.ComponentType<{ className?: string }>;
   // Icon image props (optional)
@@ -24,6 +25,7 @@ export default function SocialLink({
   ariaLabel,
   className,
   children,
+  download,
   icon: Icon,
   imgSrc,
   imgAlt,
@@ -38,6 +40,7 @@ export default function SocialLink({
       rel="noopener noreferrer"
       aria-label={ariaLabel}
       className={cn("hover:text-primary transition-colors", className)}
+      download={download}
     >
       {/* If children are provided, render them directly */}
       {children || (

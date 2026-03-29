@@ -3,6 +3,7 @@ import Image from "next/image";
 import { getFeaturedProjects } from "@/lib/projects";
 import { getAchievements } from "@/lib/achievements";
 import { Button } from "@/components/ui/button";
+import ResumeDownloadButton from "@/components/cv/resume-download-button";
 import {
   Dialog,
   DialogContent,
@@ -20,7 +21,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Timeline from "@/components/timeline";
 import { cn } from "@/lib/utils";
 import SocialLink from "@/components/social-link";
-import { Download, Mail, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { GitHubIcon, LinkedInIcon } from "@/components/icons";
 import { SkillsDataTable } from "@/components/skills-data-table";
 import { siteConfig } from "@/lib/config";
@@ -196,12 +197,7 @@ export default async function Home() {
                 </DialogFooter>
               </DialogContent>
             </Dialog>
-            <Button variant="secondary" size="lg" asChild>
-              <Link href="/download/resume.pdf" target="_blank" rel="noopener noreferrer">
-                Resume
-                <Download />
-              </Link>
-            </Button>
+            <ResumeDownloadButton />
           </div>
         </section>
       </div>
