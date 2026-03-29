@@ -30,6 +30,9 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
+# generated resume PDF (built from /cv page)
+public/download/resume.pdf
+
 # env files (can opt-in for committing if needed)
 .env
 

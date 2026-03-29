@@ -64,7 +64,7 @@ function SidebarSectionHeader({ icon: Icon, title }: { icon: LucideIcon; title: 
   return (
     <div className="mb-3">
       <div className="mb-1 flex items-center gap-2">
-        <Icon className="h-4 w-4" />
+        <Icon className="size-4" />
         <h2 className="text-sm font-bold tracking-wider uppercase">{title}</h2>
       </div>
       <hr className="border-primary-foreground/30" />
@@ -151,7 +151,7 @@ export default async function CVPage() {
       {/* CV Layout */}
       <div className="cv-layout mx-auto flex max-w-5xl shadow-lg print:max-w-none print:shadow-none">
         {/* Left Sidebar */}
-        <aside className="cv-sidebar bg-primary text-primary-foreground print:bg-primary flex w-[33%] flex-col gap-6 p-6 [print-color-adjust:exact] print:text-white">
+        <aside className="cv-sidebar bg-primary text-primary-foreground print:bg-primary flex w-[33%] flex-col gap-4 p-6 [print-color-adjust:exact] print:text-white">
           {/* Profile */}
           <div className="flex flex-col items-center gap-3 text-center">
             <div className="relative size-36">
