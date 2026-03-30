@@ -1,5 +1,6 @@
 import { render, screen, fireEvent, waitFor, act } from "@testing-library/react";
 import { EmailCopyButton } from "@/components/email-copy-button";
+import { siteConfig } from "@/lib/config";
 
 // Mock clipboard API
 Object.assign(navigator, {
@@ -62,9 +63,7 @@ describe("EmailCopyButton", () => {
 
     fireEvent.click(button);
 
-    expect(navigator.clipboard.writeText).toHaveBeenCalledWith(
-      "simon.stijnen.23+portfolio@gmail.com"
-    );
+    expect(navigator.clipboard.writeText).toHaveBeenCalledWith(siteConfig.author.email);
   });
 
   it("changes tooltip to 'Email Copied!' after click", async () => {
