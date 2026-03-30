@@ -6,6 +6,7 @@
     "Python",
     "LangChain",
     "MCP",
+    "LLMs",
     "Azure OpenAI",
     "FastAPI",
     "Gradio",

@@ -17,6 +17,9 @@ const commonDomains = [
 const domains = ["localhost", siteUrlDomain, ...commonDomains];
 
 const nextConfig: NextConfig = {
+  outputFileTracingExcludes: {
+    "*": ["public/**"],
+  },
   images: {
     remotePatterns: domains.map((domain) => ({
       protocol: "https",
@@ -27,6 +30,15 @@ const nextConfig: NextConfig = {
   },
   // For Docker deployment - creates a standalone build
   output: "standalone",
+  // async redirects() {
+  //   return [
+  //     {
+  //       source: "/resume",
+  //       destination: "/download/resume.pdf",
+  //       permanent: true,
+  //     },
+  //   ];
+  // },
 };
 
 const withBundleAnalyzer = bundleAnalyzer({
