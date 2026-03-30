@@ -19,6 +19,7 @@ import {
   ExternalLink,
   Info,
   Users,
+  Link as ArrowUpRight,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/config";
@@ -342,7 +343,7 @@ export default async function CVPage() {
               {workExperience.map((item, i) => (
                 <div
                   key={i}
-                  className={`relative flex gap-3 print:break-inside-avoid ${i < workExperience.length - 1 ? "pb-4" : ""}`}
+                  className={`relative flex gap-3 print:break-inside-avoid ${i < workExperience.length - 1 ? "pb-3" : ""}`}
                 >
                   <EntryDot />
                   <div className="min-w-0 flex-1">
@@ -381,7 +382,7 @@ export default async function CVPage() {
               {education.map((item, i) => (
                 <div
                   key={i}
-                  className={`relative flex gap-3 print:break-inside-avoid ${i < education.length - 1 ? "pb-4" : ""}`}
+                  className={`relative flex gap-3 print:break-inside-avoid ${i < education.length - 1 ? "pb-3" : ""}`}
                 >
                   <EntryDot />
                   <div className="min-w-0 flex-1">
@@ -400,14 +401,14 @@ export default async function CVPage() {
 
           {/* Awards */}
           {awards.length > 0 && (
-            <section className={cn("print:break-inside-avoid", topOfSecondPageClass)}>
+            <section className={cn("print:break-inside-avoid")}>
               <RightSectionHeader icon={Trophy} title="Achievements" />
               <div className="relative">
                 <div className="bg-primary/80 print:bg-primary/80 absolute top-2 bottom-0 left-1 w-0.5 rounded-full [print-color-adjust:exact]" />
                 {awards.map((award, i) => (
                   <div
                     key={award.slug}
-                    className={`relative flex gap-3 print:break-inside-avoid ${i < awards.length - 1 ? "pb-4" : ""}`}
+                    className={`relative flex gap-3 print:break-inside-avoid ${i < awards.length - 1 ? "pb-3" : ""}`}
                   >
                     <EntryDot />
                     <div className="min-w-0 flex-1">
@@ -429,14 +430,14 @@ export default async function CVPage() {
           )}
 
           {/* Featured Projects */}
-          <section className="print:break-inside-avoid">
+          <section className={cn("print:break-inside-avoid", topOfSecondPageClass)}>
             <RightSectionHeader icon={FolderOpen} title="Featured Projects" />
             <div className="relative">
               <div className="bg-primary/80 print:bg-primary/80 absolute top-2 bottom-0 left-1 w-0.5 rounded-full [print-color-adjust:exact]" />
               {featuredProjects.map((project, i) => (
                 <div
                   key={project.slug}
-                  className={`relative flex gap-3 print:break-inside-avoid ${i < featuredProjects.length - 1 ? "pb-4" : ""}`}
+                  className={`relative flex gap-3 print:break-inside-avoid ${i < featuredProjects.length - 1 ? "pb-3" : ""}`}
                 >
                   <EntryDot />
                   <div className="min-w-0 flex-1">
@@ -454,6 +455,7 @@ export default async function CVPage() {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-muted-foreground hover:text-foreground"
+                            title="View demo"
                           >
                             <ExternalLink className="size-3.5 flex-shrink-0" />
                           </Link>
@@ -464,10 +466,18 @@ export default async function CVPage() {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-muted-foreground hover:text-foreground"
+                            title="View GitHub repository"
                           >
                             <GitHubIcon className="size-3.5 flex-shrink-0" />
                           </Link>
                         )}
+                        <Link
+                          href={`/projects/${project.slug}`}
+                          className="text-muted-foreground hover:text-foreground"
+                          title="View project details"
+                        >
+                          <ArrowUpRight className="size-3.5 flex-shrink-0" />
+                        </Link>
                       </div>
                     </div>
                     <p className="text-muted-foreground text-xs italic">

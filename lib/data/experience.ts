@@ -12,31 +12,31 @@ export const workExperience: ExperienceItem[] = [
   {
     year: "Jan. 2026 - Jun. 2026",
     title: "Intern AI Researcher & Developer",
-    company: "Cerm",
-    companyUrl: "https://www.cerm.be/",
+    company: "CERM nv",
+    companyUrl: "https://www.cerm.net/",
     logo: "/images/logos/cerm.webp",
     description:
-      "Implemented an automated workflow that extracts key data from customer correspondence and instantly syncs it with the internal ERP/CRM system.",
+      "Built an automated pipeline that extracts structured data from customer correspondence and syncs it with the ERP/CRM system, reducing manual data entry.",
     projectLink: "/projects/cerm-mcp-poc",
   },
   {
     year: "Aug. 2025 - Dec. 2025",
     title: "Student AI Researcher",
-    company: "Cerm",
-    companyUrl: "https://www.cerm.be/",
+    company: "CERM nv",
+    companyUrl: "https://www.cerm.net/",
     logo: "/images/logos/cerm.webp",
     description:
-      "Using LLMs to convert technical developer updates from Jira into clear end-user documentation. Linking developer notes with existing docs and automatically generating user-friendly explanations to reduce time spent writing and reviewing feedback.",
+      "Leveraged LLMs to automatically transform technical Jira updates into polished end-user documentation, cutting manual writing and review time.",
     projectLink: "https://github.com/SimonStnn/CERM-Jira-LLM-Automation",
   },
   {
     year: "Apr. 2024",
     title: "Student Job Test Engineer",
-    company: "Advionics NV",
+    company: "Advionics nv",
     companyUrl: "https://www.advionics.be/",
     logo: "/images/logos/advionics-nv.webp",
     description:
-      "Developed a sensor monitoring system using real-time data analysis and MLX90640 heat sensors. Integrated the solution into an existing application, enabling continuous thermal monitoring for anomaly detection in a production environment.",
+      "Developed a real-time thermal monitoring system with MLX90640 heat sensors, integrated into a production application for automated anomaly detection.",
     projectLink: "/projects/mlx90640",
   },
   {
@@ -46,7 +46,7 @@ export const workExperience: ExperienceItem[] = [
     companyUrl: "https://stijnen.homecenter.be/",
     logo: "/images/logos/logo-stijnen.webp",
     description:
-      "Designed and built a REST API in Python that translates the internal protocol of a Homecenter module into structured JSON data. Implemented an integration with Home Assistant.",
+      "Designed a Python REST API that translates proprietary Homecenter protocols into structured JSON, with a Home Assistant integration for smart-home control.",
   },
   {
     year: "Dec. 2021 - Sep. 2022",
@@ -55,16 +55,16 @@ export const workExperience: ExperienceItem[] = [
     companyUrl: "https://stijnen.homecenter.be/",
     logo: "/images/logos/logo-stijnen.webp",
     description:
-      "Developed and tested a Python program that exposes the data from a Homecenter module to a Prometheus server. Connecting them to graphs in Grafana, allowing for real-time monitoring of home energy consumption.",
+      "Built a Python service exposing Homecenter data to Prometheus and Grafana, enabling real-time home energy consumption dashboards.",
   },
   {
     year: "Apr. 2022",
     title: "Intern Test Engineer",
-    company: "Advionics NV",
+    company: "Advionics nv",
     companyUrl: "https://www.advionics.be/",
     logo: "/images/logos/advionics-nv.webp",
     description:
-      "During my internship in my final year of secondary school, I developed an automated camera system for quality control in the shipping process. The system captures photos of products before packaging and automatically generates PDF reports as proof of undamaged shipments.",
+      "Created an automated camera-based QC system for shipping that captures product photos pre-packaging and generates PDF proof-of-condition reports.",
   },
 ];
 
