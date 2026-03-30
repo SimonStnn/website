@@ -38,7 +38,7 @@ jest.mock("@/lib/config", () => ({
 // Mock fetch
 global.fetch = jest.fn(() => Promise.resolve());
 
-describe("middleware", () => {
+describe("proxy", () => {
   const originalEnv = process.env;
 
   beforeEach(() => {
@@ -52,18 +52,18 @@ describe("middleware", () => {
   });
 
   it("returns a response", async () => {
-    const { middleware } = await import("@/middleware");
+    const { proxy } = await import("@/proxy");
     const request = new (await import("next/server")).NextRequest("https://example.com");
-    const response = await middleware(request);
+    const response = await proxy(request);
     expect(response).toHaveProperty("headers");
   });
 
   it("skips webhook when disabled", async () => {
     process.env.WEBHOOK_ENABLED = "false";
     jest.resetModules();
-    const { middleware } = await import("@/middleware");
+    const { proxy } = await import("@/proxy");
     const request = new (await import("next/server")).NextRequest("https://example.com");
-    const response = await middleware(request);
+    const response = await proxy(request);
 
     expect(global.fetch).not.toHaveBeenCalled();
     expect(response.headers.get("x-middleware-processed")).toBe("true");
@@ -74,9 +74,9 @@ describe("middleware", () => {
     process.env.WEBHOOK_URL = "https://webhook.example.com";
     (global.fetch as jest.Mock).mockRejectedValueOnce(new Error("Network error"));
 
-    const { middleware } = await import("@/middleware");
+    const { proxy } = await import("@/proxy");
     const request = new (await import("next/server")).NextRequest("https://example.com");
-    const response = await middleware(request);
+    const response = await proxy(request);
 
     expect(response).toBeDefined(); // Should not throw
   });
@@ -84,11 +84,11 @@ describe("middleware", () => {
   it("includes request method and url in webhook", async () => {
     process.env.WEBHOOK_ENABLED = "true";
     process.env.WEBHOOK_URL = "https://webhook.example.com";
-    const { middleware } = await import("@/middleware");
+    const { proxy } = await import("@/proxy");
     const request = new (await import("next/server")).NextRequest("https://example.com/test", {
       method: "POST",
     });
-    await middleware(request);
+    await proxy(request);
 
     expect(global.fetch).toHaveBeenCalledWith(
       "https://webhook.example.com",
@@ -101,9 +101,9 @@ describe("middleware", () => {
   it("skips webhook when URL is invalid", async () => {
     process.env.WEBHOOK_ENABLED = "true";
     process.env.WEBHOOK_URL = "invalid-url";
-    const { middleware } = await import("@/middleware");
+    const { proxy } = await import("@/proxy");
     const request = new (await import("next/server")).NextRequest("https://example.com");
-    const response = await middleware(request);
+    const response = await proxy(request);
 
     expect(global.fetch).not.toHaveBeenCalled();
   });
@@ -117,9 +117,9 @@ describe("middleware", () => {
         isDevelopment: false,
       },
     }));
-    const { middleware } = await import("@/middleware");
+    const { proxy } = await import("@/proxy");
     const request = new (await import("next/server")).NextRequest("https://example.com");
-    const response = await middleware(request);
+    const response = await proxy(request);
 
     expect(global.fetch).not.toHaveBeenCalled();
   });
@@ -127,9 +127,9 @@ describe("middleware", () => {
   it("skips webhook when URL is not set", async () => {
     process.env.WEBHOOK_ENABLED = "true";
     delete process.env.WEBHOOK_URL;
-    const { middleware } = await import("@/middleware");
+    const { proxy } = await import("@/proxy");
     const request = new (await import("next/server")).NextRequest("https://example.com");
-    const response = await middleware(request);
+    const response = await proxy(request);
 
     expect(global.fetch).not.toHaveBeenCalled();
   });
