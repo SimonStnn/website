@@ -20,6 +20,9 @@ const nextConfig: NextConfig = {
   outputFileTracingExcludes: {
     "*": ["public/**"],
   },
+  outputFileTracingIncludes: {
+    "*": ["./node_modules/sharp/**/*", "./node_modules/@img/**/*"],
+  },
   images: {
     remotePatterns: domains.map((domain) => ({
       protocol: "https",
