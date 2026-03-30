@@ -32,14 +32,10 @@ async function main() {
   try {
     console.log(`Starting Next.js server on port ${PORT}...`);
 
-    server = spawn(
-      process.execPath,
-      ["node_modules/next/dist/bin/next", "start", "--port", String(PORT)],
-      {
-        env: { ...process.env, PORT: String(PORT), HOSTNAME: "localhost" },
-        stdio: "pipe",
-      }
-    );
+    server = spawn(process.execPath, [".next/standalone/server.js"], {
+      env: { ...process.env, PORT: String(PORT), HOSTNAME: "localhost" },
+      stdio: "pipe",
+    });
 
     server.stderr?.on("data", (data: Buffer) => {
       const msg = data.toString();
