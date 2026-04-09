@@ -443,7 +443,7 @@ export default async function CVPage() {
                   <div className="min-w-0 flex-1">
                     <div className="flex items-baseline justify-between gap-2">
                       <Link
-                        href={`/projects/${project.slug}`}
+                        href={`${siteConfig.url}/projects/${project.slug}`}
                         className="text-sm font-bold hover:underline"
                       >
                         {project.title}
@@ -472,7 +472,7 @@ export default async function CVPage() {
                           </Link>
                         )}
                         <Link
-                          href={`/projects/${project.slug}`}
+                          href={`${siteConfig.url}/projects/${project.slug}`}
                           className="text-muted-foreground hover:text-foreground"
                           title="View project details"
                         >
