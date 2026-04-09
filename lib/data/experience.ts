@@ -71,7 +71,7 @@ export const workExperience: ExperienceItem[] = [
 export const education: ExperienceItem[] = [
   {
     year: "2023 - 2026",
-    title: "Computer Science \u2013 Specialization in Software Engineering & AI",
+    title: "Electronics and ICT \u2013 Specialization in Software Engineering & AI",
     company: "Vives University of Applied Sciences \u2013 Bruges, Belgium",
     companyUrl: "https://www.vives.be/en",
     logo: "/images/logos/vives.webp",
