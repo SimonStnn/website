@@ -29,6 +29,7 @@ import {
 import { siteConfig } from "@/lib/config";
 import { Separator } from "@/components/ui/separator";
 import { GitHubIcon, LinkedInIcon } from "@/components/icons";
+import { useContactDialog } from "@/components/contact-dialog";
 
 interface HeaderProps {
   className?: string;
@@ -37,6 +38,7 @@ interface HeaderProps {
 interface NavigationItem {
   label: string;
   href?: string;
+  action?: "contact";
   icon?: React.ElementType;
   items?: {
     label: string;
@@ -70,11 +72,17 @@ const navigationItems: NavigationItem[] = [
   },
   { href: "/#skills", label: "Skills", icon: Zap },
   { href: "/#achievements", label: "Achievements", icon: Trophy },
-  { href: "/#contact", label: "Contact", icon: Mail },
+  { action: "contact", label: "Contact", icon: Mail },
 ];
 
 export function Header({ className }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { openContact } = useContactDialog();
+
+  const handleContactClick = () => {
+    setMobileMenuOpen(false);
+    openContact();
+  };
 
   return (
     <header
@@ -105,6 +113,17 @@ export function Header({ className }: HeaderProps) {
                     >
                       {item.label}
                     </Link>
+                  </Button>
+                </NavigationMenuLink>
+              ) : item.action === "contact" ? (
+                // Contact action — opens dialog
+                <NavigationMenuLink asChild>
+                  <Button
+                    variant="link"
+                    onClick={handleContactClick}
+                    className="text-primary-foreground/80 hover:text-primary-foreground capitalize"
+                  >
+                    {item.label}
                   </Button>
                 </NavigationMenuLink>
               ) : (
@@ -182,6 +201,19 @@ export function Header({ className }: HeaderProps) {
                         )}
                         {item.label}
                       </Link>
+                    ) : item.action === "contact" ? (
+                      <button
+                        onClick={handleContactClick}
+                        className={cn(
+                          "flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-base font-medium",
+                          "text-foreground/80 hover:bg-muted hover:text-foreground transition-colors"
+                        )}
+                      >
+                        {item.icon && (
+                          <item.icon className="text-muted-foreground size-5 shrink-0" />
+                        )}
+                        {item.label}
+                      </button>
                     ) : (
                       <div className="flex flex-col">
                         <div className="flex items-center gap-3 px-3 py-2.5">

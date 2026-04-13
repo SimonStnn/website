@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
+import { ContactDialogProvider } from "@/components/contact-dialog";
 import Analytics from "@/components/meta/analytics";
 import { PersonJsonLd } from "@/components/meta/structured-data";
 import { ThemeProvider } from "next-themes";
@@ -117,18 +118,20 @@ export default function RootLayout({
           ></iframe>
         </noscript>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <a
-            // Skip to main content link for screen readers
-            href="#main-content"
-            className="focus:bg-primary focus:text-primary-foreground focus:ring-accent sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:rounded-md focus:px-8 focus:py-2 focus:shadow-lg"
-          >
-            Skip to main content
-          </a>
-          <Header className="sticky top-0 z-40" />
-          <main id="main-content" className="flex-grow">
-            {children}
-          </main>
-          <Footer />
+          <ContactDialogProvider>
+            <a
+              // Skip to main content link for screen readers
+              href="#main-content"
+              className="focus:bg-primary focus:text-primary-foreground focus:ring-accent sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:rounded-md focus:px-8 focus:py-2 focus:shadow-lg"
+            >
+              Skip to main content
+            </a>
+            <Header className="sticky top-0 z-40" />
+            <main id="main-content" className="flex-grow">
+              {children}
+            </main>
+            <Footer />
+          </ContactDialogProvider>
         </ThemeProvider>
       </body>
     </html>
