@@ -196,9 +196,10 @@ export function Header({ className }: HeaderProps) {
                           "text-foreground/80 hover:bg-muted hover:text-foreground transition-colors"
                         )}
                       >
-                        {item.icon && (
-                          <item.icon className="text-muted-foreground size-5 shrink-0" />
-                        )}
+                        {item.icon &&
+                          React.createElement(item.icon, {
+                            className: "text-muted-foreground size-5 shrink-0",
+                          })}
                         {item.label}
                       </Link>
                     ) : item.action === "contact" ? (
@@ -209,17 +210,19 @@ export function Header({ className }: HeaderProps) {
                           "text-foreground/80 hover:bg-muted hover:text-foreground transition-colors"
                         )}
                       >
-                        {item.icon && (
-                          <item.icon className="text-muted-foreground size-5 shrink-0" />
-                        )}
+                        {item.icon &&
+                          React.createElement(item.icon, {
+                            className: "text-muted-foreground size-5 shrink-0",
+                          })}
                         {item.label}
                       </button>
                     ) : (
                       <div className="flex flex-col">
                         <div className="flex items-center gap-3 px-3 py-2.5">
-                          {item.icon && (
-                            <item.icon className="text-muted-foreground size-5 shrink-0" />
-                          )}
+                          {item.icon &&
+                            React.createElement(item.icon, {
+                              className: "text-muted-foreground size-5 shrink-0",
+                            })}
                           <span className="text-muted-foreground text-xs font-semibold tracking-widest uppercase">
                             {item.label}
                           </span>

@@ -5,6 +5,16 @@ import { Header } from "@/components/layout/header";
 jest.mock("@/lib/config", () => ({
   siteConfig: {
     name: "Test Site",
+    person: {
+      jobTitle: "Software Engineer",
+    },
+    social: {
+      github: "https://github.com/test",
+      linkedin: "https://linkedin.com/in/test",
+    },
+    author: {
+      email: "test@example.com",
+    },
   },
 }));
 
