@@ -238,9 +238,10 @@ export function Header({ className }: HeaderProps) {
                                 "text-foreground/80 hover:bg-muted hover:text-foreground transition-colors"
                               )}
                             >
-                              {subItem.icon && (
-                                <subItem.icon className="text-muted-foreground size-4 shrink-0" />
-                              )}
+                              {subItem.icon &&
+                                React.createElement(subItem.icon, {
+                                  className: "text-muted-foreground size-4 shrink-0",
+                                })}
                               {subItem.label}
                             </Link>
                           ))}
