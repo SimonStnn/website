@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import {
@@ -12,18 +12,23 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-  SheetClose,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { Menu } from "lucide-react";
+import {
+  Menu,
+  Home,
+  User,
+  Briefcase,
+  FolderOpen,
+  Star,
+  LayoutGrid,
+  Zap,
+  Trophy,
+  Mail,
+} from "lucide-react";
 import { siteConfig } from "@/lib/config";
 import { Separator } from "@/components/ui/separator";
+import { GitHubIcon, LinkedInIcon } from "@/components/icons";
 
 interface HeaderProps {
   className?: string;
@@ -32,38 +37,45 @@ interface HeaderProps {
 interface NavigationItem {
   label: string;
   href?: string;
+  icon?: React.ElementType;
   items?: {
     label: string;
     href: string;
     description?: string;
+    icon?: React.ElementType;
   }[];
 }
 
 const navigationItems: NavigationItem[] = [
-  { href: "/#home", label: "Home" },
-  { href: "/#about", label: "About" },
-  { href: "/#experience", label: "Experience" },
+  { href: "/#home", label: "Home", icon: Home },
+  { href: "/#about", label: "About", icon: User },
+  { href: "/#experience", label: "Experience", icon: Briefcase },
   {
     label: "Projects",
+    icon: FolderOpen,
     items: [
       {
         label: "Featured Projects",
         href: "/#projects",
+        icon: Star,
         description: "Browse my featured projects.",
       },
       {
         label: "All Projects",
         href: "/projects",
+        icon: LayoutGrid,
         description: "Browse all my projects.",
       },
     ],
   },
-  { href: "/#skills", label: "Skills" },
-  { href: "/#achievements", label: "Achievements" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/#skills", label: "Skills", icon: Zap },
+  { href: "/#achievements", label: "Achievements", icon: Trophy },
+  { href: "/#contact", label: "Contact", icon: Mail },
 ];
 
 export function Header({ className }: HeaderProps) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <header
       className={cn(
@@ -135,7 +147,7 @@ export function Header({ className }: HeaderProps) {
         <ThemeToggle />
 
         {/* Mobile Menu Sheet */}
-        <Sheet>
+        <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
           <SheetTrigger asChild>
             <Button
               variant="ghost"
@@ -146,43 +158,92 @@ export function Header({ className }: HeaderProps) {
               <Menu className="size-5" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="right">
-            <SheetHeader>
-              <SheetTitle className="text-lg font-bold">{siteConfig.name}</SheetTitle>
+          <SheetContent side="right" className="flex flex-col gap-0 p-0">
+            <SheetHeader className="px-6 pt-6 pb-4">
+              <SheetTitle className="text-xl font-bold">{siteConfig.name}</SheetTitle>
+              <p className="text-muted-foreground text-sm">{siteConfig.person.jobTitle}</p>
             </SheetHeader>
             <Separator />
-            <nav className="flex flex-col">
-              {navigationItems.map((item) => (
-                <div key={item.label}>
-                  {item.href ? (
-                    // Simple link
-                    <SheetClose asChild>
-                      <Button variant="link" className="justify-start" size="lg" asChild>
-                        <Link href={item.href} className="justify-start">
-                          {item.label}
-                        </Link>
-                      </Button>
-                    </SheetClose>
-                  ) : (
-                    // Dropdown items
-                    <div className="flex flex-col px-2">
-                      <span className="text-muted-foreground px-4 py-2 text-sm font-medium">
+            <nav className="flex-1 overflow-y-auto px-3 py-4">
+              <div className="flex flex-col gap-0.5">
+                {navigationItems.map((item) => (
+                  <div key={item.label}>
+                    {item.href ? (
+                      <Link
+                        href={item.href}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className={cn(
+                          "flex items-center gap-3 rounded-lg px-3 py-2.5 text-base font-medium",
+                          "text-foreground/80 hover:bg-muted hover:text-foreground transition-colors"
+                        )}
+                      >
+                        {item.icon && (
+                          <item.icon className="text-muted-foreground size-5 shrink-0" />
+                        )}
                         {item.label}
-                      </span>
-                      {item.items?.map((subItem) => (
-                        <SheetClose key={subItem.href} asChild>
-                          <Button variant="link" className="justify-start pl-8" size="lg" asChild>
-                            <Link href={subItem.href} className="justify-start">
+                      </Link>
+                    ) : (
+                      <div className="flex flex-col">
+                        <div className="flex items-center gap-3 px-3 py-2.5">
+                          {item.icon && (
+                            <item.icon className="text-muted-foreground size-5 shrink-0" />
+                          )}
+                          <span className="text-muted-foreground text-xs font-semibold tracking-widest uppercase">
+                            {item.label}
+                          </span>
+                        </div>
+                        <div className="ml-[1.1rem] flex flex-col gap-0.5 border-l pl-4">
+                          {item.items?.map((subItem) => (
+                            <Link
+                              key={subItem.href}
+                              href={subItem.href}
+                              onClick={() => setMobileMenuOpen(false)}
+                              className={cn(
+                                "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium",
+                                "text-foreground/80 hover:bg-muted hover:text-foreground transition-colors"
+                              )}
+                            >
+                              {subItem.icon && (
+                                <subItem.icon className="text-muted-foreground size-4 shrink-0" />
+                              )}
                               {subItem.label}
                             </Link>
-                          </Button>
-                        </SheetClose>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
             </nav>
+            <Separator />
+            <div className="flex items-center gap-1 px-4 py-4">
+              <a
+                href={siteConfig.social.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className="text-muted-foreground hover:text-foreground hover:bg-muted rounded-md p-2 transition-colors"
+              >
+                <GitHubIcon className="size-5" />
+              </a>
+              <a
+                href={siteConfig.social.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="text-muted-foreground hover:text-foreground hover:bg-muted rounded-md p-2 transition-colors"
+              >
+                <LinkedInIcon className="size-5" />
+              </a>
+              <a
+                href={`mailto:${siteConfig.author.email}`}
+                aria-label="Email"
+                className="text-muted-foreground hover:text-foreground hover:bg-muted rounded-md p-2 transition-colors"
+              >
+                <Mail className="size-5" />
+              </a>
+            </div>
           </SheetContent>
         </Sheet>
       </div>

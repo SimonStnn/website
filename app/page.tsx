@@ -149,7 +149,7 @@ export default async function Home() {
               className="text-primary hover:text-accent/80 transition-transform duration-300 ease-in-out hover:scale-110 hover:transform"
             />
           </div>
-          <div className="flex gap-4">
+          <div className="flex flex-wrap gap-4">
             <Button asChild size="lg" className="font-bold">
               <a href="#projects">View My Work</a>
             </Button>
