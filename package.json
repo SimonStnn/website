@@ -1,6 +1,6 @@
 {
   "name": "portfolio-stijnen-simon",
-  "version": "2.4.6",
+  "version": "2.4.7",
   "private": true,
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
