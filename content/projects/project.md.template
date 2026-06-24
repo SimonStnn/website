@@ -1,0 +1,27 @@
+---
+title: "Project Title"
+shortDescription: "One-sentence summary shown on the project card and in metadata."
+technologies: ["Tech1", "Tech2", "Tech3"]
+images:
+  - src: /images/projects/slug/screenshot.webp
+    alt: "Description of the screenshot"
+# demoUrl: "https://example.com"          # omit or remove if no live demo
+githubUrl: "https://github.com/SimonStnn/repo"
+# order: 1                                # 1–6 = featured on home page; omit for non-featured
+---
+
+## Overview
+
+Write the main project description here using full Markdown.
+
+You can use **bold**, _italic_, `inline code`, [links](https://example.com), and headings.
+
+## Key Features
+
+- Feature one
+- Feature two
+- Feature three
+
+## What I learned
+
+Describe technical challenges, interesting decisions, or skills gained.

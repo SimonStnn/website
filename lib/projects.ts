@@ -1,5 +1,14 @@
 import fs from "fs";
 import path from "path";
+import matter from "gray-matter";
+import { remark } from "remark";
+import remarkGfm from "remark-gfm";
+import remarkEmoji from "remark-emoji";
+import remarkSmartypants from "remark-smartypants";
+import remarkRehype from "remark-rehype";
+import rehypeRaw from "rehype-raw";
+import rehypePrettyCode from "rehype-pretty-code";
+import rehypeStringify from "rehype-stringify";
 
 export interface ProjectImage {
   src: string;
@@ -11,7 +20,10 @@ export interface Project {
   lastModified: Date;
   title: string;
   shortDescription: string;
-  description: string;
+  /** Raw markdown body */
+  content: string;
+  /** Rendered HTML of the markdown body */
+  contentHtml: string;
   technologies: string[];
   images: ProjectImage[];
   demoUrl?: string;
@@ -22,51 +34,82 @@ export interface Project {
 // Path to the project files
 const projectsDirectory = path.join(process.cwd(), "content/projects");
 
+/** Converts a markdown string to an HTML string */
+async function markdownToHtml(md: string): Promise<string> {
+  const file = await remark()
+    .use(remarkGfm)
+    .use(remarkEmoji)
+    .use(remarkSmartypants)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeRaw)
+    .use(rehypePrettyCode, {
+      // theme: { dark: "github-dark", light: "github-light" },
+    })
+    .use(rehypeStringify)
+    .process(md);
+  return String(file);
+}
+
 /**
- * Reads all project data from JSON files in the content/projects directory
- * The filename (without .json) is used as the slug
+ * Reads all project data from Markdown files in the content/projects directory.
+ * The filename (without .md) is used as the slug.
+ * YAML frontmatter holds metadata; the body is the project description in Markdown.
  */
 export async function getProjects(): Promise<Project[]> {
   // Read all files from the projects directory
   const fileNames = fs.readdirSync(projectsDirectory);
 
   // Get project data from each file
-  const projects = fileNames
-    .filter((fileName) => fileName.endsWith(".json"))
-    .map((fileName) => {
-      // Get the slug from the filename (without .json extension)
-      const slug = fileName.replace(/\.json$/, "");
+  const projects = await Promise.all(
+    fileNames
+      .filter((fileName) => fileName.endsWith(".md"))
+      .map(async (fileName) => {
+        // Get the slug from the filename (without .md extension)
+        const slug = fileName.replace(/\.md$/, "");
 
-      // Read the JSON file content
-      const filePath = path.join(projectsDirectory, fileName);
-      const fileContent = fs.readFileSync(filePath, "utf8");
+        const filePath = path.join(projectsDirectory, fileName);
 
-      // Parse the JSON data with error handling
-      let projectData: unknown;
-      try {
-        projectData = JSON.parse(fileContent);
-      } catch (error) {
-        console.error(`Error parsing JSON for project ${slug}`, { error, fileName });
-        return null; // Skip invalid files
-      }
+        // Read and parse frontmatter + body with error handling
+        let data: Record<string, unknown>;
+        let content: string;
+        try {
+          const fileContent = fs.readFileSync(filePath, "utf8");
+          const parsed = matter(fileContent);
+          data = parsed.data as Record<string, unknown>;
+          content = parsed.content;
+        } catch (error) {
+          console.error(`Error reading or parsing markdown for project ${slug}`, {
+            error,
+            fileName,
+          });
+          return null; // Skip invalid files
+        }
 
-      // Ensure it's an object and not an array
-      if (typeof projectData !== "object" || projectData === null || Array.isArray(projectData)) {
-        console.error(`Invalid JSON structure for project ${slug}`, { projectData });
-        return null;
-      }
+        // Ensure frontmatter is an object
+        if (typeof data !== "object" || data === null || Array.isArray(data)) {
+          console.error(`Invalid frontmatter structure for project ${slug}`, { data });
+          return null;
+        }
 
-      // Return the project data with the slug and file modification date
-      return {
-        slug,
-        lastModified: fs.statSync(filePath).mtime,
-        ...projectData,
-      };
-    })
-    .filter((project): project is Project => project !== null);
+        // Render the markdown body to HTML
+        const contentHtml = await markdownToHtml(content);
+
+        // Return the project data with the slug, rendered content, and file modification date
+        return {
+          slug,
+          lastModified: fs.statSync(filePath).mtime,
+          ...data,
+          content,
+          contentHtml,
+        } as Project;
+      })
+  );
+
+  // Filter out null entries (invalid files)
+  const validProjects = projects.filter((project): project is Project => project !== null);
 
   // Sort projects by order (if specified)
-  return projects.sort((a, b) => {
+  return validProjects.sort((a, b) => {
     // If both have order, sort by order
     if (a.order !== undefined && b.order !== undefined) {
       return a.order - b.order;

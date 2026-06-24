@@ -57,7 +57,8 @@ const mockProject: Project = {
   slug: "test-project",
   title: "Test Project",
   shortDescription: "A test project",
-  description: "Full description",
+  content: "Full description",
+  contentHtml: "<p>Full description</p>",
   technologies: ["React", "TypeScript"],
   images: [{ src: "/image.jpg", alt: "Test image" }],
 };

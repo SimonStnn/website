@@ -153,20 +153,15 @@ function ActionButtons({ demoUrl, githubUrl }: { demoUrl?: string; githubUrl?: s
 }
 
 function ProjectContent({
-  description,
+  contentHtml,
   technologies,
 }: {
-  description: string;
+  contentHtml: string;
   technologies: string[];
 }) {
   return (
-    <div className="prose max-w-none">
-      <h2 className="mt-8 mb-4 text-2xl font-bold">Project Overview</h2>
-      {description.split("\n").map((line, index) => (
-        <p key={index} className="mb-4 text-justify">
-          {line}
-        </p>
-      ))}
+    <div className="prose dark:prose-invert max-w-none">
+      <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
 
       <h2 className="mt-8 mb-4 text-2xl font-bold">Technologies Used</h2>
       <ul className="mb-8 flex flex-wrap gap-2">
@@ -212,7 +207,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <div className="container mx-auto max-w-4xl">
           <ProjectStructuredData
             title={project.title}
-            description={project.description}
+            description={project.shortDescription}
             slug={project.slug}
             technologies={project.technologies}
             images={project.images}
@@ -274,7 +269,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               />
             </>
           )}
-          <ProjectContent description={project.description} technologies={project.technologies} />
+          <ProjectContent contentHtml={project.contentHtml} technologies={project.technologies} />
           <ActionButtons demoUrl={project.demoUrl} githubUrl={project.githubUrl} />
         </div>
       </section>
