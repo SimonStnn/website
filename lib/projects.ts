@@ -64,7 +64,7 @@ export const getProjects = cache(async function getProjects(): Promise<Project[]
   const projects = await Promise.all(
     fileNames
       .filter((fileName) => fileName.endsWith(".md"))
-      .map(async (fileName) => {
+      .map(async (fileName): Promise<Project | null> => {
         // Get the slug from the filename (without .md extension)
         const slug = fileName.replace(/\.md$/, "");
 
@@ -99,19 +99,21 @@ export const getProjects = cache(async function getProjects(): Promise<Project[]
           console.error(`Missing or invalid 'title' field for project ${slug}`, { data });
           return null;
         }
-        if (!Array.isArray(data.technologies)) {
-          console.error(`Missing or invalid 'technologies' field for project ${slug}`, { data });
-          return null;
-        }
 
         // Return the project data with the slug, rendered content, and file modification date
         return {
           slug,
           lastModified: fs.statSync(filePath).mtime,
-          ...data,
+          title: data.title,
+          shortDescription: typeof data.shortDescription === "string" ? data.shortDescription : "",
+          technologies: Array.isArray(data.technologies) ? (data.technologies as string[]) : [],
+          images: Array.isArray(data.images) ? (data.images as ProjectImage[]) : [],
+          demoUrl: typeof data.demoUrl === "string" ? data.demoUrl : undefined,
+          githubUrl: typeof data.githubUrl === "string" ? data.githubUrl : undefined,
+          order: typeof data.order === "number" ? data.order : undefined,
           content,
           contentHtml,
-        } as Project;
+        };
       })
   );
 
