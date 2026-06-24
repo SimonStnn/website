@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { getProjects, type ProjectImage } from "@/lib/projects";
+import { getProjects, getProjectBySlug, type ProjectImage } from "@/lib/projects";
 import ProjectStructuredData from "@/components/meta/project-structured-data";
 import RelatedProjects from "@/components/related-projects";
 import {
@@ -27,9 +27,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
-  const projects = await getProjects();
   const { slug } = await params;
-  const project = projects.find((p) => p.slug === slug);
+  const project = await getProjectBySlug(slug);
 
   if (!project) {
     return {
@@ -153,20 +152,15 @@ function ActionButtons({ demoUrl, githubUrl }: { demoUrl?: string; githubUrl?: s
 }
 
 function ProjectContent({
-  description,
+  contentHtml,
   technologies,
 }: {
-  description: string;
+  contentHtml: string;
   technologies: string[];
 }) {
   return (
-    <div className="prose max-w-none">
-      <h2 className="mt-8 mb-4 text-2xl font-bold">Project Overview</h2>
-      {description.split("\n").map((line, index) => (
-        <p key={index} className="mb-4 text-justify">
-          {line}
-        </p>
-      ))}
+    <div className="prose dark:prose-invert max-w-none">
+      <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
 
       <h2 className="mt-8 mb-4 text-2xl font-bold">Technologies Used</h2>
       <ul className="mb-8 flex flex-wrap gap-2">
@@ -212,7 +206,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <div className="container mx-auto max-w-4xl">
           <ProjectStructuredData
             title={project.title}
-            description={project.description}
+            description={project.shortDescription}
             slug={project.slug}
             technologies={project.technologies}
             images={project.images}
@@ -274,7 +268,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               />
             </>
           )}
-          <ProjectContent description={project.description} technologies={project.technologies} />
+          <ProjectContent contentHtml={project.contentHtml} technologies={project.technologies} />
           <ActionButtons demoUrl={project.demoUrl} githubUrl={project.githubUrl} />
         </div>
       </section>
