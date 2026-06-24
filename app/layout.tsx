@@ -90,6 +90,7 @@ export default function RootLayout({
           href="/llms.txt"
           title="LLM-readable site information"
         />
+        <link rel="alternate" type="application/rss+xml" href="/rss.xml" title="Blog RSS Feed" />
         <Analytics />
         <VercelAnalytics />
         <SpeedInsights />

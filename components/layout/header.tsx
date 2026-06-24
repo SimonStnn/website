@@ -25,6 +25,7 @@ import {
   Zap,
   Trophy,
   Mail,
+  BookOpen,
 } from "lucide-react";
 import { siteConfig } from "@/lib/config";
 import { Separator } from "@/components/ui/separator";
@@ -70,6 +71,7 @@ const navigationItems: NavigationItem[] = [
       },
     ],
   },
+  { href: "/blog", label: "Blog", icon: BookOpen },
   { href: "/#skills", label: "Skills", icon: Zap },
   { href: "/#achievements", label: "Achievements", icon: Trophy },
   { action: "contact", label: "Contact", icon: Mail },
