@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { getProjects, type ProjectImage } from "@/lib/projects";
+import { getProjects, getProjectBySlug, type ProjectImage } from "@/lib/projects";
 import ProjectStructuredData from "@/components/meta/project-structured-data";
 import RelatedProjects from "@/components/related-projects";
 import {
@@ -27,9 +27,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
-  const projects = await getProjects();
   const { slug } = await params;
-  const project = projects.find((p) => p.slug === slug);
+  const project = await getProjectBySlug(slug);
 
   if (!project) {
     return {

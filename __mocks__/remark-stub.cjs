@@ -11,15 +11,9 @@ function remark() {
       return processor; // chainable
     },
     process: async function (content) {
-      // Very basic markdown → HTML: wrap paragraphs and handle bold/italic
-      const html = String(content)
-        .trim()
-        .split(/\n\n+/)
-        .map((para) => `<p>${para.trim()}</p>`)
-        .join("\n");
       return {
         toString: function () {
-          return html;
+          return String(content).trim();
         },
       };
     },

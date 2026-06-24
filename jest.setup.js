@@ -15,8 +15,7 @@ beforeAll(() => {
       !message.includes("Invalid JSON structure for") &&
       !message.includes("Error reading or parsing markdown for") &&
       !message.includes("Middleware error:") &&
-      !message.includes("Invalid webhook URL:") &&
-      !message.includes("In HTML, <div> cannot be a descendant of <p>")
+      !message.includes("Invalid webhook URL:")
     ) {
       throw new Error(`Unexpected console.error: ${message}`);
     }

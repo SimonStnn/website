@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { cache } from "react";
 import { remark } from "remark";
 import remarkGfm from "remark-gfm";
 import remarkEmoji from "remark-emoji";
@@ -55,7 +56,7 @@ async function markdownToHtml(md: string): Promise<string> {
  * The filename (without .md) is used as the slug.
  * YAML frontmatter holds metadata; the body is the project description in Markdown.
  */
-export async function getProjects(): Promise<Project[]> {
+export const getProjects = cache(async function getProjects(): Promise<Project[]> {
   // Read all files from the projects directory
   const fileNames = fs.readdirSync(projectsDirectory);
 
@@ -72,11 +73,13 @@ export async function getProjects(): Promise<Project[]> {
         // Read and parse frontmatter + body with error handling
         let data: Record<string, unknown>;
         let content: string;
+        let contentHtml: string;
         try {
           const fileContent = fs.readFileSync(filePath, "utf8");
           const parsed = matter(fileContent);
           data = parsed.data as Record<string, unknown>;
           content = parsed.content;
+          contentHtml = await markdownToHtml(content);
         } catch (error) {
           console.error(`Error reading or parsing markdown for project ${slug}`, {
             error,
@@ -91,8 +94,15 @@ export async function getProjects(): Promise<Project[]> {
           return null;
         }
 
-        // Render the markdown body to HTML
-        const contentHtml = await markdownToHtml(content);
+        // Validate required frontmatter fields
+        if (typeof data.title !== "string" || !data.title) {
+          console.error(`Missing or invalid 'title' field for project ${slug}`, { data });
+          return null;
+        }
+        if (!Array.isArray(data.technologies)) {
+          console.error(`Missing or invalid 'technologies' field for project ${slug}`, { data });
+          return null;
+        }
 
         // Return the project data with the slug, rendered content, and file modification date
         return {
@@ -122,7 +132,7 @@ export async function getProjects(): Promise<Project[]> {
     // If neither has order, sort alphabetically
     return a.title.localeCompare(b.title);
   });
-}
+});
 
 /**
  * Gets featured projects for the home page (projects with order 1-6)
