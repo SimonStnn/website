@@ -41,7 +41,7 @@ Achievements follow the same pattern in `content/achievements/`.
 - **Project Sorting**: By `order` field (1-6 for featured), then alphabetical
 - **Image Handling**: Filter videos with `isVideoFile()` from `lib/utils.ts`
 - **Environment Config**: Use `lib/config.ts` for site settings (NEXT*PUBLIC*\* vars)
-- **Analytics**: Custom analytics component + Vercel Analytics/Speed Insights in `app/layout.tsx`
+- **Analytics**: All analytics (GA4, GTM, Vercel Analytics, Speed Insights) are gated behind GDPR cookie consent. `components/consent/ConsentProvider.tsx` manages consent state via `localStorage`; `components/meta/analytics.tsx` is a `'use client'` component that only renders tracking scripts when consent is `'accepted'`. A cookie banner (`components/consent/CookieBanner.tsx`) appears until the user decides. See `app/privacy/page.tsx` for the privacy policy.
 - **Skills Table**: Uses @tanstack/react-table for sortable, filterable skills display
 - **Related Projects**: Determined by shared technologies
 

@@ -52,6 +52,10 @@ components/
 │   ├── table.tsx
 │   ├── tabs.tsx
 │   └── tooltip.tsx
+├── consent/                 # GDPR cookie consent
+│   ├── ConsentProvider.tsx
+│   ├── CookieBanner.tsx
+│   └── CookieSettingsButton.tsx
 ├── layout/                  # Layout components
 │   ├── header.tsx
 │   └── footer.tsx
@@ -129,11 +133,19 @@ graph TB
     Meta --> Analytics[Analytics]
     Meta --> StructuredData[Structured Data]
 
+    App --> Consent[ConsentProvider]
+    Consent --> Banner[CookieBanner]
+    Consent --> Analytics
+    Footer --> CookieSettingsBtn[CookieSettingsButton]
+
     style App fill:#e1f5ff
     style Header fill:#fff3cd
     style Footer fill:#fff3cd
     style Pages fill:#d4edda
     style Meta fill:#f8d7da
+    style Consent fill:#e8f5e9
+    style Banner fill:#e8f5e9
+    style CookieSettingsBtn fill:#e8f5e9
 ```
 
 ## Component Categories
@@ -211,11 +223,23 @@ The UI layer uses shadcn/ui components configured with the **New York** style an
 
 **See:** [shadcn/ui Integration](./03-shadcn-ui.md)
 
+### Consent Components
+
+Consent components implement GDPR-compliant cookie consent:
+
+| Component | Purpose | Client/Server |
+|---|---|---|
+| `consent/ConsentProvider.tsx` | React context exposing `accept()`, `decline()`, `reset()`; persists to `localStorage` | Client |
+| `consent/CookieBanner.tsx` | Fixed bottom banner shown until user makes a choice | Client |
+| `consent/CookieSettingsButton.tsx` | Footer button that calls `reset()` to re-show the banner | Client |
+
+**See:** [Consent System](./16-consent-system.md)
+
 ### Meta Components
 
 Meta components handle SEO, analytics, and structured data:
 
-- **Analytics** (`meta/analytics.tsx`): Google Analytics & Tag Manager
+- **Analytics** (`meta/analytics.tsx`): Consent-gated Google Analytics 4, GTM, Vercel Analytics, and Speed Insights — only loads when user has accepted cookies
 - **Structured Data** (`meta/structured-data.tsx`): JSON-LD schemas
 - **Project Structured Data** (`meta/project-structured-data.tsx`): Project-specific schemas
 

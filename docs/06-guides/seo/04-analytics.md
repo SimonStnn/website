@@ -94,53 +94,34 @@ The code is automatically installed via the Analytics component.
 
 ## Implementation
 
+All analytics are **gated behind GDPR cookie consent**. Scripts only load after the user explicitly accepts via the cookie banner. See [Consent System](../../02-features/16-consent-system.md) for full details.
+
 ### Analytics Component
 
 **File:** `components/meta/analytics.tsx`
 
 ```typescript
-// components/meta/analytics.tsx
+'use client'
+
 import { analyticsConfig, appConfig } from '@/lib/config';
+import { useConsent } from '@/components/consent/ConsentProvider';
+import { Analytics as VercelAnalytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export function Analytics() {
-  // Don't render in development
-  if (!analyticsConfig.gaId || !analyticsConfig.gtmId || appConfig.isDevelopment) {
-    return null;
-  }
+  const { consent } = useConsent();
+
+  // Only load after explicit user consent
+  if (consent !== 'accepted') return null;
+  if (!analyticsConfig.gaId || !analyticsConfig.gtmId || appConfig.isDevelopment) return null;
 
   return (
     <>
-      {/* Google Site Verification */}
-      <meta name="google-site-verification" content="your-verification-code" />
-
-      {/* Google Analytics */}
-      <script
-        async
-        src={`https://www.googletagmanager.com/gtag/js?id=${analyticsConfig.gaId}`}
-      />
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${analyticsConfig.gaId}';
-          `,
-        }}
-      />
-
-      {/* Google Tag Manager */}
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','${analyticsConfig.gtmId}');
-          `,
-        }}
-      />
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${analyticsConfig.gaId}`} />
+      <script dangerouslySetInnerHTML={{ __html: `...gtag config...` }} />
+      <script dangerouslySetInnerHTML={{ __html: `...GTM loader...` }} />
+      <VercelAnalytics />
+      <SpeedInsights />
     </>
   );
 }
@@ -150,33 +131,29 @@ export function Analytics() {
 
 ```typescript
 // app/layout.tsx
+import { ConsentProvider } from '@/components/consent/ConsentProvider';
+import { CookieBanner } from '@/components/consent/CookieBanner';
 import Analytics from '@/components/meta/analytics';
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Analytics as VercelAnalytics } from '@vercel/analytics/next';
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <Analytics />
-        <VercelAnalytics />
-        <SpeedInsights />
+        {/* google-site-verification is in the static metadata object, not the Analytics component */}
       </head>
       <body>
-        {/* GTM noscript fallback */}
-        <noscript>
-          <iframe
-            src={`https://www.googletagmanager.com/ns.html?id=${analyticsConfig.gtmId}`}
-            height="0"
-            width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
-          />
-        </noscript>
-        {children}
+        <ConsentProvider>
+          <Analytics /> {/* renders nothing until consent === 'accepted' */}
+          <ThemeProvider>
+            {children}
+            <CookieBanner /> {/* shown until user decides */}
+          </ThemeProvider>
+        </ConsentProvider>
       </body>
     </html>
   );
 }
+```
 ```
 
 ### Configuration
@@ -336,86 +313,34 @@ gtag("event", "social_click", {
 
 ### GDPR Compliance
 
-**If targeting EU users, consider:**
+The site is fully compliant with the EU ePrivacy Directive and GDPR for analytics:
 
-1. **Cookie consent banner**
-2. **Privacy policy page**
-3. **Data processing agreement**
-4. **User opt-out option**
+1. **Consent-first**: analytics scripts never load until the user clicks Accept
+2. **Cookie banner**: `components/consent/CookieBanner.tsx` — fixed bottom bar with equal-prominence Accept/Decline buttons
+3. **Persistent preference**: consent stored in `localStorage` (`cookie-consent: 'accepted' | 'declined'`)
+4. **Revocable**: "Cookie Settings" link in the footer resets consent so the banner reappears
+5. **Privacy policy**: `/privacy` page covers data controller, cookie table, legal basis, retention, GDPR rights
 
-### Cookie Consent
+**See:** [Privacy & Compliance Guide](../07-privacy-compliance.md)
 
-**Basic implementation:**
+### Consent State
 
 ```typescript
-'use client';
+// Three possible states
+type ConsentState = 'accepted' | 'declined' | null  // null = no decision yet
 
-import { useState, useEffect } from 'react';
-
-export function CookieConsent() {
-  const [showBanner, setShowBanner] = useState(false);
-
-  useEffect(() => {
-    const consent = localStorage.getItem('cookie-consent');
-    if (!consent) {
-      setShowBanner(true);
-    }
-  }, []);
-
-  const acceptCookies = () => {
-    localStorage.setItem('cookie-consent', 'accepted');
-    setShowBanner(false);
-
-    // Initialize analytics
-    if (window.gtag) {
-      window.gtag('consent', 'update', {
-        analytics_storage: 'granted',
-      });
-    }
-  };
-
-  if (!showBanner) return null;
-
-  return (
-    <div className="fixed bottom-0 left-0 right-0 bg-card p-4 shadow-lg">
-      <div className="container mx-auto flex items-center justify-between">
-        <p>We use cookies to improve your experience.</p>
-        <Button onClick={acceptCookies}>Accept</Button>
-      </div>
-    </div>
-  );
-}
+// From useConsent() hook
+const { consent, accept, decline, reset } = useConsent();
 ```
 
 ### Anonymize IP Addresses
 
-**GA4 (automatic in GA4):**
+GA4 anonymizes IPs automatically. To be explicit:
 
 ```typescript
 gtag("config", analyticsConfig.gaId, {
   anonymize_ip: true,
 });
-```
-
-### Opt-Out
-
-**Provide opt-out option:**
-
-```typescript
-'use client';
-
-export function OptOutButton() {
-  const handleOptOut = () => {
-    // Disable Google Analytics
-    if (typeof window !== 'undefined') {
-      window[`ga-disable-${analyticsConfig.gaId}`] = true;
-      localStorage.setItem('analytics-opt-out', 'true');
-      alert('Analytics disabled');
-    }
-  };
-
-  return <Button onClick={handleOptOut}>Opt Out of Analytics</Button>;
-}
 ```
 
 ## Testing
