@@ -1,6 +1,16 @@
 import { render, screen } from "@testing-library/react";
 import { Footer } from "@/components/layout/footer";
 
+// Mock consent provider so CookieSettingsButton renders without a ConsentProvider wrapper
+jest.mock("@/components/consent/ConsentProvider", () => ({
+  useConsent: () => ({
+    consent: null,
+    accept: jest.fn(),
+    decline: jest.fn(),
+    reset: jest.fn(),
+  }),
+}));
+
 // Mock the config
 jest.mock("@/lib/config", () => ({
   siteConfig: {
@@ -48,5 +58,12 @@ describe("Footer", () => {
 
     // Assuming Copyright component renders something with year
     expect(screen.getByText(/©/)).toBeInTheDocument();
+  });
+
+  it("renders privacy and cookie settings links", () => {
+    render(<Footer />);
+
+    expect(screen.getByText("Privacy")).toBeInTheDocument();
+    expect(screen.getByText("Cookie Settings")).toBeInTheDocument();
   });
 });
