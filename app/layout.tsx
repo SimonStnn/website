@@ -8,8 +8,8 @@ import Analytics from "@/components/meta/analytics";
 import { PersonJsonLd } from "@/components/meta/structured-data";
 import { ThemeProvider } from "next-themes";
 import { siteConfig } from "@/lib/config";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
+import { ConsentProvider } from "@/components/consent/ConsentProvider";
+import { CookieBanner } from "@/components/consent/CookieBanner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -70,6 +70,9 @@ export const metadata: Metadata = {
     images: ["/images/profile-meta.jpg"],
   },
   manifest: "/site.webmanifest",
+  verification: {
+    google: "Yr7tvEhqrFxE-am7WS4b7RiQJhy_F9grOg12XEhHtLw",
+  },
   other: {
     "llms-txt": `${siteConfig.url}/llms.txt`,
   },
@@ -90,9 +93,6 @@ export default function RootLayout({
           href="/llms.txt"
           title="LLM-readable site information"
         />
-        <Analytics />
-        <VercelAnalytics />
-        <SpeedInsights />
         <PersonJsonLd
           name={siteConfig.author.name}
           url={siteConfig.url}
@@ -109,30 +109,26 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} selection:bg-primary/80 selection:text-accent flex min-h-screen flex-col antialiased`}
       >
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-KH4ZNPL4"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          ></iframe>
-        </noscript>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <ContactDialogProvider>
-            <a
-              // Skip to main content link for screen readers
-              href="#main-content"
-              className="focus:bg-primary focus:text-primary-foreground focus:ring-accent sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:rounded-md focus:px-8 focus:py-2 focus:shadow-lg"
-            >
-              Skip to main content
-            </a>
-            <Header className="sticky top-0 z-40" />
-            <main id="main-content" className="flex-grow">
-              {children}
-            </main>
-            <Footer />
-          </ContactDialogProvider>
-        </ThemeProvider>
+        <ConsentProvider>
+          <Analytics />
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <ContactDialogProvider>
+              <a
+                // Skip to main content link for screen readers
+                href="#main-content"
+                className="focus:bg-primary focus:text-primary-foreground focus:ring-accent sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:rounded-md focus:px-8 focus:py-2 focus:shadow-lg"
+              >
+                Skip to main content
+              </a>
+              <Header className="sticky top-0 z-40" />
+              <main id="main-content" className="flex-grow">
+                {children}
+              </main>
+              <Footer />
+              <CookieBanner />
+            </ContactDialogProvider>
+          </ThemeProvider>
+        </ConsentProvider>
       </body>
     </html>
   );
