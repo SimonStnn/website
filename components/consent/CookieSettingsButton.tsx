@@ -1,10 +1,10 @@
-'use client'
+"use client";
 
-import { Button } from '@/components/ui/button'
-import { useConsent } from '@/components/consent/ConsentProvider'
+import { Button } from "@/components/ui/button";
+import { useConsent } from "@/components/consent/ConsentProvider";
 
 export function CookieSettingsButton() {
-  const { reset } = useConsent()
+  const { reset } = useConsent();
 
   return (
     <Button
@@ -15,7 +15,7 @@ export function CookieSettingsButton() {
     >
       Cookie Settings
     </Button>
-  )
+  );
 }
 
-export default CookieSettingsButton
+export default CookieSettingsButton;

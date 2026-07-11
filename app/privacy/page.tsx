@@ -22,7 +22,7 @@ export default function PrivacyPage() {
           <br />
           <a
             href={`mailto:${siteConfig.author.email}`}
-            className="underline hover:text-foreground transition-colors"
+            className="underline transition-colors hover:text-foreground"
           >
             {siteConfig.author.email}
           </a>
@@ -121,12 +121,13 @@ export default function PrivacyPage() {
           <li>Request correction or deletion of your data</li>
           <li>Object to or restrict processing</li>
           <li>Data portability</li>
-          <li>Lodge a complaint with the Belgian Data Protection Authority (GBA/APD) at{" "}
+          <li>
+            Lodge a complaint with the Belgian Data Protection Authority (GBA/APD) at{" "}
             <a
               href="https://www.dataprotectionauthority.be"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline hover:text-foreground transition-colors"
+              className="underline transition-colors hover:text-foreground"
             >
               dataprotectionauthority.be
             </a>
@@ -136,7 +137,7 @@ export default function PrivacyPage() {
           To exercise your rights, contact{" "}
           <a
             href={`mailto:${siteConfig.author.email}`}
-            className="underline hover:text-foreground transition-colors"
+            className="underline transition-colors hover:text-foreground"
           >
             {siteConfig.author.email}
           </a>

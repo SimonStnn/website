@@ -17,9 +17,9 @@ This guide explains the legal framework for analytics on this site and how the c
 
 Two EU laws govern analytics on websites:
 
-| Law | Scope | Key Requirement |
-|---|---|---|
-| **GDPR** | Personal data processing | Lawful basis (consent for analytics) |
+| Law                    | Scope                               | Key Requirement                               |
+| ---------------------- | ----------------------------------- | --------------------------------------------- |
+| **GDPR**               | Personal data processing            | Lawful basis (consent for analytics)          |
 | **ePrivacy Directive** | Storing anything on a user's device | Consent before non-essential cookies/tracking |
 
 The ePrivacy Directive applies **even if no personal data is collected**. Analytics cookies are non-essential by definition. Consent must be:
@@ -33,12 +33,12 @@ The ePrivacy Directive applies **even if no personal data is collected**. Analyt
 
 All four analytics tools on this site require consent:
 
-| Tool | Reason |
-|---|---|
-| Google Analytics 4 | Sets cookies (`_ga`, `_ga_*`, `_gid`), transfers data to Google/US |
-| Google Tag Manager | Loads third-party scripts |
-| Vercel Analytics | Sends data to Vercel servers (US) |
-| Vercel Speed Insights | Sends data to Vercel servers (US) |
+| Tool                  | Reason                                                             |
+| --------------------- | ------------------------------------------------------------------ |
+| Google Analytics 4    | Sets cookies (`_ga`, `_ga_*`, `_gid`), transfers data to Google/US |
+| Google Tag Manager    | Loads third-party scripts                                          |
+| Vercel Analytics      | Sends data to Vercel servers (US)                                  |
+| Vercel Speed Insights | Sends data to Vercel servers (US)                                  |
 
 ## What Is Implemented
 

@@ -32,16 +32,16 @@ Consent state is stored in `localStorage` under the key `cookie-consent`. Using 
 **File:** `components/consent/ConsentProvider.tsx`
 
 ```typescript
-type ConsentState = 'accepted' | 'declined' | null
+type ConsentState = "accepted" | "declined" | null;
 
-const { consent, accept, decline, reset } = useConsent()
+const { consent, accept, decline, reset } = useConsent();
 ```
 
-| Value | Meaning |
-|---|---|
-| `null` | No decision yet — banner is visible |
-| `'accepted'` | User accepted — analytics load |
-| `'declined'` | User declined — analytics blocked |
+| Value        | Meaning                             |
+| ------------ | ----------------------------------- |
+| `null`       | No decision yet — banner is visible |
+| `'accepted'` | User accepted — analytics load      |
+| `'declined'` | User declined — analytics blocked   |
 
 **Reads** `localStorage` on mount (client-side only, safe for SSR). **Writes** on every `accept()`, `decline()`, or `reset()` call.
 

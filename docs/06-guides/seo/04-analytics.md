@@ -101,18 +101,18 @@ All analytics are **gated behind GDPR cookie consent**. Scripts only load after 
 **File:** `components/meta/analytics.tsx`
 
 ```typescript
-'use client'
+"use client";
 
-import { analyticsConfig, appConfig } from '@/lib/config';
-import { useConsent } from '@/components/consent/ConsentProvider';
-import { Analytics as VercelAnalytics } from '@vercel/analytics/next';
-import { SpeedInsights } from '@vercel/speed-insights/next';
+import { analyticsConfig, appConfig } from "@/lib/config";
+import { useConsent } from "@/components/consent/ConsentProvider";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export function Analytics() {
   const { consent } = useConsent();
 
   // Only load after explicit user consent
-  if (consent !== 'accepted') return null;
+  if (consent !== "accepted") return null;
   if (!analyticsConfig.gaId || !analyticsConfig.gtmId || appConfig.isDevelopment) return null;
 
   return (
@@ -131,9 +131,9 @@ export function Analytics() {
 
 ```typescript
 // app/layout.tsx
-import { ConsentProvider } from '@/components/consent/ConsentProvider';
-import { CookieBanner } from '@/components/consent/CookieBanner';
-import Analytics from '@/components/meta/analytics';
+import { ConsentProvider } from "@/components/consent/ConsentProvider";
+import { CookieBanner } from "@/components/consent/CookieBanner";
+import Analytics from "@/components/meta/analytics";
 
 export default function RootLayout({ children }) {
   return (
@@ -153,7 +153,6 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-```
 ```
 
 ### Configuration
@@ -327,7 +326,7 @@ The site is fully compliant with the EU ePrivacy Directive and GDPR for analytic
 
 ```typescript
 // Three possible states
-type ConsentState = 'accepted' | 'declined' | null  // null = no decision yet
+type ConsentState = "accepted" | "declined" | null; // null = no decision yet
 
 // From useConsent() hook
 const { consent, accept, decline, reset } = useConsent();

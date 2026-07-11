@@ -227,11 +227,11 @@ The UI layer uses shadcn/ui components configured with the **New York** style an
 
 Consent components implement GDPR-compliant cookie consent:
 
-| Component | Purpose | Client/Server |
-|---|---|---|
-| `consent/ConsentProvider.tsx` | React context exposing `accept()`, `decline()`, `reset()`; persists to `localStorage` | Client |
-| `consent/CookieBanner.tsx` | Fixed bottom banner shown until user makes a choice | Client |
-| `consent/CookieSettingsButton.tsx` | Footer button that calls `reset()` to re-show the banner | Client |
+| Component                          | Purpose                                                                               | Client/Server |
+| ---------------------------------- | ------------------------------------------------------------------------------------- | ------------- |
+| `consent/ConsentProvider.tsx`      | React context exposing `accept()`, `decline()`, `reset()`; persists to `localStorage` | Client        |
+| `consent/CookieBanner.tsx`         | Fixed bottom banner shown until user makes a choice                                   | Client        |
+| `consent/CookieSettingsButton.tsx` | Footer button that calls `reset()` to re-show the banner                              | Client        |
 
 **See:** [Consent System](./16-consent-system.md)
 

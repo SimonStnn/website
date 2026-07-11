@@ -11,11 +11,13 @@ cat .husky/commit-msg
 ```
 
 Expected output should include:
+
 ```
 sed -i '/Co-Authored-By:.*[Cc]laude/d' "$1"
 ```
 
 If it's missing or wrong, recreate the file with exactly:
+
 ```sh
 #!/usr/bin/env sh
 # Strip Co-Authored-By: Claude lines from commit messages
