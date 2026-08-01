@@ -85,9 +85,10 @@ export default async function Home() {
               width={400}
               height={400}
               className={cn(
-                "size-full h-[400px] max-h-[400px] rounded-lg bg-transparent object-cover shadow-lg",
+                "size-full h-[400px] max-h-[400px] w-auto rounded-lg bg-transparent object-cover shadow-lg",
                 "transition-transform duration-700 ease-in-out hover:-rotate-4"
               )}
+              loading="eager"
             />
           </div>
         </aside>
