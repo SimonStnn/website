@@ -22,7 +22,7 @@ export default function PrivacyPage() {
           <br />
           <a
             href={`mailto:${siteConfig.author.email}`}
-            className="underline transition-colors hover:text-foreground"
+            className="hover:text-foreground underline transition-colors"
           >
             {siteConfig.author.email}
           </a>
@@ -108,8 +108,7 @@ export default function PrivacyPage() {
         <h2 className="mb-3 text-xl font-semibold">Data Retention</h2>
         <p className="text-muted-foreground">
           Analytics data is retained for 14 months in Google Analytics, after which it is
-          automatically deleted. You can request deletion of your data at any time by contacting
-          us.
+          automatically deleted. You can request deletion of your data at any time by contacting us.
         </p>
       </section>
 
@@ -127,7 +126,7 @@ export default function PrivacyPage() {
               href="https://www.dataprotectionauthority.be"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline transition-colors hover:text-foreground"
+              className="hover:text-foreground underline transition-colors"
             >
               dataprotectionauthority.be
             </a>
@@ -137,7 +136,7 @@ export default function PrivacyPage() {
           To exercise your rights, contact{" "}
           <a
             href={`mailto:${siteConfig.author.email}`}
-            className="underline transition-colors hover:text-foreground"
+            className="hover:text-foreground underline transition-colors"
           >
             {siteConfig.author.email}
           </a>

@@ -89,18 +89,7 @@ export function Footer({ className }: FooterProps) {
                 </Link>
               </Button>
             </li>
-            <Separator className="bg-border/30 my-1" />
-            <li>
-              <Button variant="link" size="sm" asChild>
-                <Link
-                  href="/sitemap.xml"
-                  className="text-primary-foreground/80 hover:text-primary-foreground w-full justify-start !p-0 transition-colors"
-                  target="_blank"
-                >
-                  Sitemap
-                </Link>
-              </Button>
-            </li>
+            <Separator className="bg-border-foreground my-1" />
             <li>
               <Button variant="link" size="sm" asChild>
                 <Link
@@ -113,6 +102,17 @@ export function Footer({ className }: FooterProps) {
             </li>
             <li>
               <CookieSettingsButton />
+            </li>
+            <li>
+              <Button variant="link" size="sm" asChild>
+                <Link
+                  href="/sitemap.xml"
+                  className="text-primary-foreground/80 hover:text-primary-foreground w-full justify-start !p-0 transition-colors"
+                  target="_blank"
+                >
+                  Sitemap
+                </Link>
+              </Button>
             </li>
           </ul>
         </div>

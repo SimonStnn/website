@@ -23,6 +23,7 @@ Two EU laws govern analytics on websites:
 | **ePrivacy Directive** | Storing anything on a user's device | Consent before non-essential cookies/tracking |
 
 The ePrivacy Directive applies **even if no personal data is collected**. Analytics cookies are non-essential by definition. Consent must be:
+
 - Freely given (no cookie walls)
 - Specific (purpose stated clearly)
 - Informed (privacy policy linked)

@@ -10,12 +10,12 @@ export function CookieBanner() {
   if (consent !== null) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-background/95 backdrop-blur-sm">
+    <div className="border-border bg-background/95 fixed right-0 bottom-0 left-0 z-50 border-t backdrop-blur-sm">
       <div className="container mx-auto flex max-w-6xl flex-col gap-4 px-8 py-4 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-muted-foreground text-sm">
           This site uses Google Analytics to understand visitor behaviour. No personal profiles are
           built.{" "}
-          <Link href="/privacy" className="underline transition-colors hover:text-foreground">
+          <Link href="/privacy" className="hover:text-foreground underline transition-colors">
             Privacy policy
           </Link>
         </p>

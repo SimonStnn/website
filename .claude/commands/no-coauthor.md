@@ -50,6 +50,7 @@ If they're already on the main branch, report them to the user — rewriting mer
 ### 4. Report
 
 Tell the user:
+
 - Whether the hook is correctly installed
 - How many commits were found and fixed
 - Whether a force push was needed
