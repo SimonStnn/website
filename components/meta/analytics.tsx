@@ -1,14 +1,10 @@
 "use client";
 
 import { analyticsConfig, appConfig } from "@/lib/config";
-import { useConsent } from "@/components/consent/ConsentProvider";
-import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export function Analytics() {
-  const { consent } = useConsent();
-
-  if (consent !== "accepted") return null;
   if (!analyticsConfig.gaId || !analyticsConfig.gtmId || appConfig.isDevelopment) return null;
 
   return (

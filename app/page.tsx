@@ -70,8 +70,8 @@ export default async function Home() {
         <aside className="">
           <div
             className={cn(
-              "relative ml-auto hidden md:block",
-              "w-[250px] transition-transform duration-700 ease-in-out hover:-rotate-4"
+              "relative ml-auto hidden h-[400px] w-[250px] md:block",
+              "transition-transform duration-700 ease-in-out hover:-rotate-4"
             )}
           >
             <span
@@ -82,10 +82,10 @@ export default async function Home() {
             <Image
               src="/images/hero.jpg"
               alt="Portrait of Simon Stijnen, Software Engineering and AI student"
-              width={400}
-              height={400}
+              fill
+              sizes="(min-width: 768px) 250px, 0px"
               className={cn(
-                "size-full h-[400px] max-h-[400px] w-auto rounded-lg bg-transparent object-cover shadow-lg",
+                "rounded-lg bg-transparent object-cover shadow-lg",
                 "transition-transform duration-700 ease-in-out hover:-rotate-4"
               )}
               loading="eager"
