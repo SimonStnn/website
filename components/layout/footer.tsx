@@ -8,6 +8,7 @@ import { FileDownloadIcon, GitHubIcon, LinkedInIcon } from "@/components/icons";
 import { Mail as MailIcon } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { EmailCopyButton } from "@/components/email-copy-button";
+import { CookieSettingsButton } from "@/components/consent/CookieSettingsButton";
 interface FooterProps {
   className?: string;
 }
@@ -88,7 +89,20 @@ export function Footer({ className }: FooterProps) {
                 </Link>
               </Button>
             </li>
-            <Separator className="bg-border/30 my-1" />
+            <Separator className="bg-border-foreground my-1" />
+            <li>
+              <Button variant="link" size="sm" asChild>
+                <Link
+                  href="/privacy"
+                  className="text-primary-foreground/80 hover:text-primary-foreground w-full justify-start !p-0 transition-colors"
+                >
+                  Privacy
+                </Link>
+              </Button>
+            </li>
+            <li>
+              <CookieSettingsButton />
+            </li>
             <li>
               <Button variant="link" size="sm" asChild>
                 <Link

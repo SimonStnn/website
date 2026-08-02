@@ -1,7 +1,6 @@
 import { render } from "@testing-library/react";
 import { Analytics } from "@/components/meta/analytics";
 
-// Mock config
 jest.mock("@/lib/config", () => ({
   analyticsConfig: {
     gaId: "GA-123",
@@ -12,11 +11,18 @@ jest.mock("@/lib/config", () => ({
   },
 }));
 
+jest.mock("@vercel/analytics/react", () => ({
+  Analytics: () => null,
+}));
+
+jest.mock("@vercel/speed-insights/next", () => ({
+  SpeedInsights: () => null,
+}));
+
 describe("Analytics", () => {
-  it("renders analytics scripts when IDs are provided and not in development", () => {
+  it("renders analytics scripts when IDs are provided and the app is not in development", () => {
     const { container } = render(<Analytics />);
     const scripts = container.querySelectorAll("script");
-    expect(scripts).toHaveLength(2); // The two inline scripts
-    // Meta is added to head, not container
+    expect(scripts).toHaveLength(2);
   });
 });
