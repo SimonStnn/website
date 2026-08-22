@@ -29,7 +29,7 @@ const nextConfig: NextConfig = {
     })),
   },
   // For Docker deployment - creates a standalone build
-  output: "standalone",
+  // output: "standalone",
   // async redirects() {
   //   return [
   //     {
