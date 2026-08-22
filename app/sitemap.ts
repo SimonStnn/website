@@ -1,21 +1,11 @@
-import fs from "fs";
-import path from "path";
-
 import { MetadataRoute } from "next";
 
 import { siteConfig } from "@/lib/config";
 import { getProjects } from "@/lib/projects";
 
-// Stable date for the homepage — update manually when you make significant content changes.
+// Stable dates for content pages — update manually when you make significant content changes.
 const HOMEPAGE_LAST_MODIFIED = new Date("2026-02-28");
-
-function getFileMtime(relativePath: string): Date {
-  try {
-    return fs.statSync(path.join(process.cwd(), relativePath)).mtime;
-  } catch {
-    return HOMEPAGE_LAST_MODIFIED;
-  }
-}
+const RESUME_LAST_MODIFIED = new Date("2026-08-02");
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = siteConfig.url;
@@ -58,7 +48,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const downloadRoutes: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}/download/resume.pdf`,
-      lastModified: getFileMtime("public/download/resume.pdf"),
+      lastModified: RESUME_LAST_MODIFIED,
       changeFrequency: "monthly",
       priority: 0.6,
     },
