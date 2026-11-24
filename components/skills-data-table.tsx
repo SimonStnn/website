@@ -194,7 +194,7 @@ export function SkillsDataTable({ data }: DataTableProps) {
     initialState: {
       pagination: {
         pageIndex: 0,
-        pageSize: 10, // Show 10 skills per page
+        pageSize: 5, // Show 5 skills per page
       },
     },
     state: {

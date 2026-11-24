@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import { useTable } from "@tanstack/react-table";
 import { SkillsDataTable } from "@/components/skills-data-table";
 import { Skill } from "@/lib/skills";
 
@@ -214,5 +215,16 @@ describe("SkillsDataTable", () => {
     render(<SkillsDataTable data={mockSkills} />);
     expect(screen.getByText("Previous")).toBeInTheDocument();
     expect(screen.getByText("Next")).toBeInTheDocument();
+  });
+
+  it("shows five skills per page", () => {
+    render(<SkillsDataTable data={mockSkills} />);
+    expect(useTable).toHaveBeenCalledWith(
+      expect.objectContaining({
+        initialState: {
+          pagination: { pageIndex: 0, pageSize: 5 },
+        },
+      })
+    );
   });
 });
