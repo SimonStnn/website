@@ -1,0 +1,12 @@
+{
+  "title": "Best Bachelor Thesis Award",
+  "issuer": "VIVES Technology",
+  "date": "2026",
+  "type": "award",
+  "description": "Won the VIVES Technology prize for best bachelor thesis, which explored how AI can accelerate the software development process. Graduated magna cum laude in Electronics-ICT.",
+  "image": {
+    "src": "/images/logos/vives.webp",
+    "alt": "VIVES University of Applied Sciences logo - official school emblem"
+  },
+  "order": 0
+}
