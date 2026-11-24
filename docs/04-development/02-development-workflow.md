@@ -226,8 +226,8 @@ touch app/new-section/page.tsx
 1. **Use utility classes:**
 
    ```tsx
-   <div className="bg-card flex items-center gap-4 rounded-lg p-6 shadow-md">
-     <h2 className="text-foreground text-2xl font-bold">Title</h2>
+   <div className="flex items-center gap-4 rounded-lg bg-card p-6 shadow-md">
+     <h2 className="text-2xl font-bold text-foreground">Title</h2>
    </div>
    ```
 

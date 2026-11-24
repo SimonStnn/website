@@ -98,51 +98,37 @@ flowchart LR
   {
     id: "ai",
     name: "AI",
-    projects: [
-      /* Signapse */
-    ],
+    projects: [/* Signapse */],
   },
   {
     id: "mongodb",
     name: "MongoDB",
-    projects: [
-      /* Pop-a-loon */
-    ],
+    projects: [/* Pop-a-loon */],
   },
   {
     id: "python",
     name: "Python",
-    projects: [
-      /* Signapse */
-    ],
+    projects: [/* Signapse */],
   },
   {
     id: "react",
     name: "React",
-    projects: [
-      /* Pop-a-loon, ChitChatz */
-    ],
+    projects: [/* Pop-a-loon, ChitChatz */],
   },
   {
     id: "react-native",
     name: "React Native",
-    projects: [
-      /* Signapse */
-    ],
+    projects: [/* Signapse */],
   },
   {
     id: "typescript",
     name: "TypeScript",
-    projects: [
-      /* Signapse, Pop-a-loon, ChitChatz */
-    ],
+    projects: [/* Signapse, Pop-a-loon, ChitChatz */],
   },
   {
     id: "websocket",
     name: "WebSocket",
-    projects: [
-      /* ChitChatz */
-    ],
+    projects: [/* ChitChatz */],
   },
 ];
 ```
@@ -467,16 +453,12 @@ const skills = [
   {
     id: "docker",
     name: "Docker", // First occurrence
-    projects: [
-      /* p1, p2, p3 */
-    ],
+    projects: [/* p1, p2, p3 */],
   },
   {
     id: "typescript",
     name: "TypeScript", // First occurrence
-    projects: [
-      /* p1, p2, p3 */
-    ],
+    projects: [/* p1, p2, p3 */],
   },
 ];
 

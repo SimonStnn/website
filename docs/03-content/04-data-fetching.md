@@ -479,51 +479,37 @@ const skills = [
   {
     id: "docker",
     name: "Docker",
-    projects: [
-      /* Project A, Project C */
-    ], // 2 projects
+    projects: [/* Project A, Project C */], // 2 projects
   },
   {
     id: "fastapi",
     name: "FastAPI",
-    projects: [
-      /* Project C */
-    ], // 1 project
+    projects: [/* Project C */], // 1 project
   },
   {
     id: "nextjs",
     name: "Next.js",
-    projects: [
-      /* Project B */
-    ], // 1 project
+    projects: [/* Project B */], // 1 project
   },
   {
     id: "postgresql",
     name: "PostgreSQL",
-    projects: [
-      /* Project B */
-    ], // 1 project
+    projects: [/* Project B */], // 1 project
   },
   {
     id: "python",
     name: "Python",
-    projects: [
-      /* Project C */
-    ], // 1 project
+    projects: [/* Project C */], // 1 project
   },
   {
     id: "react",
     name: "React",
-    projects: [
-      /* Project A, Project B */
-    ], // 2 projects
+    projects: [/* Project A, Project B */], // 2 projects
   },
   {
     id: "typescript",
     name: "TypeScript",
-    projects: [
-      /* Project A */
-    ], // 1 project
+    projects: [/* Project A */], // 1 project
   },
 ];
 // Sorted alphabetically by name

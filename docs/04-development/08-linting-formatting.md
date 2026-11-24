@@ -347,13 +347,13 @@ const longString =
 **Before:**
 
 ```tsx
-<div className="bg-card hover:bg-accent mb-2 rounded-lg p-4 text-lg font-bold">Content</div>
+<div className="mb-2 rounded-lg bg-card p-4 text-lg font-bold hover:bg-accent">Content</div>
 ```
 
 **After:**
 
 ```tsx
-<div className="bg-card hover:bg-accent mb-2 rounded-lg p-4 text-lg font-bold">Content</div>
+<div className="mb-2 rounded-lg bg-card p-4 text-lg font-bold hover:bg-accent">Content</div>
 ```
 
 **Sort order:**
