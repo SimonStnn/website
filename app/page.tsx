@@ -272,7 +272,7 @@ export default async function Home() {
         <div className="container mx-auto max-w-4xl">
           <h2 className="mb-8 text-center text-3xl font-bold">About Me</h2>
 
-          <div className="prose max-w-none">
+          <div className="prose dark:prose-invert max-w-none">
             <p className="mb-6 text-lg">
               Hello! I&apos;m {siteConfig.author.name}, a software Engineering & AI student at VIVES
               University of Applied Sciences. I build software that works, scales, and is
@@ -290,7 +290,7 @@ export default async function Home() {
               I learn fast and apply new technology in practice. At 17, I built a system to
               determine device locations using Bluetooth signal strength, similar to how satellites
               operate. Today, I work with AI and developed Pop-a-loon, a browser extension with over{" "}
-              <b>200 active users</b>.
+              <b>300 active users</b>.
             </p>
             <p className="mb-4">
               In 2023, Rotary International recognized me as the top graduating student in secondary

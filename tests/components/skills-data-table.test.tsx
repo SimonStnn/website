@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import { useTable } from "@tanstack/react-table";
 import { SkillsDataTable } from "@/components/skills-data-table";
 import { Skill } from "@/lib/skills";
 
@@ -86,7 +87,28 @@ jest.mock("@/components/ui/badge", () => ({
 
 // Mock TanStack Table
 jest.mock("@tanstack/react-table", () => ({
-  useReactTable: jest.fn(() => ({
+  columnFilteringFeature: {},
+  columnVisibilityFeature: {},
+  createColumnHelper: () => ({
+    accessor: (accessorKey, column) => ({ accessorKey, ...column }),
+    display: (column) => column,
+    columns: (columns) => columns,
+  }),
+  createFilteredRowModel: jest.fn(),
+  createPaginatedRowModel: jest.fn(),
+  createSortedRowModel: jest.fn(),
+  filterFn_includesString: jest.fn(),
+  flexRender: jest.fn((component, props) => {
+    if (typeof component === "function") {
+      return component(props);
+    }
+    return component;
+  }),
+  rowPaginationFeature: {},
+  rowSelectionFeature: {},
+  rowSortingFeature: {},
+  tableFeatures: jest.fn(() => ({})),
+  useTable: jest.fn(() => ({
     getHeaderGroups: () => [
       {
         id: "header",
@@ -137,7 +159,7 @@ jest.mock("@tanstack/react-table", () => ({
       setFilterValue: jest.fn(),
     }),
     getAllColumns: () => [],
-    getState: () => ({ pagination: { pageIndex: 0 } }),
+    state: { pagination: { pageIndex: 0 } },
     getPageCount: () => 1,
     getFilteredRowModel: () => ({ rows: [] }),
     previousPage: jest.fn(),
@@ -145,16 +167,6 @@ jest.mock("@tanstack/react-table", () => ({
     getCanPreviousPage: () => false,
     getCanNextPage: () => false,
   })),
-  getCoreRowModel: jest.fn(),
-  getPaginationRowModel: jest.fn(),
-  getSortedRowModel: jest.fn(),
-  getFilteredRowModel: jest.fn(),
-  flexRender: jest.fn((component, props) => {
-    if (typeof component === "function") {
-      return component(props);
-    }
-    return component;
-  }),
 }));
 
 const mockSkills: Skill[] = [
@@ -203,5 +215,16 @@ describe("SkillsDataTable", () => {
     render(<SkillsDataTable data={mockSkills} />);
     expect(screen.getByText("Previous")).toBeInTheDocument();
     expect(screen.getByText("Next")).toBeInTheDocument();
+  });
+
+  it("shows five skills per page", () => {
+    render(<SkillsDataTable data={mockSkills} />);
+    expect(useTable).toHaveBeenCalledWith(
+      expect.objectContaining({
+        initialState: {
+          pagination: { pageIndex: 0, pageSize: 5 },
+        },
+      })
+    );
   });
 });

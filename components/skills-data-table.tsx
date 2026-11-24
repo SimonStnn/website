@@ -2,16 +2,23 @@
 
 import * as React from "react";
 import {
-  ColumnDef,
   ColumnFiltersState,
+  ColumnVisibilityState,
+  RowSelectionState,
   SortingState,
-  VisibilityState,
+  columnFilteringFeature,
+  columnVisibilityFeature,
+  createColumnHelper,
+  createFilteredRowModel,
+  createPaginatedRowModel,
+  createSortedRowModel,
+  filterFn_includesString,
   flexRender,
-  getCoreRowModel,
-  getFilteredRowModel,
-  getPaginationRowModel,
-  getSortedRowModel,
-  useReactTable,
+  rowPaginationFeature,
+  rowSelectionFeature,
+  rowSortingFeature,
+  tableFeatures,
+  useTable,
 } from "@tanstack/react-table";
 import { ArrowUpDown, ChevronDown, ExternalLink, MoreHorizontal } from "lucide-react";
 
@@ -39,9 +46,22 @@ import { Skill } from "@/lib/skills";
 import Link from "next/link";
 import { Project } from "@/lib/projects";
 
-export const columns: ColumnDef<Skill>[] = [
-  {
-    accessorKey: "name",
+const features = tableFeatures({
+  columnFilteringFeature,
+  filteredRowModel: createFilteredRowModel(),
+  filterFns: { includesString: filterFn_includesString },
+  rowSortingFeature,
+  sortedRowModel: createSortedRowModel(),
+  rowPaginationFeature,
+  paginatedRowModel: createPaginatedRowModel(),
+  columnVisibilityFeature,
+  rowSelectionFeature,
+});
+
+const columnHelper = createColumnHelper<typeof features, Skill>();
+
+export const columns = columnHelper.columns([
+  columnHelper.accessor("name", {
     header: ({ column }) => {
       return (
         <Button
@@ -55,9 +75,8 @@ export const columns: ColumnDef<Skill>[] = [
       );
     },
     cell: ({ row }) => <div className="font-medium">{row.getValue("name")}</div>,
-  },
-  {
-    accessorKey: "projects",
+  }),
+  columnHelper.accessor("projects", {
     header: ({ column }) => {
       return (
         <Button
@@ -79,13 +98,13 @@ export const columns: ColumnDef<Skill>[] = [
         </Badge>
       );
     },
-    sortingFn: (rowA, rowB) => {
+    sortFn: (rowA, rowB) => {
       const projectsA = rowA.getValue("projects") as Project[];
       const projectsB = rowB.getValue("projects") as Project[];
       return projectsA.length - projectsB.length;
     },
-  },
-  {
+  }),
+  columnHelper.display({
     id: "actions",
     enableHiding: false,
     cell: ({ row }) => {
@@ -151,8 +170,8 @@ export const columns: ColumnDef<Skill>[] = [
         </DropdownMenu>
       );
     },
-  },
-];
+  }),
+]);
 
 interface DataTableProps {
   data: Skill[];
@@ -161,23 +180,21 @@ interface DataTableProps {
 export function SkillsDataTable({ data }: DataTableProps) {
   const [sorting, setSorting] = React.useState<SortingState>([{ id: "projects", desc: true }]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([]);
-  const [columnVisibility, setColumnVisibility] = React.useState<VisibilityState>({});
-  const [rowSelection, setRowSelection] = React.useState({});
+  const [columnVisibility, setColumnVisibility] = React.useState<ColumnVisibilityState>({});
+  const [rowSelection, setRowSelection] = React.useState<RowSelectionState>({});
 
-  const table = useReactTable({
+  const table = useTable({
+    features,
     data,
     columns,
     onSortingChange: setSorting,
     onColumnFiltersChange: setColumnFilters,
-    getCoreRowModel: getCoreRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
-    getSortedRowModel: getSortedRowModel(),
-    getFilteredRowModel: getFilteredRowModel(),
     onColumnVisibilityChange: setColumnVisibility,
     onRowSelectionChange: setRowSelection,
     initialState: {
       pagination: {
-        pageSize: 10, // Show 10 skills per page
+        pageIndex: 0,
+        pageSize: 5, // Show 5 skills per page
       },
     },
     state: {
@@ -268,7 +285,7 @@ export function SkillsDataTable({ data }: DataTableProps) {
       <div className="flex items-center justify-between space-x-2 py-4">
         <div className="text-muted-foreground flex flex-1 gap-2 text-sm">
           <span>
-            Page {table.getState().pagination.pageIndex + 1} of {table.getPageCount()}
+            Page {table.state.pagination.pageIndex + 1} of {table.getPageCount()}
           </span>
           -
           <span className="italic">

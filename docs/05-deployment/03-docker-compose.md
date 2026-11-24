@@ -190,7 +190,7 @@ restart: always
 restart: on-failure:5
 
 # Never restart (development)
-restart: "no"  # Quotes required for 'no'
+restart: "no" # Quotes required for 'no'
 ```
 
 #### Port Mapping
@@ -207,20 +207,20 @@ ports:
 ```yaml
 # Map different host port
 ports:
-  - "8080:3000"  # Access at http://localhost:8080
+  - "8080:3000" # Access at http://localhost:8080
 
 # Bind to specific interface
 ports:
-  - "127.0.0.1:3000:3000"  # Only localhost access
+  - "127.0.0.1:3000:3000" # Only localhost access
 
 # Multiple ports
 ports:
-  - "3000:3000"   # HTTP
-  - "9229:9229"   # Node.js debugger
+  - "3000:3000" # HTTP
+  - "9229:9229" # Node.js debugger
 
 # Random host port
 ports:
-  - "3000"  # Docker assigns random port
+  - "3000" # Docker assigns random port
 
 # Port range
 ports:

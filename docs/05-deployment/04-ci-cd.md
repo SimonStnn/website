@@ -229,21 +229,21 @@ on:
 on:
   push:
     tags:
-      - 'v*.*.*'
+      - "v*.*.*"
 
 # Scheduled runs (cron)
 on:
   schedule:
-    - cron: '0 2 * * 0'  # Weekly on Sunday at 2 AM
+    - cron: "0 2 * * 0" # Weekly on Sunday at 2 AM
 
 # Manual trigger
 on:
   workflow_dispatch:
     inputs:
       environment:
-        description: 'Deployment environment'
+        description: "Deployment environment"
         required: true
-        default: 'staging'
+        default: "staging"
         type: choice
         options:
           - staging
